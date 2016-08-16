@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="ic.tcc00175.biblioteca.model.Exemplar" table="EXEMPLAR" schema="LLEME">
+        <composite-id name="id" class="ic.tcc00175.biblioteca.model.ExemplarId">
+            <key-property name="codigo" type="long">
+                <column name="CODIGO" precision="10" scale="0" />
+            </key-property>
+            <key-property name="num" type="long">
+                <column name="NUM" precision="10" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="material" class="ic.tcc00175.biblioteca.model.Material" update="false" insert="false" fetch="select">
+            <column name="CODIGO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="desc" type="string">
+            <column name="desc" length="510" />
+        </property>
+        <set name="emprestimos" inverse="true">
+            <key>
+                <column name="CODIGO" precision="10" scale="0" not-null="true" />
+                <column name="NUM" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="ic.tcc00175.biblioteca.model.Emprestimo" />
+        </set>
+    </class>
+</hibernate-mapping>

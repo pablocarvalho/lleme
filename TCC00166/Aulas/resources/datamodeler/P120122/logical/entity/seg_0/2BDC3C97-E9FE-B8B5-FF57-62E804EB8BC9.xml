@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="2BDC3C97-E9FE-B8B5-FF57-62E804EB8BC9" directorySegmentName="seg_0" name="Multa">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:39:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pkName>Multa PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Atributo</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dados</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Primária</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Estrangeira</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Chave Exclusiva</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>NOT NULL</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Chave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="data" id="6ECA6A93-4433-1CEA-88C9-1AAE8E241536">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:39:28 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="inicio_faixa" id="9F262F23-53FC-6EB7-AA2B-5918EB309CC6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:39:33 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="fim_faixa" id="4F39A7F0-AEF0-2102-3A9B-18868D0205E9">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:39:41 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="AD86B312-4117-75E0-AD1D-E16339C65A52" name="Multa_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:41:42 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6ECA6A93-4433-1CEA-88C9-1AAE8E241536</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

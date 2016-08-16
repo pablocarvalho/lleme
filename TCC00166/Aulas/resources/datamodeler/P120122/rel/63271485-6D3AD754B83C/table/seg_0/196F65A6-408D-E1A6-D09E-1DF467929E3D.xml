@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="196F65A6-408D-E1A6-D09E-1DF467929E3D" directorySegmentName="seg_0" name="Orcamento">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>70A9A14B-B2E3-D95E-7800-7683B55A024E</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<pkName>Orcamento PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Coluna</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dados</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Primária</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Estrangeira</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Chave Exclusiva</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>NOT NULL</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Chave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="numero_os" id="CCFEB937-1B36-159A-CA21-6A60CA6C50F7">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>8DBA4DBB-52A5-6EAD-50AD-66E93FEF43C6</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>263B61F3-F8DD-0A74-8B1A-72F8FEF7C3F4</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDCD74B1-3B9F-1EAF-95D6-33EBE35006F1" referredColumn="263B61F3-F8DD-0A74-8B1A-72F8FEF7C3F4"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="numero" id="ED8EC599-242C-C017-18FB-4B2EA5C91531">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>97CB5424-D08E-6E5C-268A-63943987B95A</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="data" id="C3A559D1-C7C4-5BA5-B580-5D7B54F76E81">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>7D0AFE23-9573-62A5-B012-6ACB8F600B6C</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="valor" id="729E5B12-6A7B-B258-BBA4-21DE645A166E">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>E26C127A-11B1-2CB9-9D03-B6A579346B5E</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="aceite" id="A85C7300-FB33-F186-3A44-4424E584E294">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>539A56E0-BA4E-2180-2120-E3C54D84D371</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="EBFAA7B9-6F85-CA63-68B6-B3B5F1DC7E6D" name="Orcamento_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>126C7386-744A-0E83-A596-78A567FBF5A3</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="ED8EC599-242C-C017-18FB-4B2EA5C91531"/>
+<colUsage columnID="CCFEB937-1B36-159A-CA21-6A60CA6C50F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5DC82AB3-E3E5-2952-4DF0-A75213DDBB83" name="possui">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>2DF2F153-F937-6F20-BFB0-07090AB59350</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="CCFEB937-1B36-159A-CA21-6A60CA6C50F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints>
+<tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="Orcamento_datas_CK" id="343EBF26-0B71-8B57-81E1-5C6B804E56BD" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 21:58:01 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<rule>aceite &gt;= data</rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

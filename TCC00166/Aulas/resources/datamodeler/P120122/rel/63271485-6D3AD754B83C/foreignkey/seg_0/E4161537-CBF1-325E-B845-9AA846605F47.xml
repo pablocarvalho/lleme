@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="E4161537-CBF1-325E-B845-9AA846605F47" directorySegmentName="seg_0" name="e_composta_de">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>39C02EB2-B153-05EF-7D31-D986AEB80ECA</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<containerWithKeyObject>2B398C6B-64DF-4009-657B-28073F33A555</containerWithKeyObject>
+<deleteRule>RESTRICT</deleteRule>
+<localFKIndex>27F034F1-5001-267B-DA6D-A90B0C7A8C6F</localFKIndex>
+<keyObject>53CE7FF3-0A38-92AD-7C1D-5FBB0652A933</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

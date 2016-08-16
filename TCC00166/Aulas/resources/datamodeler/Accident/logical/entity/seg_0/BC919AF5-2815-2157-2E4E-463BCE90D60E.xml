@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="BC919AF5-2815-2157-2E4E-463BCE90D60E" directorySegmentName="seg_0" name="VENDEDOR">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>CDB7C85D-12FA-17C7-8FBA-51DD038C0954</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pkName>SYS_C0010880</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="matricula" id="76F5FE7F-5902-B2CD-55BB-43522ECFC510">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>B3237C8F-A4F4-5D1E-4706-136E69B0F8F6</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="name" id="C5526CD8-7243-846A-4A88-6495DAC635A3">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>84E71366-EE0B-640E-B26A-7F4C06C80C7A</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="endereco" id="B6AF1640-8065-1A25-0CA5-4794A1230526">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>6DBE4223-B642-ACEE-3DC9-A69C03A553D6</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="cpf" id="DA7B37C5-C266-8DD7-6953-13DFECB81FFD">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>CD99A750-214E-9EC7-2887-7EC4DADBF10B</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="169863CE-6848-1A03-5337-F59105B853A8" name="SYS_C0010880">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>5CC80014-D3D1-96F4-A917-FFC20119C138</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>76F5FE7F-5902-B2CD-55BB-43522ECFC510</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,182 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="AA537080-FC7A-E2FA-2EE3-8E2AA9ED0332" directorySegmentName="seg_0" name="Ordem_Servico">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 17:41:43 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pkName>Ordem_Servico PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Atributo</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dados</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Primária</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Estrangeira</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Chave Exclusiva</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>NOT NULL</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Chave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="numero_os" id="1D4D561B-D730-602F-B59B-1074122D3BCE">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:07:37 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id_cliente" id="A0690E9A-F2CB-15B6-44E9-A69E78E64CA8">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:32:17 UTC</createdTime>
+<generatorID>F771F6D5-5453-BAC7-2E27-0ED5758DEC49</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<referedAttribute>D9EF4D94-A10B-4072-5FB6-954941826FB8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="licensa" id="64207ADE-5480-9DC0-F12B-1E28CDF395DD">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:06:31 UTC</createdTime>
+<generatorID>39A3F13C-8972-F2B5-19DA-65C2F4D4E952</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<referedAttribute>0143BBF9-6C3E-99A5-FF0C-25FC76A56ABB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="queixa" id="C9B3C427-6486-5F12-47F1-CAF251556087">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:08:15 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="multa" id="B252964C-4B8D-7349-FC5A-E8CD032C35DB">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 19:13:26 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="abertura" id="E811D14F-21A5-374A-33BD-40F895A5F895">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:06:44 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="encerramento" id="76413490-C4DC-7998-54C9-764D7D6F20AF">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:08:18 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id_mecanico" id="2D7CC6F3-AC8B-A3EF-E0B5-136F181F6FF1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:27:18 UTC</createdTime>
+<generatorID>B93BF42E-88A5-2E67-C147-FE6AFA68098A</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>FEFA848C-5C0E-AC66-BA0E-31E584033AC0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="2D42E071-64BA-CD5D-246D-128829C033F1" name="Ordem_Servico_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:07:59 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1D4D561B-D730-602F-B59B-1074122D3BCE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

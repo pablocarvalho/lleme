@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:d211a731-f666-4243-a465-4e2447c17067'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Hospedagem'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:42522331-c365-4a2c-86e8-5f57e51179c0'
+    isSubstitutable='true'>
+   <general href='urn:uuid:aea12022-acbb-4ed6-b5e7-a5ba80362ec5'/>
+  </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:2e876295-6810-430e-873d-35b30097cef2'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='destino'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/String:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:f8be304b-f504-41c2-a327-d7133c0519ac'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:54092e8d-f3d3-4703-a9f2-dfdc23647a17'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:67976dce-c5ba-4e2e-820f-51d788d75d2c'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='origem'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/String:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:c2d076bd-b9ee-47ed-9201-7b38d2597e9d'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:bf75d770-93b3-41bd-acb8-c85bbf3fc300'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:311d2dcb-6edd-4f9d-842a-efd0b4275552'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Hospedagem'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:1f88fde4-c5a7-4521-896c-5996367edc38'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='reserva'
+     direction='in'>
+    <type href='urn:uuid:d67a274c-96a7-4d11-ad7f-83878499c2d0'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:9f0982e7-c30c-41d3-8ebc-9cc8e0e120f9'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:a450ab07-c82a-48d7-88f7-70d17178177a'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:90f55dd1-4a28-4a38-a836-5a15afa93049'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='quarto'
+     direction='in'>
+    <type href='urn:uuid:c1a9586c-d4f5-41f9-976a-6ec47b4f13e5'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8fe99034-68f7-4456-994e-80df2af012c1'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:5b885272-1ba5-4bf8-8209-adaa350c91fd'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:12a6698c-a773-4e42-8d4d-1a74f08a494e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='origem'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:00b7fd3a-ee9d-4969-bfc7-52c7fb095bbf'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:f89f71c9-4bd5-41c5-ac0b-31a21c31b916'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:db8b738c-7fad-4749-b5b1-296b88e68bc4'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='destino'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:fd4099d9-7092-475a-82ff-f725a4f551f0'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:08ddd11f-fd84-4f42-84ae-05e8ea654163'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:d8f2351c-16bd-4986-b94f-0aa5fecaaf05'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Hospedagem'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:995f43f3-7c68-43fe-b8c8-c7859d1cc37e'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='periodo'
+     direction='in'>
+    <type href='urn:uuid:deae970d-6523-43b9-93d0-82c8c4adda8a'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a0ae3f13-352c-4aee-af05-58932b266f51'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:9adef630-e9ab-4745-87f6-b491bf11baf8'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:96f68e9c-69d6-44c4-ae4b-0aa78e0643d3'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='quarto'
+     direction='in'>
+    <type href='urn:uuid:c1a9586c-d4f5-41f9-976a-6ec47b4f13e5'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:712155f9-968e-47b6-abcc-485d08deee20'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:7c8cd65a-a49e-43db-8645-d98acc6a369f'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:68c813e0-9f8e-4bfe-aa4e-23ace9269267'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='origem'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:f20410bf-9e97-42a8-8cbc-bd7a1cbcdbda'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:b186cf2f-eab2-4846-8f38-dc191e4a8372'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:ae83fa70-0b7b-4cba-af01-4d1143d3d4a9'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='destino'
+     direction='in'>
+    <type href='mof:/String:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:53f35027-d70e-4948-8c4c-e7c465ef23b9'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:56d7b897-af2e-42bf-b678-30d1a922fc4a'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

@@ -1,0 +1,15 @@
+#ifndef PROPERTY_IDL
+#define PROPERTY_IDL
+
+module exemploAula {
+module corbaClasses {
+
+interface Property {
+   string name();
+   string get();
+   void set (in string value);
+};
+
+};
+};
+#endif

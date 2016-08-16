@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:d67a274c-96a7-4d11-ad7f-83878499c2d0'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Reserva'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:24c6792e-a906-4a7b-811d-0b0c3c0a6b50'
+    isSubstitutable='true'>
+   <general href='urn:uuid:aea12022-acbb-4ed6-b5e7-a5ba80362ec5'/>
+  </generalization>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:2c43c7ec-aab4-4698-a641-6cab780b6f51'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='numero'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/int:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a3e20814-aacc-4009-910b-62cb5ddd4039'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:7c9320f4-1579-418f-a3b7-6127852de2f8'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:a4ecc82c-793f-4bb6-82c9-17ff3106c0c3'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='criacao'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/java:uml:NamedElement/util:uml:NamedElement/Date:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:730447f7-700e-43f7-8949-ead0d2e09fa9'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:fb66d2ea-6bfa-495a-956c-9f6b714c7d45'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:515502fd-cdc7-44ae-a0d8-43ec7f67840a'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='itens'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/reservas:uml:NamedElement/ItemReserva:uml:Type'/>
+   <defaultValue xmi:type='uml:LiteralString' xmi:uuid='urn:uuid:39783ea1-ffae-49fd-874f-7858745503e7'
+     value='new HashSet&lt;ItemReserva>()'
+     visibility='public'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:042c1ea0-f334-4416-8156-d27d2f12038c'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:8e91d952-8344-46ac-bf18-aea1768829e7'
+     value='*'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:4ca908c3-4e57-4bbf-bbac-53ed06148664'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='hospedagens'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/reservas:uml:NamedElement/Hospedagem:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:97b55e58-4613-4209-8146-486512ba2bb3'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:b04cf056-7d22-40d5-b977-d743c305315d'
+     value='*'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:d1cb7084-89e9-4177-b04d-93c3ca65c822'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='Reserva'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:da5bf093-0627-4fdd-8bb9-5f40ecffbfff'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='cliente'
+     direction='in'>
+    <type href='urn:uuid:b7253078-5f36-4658-92b8-e27473c345a8'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:20dd3397-5e46-4a27-a71f-b2d1f8d3feb6'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:8f93af04-e83c-4917-8203-218395118da9'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:49e44ff6-943f-4eeb-a392-7da6d95212c3'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='periodo'
+     direction='in'>
+    <type href='urn:uuid:deae970d-6523-43b9-93d0-82c8c4adda8a'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:26372019-c3f3-41a2-b4f3-c717b16e909d'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:732b5c1a-4756-4a3e-a5b4-b56637a3bebd'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:370a084f-cbbe-43ed-92c7-d93788138110'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='pedido'
+     direction='in'>
+    <type href='mof:/java:uml:NamedElement/util:uml:NamedElement/Map:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a47ade22-08e3-418e-ac62-2947bda0a286'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:312fe85e-6083-4720-ba3c-737551e1d3b3'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

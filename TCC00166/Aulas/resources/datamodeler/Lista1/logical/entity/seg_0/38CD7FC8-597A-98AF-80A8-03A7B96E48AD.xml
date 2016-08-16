@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="38CD7FC8-597A-98AF-80A8-03A7B96E48AD" directorySegmentName="seg_0" name="Locacao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-27 22:42:08 UTC</createdTime>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="registro" id="00402DA1-085E-F726-769B-B6CD921CED97">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-27 22:42:38 UTC</createdTime>
+<generatorID>55B07A14-2692-741F-13A7-0FA4F2879D67</generatorID>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>A32B73FF-BFA2-BB83-D1C5-8CB4BDB6DF68</referedAttribute>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="chassi" id="8ED9B277-E544-932B-2309-38E064166D86">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-27 22:43:03 UTC</createdTime>
+<generatorID>96CD8381-810C-DB57-AD00-5A7C11A62B37</generatorID>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>29C4AAEE-D073-025A-AA9B-3C68018CCEC6</referedAttribute>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="data de aluguel" id="7741BBDF-1D26-B700-76F1-199D949D46C0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-27 22:45:00 UTC</createdTime>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="data de devolucao" id="9F682125-2589-F952-D904-45254EB79DB4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-27 22:45:14 UTC</createdTime>
+<ownerDesignName>Lista1</ownerDesignName>
+<engineerTo>
+<item key="1F450E0A-8A80-E0B1-2C35-DDBDE3A1C30A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+</Attribute>
+</attributes>
+</Entity>

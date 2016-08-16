@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2C820122-BF85-BA59-8178-A1D5F1E24112" name="Material">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+    <generatorID>9CF874C3-96D0-6391-A843-362ADB429C47</generatorID>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <allowColumnReorder>false</allowColumnReorder>
+    <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+    <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+        <Column name="codigo" id="D14F011A-F9EB-D053-46E1-0DB599B1782B">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>00289B25-9A2E-E2E7-AC66-3D7A79D209D4</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="titulo" id="3DE90C9C-810D-DDB2-FDA2-1A4AC644B007">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>E7B10017-8274-330E-6532-E07B07C0234D</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+    </columns>
+    <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+        <ind_PK_UK id="5C6E1A50-2949-B684-21A0-F249FFE025DB" name="PK_MATE">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>DEF1F489-902F-1B41-4708-80DF1923D686</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <pk>true</pk>
+            <indexState>Primary Constraint</indexState>
+            <isSurrogateKey>false</isSurrogateKey>
+            <indexColumnUsage>
+                <colUsage columnID="D14F011A-F9EB-D053-46E1-0DB599B1782B"/>
+            </indexColumnUsage>
+        </ind_PK_UK>
+    </indexes>
+</Table>

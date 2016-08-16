@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ACCIDENT" id="AE70B886-4F9F-EEB7-F7A3-E0CA8BEA658F" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>160ED660-3175-3CB8-D077-ACF9BACB5E15</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="location" id="3036277F-0827-65A6-E2A2-B3F29DE73C23">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="report-number" id="51D115B8-3759-82A1-C61C-91A14927C174">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="date" id="F28D83CB-0634-3275-9947-4D23D596F982">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="SYS_C0010862" id="5E1D00B4-7640-21D8-EE4A-80AE18A49342">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<segment>181C510E-5CAF-1BB2-F604-CF250455DB89</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="SYS_C0010862" id="22A41025-DC85-6274-1BDA-25A4270FF21A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<existingIndex>5E1D00B4-7640-21D8-EE4A-80AE18A49342</existingIndex>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

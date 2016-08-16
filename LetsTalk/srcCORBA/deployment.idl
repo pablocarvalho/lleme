@@ -1,0 +1,124 @@
+#ifndef DEPLOYMENT_IDL
+#define DEPLOYMENT_IDL
+
+#include "scs.idl"
+
+module corbaObjects {
+module scs {
+
+typedef sequence<string> StringSeq;
+typedef sequence<octet> OctetSeq;
+typedef sequence<IComponent> IComponentSeq;
+
+struct ComponentId {
+   string name;
+   unsigned long version;
+};
+typedef sequence<ComponentId> ComponentIdSeq;
+
+struct ComponentHandle {
+   IComponent cmp;
+   ComponentId id;
+   unsigned long instance_id;
+};
+typedef sequence<ComponentHandle> ComponentHandleSeq;
+
+struct ComponentDescription {
+   ComponentId id;
+   string entry_point;
+   boolean shared;
+   string help_info;
+};
+typedef sequence<ComponentDescription> ComponentDescriptionSeq;
+
+
+exception ComponentNotFound{};
+exception ComponentAlreadyLoaded{};
+exception LoadFailure{};
+exception HelpInfoNotAvailable{};
+exception ComponentAlreadyInstalled{};
+exception IOException{};
+exception ComponentNotInstalled{};
+exception ContainerAlreadyExists{};
+
+
+interface ComponentLoader {
+   ComponentHandle load (in ComponentId id, in StringSeq args) raises (ComponentNotFound, 
+	   ComponentAlreadyLoaded, LoadFailure);
+   void unload (in ComponentHandle handle) raises (ComponentNotFound);
+   ComponentHandleSeq getLoadedComponents();
+   ComponentIdSeq getInstalledComponents();  
+};
+
+interface ComponentCollection {
+   ComponentHandleSeq getComponent (in ComponentId id) raises (InvalidName);
+   ComponentHandleSeq getComponents () raises (InvalidName);   
+};
+
+interface ComponentHelp {
+   string getHelpInfo (in ComponentId id)
+      raises (ComponentNotFound, HelpInfoNotAvailable);
+};
+
+interface ComponentRepository {
+   void install (in ComponentId id, in string entry_point,
+                 in boolean shared, in OctetSeq file, in string help_info)
+      raises (ComponentAlreadyInstalled, IOException);
+      
+   void uninstall (in ComponentId id)
+       raises (ComponentNotInstalled, IOException);
+       
+   void copy (in ComponentId id, in ComponentRepository rep)
+      raises (ComponentAlreadyInstalled,ComponentNotInstalled);
+   
+   OctetSeq getComponentFile (in ComponentId id)
+      raises (ComponentNotInstalled, IOException);
+   ComponentDescription getComponentDescription (in ComponentId id)
+      raises (ComponentNotInstalled);
+   ComponentDescriptionSeq  getInstalledComponents();  
+};
+
+struct ContainerDescription {
+   IComponent container;
+   string container_name;
+   IComponent execution_node;
+};
+typedef sequence<ContainerDescription> ContainerDescriptionSeq;
+
+interface ExecutionNode {
+   readonly attribute string name;
+   IComponent startContainer (in string container_name)
+      raises (ContainerAlreadyExists, InternalError);
+   IComponent getContainer (in string container_name);
+   ContainerDescriptionSeq getContainers ();
+};
+
+struct Property {
+   string name;
+   string value;
+};
+typedef sequence<Property> PropertySeq;
+
+struct NodeDescription {
+   IComponent node;
+   PropertySeq props;
+};
+typedef sequence<NodeDescription> NodeDescriptionSeq;
+
+interface NodeLookup {
+   NodeDescription getNode (in string name);
+   NodeDescriptionSeq getNodes (in PropertySeq props);
+   NodeDescriptionSeq getAllNodes ();
+};
+
+interface NodeRegister {
+   void register (in IComponent node, in PropertySeq props);
+   void unregister (in IComponent node)
+      raises (ComponentNotFound);
+};
+                      
+};
+
+};
+
+#endif

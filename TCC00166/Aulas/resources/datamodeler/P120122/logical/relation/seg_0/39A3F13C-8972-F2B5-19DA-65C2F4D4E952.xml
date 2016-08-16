@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="sofre" id="39A3F13C-8972-F2B5-19DA-65C2F4D4E952" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:01:24 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BE828B4D-2221-ECE2-CE07-345DDC721DBE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>AA537080-FC7A-E2FA-2EE3-8E2AA9ED0332</targetEntity>
+<transferable>true</transferable>
+</Relation>

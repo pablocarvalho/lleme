@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="ic.tcc00175.biblioteca.model.Cd" table="CD" schema="LLEME">
+        <id name="materialCodigo" type="long">
+            <column name="MATERIAL_CODIGO" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="material" class="ic.tcc00175.biblioteca.model.Material" update="false" insert="false" fetch="select">
+            <column name="MATERIAL_CODIGO" precision="10" scale="0" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="autores" type="string">
+            <column name="AUTORES" length="510" />
+        </property>
+        <property name="ano" type="java.lang.Long">
+            <column name="ANO" precision="10" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

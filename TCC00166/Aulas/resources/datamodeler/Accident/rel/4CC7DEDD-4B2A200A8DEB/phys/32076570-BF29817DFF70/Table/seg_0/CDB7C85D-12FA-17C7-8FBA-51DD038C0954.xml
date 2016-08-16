@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="VENDEDOR" id="CDB7C85D-12FA-17C7-8FBA-51DD038C0954" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>F89B4DFF-3EC2-9907-B1A9-3FE8DDFF2C43</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="endereco" id="6DBE4223-B642-ACEE-3DC9-A69C03A553D6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="name" id="84E71366-EE0B-640E-B26A-7F4C06C80C7A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="matricula" id="B3237C8F-A4F4-5D1E-4706-136E69B0F8F6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="cpf" id="CD99A750-214E-9EC7-2887-7EC4DADBF10B">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="SYS_C0010880" id="4632E756-CA18-ADAE-C866-D3A3B115F0CB">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<segment>4ADEE37F-C97E-F22E-EA82-4BFAC3F04218</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="SYS_C0010880" id="5CC80014-D3D1-96F4-A917-FFC20119C138">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<existingIndex>4632E756-CA18-ADAE-C866-D3A3B115F0CB</existingIndex>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

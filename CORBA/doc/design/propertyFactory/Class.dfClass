@@ -1,0 +1,314 @@
+package id2fv9uedvjudwaedvk1123;
+
+/**
+@version 2.0
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:java#Class#propertyFactory.PropertyServant:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.PropertyFactoryPOA:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference17 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.PropertyPOA:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference18 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.PropertyFactoryOperations:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference19 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.PropertyOperations:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference20 {
+}/**
+@__ref <oiref:java#Class#org.omg.PortableServer.Servant:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference21 {
+}/**
+@__ref <oiref:java#Class#org.omg.CORBA.portable.InvokeHandler:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference22 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects._PropertyFactoryStub:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference23 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.PropertyFactory:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference24 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects._PropertyStub:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference25 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaObjects.Property:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference26 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaClasses.PropertyPOA:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference33 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaClasses._PropertyStub:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference35 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaClasses.Property:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference36 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaClasses.PropertyOperations:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference37 {
+}/**
+@__ref <oiref:java#Class#org.omg.CORBA.portable.IDLEntity:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference38 {
+}/**
+@__ref <oiref:java#Class#propertyFactory.corbaClasses.PropertyPackage.PropertyData:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference39 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.Property:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference74 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses._PropertyStub:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference75 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyHelper:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference76 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyHolder:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference77 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyPOA:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference78 {
+}/**
+@__ref <oiref:java#Class#exemploAula.PropertyServant:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference79 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyPackage.PropertyData:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference80 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyOperations:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference81 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactory:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference84 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryOperations:oiref><oihard>
+@__modelType reference
+@__imported
+@backgroundColor 204,255,255 
+*/
+class reference85 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryPOA:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference86 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses._PropertyFactoryStub:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference87 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHelper:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference88 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHolder:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference89 {
+}/**
+@__ref <oiref:java#Class#exemploAula.PropertyFactoryServant:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference90 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyData:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference95 {
+}/**
+@__ref <oiref:java#Class#java.io.Serializable:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference98 {
+}}/**
+
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options option.detail = Implementation
+option.inheritance = Vertical
+option.papersize = A3
+option.orientation = Landscape
+option.fittopage = true
+*/
+class __options {
+}/**
+@__positions <oigroup:<oiref:java#Class#java.io.Serializable:oiref>=170,640,118,98,1:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHolder:oiref>=-791,350,260,174,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyFactory:oiref>=-440,389,180,130,0:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects._PropertyStub#propertyFactory.corbaObjects.Property:oiref>=834,550,834,451:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyData:oiref>=150,980,200,126,1:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyPOA#org.omg.CORBA.portable.InvokeHandler:oiref>=285,245,285,480:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.PropertyFactoryPOA:oiref>=20,60,330,206,0:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.PropertyFactoryServant#exemploAula.corbaClasses.PropertyFactoryPOA:oiref>=-70,310,-70,249:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.PropertyFactory:oiref>=-320,330,221,130,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses._PropertyStub:oiref>=660,641,263,190,0:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#exemploAula.corbaClasses.PropertyFactoryHolder#value:oiref>=-531,454,-440,454:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaClasses.PropertyPOA#propertyFactory.corbaClasses.PropertyOperations:oiref>=530,116,871,116:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.PropertyOperations:oiref>=720,90,200,133,1:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.PropertyFactoryServant:oiref>=-170,310,200,174,1:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyHelper:oiref>=962,81,380,207,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyHolder:oiref>=1021,391,249,174,0:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects._PropertyFactoryStub#propertyFactory.corbaObjects.PropertyFactory:oiref>=-210,560,-210,460:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaClasses.PropertyPackage.PropertyData#org.omg.CORBA.portable.IDLEntity:oiref>=680,371,680,274:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyPOA:oiref>=211,71,369,174,0:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.Property#exemploAula.corbaClasses.PropertyOperations:oiref>=776,441,776,242:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaObjects.PropertyFactoryPOA#org.omg.PortableServer.Servant:oiref>=270,60,270,-37:oigroup>
+<oigroup:<oiref:java#Class#org.omg.CORBA.portable.InvokeHandler:oiref>=70,480,290,103,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses._PropertyFactoryStub:oiref>=-491,621,332,222,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryOperations:oiref>=-440,79,200,165,1:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects._PropertyFactoryStub:oiref>=-370,560,349,260,0:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses._PropertyFactoryStub#exemploAula.corbaClasses.PropertyFactory:oiref>=-392,621,-392,519:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaClasses.PropertyPackage.PropertyData:oiref>=580,371,200,126,1:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.PropertyServant#propertyFactory.corbaObjects.PropertyPOA:oiref>=522,340,522,266:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaClasses.PropertyPOA#org.omg.PortableServer.Servant:oiref>=363,31,363,-37:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects.PropertyPOA#propertyFactory.corbaObjects.PropertyOperations:oiref>=660,156,720,156:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.PropertyServant:oiref>=230,330,200,142,1:oigroup>
+<oigroup:<oiref:java#Extends#org.omg.CORBA.portable.IDLEntity#java.io.Serializable:oiref>=235,800,235,738:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyPOA#exemploAula.corbaClasses.PropertyOperations:oiref>=580,177,671,177:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaClasses._PropertyStub:oiref>=870,540,200,190,1:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.PropertyServant#exemploAula.corbaClasses.PropertyPOA:oiref>=480,310,480,245:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.PropertyFactoryPOA#org.omg.PortableServer.Servant:oiref>=109,70,109,-7:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses._PropertyStub#exemploAula.corbaClasses.Property:oiref>=781,641,781,555:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaClasses.Property#org.omg.CORBA.portable.IDLEntity:oiref>=910,320,740,274:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaObjects.PropertyFactory#propertyFactory.corbaObjects.PropertyFactoryOperations:oiref>=-210,330,-210,246:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryPOA:oiref>=-170,70,348,179,0:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects.PropertyFactoryPOA#propertyFactory.corbaObjects.PropertyFactoryOperations:oiref>=20,163,-50,163:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyFactoryPOA#org.omg.CORBA.portable.InvokeHandler:oiref>=124,249,124,480:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.Property#org.omg.CORBA.portable.IDLEntity:oiref>=731,555,274,800:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.PropertyPOA:oiref>=370,60,290,206,0:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.PropertyPOA#org.omg.PortableServer.Servant:oiref>=330,71,330,-7:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyPackage.PropertyData#org.omg.CORBA.portable.IDLEntity:oiref>=230,970,230,863:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaClasses.Property:oiref>=849,320,261,146,0:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.PropertyFactoryServant#propertyFactory.corbaObjects.PropertyFactoryPOA:oiref>=191,340,191,266:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.Property:oiref>=730,321,209,130,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.PropertyServant:oiref>=380,310,200,174,1:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaClasses.PropertyOperations:oiref>=871,50,200,133,1:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyOperations:oiref>=671,109,200,133,1:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#exemploAula.corbaClasses.PropertyHolder#value:oiref>=1021,498,881,498:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyPackage.PropertyData:oiref>=130,970,200,126,1:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.PropertyFactory#exemploAula.corbaClasses.PropertyFactoryOperations:oiref>=-350,389,-350,244:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.Property:oiref>=681,441,200,114,1:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.PropertyServant#propertyFactory.corbaClasses.PropertyPOA:oiref>=330,330,330,208:oigroup>
+<oigroup:<oiref:java#Extends#exemploAula.corbaClasses.PropertyFactory#org.omg.CORBA.portable.IDLEntity:oiref>=-326,519,197,800:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaObjects.Property#propertyFactory.corbaObjects.PropertyOperations:oiref>=825,321,825,223:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaObjects.PropertyPOA#org.omg.PortableServer.Servant:oiref>=456,60,456,-37:oigroup>
+<oigroup:<oiref:java#Extends#propertyFactory.corbaClasses.Property#propertyFactory.corbaClasses.PropertyOperations:oiref>=971,320,971,183:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaClasses._PropertyStub#propertyFactory.corbaClasses.Property:oiref>=970,540,970,466:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyFactoryPOA#exemploAula.corbaClasses.PropertyFactoryOperations:oiref>=-170,161,-240,161:oigroup>
+<oigroup:<oiref:java#Class#org.omg.CORBA.portable.IDLEntity:oiref>=120,800,231,114,0:oigroup>
+<oigroup:<oiref:java#Implements#exemploAula.corbaClasses.PropertyData#org.omg.CORBA.portable.IDLEntity:oiref>=250,980,250,914:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects.PropertyFactoryOperations:oiref>=-339,80,289,166,0:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaObjects._PropertyStub:oiref>=700,550,278,206,0:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaClasses.PropertyPOA#org.omg.CORBA.portable.InvokeHandler:oiref>=211,31,-85,-69:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects.PropertyPOA#org.omg.CORBA.portable.InvokeHandler:oiref>=413,60,46,-69:oigroup>
+<oigroup:<oiref:java#Implements#propertyFactory.corbaObjects.PropertyFactoryPOA#org.omg.CORBA.portable.InvokeHandler:oiref>=33,60,33,-69:oigroup>
+<oigroup:<oiref:java#Class#org.omg.PortableServer.Servant:oiref>=40,-310,320,303,0:oigroup>
+<oigroup:<oiref:java#Class#propertyFactory.corbaClasses.PropertyPOA:oiref>=60,31,470,177,0:oigroup>
+<oigroup:<oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHelper:oiref>=-819,30,329,220,0:oigroup>
+*/
+class __positions {
+}

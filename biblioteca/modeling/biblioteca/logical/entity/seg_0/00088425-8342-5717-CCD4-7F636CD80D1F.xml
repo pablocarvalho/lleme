@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="00088425-8342-5717-CCD4-7F636CD80D1F" name="Reserva">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:06:34 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <adequatelyNormalized>NO</adequatelyNormalized>
+    <expectedVolumes>0</expectedVolumes>
+    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+    <growthPercent>0</growthPercent>
+    <growthType>Year</growthType>
+    <hierarchicalParent>DA841682-4553-E888-CD3B-45E4956D8224</hierarchicalParent>
+    <maxVolumes>9999999</maxVolumes>
+    <minVolumes>0</minVolumes>
+    <normalForm>Third</normalForm>
+    <preferredAbbreviation>Reserva</preferredAbbreviation>
+    <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+        <Attribute name="obs" id="DF54A4FF-FA89-E85E-05A8-0AE94992C224">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:47:24 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+        </Attribute>
+        <Attribute name="codigo" id="9495D7AA-7D0F-5160-E3DA-BE6B0FB2EB37">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 21:18:21 UTC</createdTime>
+            <generatorID>43AEA1D8-E93B-100A-AD71-B884875F4927</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <referedAttribute>00289B25-9A2E-E2E7-AC66-3D7A79D209D4</referedAttribute>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+        </Attribute>
+    </attributes>
+</Entity>

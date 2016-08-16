@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="0E9B5BDC-7420-A557-336C-FFFB6C984528" directorySegmentName="seg_0" name="CLIENTE">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>4D52DBBB-8698-1140-2F07-4FB79E91991E</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pkName>SYS_C0010886</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="numero" id="58906001-D38F-BBF7-43EF-7046DD917047">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>980B0F32-79D3-8DF8-8C6B-42D3927FED84</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="nome" id="680F22FF-708D-6786-AF2A-46B437F98081">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>0D6A2431-EB5B-78D6-1DAB-7F3360E8F0F7</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="582831BF-D3AB-F9E9-A22C-8F4673E056A2" name="CLIENTE_UK1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>0FAAF91D-276A-FFFA-7C7E-352932FA7ADB</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>680F22FF-708D-6786-AF2A-46B437F98081</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="33741FD4-C75D-5918-2412-957F5E13CA67" name="SYS_C0010886">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>7453A149-5118-9865-FB25-BCBE14C0ECE3</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>58906001-D38F-BBF7-43EF-7046DD917047</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

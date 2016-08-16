@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="EA154565-D24B-DF3F-6BBA-1494F888042D" directorySegmentName="seg_0" name="Saida">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-04 22:08:12 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pkName>Saida PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="data_hora" id="FE2E12D2-F892-73D3-0367-D015D51B4F34">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-04 22:32:08 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="5904D92D-0CF2-8CAB-225F-4308DDA659D1" name="Saida PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-04 22:32:13 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FE2E12D2-F892-73D3-0367-D015D51B4F34</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

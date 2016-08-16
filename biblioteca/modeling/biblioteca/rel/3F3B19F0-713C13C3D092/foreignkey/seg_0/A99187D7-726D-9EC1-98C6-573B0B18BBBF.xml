@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A99187D7-726D-9EC1-98C6-573B0B18BBBF" name="FK_Emprestimo_Devolucao">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+    <generatorID>8464BA49-8880-2D39-D9BA-FE2209B173D0</generatorID>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <containerWithKeyObject>13B1FDF6-61F9-D26C-86CF-822FB76D7FE3</containerWithKeyObject>
+    <deleteRule>NO ACTION</deleteRule>
+    <localFKIndex>0EF59385-97D2-945E-8E91-C2A99837A1A1</localFKIndex>
+    <keyObject>DD24237A-274E-7C40-312A-9059F03B61D8</keyObject>
+    <mandatory>true</mandatory>
+    <transferable>true</transferable>
+    <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

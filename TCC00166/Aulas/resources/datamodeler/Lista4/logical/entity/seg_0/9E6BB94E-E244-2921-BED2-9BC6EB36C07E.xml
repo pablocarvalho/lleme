@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="9E6BB94E-E244-2921-BED2-9BC6EB36C07E" directorySegmentName="seg_0" name="Pesquisador">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:57:59 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pkName>Pesquisador PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="rg" id="412CD366-FA35-83A1-0FBE-0E1E9BFBA15C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:14 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="cpf" id="AD06B37A-3A1F-F954-3AC5-9BBC77E5DA73">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:18 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="nome" id="DE855181-8435-2D6E-8A47-FE65CAEC037B">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:24 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="sexo" id="26C7EAC5-E42A-0D15-455F-678C2DFBA3A2">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:31 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="dt_nascimento" id="3AABF591-C4F0-EB8B-E001-3317314B1B1A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:36 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="grau_cientifico" id="E5D898B1-1A10-5201-1155-D37F809FD08D">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:48 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="A2888203-A7E8-56A4-06AE-D1FC85209275" name="Pesquisador PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:58:22 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AD06B37A-3A1F-F954-3AC5-9BBC77E5DA73</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

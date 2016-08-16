@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Accident" id="6BCD1C8F-2115-CEB6-9A91-E340A5152086" version="3.5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 20:21:33 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6BCD1C8F-2115-CEB6-9A91-E340A5152086</designId>
+</OSDM_Design>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="operacao" directorySegmentName="seg_0" id="E9EAF285-934F-7AE9-23F4-6258A7DF652D">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:17:31 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <sourcePk>19866F1A-B8DB-2CB1-E3EE-C8FCDC11670E</sourcePk>
+    <identifying>false</identifying>
+    <optionalSource>true</optionalSource>
+    <optionalTarget>false</optionalTarget>
+    <sourceCardinality>1</sourceCardinality>
+    <sourceEntity>DA5A657A-39BB-C296-8201-7C86AE2A940C</sourceEntity>
+    <targetCardinalityString>*</targetCardinalityString>
+    <targetEntity>DA841682-4553-E888-CD3B-45E4956D8224</targetEntity>
+    <transferable>true</transferable>
+</Relation>

@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="TELEFONE" id="EE129386-3E51-33CA-E114-930151DAD87D" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>F89B4DFF-3EC2-9907-B1A9-3FE8DDFF2C43</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="matricula" id="0F3209E0-A18F-AC7E-991B-9DC88743F44F">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="cliente" id="3B817119-2FF0-B272-5526-7F895373F735">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="numero" id="DF2ACAEE-6F2E-6C2E-95A2-2EEBB9639344">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="SYS_C0010885" id="5B11CD39-58F7-A08F-D66B-3529D1226949">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<segment>4ADEE37F-C97E-F22E-EA82-4BFAC3F04218</segment>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="SYS_C0010885" id="DEDA925F-FCF3-6B04-6003-EED22617DFC8">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<tableSpace>B711F601-2C5F-D9CC-8D67-5FA2D60321AC</tableSpace>
+<existingIndex>5B11CD39-58F7-A08F-D66B-3529D1226949</existingIndex>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints>
+<TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="TELEFONE_CHK1" id="F980FDBE-86D2-31C8-A9FE-A0F79F28E3BB">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev11g>

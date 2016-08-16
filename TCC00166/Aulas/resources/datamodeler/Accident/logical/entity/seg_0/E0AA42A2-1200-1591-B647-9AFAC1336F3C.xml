@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="E0AA42A2-1200-1591-B647-9AFAC1336F3C" directorySegmentName="seg_0" name="PARTICIPATED">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>1CFAD1B5-8306-5D44-6953-734E91E9A9BF</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pkName>PK_PARTICIPATED</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="driver-id" id="64DA2175-98DE-713C-ED40-A6A57387567E">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>E9E54D66-EDFD-75C0-19AE-22F30A71212E</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<referedAttribute>75A98694-B052-13D7-6C74-9288380FA700</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>24</dataTypePrecision>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="car" id="FA760E10-4F1E-6A82-6B26-5E860EF2E9ED">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>5F11D621-4836-AC03-BB21-7E74C117319B</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<referedAttribute>2458EC5D-9EA1-2E5D-5473-3F6AFE68EAF3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>24</dataTypePrecision>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="report-number" id="2571FEA8-2AD4-0C6C-8741-C7490D38C819">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>28E7CA69-02EB-2525-F5A5-524DF2F90066</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<referedAttribute>AABDE902-7E97-D784-9024-3305D477E418</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="damage-amount" id="0EA81861-5871-B06D-AF09-C55C0DA8A2BE">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>1A0BA863-CE23-5808-45F7-7CF35620B60B</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="A36131FF-AD70-C9E4-7C69-0D78E25F9638" name="PK_PARTICIPATED">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>9DED1E39-AB3F-6B4B-0DBC-4B76508FC248</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>64DA2175-98DE-713C-ED40-A6A57387567E</attributeRef>
+<attributeRef>FA760E10-4F1E-6A82-6B26-5E860EF2E9ED</attributeRef>
+<attributeRef>2571FEA8-2AD4-0C6C-8741-C7490D38C819</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

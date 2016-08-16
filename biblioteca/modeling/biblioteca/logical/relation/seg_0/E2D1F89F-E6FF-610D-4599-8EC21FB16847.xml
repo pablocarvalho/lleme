@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="login" directorySegmentName="seg_0" id="E2D1F89F-E6FF-610D-4599-8EC21FB16847">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:45:22 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <sourcePk>19866F1A-B8DB-2CB1-E3EE-C8FCDC11670E</sourcePk>
+    <targetPk>F9D28874-DBA8-DCA0-9C8C-143F2084830D</targetPk>
+    <dominantRole>DA5A657A-39BB-C296-8201-7C86AE2A940C</dominantRole>
+    <identifying>false</identifying>
+    <optionalSource>false</optionalSource>
+    <optionalTarget>true</optionalTarget>
+    <sourceCardinality>1</sourceCardinality>
+    <sourceEntity>DA5A657A-39BB-C296-8201-7C86AE2A940C</sourceEntity>
+    <targetCardinalityString>1</targetCardinalityString>
+    <targetEntity>9C53BBD9-576C-49E8-08C3-771CADFD0A09</targetEntity>
+    <transferable>true</transferable>
+</Relation>

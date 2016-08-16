@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:805c15a6-3340-44c9-9ed7-f14ecf3dbf3d'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='XMLLiteral'
+   visibility='public'>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:bd7f8f5b-43ad-4ade-9ed9-aeb1b9fde88a'
+    isSubstitutable='true'>
+   <general href='urn:uuid:bc6939ee-d534-4753-b3ee-ca40e9c8421f'/>
+  </generalization>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:986aabec-1e47-44c9-af24-be86347c1c91'
+    isSubstitutable='true'>
+   <general href='urn:uuid:bc6939ee-d534-4753-b3ee-ca40e9c8421f'/>
+  </generalization>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:76740e70-4256-420f-a5c4-df18aaa45366'
+    isSubstitutable='true'>
+   <general href='urn:uuid:bc6939ee-d534-4753-b3ee-ca40e9c8421f'/>
+  </generalization>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:271133c2-c7ad-491e-9a88-467f0ac023f4'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='XMLLiteral'
+    concurrency='sequential'
+    visibility='public'/>
+ </uml:Class>
+</xmi:XMI>

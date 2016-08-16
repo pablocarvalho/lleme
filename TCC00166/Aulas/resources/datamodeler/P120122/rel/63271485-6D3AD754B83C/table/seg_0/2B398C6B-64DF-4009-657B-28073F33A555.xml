@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="2B398C6B-64DF-4009-657B-28073F33A555" directorySegmentName="seg_0" name="Atribuicao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>D1F4B897-34BE-F116-6242-D7F27FD2B50F</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<pkName>Servico PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Coluna</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dados</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Primária</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Estrangeira</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Chave Exclusiva</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>NOT NULL</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Chave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="numero_os" id="275CB1B6-ECF4-10DC-4FE9-39C17FE9F69A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>D2C0CC21-00E6-EAA2-EDF9-CA34B0856DE5</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>263B61F3-F8DD-0A74-8B1A-72F8FEF7C3F4</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4161537-CBF1-325E-B845-9AA846605F47" referredColumn="263B61F3-F8DD-0A74-8B1A-72F8FEF7C3F4"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="id_servico" id="98212613-4358-7CF0-F141-92B8BA21C396">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>4C99D6ED-F1CE-E724-C86F-5014808C2CAA</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>3591D491-0C71-106B-3399-B272EA53731B</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2151DC99-239B-03B9-A7D1-009291DC83D4" referredColumn="3591D491-0C71-106B-3399-B272EA53731B"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="id_mecanico" id="2AF12916-9D7A-C52A-A624-EB4A8C5DDA6A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>91F7684A-77AD-69A9-0167-1F9A68EEB8CC</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>893E150C-46C1-9813-2EDD-1120DC32EE1C</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8BB182C-821D-C9B6-0F18-1C74F7C7922A" referredColumn="893E150C-46C1-9813-2EDD-1120DC32EE1C"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="data" id="AB827AE6-9EF2-EA0C-F344-0993ABB266C6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>CDCACE8E-CD0D-A01E-ABDB-12AAAAA8882E</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="98443B4F-A50F-4FC5-E53D-34421822E73B" name="Atribuicao_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>F02E2499-E4E1-BFE8-1293-856E1E999440</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="275CB1B6-ECF4-10DC-4FE9-39C17FE9F69A"/>
+<colUsage columnID="98212613-4358-7CF0-F141-92B8BA21C396"/>
+<colUsage columnID="2AF12916-9D7A-C52A-A624-EB4A8C5DDA6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="10277901-1D3A-78D8-7E96-41687AFDF6E7" name="recebe">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>1B53570E-DCD2-7367-D7C4-A70A86F64778</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="98212613-4358-7CF0-F141-92B8BA21C396"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="27F034F1-5001-267B-DA6D-A90B0C7A8C6F" name="e_composta_de">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>39C02EB2-B153-05EF-7D31-D986AEB80ECA</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="275CB1B6-ECF4-10DC-4FE9-39C17FE9F69A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="4C32FC7E-C086-152D-1832-0DB5EE7DF6F6" name="executa">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>FFC3E65A-AFDE-B359-D2F3-9CAD8EE326B9</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="2AF12916-9D7A-C52A-A624-EB4A8C5DDA6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

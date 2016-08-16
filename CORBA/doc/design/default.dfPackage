@@ -1,0 +1,93 @@
+package id1iocyedvjudwaedvjyfoz;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:idl#Class#testes::javaORB::StockObjects::Stock:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:idl#Class#testes::javaORB::StockObjects::Unknown:oiref><oihard>
+@__modelType reference 
+*/
+class reference1 {
+}/**
+@__ref <oiref:idl#Class#testes::javaORB::StockObjects::Quote:oiref><oihard>
+@__modelType reference 
+*/
+class reference3 {
+}/**
+@__ref <oiref:design#Class#idr0nbedvjudwaedvjygb4.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#testes:oiref> 
+*/
+class reference4 {
+}/**
+@__ref <oiref:idl#Class#testes::jacORB::demo::grid::corbaObjects::MyServer:oiref><oihard>
+@__modelType reference 
+*/
+class reference6 {
+}/**
+@__ref <oiref:design#Class#id1lpbtedvjudwaedvjygao.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#propertyFactory:oiref> 
+*/
+class reference9 {
+}/**
+@__ref <oiref:design#Class#id2c1w2edvjudwaedvrsjdl.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#exemploAula:oiref> 
+*/
+class reference44 {
+}/**
+@__ref <oiref:idl#Class#exemploAula::corbaClasses::PropertyAlreadyExists:oiref><oihard>
+@__modelType reference 
+*/
+class reference55 {
+}/**
+@__ref <oiref:idl#Class#exemploAula::corbaClasses::UnknownProperty:oiref><oihard>
+@__modelType reference 
+*/
+class reference60 {
+}/**
+@__ref <oiref:idl#Class#exemploAula::corbaClasses::PropertyFactory:oiref><oihard>
+@__modelType reference 
+*/
+class reference64 {
+}/**
+@__ref <oiref:idl#Class#exemploAula::corbaClasses::Property:oiref><oihard>
+@__modelType reference 
+*/
+class reference69 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions <oigroup:<oiref:idl#Class#exemploAula::corbaClasses::PropertyFactory:oiref>=446,378,200,149,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#propertyFactory::corbaClasses::PropertyAlreadyExists#prop:oiref>=171,155,171,328:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#exemploAula::corbaClasses::PropertyAlreadyExists#prop:oiref>=171,155,171,328:oigroup>
+<oigroup:<oiref:idl#Class#testes::javaORB::StockObjects::Quote:oiref>=230,330,200,155,1:oigroup>
+<oigroup:<oiref:idl#Class#exemploAula::corbaClasses::Property:oiref>=6,328,200,133,1:oigroup>
+<oigroup:<oiref:idl#Class#exemploAula::corbaClasses::PropertyAlreadyExists:oiref>=136,48,200,107,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#exemploAula::corbaObjects::PropertyAlreadyExists#prop:oiref>=210,63,290,63:oigroup>
+<oigroup:<oiref:design#Class#id2c1w2edvjudwaedvrsjdl.diagram:oiref>=353,5,146,167,1:oigroup>
+<oigroup:<oiref:idl#Class#exemploAula::corbaClasses::UnknownProperty:oiref>=576,218,200,107,1:oigroup>
+<oigroup:<oiref:idl#Class#testes::jacORB::demo::grid::corbaObjects::MyServer:oiref>=592,10,200,190,1:oigroup>
+<oigroup:<oiref:design#Class#idr0nbedvjudwaedvjygb4.diagram:oiref>=510,10,62,94,1:oigroup>
+<oigroup:<oiref:design#Class#id1lpbtedvjudwaedvjygao.diagram:oiref>=450,250,109,110,1:oigroup>
+<oigroup:<oiref:idl#Class#testes::javaORB::StockObjects::Stock:oiref>=10,190,200,126,1:oigroup>
+<oigroup:<oiref:idl#Class#testes::javaORB::StockObjects::Unknown:oiref>=230,190,200,98,1:oigroup>
+*/
+class __positions {
+}

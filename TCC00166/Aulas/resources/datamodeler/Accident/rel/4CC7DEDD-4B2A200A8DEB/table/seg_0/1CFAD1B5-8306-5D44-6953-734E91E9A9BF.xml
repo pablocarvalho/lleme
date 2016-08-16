@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="1CFAD1B5-8306-5D44-6953-734E91E9A9BF" directorySegmentName="seg_0" name="PARTICIPATED">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>PARTICIPATED</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+<pkName>PK_PARTICIPATED</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="driver-id" id="34094DEA-85A8-B0FC-D053-499B50E872D0">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>PARTICIPATED</sourceObjSchema>
+<sourceObjName>driver-id</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>24</dataTypePrecision>
+<delegate>A7A9733F-942F-57AD-59E8-2B02430F826B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="18A1281B-259C-58CC-6F3A-AE7B922F8F2E" referredColumn="A7A9733F-942F-57AD-59E8-2B02430F826B"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="car" id="0B971731-8385-8A85-7FA4-7058132189E6">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>PARTICIPATED</sourceObjSchema>
+<sourceObjName>car</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>24</dataTypePrecision>
+<delegate>90AF4115-8641-C603-3659-A498E6107626</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9BD3A10B-DD91-D76C-3728-BE8CBB4DFB9D" referredColumn="90AF4115-8641-C603-3659-A498E6107626"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="report-number" id="BDBACDF4-5582-AE8A-3B92-35A29D86C8B5">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>PARTICIPATED</sourceObjSchema>
+<sourceObjName>report-number</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<delegate>51D115B8-3759-82A1-C61C-91A14927C174</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB30ECE3-DCF4-B03D-4948-BCEC7D606AA2" referredColumn="51D115B8-3759-82A1-C61C-91A14927C174"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="damage-amount" id="1A0BA863-CE23-5808-45F7-7CF35620B60B">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>PARTICIPATED</sourceObjSchema>
+<sourceObjName>damage-amount</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="9DED1E39-AB3F-6B4B-0DBC-4B76508FC248" name="PK_PARTICIPATED">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>PK_PARTICIPATED</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="34094DEA-85A8-B0FC-D053-499B50E872D0"/>
+<colUsage columnID="0B971731-8385-8A85-7FA4-7058132189E6"/>
+<colUsage columnID="BDBACDF4-5582-AE8A-3B92-35A29D86C8B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="41E7E3D0-C715-9432-DC6C-58A95760D315" name="PARTICIPATED_ACCIDENT_FK1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="BDBACDF4-5582-AE8A-3B92-35A29D86C8B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="434B44E4-A0E2-D5C0-E709-71238F90C4F5" name="PARTICIPATED_CAR_FK1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="0B971731-8385-8A85-7FA4-7058132189E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="41E2954F-4D6F-5879-E6BA-6FFED331F5DD" name="PARTICIPATED_PERSON_FK1">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="34094DEA-85A8-B0FC-D053-499B50E872D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

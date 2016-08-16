@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRIGGER1" id="D88BA4EF-AC3D-8C41-6C49-99190A6A8C0B" directorySegmentName="seg_0">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>TRIGGER1</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body>declare &lt;br/&gt;  CONTAGEM NUMBER(8,0);&lt;br/&gt;begin&lt;br/&gt;  select COUNT(*) into CONTAGEM from &quot;CAR&quot;;&lt;br/&gt;  if (CONTAGEM &gt; 100) then&lt;br/&gt;    RAISE_APPLICATION_ERROR(-20001,&apos;ERRO&apos;);&lt;br/&gt;  else&lt;br/&gt;    insert into &quot;CAR&quot;(&quot;license&quot;,&quot;model&quot;,&quot;year&quot;) values (:NOVO.&quot;numero&quot;*100,&apos;modelo&apos;,2012);&lt;br/&gt;  END IF;&lt;br/&gt;END;</body>
+<triggerTime>BEFORE</triggerTime>
+<owner>DE4722D7-704D-F863-073B-79990049A9B3</owner>
+<ref_NEW_AS>NOVO</ref_NEW_AS>
+<ref_OLD_AS>ANTIGO</ref_OLD_AS>
+<table>4D52DBBB-8698-1140-2F07-4FB79E91991E</table>
+</TriggerOraclev10g>

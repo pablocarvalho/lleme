@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="036BE7BB-9C9D-E428-1CFB-143ADA0DDE01" directorySegmentName="seg_0" name="Parecer">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-06 22:35:51 UTC</createdTime>
+<generatorID>BB97D168-EE60-8817-4AE0-D1C976E3A333</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<pkName>Parecer PK</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="data_hora" id="0C55C2EE-1EF1-116E-B71C-F6E8D87B17BD">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-06 22:35:51 UTC</createdTime>
+<generatorID>555BFCB7-4D8C-C3B6-100F-00A38EAECB07</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<use>0</use>
+<delegate>F54067EE-E701-F792-1846-A3E72ABFED53</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ADA69C26-A28F-0661-CB38-C0A5C8E126A6" referredColumn="F54067EE-E701-F792-1846-A3E72ABFED53"/>
+</associations>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="comentario" id="FC938D2B-DF37-3957-9240-EF3169D6643E">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-06 22:35:51 UTC</createdTime>
+<generatorID>F697F1CA-8498-B207-AEA5-0D5C3439319D</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0C173DA7-010C-AD94-A76F-1C128B6BF929" name="Parecer PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-06 22:35:51 UTC</createdTime>
+<generatorID>00CADE98-0D83-0EF4-9192-4FF7E56B3346</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="0C55C2EE-1EF1-116E-B71C-F6E8D87B17BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="706C1D23-1082-CEAE-0F48-941A3AB1C10E" name="Relation_17">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-12-06 22:35:51 UTC</createdTime>
+<generatorID>46EBCB7A-87EC-F287-F6E0-DDF892896BF9</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<indexColumnUsage>
+<colUsage columnID="0C55C2EE-1EF1-116E-B71C-F6E8D87B17BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

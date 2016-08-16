@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2182C9DD-3C51-2DB4-1434-0BDA29431363" name="Emprestimo">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>390B9569-02C2-14BE-F5E6-1E4D186B4536</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="operacao_numero" id="8B7FC954-4EDE-DA59-60C7-341309902C5C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>73D2D32C-FE02-FE35-B957-0DD248DA84E4</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>592A087B-385D-43C7-FB25-4DFA4B9A0346</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EA814E27-0EA1-E527-E2ED-0F3FE8C66F58" referredColumn="592A087B-385D-43C7-FB25-4DFA4B9A0346"/>
+</associations>
+</Column>
+<Column name="material_codigo" id="59DD7832-C9BC-1FF3-4F61-E90AEB972491">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>89C2C130-EC63-72CD-0629-A4199211C137</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>2F1944CD-A8D7-F623-EEBF-DD0F92BBB10A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62C856C2-B14C-2802-EF75-8F88EC82FE3C" referredColumn="2F1944CD-A8D7-F623-EEBF-DD0F92BBB10A"/>
+</associations>
+</Column>
+<Column name="exemplar_num" id="833592BE-24EF-4211-29CA-4B121421CF19">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>4B9CF752-7C76-0DB2-64FD-EFAC163B8BBF</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>2A3F07E6-4010-1240-0AE7-652796032F86</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62C856C2-B14C-2802-EF75-8F88EC82FE3C" referredColumn="2A3F07E6-4010-1240-0AE7-652796032F86"/>
+</associations>
+</Column>
+<Column name="obs" id="70A87957-0857-EC12-C499-CB3AA1290E56">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>4819EC36-9DC0-3558-88F7-EBA6888D5DF9</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DD24237A-274E-7C40-312A-9059F03B61D8" name="PK_EMPR">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>A12C1212-5584-69B4-468B-998C232A6282</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B7FC954-4EDE-DA59-60C7-341309902C5C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B480571-F849-4F60-A9D1-C7036D8A15FB" name="FK_ASS_5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>EB8F5B55-7830-929D-E97E-174BD57F5751</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B7FC954-4EDE-DA59-60C7-341309902C5C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B7E15C9E-7986-11BB-396E-2644C22C24C0" name="FK_Exemplar_Emprestimo">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>C1226CF0-12F8-AA37-7796-042A9256C969</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59DD7832-C9BC-1FF3-4F61-E90AEB972491"/>
+<colUsage columnID="833592BE-24EF-4211-29CA-4B121421CF19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

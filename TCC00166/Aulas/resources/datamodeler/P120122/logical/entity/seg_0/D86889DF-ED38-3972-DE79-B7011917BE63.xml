@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="D86889DF-ED38-3972-DE79-B7011917BE63" directorySegmentName="seg_0" name="Execucao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:54:06 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pkName>Execucao PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Título</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Atributo</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Tipo de Dados</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Primária</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento da Chave Estrangeira</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Elemento de Chave Exclusiva</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>NOT NULL</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Chave</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="numero_os" id="8FC28D3E-A45B-8D91-655F-CA6FAC2A8BB2">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:54:55 UTC</createdTime>
+<generatorID>E19FFB35-2E94-9F7A-72A8-32B595796549</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<referedAttribute>D2C0CC21-00E6-EAA2-EDF9-CA34B0856DE5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id_servico" id="2B07AC90-D54D-7438-2FAC-AF59F3EC60C4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:54:55 UTC</createdTime>
+<generatorID>E19FFB35-2E94-9F7A-72A8-32B595796549</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<referedAttribute>4C99D6ED-F1CE-E724-C86F-5014808C2CAA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="id_mecanico" id="E33312C4-6713-960F-148D-302FAF5FAD38">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 19:02:54 UTC</createdTime>
+<generatorID>E19FFB35-2E94-9F7A-72A8-32B595796549</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<referedAttribute>91F7684A-77AD-69A9-0167-1F9A68EEB8CC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="inicio" id="48B0D2A0-900B-D460-C4C6-3AAE17351098">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 19:09:22 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="fim" id="B1720237-2056-5BC9-D132-E9F6F84B3371">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 19:09:33 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="10C90632-4625-EB39-054C-88E10C7DE901" name="Execucao_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:54:55 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8FC28D3E-A45B-8D91-655F-CA6FAC2A8BB2</attributeRef>
+<attributeRef>2B07AC90-D54D-7438-2FAC-AF59F3EC60C4</attributeRef>
+<attributeRef>E33312C4-6713-960F-148D-302FAF5FAD38</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

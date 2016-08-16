@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="D292B15F-550A-A86A-A4F1-DFB5E3BF7A32" directorySegmentName="seg_0" name="Movimentacao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 21:30:07 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pkName>Movimentacao PK</pkName>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Attribute</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<attributes>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="data_envio" id="65B380FE-E9A9-CCAB-8F3F-53F01AFA4744">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 21:30:26 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<use>0</use>
+</Attribute>
+<Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="cpf" id="293B1590-C966-3DBF-76E3-0A906CD70A2F">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 21:32:04 UTC</createdTime>
+<generatorID>342B6D76-34EE-F953-55E4-68BFE7867EE0</generatorID>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<referedAttribute>CFD6948B-753B-BCD9-CC35-7FF8A9E3E78A</referedAttribute>
+<use>0</use>
+</Attribute>
+</attributes>
+<identifiers>
+<identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0D45D8E8-CACC-9347-AF62-84891DB38908" name="Movimentacao PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 21:46:31 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<engineerTo>
+<item key="961D8FF0-F613-99F6-F433-07DA4680D17D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>65B380FE-E9A9-CCAB-8F3F-53F01AFA4744</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

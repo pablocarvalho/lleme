@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="LLEME" id="DE4722D7-704D-F863-073B-79990049A9B3" directorySegmentName="seg_0">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjName>LLEME</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+</UserOraclev10g>

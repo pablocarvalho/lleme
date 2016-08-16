@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F33CCBCD-5DAE-4993-465B-52C5B458AD31" name="Reserva">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>00088425-8342-5717-CCD4-7F636CD80D1F</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="operacao_numero" id="D5A005C9-B431-2723-453D-A73DF9594712">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>73D2D32C-FE02-FE35-B957-0DD248DA84E4</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>592A087B-385D-43C7-FB25-4DFA4B9A0346</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7B0F688C-96BB-3D55-EA20-1414437BCC28" referredColumn="592A087B-385D-43C7-FB25-4DFA4B9A0346"/>
+</associations>
+</Column>
+<Column name="obs" id="DC53D678-F412-2F13-CEBF-4F562214C6DD">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>DF54A4FF-FA89-E85E-05A8-0AE94992C224</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Livro_material_codigo" id="5FFB5D6D-CDFA-45E3-F435-2E6398C1E130">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 21:20:03 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>85E04E4E-1BD5-421E-BDBD-696D8FD8DC73</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="390E4291-FC04-3A8F-55AA-E7BA8A2E8E32" referredColumn="85E04E4E-1BD5-421E-BDBD-696D8FD8DC73"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="55D5B3E5-631D-CF81-328A-4DB3CC42BB0F" name="PK_RESE">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>A12C1212-5584-69B4-468B-998C232A6282</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5A005C9-B431-2723-453D-A73DF9594712"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="798A777C-B0A3-3444-6A1D-7D640C386A94" name="FK_ASS_4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>5A04B74E-98F7-5077-FAED-B62236D3B080</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5A005C9-B431-2723-453D-A73DF9594712"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E776706-A255-1F49-0F13-4905E92AA5DA" name="FK_Livro_Reserva">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 21:20:03 UTC</createdTime>
+<generatorID>DEF1F489-902F-1B41-4708-80DF1923D686</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FFB5D6D-CDFA-45E3-F435-2E6398C1E130"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="00088425-8342-5717-CCD4-7F636CD80D1F" name="Reserva" seqName="seg_0"/>
+   <object objectType="Entity" objectID="25938F6B-3C5F-A0B6-B644-EFCC373D4E46" name="Devolucao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="390B9569-02C2-14BE-F5E6-1E4D186B4536" name="Emprestimo" seqName="seg_0"/>
+   <object objectType="Entity" objectID="490336A5-F687-E478-A3DD-1FC39C17C0CA" name="CD" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7C468D93-9ED6-0C91-5771-FD6082D27598" name="Revista" seqName="seg_0"/>
+   <object objectType="Entity" objectID="9C53BBD9-576C-49E8-08C3-771CADFD0A09" name="Login" seqName="seg_0"/>
+   <object objectType="Entity" objectID="9CF874C3-96D0-6391-A843-362ADB429C47" name="Material" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D4E63788-CD87-857B-12B4-0E3EC99E97E0" name="Livro" seqName="seg_0"/>
+   <object objectType="Entity" objectID="DA5A657A-39BB-C296-8201-7C86AE2A940C" name="Usuario" seqName="seg_0"/>
+   <object objectType="Entity" objectID="DA841682-4553-E888-CD3B-45E4956D8224" name="Operacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="E0EE6B26-86F4-C329-4207-84B8070C06BA" name="Exemplar" seqName="seg_0"/>
+   <object objectType="Entity" objectID="FB13B3C5-3E97-8CFE-0396-8A489A5694E6" name="Tipo Aluno" seqName="seg_0"/>
+   <object objectType="Relation" objectID="28233E64-8024-4DB6-27AA-2BC2366FA574" name="material" seqName="seg_0"/>
+   <object objectType="Relation" objectID="43AEA1D8-E93B-100A-AD71-B884875F4927" name="livro" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8464BA49-8880-2D39-D9BA-FE2209B173D0" name="Relation_7" seqName="seg_0"/>
+   <object objectType="Relation" objectID="C1226CF0-12F8-AA37-7796-042A9256C969" name="exemplar" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E2D1F89F-E6FF-610D-4599-8EC21FB16847" name="login" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E7D8CACC-F2B8-0948-80D7-B235E89186AE" name="tipo" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E9EAF285-934F-7AE9-23F4-6258A7DF652D" name="operacao" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="3F81ABAA-2DBF-B851-2EB3-0DC854954D71" name="Hierarchy_2" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="48F6F6B2-BEBC-4AD0-E013-1F106B528F4A" name="Hierarchy_3" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="5A04B74E-98F7-5077-FAED-B62236D3B080" name="Hierarchy_4" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="97716B45-557B-D5F3-F3BC-1AF2E55A89F7" name="Hierarchy_1" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="A38D0D48-02CF-4686-736B-6981863B9532" name="Hierarchy_6" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="EB8F5B55-7830-929D-E97E-174BD57F5751" name="Hierarchy_5" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:06d6cccf-b438-4bc4-aad1-6924de6d8768'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Aluno'
+   visibility='public'>
+  <clientDependency href='urn:uuid:19cbc477-7817-41d5-a0e3-7204487909b8'/>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:04c79b38-af3a-4fcf-9f7a-bee61878103d'
+    isSubstitutable='true'>
+   <general href='urn:uuid:6f725a88-3e0c-48ed-88b8-a5ad9f829ef7'/>
+  </generalization>
+  <interfaceRealization xmi:type='uml:InterfaceRealization' xmi:uuid='urn:uuid:19cbc477-7817-41d5-a0e3-7204487909b8'
+    name='Comparavel'
+    visibility='public'>
+   <contract href='urn:uuid:6b6712ea-d1e8-4d9e-b179-10228478715a'/>
+   <client href='urn:uuid:06d6cccf-b438-4bc4-aad1-6924de6d8768'/>
+   <supplier href='urn:uuid:6b6712ea-d1e8-4d9e-b179-10228478715a'/>
+  </interfaceRealization>
+ </uml:Class>
+</xmi:XMI>

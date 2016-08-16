@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="main_view" objectID="45D61729-87AC-948F-10FB-97D1EA433D6D" name="Logical" visible="true"/>
+   <object objectType="sub_view" objectID="C05AF179-E0FE-4DF7-38EB-A5A6C9705103" name="Ex10" visible="true"/>
+   <object objectType="sub_view" objectID="7974AACF-E289-FCBE-E87B-E1E39DBA55D9" name="Ex11" visible="true"/>
+   <object objectType="sub_view" objectID="F65E50E9-4C25-0A0E-0C63-C063CE3220F7" name="Ex2" visible="true"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

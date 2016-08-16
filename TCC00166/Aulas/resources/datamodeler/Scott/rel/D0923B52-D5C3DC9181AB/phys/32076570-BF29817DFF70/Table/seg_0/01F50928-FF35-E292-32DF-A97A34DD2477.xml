@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="SALGRADE" id="01F50928-FF35-E292-32DF-A97A34DD2477" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:03 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C08D117B-4437-678B-7B57-134C5D78AE1E</segment>
+<tableSpace>937211CE-7E39-E67E-D181-48E46D4A86DB</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="LOSAL" id="7346C38C-BA9D-4100-4D56-71B914425249">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="GRADE" id="ADB93F0A-51EB-C441-D561-539190E0D3E4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="HISAL" id="EDCB18B6-F5CB-CA9C-C2E7-943AD3F5436D">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+</TableProxyOraclev11g>

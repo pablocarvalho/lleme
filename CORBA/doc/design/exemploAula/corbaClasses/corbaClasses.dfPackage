@@ -1,0 +1,143 @@
+package id69lledvjudwaedvrsk73;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertySeqHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryPOA:oiref><oihard>
+@__modelType reference 
+*/
+class reference50 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.UnknownPropertyHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference51 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyAlreadyExists:oiref><oihard>
+@__modelType reference 
+*/
+class reference52 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.UnknownPropertyHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference53 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyOperations:oiref><oihard>
+@__modelType reference 
+*/
+class reference54 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyPOA:oiref><oihard>
+@__modelType reference 
+*/
+class reference56 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference57 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyAlreadyExistsHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference58 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference59 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactory:oiref><oihard>
+@__modelType reference 
+*/
+class reference61 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyAlreadyExistsHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference62 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference63 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertySeqHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference65 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference66 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses._PropertyStub:oiref><oihard>
+@__modelType reference 
+*/
+class reference67 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.UnknownProperty:oiref><oihard>
+@__modelType reference 
+*/
+class reference68 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyFactoryOperations:oiref><oihard>
+@__modelType reference 
+*/
+class reference70 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.Property:oiref><oihard>
+@__modelType reference 
+*/
+class reference71 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses._PropertyFactoryStub:oiref><oihard>
+@__modelType reference 
+*/
+class reference72 {
+}/**
+@__ref <oiref:design#Class#id4vwjwedvjudwaedvv2lvd.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#exemploAula.corbaClasses.PropertyPackage:oiref> 
+*/
+class reference73 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyDataHelper:oiref><oihard>
+@__modelType reference 
+*/
+class reference92 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyDataHolder:oiref><oihard>
+@__modelType reference 
+*/
+class reference93 {
+}/**
+@__ref <oiref:java#Class#exemploAula.corbaClasses.PropertyData:oiref><oihard>
+@__modelType reference 
+*/
+class reference94 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions 
+*/
+class __positions {
+}

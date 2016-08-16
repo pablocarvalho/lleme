@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Interface xmi:type='uml:Interface' xmi:uuid='urn:uuid:7fa2fb12-e3ba-4a3f-955f-80b6210591ee'
+   isAbstract='true'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Observador'
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:3bbf0e92-2232-4e24-911a-6b0d9c35a491'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='atualizarLetreiro'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:bc962ec7-c134-4c14-b514-ccff7d9ac4bd'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='letreiro'
+     direction='in'>
+    <type href='urn:uuid:668c332b-6058-445a-9427-dd217547f272'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:a9f11529-ca36-49ae-815c-acfdcc68ab48'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:09ff8399-e095-460e-8e3d-974af2585fcb'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:8e8aa14b-7a15-4fcf-b400-e02e6d53af39'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8f9c3681-c281-46bf-9090-c8becc3ec6fa'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:e65316fa-5ede-477e-963b-888cc38e4498'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Interface>
+</xmi:XMI>

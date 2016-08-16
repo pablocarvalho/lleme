@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="027B75A8-0D0B-3B71-7A70-15395D60A8E0" name="Tipo">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>FB13B3C5-3E97-8CFE-0396-8A489A5694E6</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="6FE5C773-AD75-C81C-E6EB-D0B972A9CE3A">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>25A8BC3E-2F55-CAD5-B884-752134FDD07B</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="B79029D7-546E-EBE5-82C7-D342956A9A06">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>2D1754C8-DAE0-3D5A-6F0F-3295A6D7D3BB</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="qtd_emprestimo" id="7A90043A-1BFA-2E99-86E6-95C03EF58E16">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-15 19:12:14 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tempo_emprestimo" id="0717D7E0-A8BB-45D2-23DF-3654106D714D">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-15 21:21:36 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="161F0704-1F58-427F-0E29-911DD90C0B58" name="TIAL_PK">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="6FE5C773-AD75-C81C-E6EB-D0B972A9CE3A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="gera" id="E19FFB35-2E94-9F7A-72A8-32B595796549" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:54:55 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D1F4B897-34BE-F116-6242-D7F27FD2B50F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D86889DF-ED38-3972-DE79-B7011917BE63</targetEntity>
+<transferable>true</transferable>
+</Relation>

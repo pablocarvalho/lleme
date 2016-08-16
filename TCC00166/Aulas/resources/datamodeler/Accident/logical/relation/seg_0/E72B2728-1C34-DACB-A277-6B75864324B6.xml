@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="OWNS_CAR_FK1" id="E72B2728-1C34-DACB-A277-6B75864324B6" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>FCE4C2B8-96C3-893E-D8D3-798BA12DA57C</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CE4F2263-BCBA-5426-EEE8-1CA7BDAF6F6C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A7D4D0F3-0E39-C619-0193-82EF7607C098</targetEntity>
+<transferable>true</transferable>
+</Relation>

@@ -1,0 +1,73 @@
+#ifndef SCS_IDL
+#define SCS_IDL
+
+module corbaObjects {
+module scs {
+   exception StartupFailed {};
+   exception ShutdownFailed {};
+   exception InvalidName {
+      string name;
+   };
+   exception InvalidConnection {};
+   exception AlreadyConnected {};
+   exception ExceededConnectionLimit {};
+   exception NoConnection {};
+   
+   exception InternalError {};
+   
+   typedef unsigned long ConnectionId;
+   typedef sequence<string> NameList;
+
+   struct FacetDescription {
+      string name;
+      string interface_name;
+      Object facet_ref;
+   };
+   typedef sequence<FacetDescription> FacetDescriptions;
+
+   struct ConnectionDescription {
+      ConnectionId id;
+      Object objref;
+   };
+   typedef sequence<ConnectionDescription> ConnectionDescriptions;
+
+   struct ReceptacleDescription {
+      string name;
+      string interface_name;
+      boolean is_multiplex;
+      ConnectionDescriptions connections;
+   };
+   typedef sequence<ReceptacleDescription> ReceptacleDescriptions;
+      
+   interface IComponent {
+      Object getFacet (in string facet_interface) raises (InvalidName);
+      Object getFacetByName (in string facet) raises (InvalidName);
+   
+      void startup() raises (StartupFailed);
+      void shutdown() raises (ShutdownFailed);
+
+      //Receptacle
+      ConnectionId connect (in string receptacle, in Object obj)
+         raises (InvalidName, InvalidConnection, AlreadyConnected, ExceededConnectionLimit);
+      void disconnect (in ConnectionId id) raises (InvalidConnection, NoConnection);
+      ConnectionDescription getConnection (in ConnectionId id) raises (InvalidConnection);
+      ConnectionDescriptions getConnections (in string receptacle) raises (InvalidName);
+
+      //MetaInterface
+      FacetDescriptions getFacets();
+      FacetDescriptions getFacetsByName(in NameList names) raises (InvalidName);
+      ReceptacleDescriptions getReceptacles();
+	  ConnectionDescriptions  getReceptacleConnections(in string receptacle_interface) 
+		  raises (InvalidName, InvalidConnection, AlreadyConnected, ExceededConnectionLimit,
+		  InternalError);
+      ReceptacleDescriptions getReceptaclesByName(in NameList names) raises (InvalidName);
+   };
+   
+   interface SCS {
+   		IComponent getIComponent(in string className) raises (InternalError);
+   		IComponent releaseIComponent(in string className);
+   };
+   
+};
+};
+#endif

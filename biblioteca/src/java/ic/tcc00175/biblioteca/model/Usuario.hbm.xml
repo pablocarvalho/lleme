@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="ic.tcc00175.biblioteca.model.Usuario" table="USUARIO" schema="LLEME">
+        <id name="id" type="long">
+            <column name="ID" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipo" class="ic.tcc00175.biblioteca.model.Tipo" fetch="select">
+            <column name="TIPO_CODIGO" precision="10" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="NOME" length="510" not-null="true" />
+        </property>
+        <property name="telefone" type="java.lang.Long">
+            <column name="TELEFONE" precision="10" scale="0" />
+        </property>
+        <property name="celular" type="java.lang.Long">
+            <column name="CELULAR" precision="10" scale="0" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="510" />
+        </property>
+        <property name="cpf" type="java.lang.Long">
+            <column name="CPF" precision="10" scale="0" />
+        </property>
+        <property name="logradouro" type="string">
+            <column name="LOGRADOURO" length="510" />
+        </property>
+        <property name="complemento" type="string">
+            <column name="COMPLEMENTO" length="510" />
+        </property>
+        <property name="bairro" type="string">
+            <column name="BAIRRO" length="510" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="CIDADE" length="510" />
+        </property>
+        <property name="cep" type="java.lang.Long">
+            <column name="CEP" precision="10" scale="0" />
+        </property>
+        <property name="admissao" type="date">
+            <column name="ADMISSAO" length="7" />
+        </property>
+        <property name="cancelamento" type="date">
+            <column name="CANCELAMENTO" length="7" />
+        </property>
+        <set name="operacaos" inverse="true">
+            <key>
+                <column name="USUARIO_ID" precision="10" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="ic.tcc00175.biblioteca.model.Operacao" />
+        </set>
+        <set name="logins" inverse="true">
+            <key>
+                <column name="USUARIO_ID" precision="10" scale="0" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="ic.tcc00175.biblioteca.model.Login" />
+        </set>
+    </class>
+</hibernate-mapping>

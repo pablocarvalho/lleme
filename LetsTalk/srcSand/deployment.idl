@@ -1,0 +1,80 @@
+#ifndef DEPLOYMENT_IDL
+#define DEPLOYMENT_IDL
+
+#include "scs.idl"
+
+exception ComponentNotFound{};
+
+typedef sequence<string> StringSeq;
+typedef sequence<octet> OctetSeq;
+typedef sequence<IComponent> IComponentSeq;
+
+struct ComponentId {
+   string name;
+   unsigned long version;
+};
+typedef sequence<ComponentId> ComponentIdSeq;
+
+struct ComponentHandle {
+   IComponent cmp;
+   ComponentId id;
+   unsigned long instance_id;
+};
+typedef sequence<ComponentHandle> ComponentHandleSeq;
+
+struct ComponentDescription {
+   ComponentId id;
+   string entry_point;
+   boolean shared;
+};
+typedef sequence<ComponentDescription> ComponentDescriptionSeq;
+
+
+interface ComponentLoader {
+   void load (in ComponentHandle handle);
+   void unload (in ComponentHandle handle);
+};
+
+interface ComponentCollection {
+     ComponentHandleSeq getComponents ();   
+};
+
+struct ContainerDescription {
+   IComponent container;
+   string container_name;
+   IComponent execution_node;
+};
+typedef sequence<ContainerDescription> ContainerDescriptionSeq;
+
+interface ExecutionNode {
+   readonly attribute string name;
+   void startContainer (in ContainerDescription container);
+   ContainerDescriptionSeq getContainers ();
+};
+
+struct Property {
+   string name;
+   string value;
+};
+typedef sequence<Property> PropertySeq;
+
+struct NodeDescription {
+   IComponent node;
+   PropertySeq props;
+};
+typedef sequence<NodeDescription> NodeDescriptionSeq;
+
+interface NodeLookup {
+   NodeDescription getNode (in string name);
+   NodeDescriptionSeq getNodes (in PropertySeq props);
+   NodeDescriptionSeq getAllNodes ();
+};
+
+interface NodeRegister {
+   void register (in IComponent node, in PropertySeq props);
+   void unregister (in IComponent node) 
+      raises (ComponentNotFound);
+};
+                      
+
+#endif

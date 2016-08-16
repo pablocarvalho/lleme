@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD56DFFD-1511-047E-F3F2-E16A4AA42CFC" name="Revista">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>7C468D93-9ED6-0C91-5771-FD6082D27598</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="material_codigo" id="8D3F13CA-D475-5CE5-3824-D5829629A7C3">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>00289B25-9A2E-E2E7-AC66-3D7A79D209D4</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>D14F011A-F9EB-D053-46E1-0DB599B1782B</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C21946E-2F64-20E4-BA0F-85D4A7CB9659" referredColumn="D14F011A-F9EB-D053-46E1-0DB599B1782B"/>
+</associations>
+</Column>
+<Column name="numero" id="C7859ACC-5703-7634-9AEF-F23F0748E2BF">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>7A9B085B-6082-8EB5-808A-E937A5CDA4AF</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mes" id="3F7287ED-C78F-99C8-879A-DA41A14BB1D4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>16A188A2-CB91-D841-A412-58C7E924D9F3</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ano" id="65984D61-964B-D3D0-AB47-5178D2A78CE4">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>0D89BE1C-4E53-0382-1424-FD4694DB9B77</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="03329A2F-F7C1-8F5C-1519-A0DB96F4E83B" name="PK_REVI">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>DEF1F489-902F-1B41-4708-80DF1923D686</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D3F13CA-D475-5CE5-3824-D5829629A7C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E7473F3-54D4-3071-68A8-0024479BB658" name="FK_ASS_2">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>3F81ABAA-2DBF-B851-2EB3-0DC854954D71</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8D3F13CA-D475-5CE5-3824-D5829629A7C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

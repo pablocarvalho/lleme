@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="4D52DBBB-8698-1140-2F07-4FB79E91991E" directorySegmentName="seg_0" name="CLIENTE">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>CLIENTE</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:05 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+<pkName>SYS_C0010886</pkName>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="numero" id="980B0F32-79D3-8DF8-8C6B-42D3927FED84">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>CLIENTE</sourceObjSchema>
+<sourceObjName>numero</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="nome" id="0D6A2431-EB5B-78D6-1DAB-7F3360E8F0F7">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>CLIENTE</sourceObjSchema>
+<sourceObjName>nome</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="7453A149-5118-9865-FB25-BCBE14C0ECE3" name="SYS_C0010886">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>CLIENTE__IDX</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="980B0F32-79D3-8DF8-8C6B-42D3927FED84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0FAAF91D-276A-FFFA-7C7E-352932FA7ADB" name="CLIENTE_UK1">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>CLIENTE_UK1</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+<indexState>Unique Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="0D6A2431-EB5B-78D6-1DAB-7F3360E8F0F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="888DDB4B-72A4-49D7-D7CC-573E3F2FC316" name="SYS_C0010886">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>SYS_C0010886</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<schemaObject>E1413371-A0F9-2872-A934-F46943D61103</schemaObject>
+<indexState>Unique Plain Index</indexState>
+<indexColumnUsage>
+<colUsage columnID="980B0F32-79D3-8DF8-8C6B-42D3927FED84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

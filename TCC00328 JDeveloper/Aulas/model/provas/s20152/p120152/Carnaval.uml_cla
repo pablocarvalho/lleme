@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:490e1221-bfd6-44a6-8185-b0110d75e0bb'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Carnaval'
+   visibility='public'>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:407913c3-1a72-498b-b03f-d95331a35b4e'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='ano'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/int:uml:Type'/>
+   <defaultValue xmi:type='uml:LiteralString' xmi:uuid='urn:uuid:81aeab92-aac1-4ad7-90d7-8953dc20c369'
+     value='0'
+     visibility='public'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:b68fb058-a596-49e7-aa38-7c4acad9edd9'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:eb0d9375-1f6e-4bd4-8073-b6e029959e80'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:bf6943ec-3ff8-4929-a66d-15439d863101'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='registrarJurado'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:3243fac7-ba56-4745-bc2f-6ef95810502b'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='jurado'
+     direction='in'>
+    <type href='urn:uuid:82aa2326-f4cc-4f13-985a-ecb711e48651'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:58f93e57-e479-45ed-9dbc-0e3b0ff8d250'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:27620272-5b33-4000-8145-2080359f5c38'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f1f94f4d-580e-4915-9e37-56f4f075d4b6'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:bea97140-454f-448c-8ab6-d0e4cc243558'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:4a152b07-6b78-4449-b206-b2e9319b6c74'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:421d3dd1-054a-4d7c-8379-aee2cab33e19'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='verificarDuplicidadeJurado'
+    concurrency='sequential'
+    visibility='private'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:6f0eaba4-5de1-4523-bc5b-b51fa7756642'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='jurado'
+     direction='in'>
+    <type href='urn:uuid:82aa2326-f4cc-4f13-985a-ecb711e48651'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4b3d3c8d-73bc-47e8-aae6-7951c47399fc'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d5eb994b-4d0d-4ef9-9d89-8276810e09f6'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:def6e05a-591c-4ab3-bf6d-25d6374aca50'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:9c793ea8-4c44-4229-af5d-00d22e618427'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:32cc59ba-06f1-4199-8c48-3ee15a9fb97c'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:4071f802-79f6-4c19-ac6b-4875cf0de52b'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='registrarEscola'
+    concurrency='sequential'
+    visibility='package'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:f3cb444d-9fbb-4257-82f7-92569fd2073d'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='escola'
+     direction='in'>
+    <type href='urn:uuid:dc164117-2b9d-4c2d-a8fb-03e8cfd035e0'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:b093ea63-8355-453b-874f-ad77bb4559cc'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:c06fab65-3939-4457-9ca5-f0ef1441ff3e'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:04180e91-b9c1-48ea-80d9-62917c482c22'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:fe512b1a-752d-42fd-a7bd-efc9a88dafb9'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:85540ffc-316a-4304-8184-54035867f5b6'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:ca74a61a-1289-4790-84df-98c8beae519d'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='verificarDuplicidadeEscola'
+    concurrency='sequential'
+    visibility='private'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:62c39eb2-3834-4b5a-aef3-3724bc8846c0'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='escola'
+     direction='in'>
+    <type href='urn:uuid:dc164117-2b9d-4c2d-a8fb-03e8cfd035e0'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:40d9f0d3-68a6-46dc-a24a-2182e02d05b6'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:25928cdf-5651-4624-a365-501bda47545a'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:9ff3649b-4f5a-4f47-9900-7a745907437b'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:ce0d74fb-1fd4-4731-9993-84fd53affe42'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:987bab01-e308-452f-9a21-e9e01f634345'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

@@ -1,0 +1,300 @@
+package idy2jlefnx91ceefnxdvwo;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:idl#Class#corbaObjects::scs::StartupFailed:oiref><oihard>
+@__modelType reference 
+*/
+class reference1 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ShutdownFailed:oiref><oihard>
+@__modelType reference 
+*/
+class reference2 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ConnectionDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference3 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::IComponent:oiref><oihard>
+@__modelType reference 
+*/
+class reference5 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::NoConnection:oiref><oihard>
+@__modelType reference 
+*/
+class reference6 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::FacetDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference7 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::InvalidName:oiref><oihard>
+@__modelType reference 
+*/
+class reference8 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::InvalidConnection:oiref><oihard>
+@__modelType reference 
+*/
+class reference10 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ReceptacleDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference12 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::AlreadyConnected:oiref><oihard>
+@__modelType reference 
+*/
+class reference13 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ExceededConnectionLimit:oiref><oihard>
+@__modelType reference 
+*/
+class reference15 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::SCS:oiref><oihard>
+@__modelType reference 
+*/
+class reference40 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::InternalError:oiref><oihard>
+@__modelType reference 
+*/
+class reference46 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::letstalk::InvalidSubscriptionValues:oiref><oihard>
+@__modelType reference 
+*/
+class reference31 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentNotFound:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ExecutionNode:oiref><oihard>
+@__modelType reference 
+*/
+class reference4 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference9 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ContainerDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference11 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::NodeRegister:oiref><oihard>
+@__modelType reference 
+*/
+class reference14 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::Property:oiref><oihard>
+@__modelType reference 
+*/
+class reference16 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentRepository:oiref><oihard>
+@__modelType reference 
+*/
+class reference17 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::letstalk::UserFacet:oiref><oihard>
+@__modelType reference 
+*/
+class reference18 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::letstalk::CommFacet:oiref><oihard>
+@__modelType reference 
+*/
+class reference19 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentHandle:oiref><oihard>
+@__modelType reference 
+*/
+class reference20 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentId:oiref><oihard>
+@__modelType reference 
+*/
+class reference21 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ContainerAlreadyExists:oiref><oihard>
+@__modelType reference 
+*/
+class reference22 {
+}/**
+@__ref <oiref:design#Class#id3sda2eg44b1aleg44jc4e.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#inf:oiref> 
+*/
+class reference23 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::NodeDescription:oiref><oihard>
+@__modelType reference 
+*/
+class reference24 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentHelp:oiref><oihard>
+@__modelType reference 
+*/
+class reference25 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::HelpInfoNotAvailable:oiref><oihard>
+@__modelType reference 
+*/
+class reference26 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::NodeLookup:oiref><oihard>
+@__modelType reference 
+*/
+class reference27 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentAlreadyInstalled:oiref><oihard>
+@__modelType reference 
+*/
+class reference28 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentNotInstalled:oiref><oihard>
+@__modelType reference 
+*/
+class reference29 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::letstalk::usermanager::UserManagerFacet:oiref><oihard>
+@__modelType reference 
+*/
+class reference30 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentAlreadyLoaded:oiref><oihard>
+@__modelType reference 
+*/
+class reference32 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentCollection:oiref><oihard>
+@__modelType reference 
+*/
+class reference33 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::letstalk::ServerCallBackFacet:oiref><oihard>
+@__modelType reference 
+*/
+class reference34 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentLoader:oiref><oihard>
+@__modelType reference 
+*/
+class reference35 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::LoadFailure:oiref><oihard>
+@__modelType reference 
+*/
+class reference36 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::IOException:oiref><oihard>
+@__modelType reference 
+*/
+class reference37 {
+}/**
+@__ref <oiref:design#Class#id22fbueg44b1aleg45z38g.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#corbaObjects:oiref> 
+*/
+class reference38 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions <oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::ContainerDescription#execution_node:oiref>=292,539,50,303:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentHandle:oiref>=666,639,200,139,1:oigroup>
+<oigroup:<oiref:java#Implements#_UserManagerStub#UserManager:oiref>=549,664,719,414:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::InvalidName:oiref>=450,190,191,107,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ReceptacleDescription:oiref>=450,490,200,155,1:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#enum_type#WRONGLOGIN:oiref>=789,904,789,994,959,994,959,824,869,824:oigroup>
+<oigroup:<oiref:java#Class#UserManager:oiref>=659,284,200,130,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::NoConnection:oiref>=10,470,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ConnectionDescription:oiref>=230,290,200,123,1:oigroup>
+<oigroup:<oiref:design#Class#id3sda2eg44b1aleg44jc4e.diagram:oiref>=658,161,57,78,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentRepository:oiref>=656,789,200,181,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ContainerDescription:oiref>=226,539,200,139,1:oigroup>
+<oigroup:<oiref:java#Class#ResultHelper:oiref>=879,614,200,190,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::ComponentHandle#cmp:oiref>=799,639,170,303:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::Property:oiref>=781,4,171,123,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentId:oiref>=8,321,197,123,1:oigroup>
+<oigroup:<oiref:java#Class#HostServantManager:oiref>=684,914,135,133,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::HelpInfoNotAvailable:oiref>=876,629,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::UserFacet:oiref>=226,799,200,149,1:oigroup>
+<oigroup:<oiref:design#Class#id22fbueg44b1aleg45z38g.diagram:oiref>=228,41,96,94,1:oigroup>
+<oigroup:<oiref:idl#Extends#corbaObjects::scs::letstalk::LetsTalk#corbaObjects::scs::IComponent:oiref>=110,331,110,271:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#enum_type#OK:oiref>=749,904,749,1034,999,1034,999,784,869,784:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentCollection:oiref>=646,989,200,117,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ExecutionNode:oiref>=866,839,200,142,1:oigroup>
+<oigroup:<oiref:java#Class#Teste2:oiref>=1060,400,83,85,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::usermanager::UserManagerFacet:oiref>=216,959,200,133,1:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#UserManagerHolder#value:oiref>=329,804,689,414:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ContainerAlreadyExists:oiref>=866,269,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentAlreadyInstalled:oiref>=436,909,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ExceededConnectionLimit:oiref>=230,690,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::InvalidConnection:oiref>=10,610,200,98,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::ComponentDescription#id:oiref>=666,416,205,416:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::InvalidSubscriptionValues:oiref>=656,279,200,98,1:oigroup>
+<oigroup:<oiref:java#Class#enum_typeHelper:oiref>=9,864,200,190,1:oigroup>
+<oigroup:<oiref:java#Class#UserManagerHelper:oiref>=879,844,200,206,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::ContainerDescription#container:oiref>=359,539,90,303:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentNotFound:oiref>=436,799,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#UserManager:oiref>=442,897,135,165,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentNotInstalled:oiref>=966,9,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::StartupFailed:oiref>=346,10,197,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::InternalError:oiref>=224,430,194,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::host::Host:oiref>=991,1,200,181,1:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#enum_type#__array:oiref>=709,904,709,1074,1039,1074,1039,744,869,744:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentHelp:oiref>=876,509,200,101,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::SCS:oiref>=441,307,200,117,1:oigroup>
+<oigroup:<oiref:java#Class#_UserManagerStub:oiref>=449,664,200,222,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::ServerCallBackFacet:oiref>=856,999,200,117,1:oigroup>
+<oigroup:<oiref:java#Class#enum_typeHolder:oiref>=779,4,200,174,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::LoadFailure:oiref>=432,1025,188,98,1:oigroup>
+<oigroup:<oiref:java#Class#UserManagerHolder:oiref>=229,804,200,174,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::AlreadyConnected:oiref>=10,750,200,98,1:oigroup>
+<oigroup:<oiref:java#Class#VectorHelper:oiref>=869,194,200,190,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::FacetDescription:oiref>=563,10,200,139,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::NodeDescription#node:oiref>=546,659,130,303:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#enum_typeHolder#value:oiref>=824,178,824,634:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentLoader:oiref>=6,1009,200,149,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ShutdownFailed:oiref>=230,150,200,98,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::NodeRegister:oiref>=877,380,199,117,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::letstalk::CommFacet:oiref>=776,139,200,117,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::NodeDescription:oiref>=446,659,200,123,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::NodeLookup:oiref>=6,859,200,133,1:oigroup>
+<oigroup:<oiref:java#Class#UserManagerOperations:oiref>=668,453,162,165,1:oigroup>
+<oigroup:<oiref:java#Class#VectorHolder:oiref>=849,424,200,174,1:oigroup>
+<oigroup:<oiref:java#Class#enum_type:oiref>=669,634,200,270,1:oigroup>
+<oigroup:MemberLink#<oiref:idl#Member#corbaObjects::scs::ComponentHandle#id:oiref>=732,639,106,444:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentDescription:oiref>=666,389,200,155,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentAlreadyLoaded:oiref>=986,119,200,98,1:oigroup>
+<oigroup:MemberLink#<oiref:java#Member#enum_type#ERROR:oiref>=829,904,829,954,919,954,919,864,869,864:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::IOException:oiref>=1071,1044,190,98,1:oigroup>
+<oigroup:<oiref:java#Class#Teste:oiref>=590,920,83,85,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::IComponent:oiref>=10,10,200,293,1:oigroup>
+<oigroup:<oiref:java#Extends#UserManager#UserManagerOperations:oiref>=749,414,749,453:oigroup>
+*/
+class __positions {
+}

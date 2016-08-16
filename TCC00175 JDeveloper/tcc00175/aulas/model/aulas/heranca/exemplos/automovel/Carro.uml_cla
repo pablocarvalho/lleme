@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:28b2dbef-7eaf-44be-a308-e8411818f185'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Carro'
+   visibility='public'>
+  <clientDependency href='urn:uuid:9a9dc37e-d0ff-4eee-b170-591697af9838'/>
+  <generalization xmi:type='uml:Generalization' xmi:uuid='urn:uuid:f83d416f-558b-4d40-a839-9130b7f34d19'
+    isSubstitutable='true'>
+   <general href='urn:uuid:3f7b521c-cf29-4f55-b516-7c81f84623dd'/>
+  </generalization>
+  <interfaceRealization xmi:type='uml:InterfaceRealization' xmi:uuid='urn:uuid:9a9dc37e-d0ff-4eee-b170-591697af9838'
+    name='Comparavel'
+    visibility='public'>
+   <contract href='urn:uuid:6b6712ea-d1e8-4d9e-b179-10228478715a'/>
+   <client href='urn:uuid:28b2dbef-7eaf-44be-a308-e8411818f185'/>
+   <supplier href='urn:uuid:6b6712ea-d1e8-4d9e-b179-10228478715a'/>
+  </interfaceRealization>
+ </uml:Class>
+</xmi:XMI>

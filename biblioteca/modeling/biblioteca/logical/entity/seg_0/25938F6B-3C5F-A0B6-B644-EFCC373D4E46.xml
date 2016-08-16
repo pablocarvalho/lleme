@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="25938F6B-3C5F-A0B6-B644-EFCC373D4E46" name="Devolucao">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:06:47 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <adequatelyNormalized>NO</adequatelyNormalized>
+    <expectedVolumes>0</expectedVolumes>
+    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+    <growthPercent>0</growthPercent>
+    <growthType>Year</growthType>
+    <hierarchicalParent>DA841682-4553-E888-CD3B-45E4956D8224</hierarchicalParent>
+    <maxVolumes>9999999</maxVolumes>
+    <minVolumes>0</minVolumes>
+    <normalForm>Third</normalForm>
+    <preferredAbbreviation>Devolucao</preferredAbbreviation>
+    <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+        <Attribute name="numero" id="22E79821-65F1-3DF6-FE14-A6E57202E333">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:29:52 UTC</createdTime>
+            <generatorID>8464BA49-8880-2D39-D9BA-FE2209B173D0</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <referedAttribute>73D2D32C-FE02-FE35-B957-0DD248DA84E4</referedAttribute>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+        </Attribute>
+        <Attribute name="obs" id="2A975A37-78C9-ED2E-AEBB-9B1BBD97710A">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:01 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+        </Attribute>
+    </attributes>
+</Entity>

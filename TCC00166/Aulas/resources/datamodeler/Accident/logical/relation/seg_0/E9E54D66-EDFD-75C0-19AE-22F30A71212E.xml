@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PARTICIPATED_PERSON_FK1" id="E9E54D66-EDFD-75C0-19AE-22F30A71212E" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:18 UTC</createdTime>
+<generatorID>18A1281B-259C-58CC-6F3A-AE7B922F8F2E</generatorID>
+<ownerDesignName>Accident</ownerDesignName>
+<engineerTo>
+<item key="4CC7DEDD-B1D0-D980-CBEB-4B2A200A8DEB" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EA5B436E-C3CE-743C-80A5-2E399D23F4CD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E0AA42A2-1200-1591-B647-9AFAC1336F3C</targetEntity>
+<transferable>true</transferable>
+</Relation>

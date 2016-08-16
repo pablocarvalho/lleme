@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="BC1EBF6A-E1BB-9605-840C-9240589B16BB" directorySegmentName="seg_0" name="BONUS">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>BONUS</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:03 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<schemaObject>249000D0-6292-FAE5-9DD3-80383AE0252B</schemaObject>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="ENAME" id="FCBCBA77-AF57-5F2F-C5C0-C8F72E7F5974">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>ENAME</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="JOB" id="3E4BC785-D91B-E8DA-69C0-1B6ABDF6B047">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>JOB</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 BYTE</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="SAL" id="F67DDF27-9401-B15F-1169-6C759D32FF8F">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>SAL</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeSize>22</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="COMM" id="1309BF92-817E-B431-2A2B-FD0A91BEDB66">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>BONUS</sourceObjSchema>
+<sourceObjName>COMM</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeSize>22</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

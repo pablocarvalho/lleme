@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="62C856C2-B14C-2802-EF75-8F88EC82FE3C" name="FK_Exemplar_Emprestimo">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+    <generatorID>C1226CF0-12F8-AA37-7796-042A9256C969</generatorID>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <containerWithKeyObject>2182C9DD-3C51-2DB4-1434-0BDA29431363</containerWithKeyObject>
+    <deleteRule>NO ACTION</deleteRule>
+    <localFKIndex>B7E15C9E-7986-11BB-396E-2644C22C24C0</localFKIndex>
+    <keyObject>98F1BA33-414E-EA3C-8908-08EA6779DD0B</keyObject>
+    <mandatory>true</mandatory>
+    <transferable>true</transferable>
+    <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

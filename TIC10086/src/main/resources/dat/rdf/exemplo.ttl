@@ -1,0 +1,6 @@
+@prefix schema: <http://schema.org/> .
+@prefix :      <http://ifmt.br/resource/> .
+
+:id-39b47502-6894-4e29-a58c-bd9d1e8fe2ac
+        schema:name       "Cidade das Artes" ;
+        schema:telephone  "4636436435" .

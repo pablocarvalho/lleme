@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:d950681c-0fac-4ed9-9e1b-7f5fda5072d9'
+   isAbstract='false'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='ItemReserva'
+   visibility='public'>
+  <ownedAttribute xmi:type='uml:Property' xmi:uuid='urn:uuid:6ff0709d-1cf1-4c6e-8c8e-3f2d89de0208'
+    isDerived='false'
+    isDerivedUnion='false'
+    isID='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='qtdQuartos'
+    aggregation='none'
+    visibility='public'>
+   <type href='mof:/int:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:ba025c55-99d1-4fc7-8e96-ba8a3d7298b9'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:0a198462-6244-4ce0-a446-9e8e802eeda3'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:8596e69a-7bf2-4059-aaec-0c214f1ea907'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='ItemReserva'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:cd714bee-280f-438e-ac49-9a53055fdc3c'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='reserva'
+     direction='in'>
+    <type href='urn:uuid:d67a274c-96a7-4d11-ad7f-83878499c2d0'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:35262df1-22c0-424f-9126-25d05eab5baa'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:c564fdf9-10a3-472e-a282-bb34bf09a1d2'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:993bce93-6ea8-4694-8e4b-2df9d2f69c42'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='tipo'
+     direction='in'>
+    <type href='urn:uuid:f3e9f207-a01c-4b64-83fd-ef8aa0a0c9b5'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4aca5a21-9bd5-4793-bbac-2b8e19012a8b'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:726f3314-b833-47fb-bfdb-8cae2faaa229'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:0d4b0dce-dc5a-4074-a1f4-79bcb99161ba'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='qtd'
+     direction='in'>
+    <type href='mof:/int:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:8b4fc0dd-080f-4d30-8727-42eda9099137'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:83e0bcc2-8d27-4687-8bd6-07effabe199e'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

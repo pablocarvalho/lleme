@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="DEPT" id="3EBA4BE1-B747-45CE-B042-2C43F0B4BD3C" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:03 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>C08D117B-4437-678B-7B57-134C5D78AE1E</segment>
+<tableSpace>937211CE-7E39-E67E-D181-48E46D4A86DB</tableSpace>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="DNAME" id="46A66F69-BCEC-67E9-EBDC-CB9AD04F91BC">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="LOC" id="8137CEF1-E387-2671-3BAD-C4D826741D6C">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v11g.ColumnProxyOraclev11g" name="DEPTNO" id="B0683EBD-D339-6D8A-16CF-C8B2D865C143">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_DEPT" id="6D21DEED-CDC7-7B1D-2294-16E9A28A7E3B">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<tableSpace>937211CE-7E39-E67E-D181-48E46D4A86DB</tableSpace>
+<indexSegment>760E83F6-1417-5EAD-8309-4EB320B4C941</indexSegment>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

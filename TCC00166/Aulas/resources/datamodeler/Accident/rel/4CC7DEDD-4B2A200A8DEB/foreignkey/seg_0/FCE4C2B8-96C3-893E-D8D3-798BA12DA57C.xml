@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="FCE4C2B8-96C3-893E-D8D3-798BA12DA57C" directorySegmentName="seg_0" name="OWNS_CAR_FK1">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>LLEME</sourceObjSchema>
+<sourceObjName>OWNS_CAR_FK1</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-24 22:10:06 UTC</createdTime>
+<ownerDesignName>Accident</ownerDesignName>
+<containerWithKeyObject>7E0F7EC1-A32F-65D2-0AD2-904F371859A5</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>2FAB18A7-45A3-7D53-5468-DB63F030A7C9</localFKIndex>
+<keyObject>720003B3-3EA8-3152-F54C-1BC7E96ABC36</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

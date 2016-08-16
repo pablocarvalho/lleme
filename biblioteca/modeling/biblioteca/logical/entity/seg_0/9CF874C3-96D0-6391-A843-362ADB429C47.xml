@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9CF874C3-96D0-6391-A843-362ADB429C47" name="Material">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:04:26 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <adequatelyNormalized>NO</adequatelyNormalized>
+    <expectedVolumes>0</expectedVolumes>
+    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+    <growthPercent>0</growthPercent>
+    <growthType>Year</growthType>
+    <maxVolumes>9999999</maxVolumes>
+    <minVolumes>0</minVolumes>
+    <normalForm>Third</normalForm>
+    <preferredAbbreviation>Material</preferredAbbreviation>
+    <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+        <Attribute name="codigo" id="00289B25-9A2E-E2E7-AC66-3D7A79D209D4">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:18:33 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+        </Attribute>
+        <Attribute name="titulo" id="E7B10017-8274-330E-6532-E07B07C0234D">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:18:57 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+        </Attribute>
+    </attributes>
+    <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+        <identifier id="DEF1F489-902F-1B41-4708-80DF1923D686" name="Material PK">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:18:47 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <pk>true</pk>
+            <usedAttributes>
+                <attributeRef>00289B25-9A2E-E2E7-AC66-3D7A79D209D4</attributeRef>
+            </usedAttributes>
+        </identifier>
+    </identifiers>
+</Entity>

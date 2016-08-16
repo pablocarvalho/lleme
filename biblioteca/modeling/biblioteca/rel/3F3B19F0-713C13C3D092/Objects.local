@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="027B75A8-0D0B-3B71-7A70-15395D60A8E0" name="Tipo" seqName="seg_0"/>
+   <object objectType="Table" objectID="13B1FDF6-61F9-D26C-86CF-822FB76D7FE3" name="Devolucao" seqName="seg_0"/>
+   <object objectType="Table" objectID="2182C9DD-3C51-2DB4-1434-0BDA29431363" name="Emprestimo" seqName="seg_0"/>
+   <object objectType="Table" objectID="2C820122-BF85-BA59-8178-A1D5F1E24112" name="Material" seqName="seg_0"/>
+   <object objectType="Table" objectID="3F9B9C57-CF31-8C74-5A93-647A8C488F25" name="Exemplar" seqName="seg_0"/>
+   <object objectType="Table" objectID="63C5A72D-1D2D-977E-5284-4DFD95206EEB" name="Login" seqName="seg_0"/>
+   <object objectType="Table" objectID="76634B5E-4083-A607-AC3A-DA87974B7CC2" name="Usuario" seqName="seg_0"/>
+   <object objectType="Table" objectID="9D3E893A-ED4E-C5C2-4708-1879D37F094C" name="CD" seqName="seg_0"/>
+   <object objectType="Table" objectID="BD56DFFD-1511-047E-F3F2-E16A4AA42CFC" name="Revista" seqName="seg_0"/>
+   <object objectType="Table" objectID="C5008179-1461-D3E6-94F9-53BC33B73C6B" name="Livro" seqName="seg_0"/>
+   <object objectType="Table" objectID="E55DED7B-2724-DE37-AD36-9A745B86F4D4" name="Operacao" seqName="seg_0"/>
+   <object objectType="Table" objectID="F33CCBCD-5DAE-4993-465B-52C5B458AD31" name="Reserva" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1CE88ED2-B08F-A0AB-AD8D-EC910EED566E" name="FK_Tipo_Usuario" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="271F2A55-25E7-2A0C-4EB4-CBABC91969FA" name="FK_Material_Exemplar" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="2DB2B975-C477-4653-BF0A-2DEC9A873F50" name="FK_ASS_3" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="390E4291-FC04-3A8F-55AA-E7BA8A2E8E32" name="FK_Livro_Reserva" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="5B45E6CA-5C35-6300-10EF-8ED5336F8A03" name="FK_ASS_1" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="5C21946E-2F64-20E4-BA0F-85D4A7CB9659" name="FK_ASS_2" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="62C856C2-B14C-2802-EF75-8F88EC82FE3C" name="FK_Exemplar_Emprestimo" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="7B0F688C-96BB-3D55-EA20-1414437BCC28" name="FK_ASS_4" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="A99187D7-726D-9EC1-98C6-573B0B18BBBF" name="FK_Emprestimo_Devolucao" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="AB2E8F49-6477-F954-5B03-CA079BBD5B34" name="FK_Usuario_Operacao" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="BC8A01F6-F8D7-C678-1611-A17F0A4A0AAC" name="FK_ASS_6" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="E8CD5E69-9775-DC23-82A6-3B9FCEB4BC77" name="FK_Usuario_Login" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="EA814E27-0EA1-E527-E2ED-0F3FE8C66F58" name="FK_ASS_5" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

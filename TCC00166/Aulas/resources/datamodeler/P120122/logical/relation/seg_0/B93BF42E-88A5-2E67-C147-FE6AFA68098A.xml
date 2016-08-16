@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="cuida" id="B93BF42E-88A5-2E67-C147-FE6AFA68098A" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 17:56:10 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1D10AA53-1279-F1F2-C9F6-8DC7108D6BB9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>AA537080-FC7A-E2FA-2EE3-8E2AA9ED0332</targetEntity>
+<transferable>true</transferable>
+</Relation>

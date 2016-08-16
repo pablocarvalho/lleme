@@ -1,0 +1,60 @@
+package id2c1w2edvjudwaedvrsjdl;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:java#Class#exemploAula.Server:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:java#Class#exemploAula.Client:oiref><oihard>
+@__modelType reference 
+*/
+class reference45 {
+}/**
+@__ref <oiref:design#Class#id69lledvjudwaedvrsk73.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#exemploAula.corbaClasses:oiref> 
+*/
+class reference46 {
+}/**
+@__ref <oiref:design#Class#id21ohfedvjudwaedvrsk7j.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#exemploAula.exemplo:oiref> 
+*/
+class reference47 {
+}/**
+@__ref <oiref:java#Class#exemploAula.PropertyServant:oiref><oihard>
+@__modelType reference 
+*/
+class reference48 {
+}/**
+@__ref <oiref:java#Class#exemploAula.PropertyFactoryServant:oiref><oihard>
+@__modelType reference 
+*/
+class reference49 {
+}/**
+@__ref <oiref:design#Class#id1gcudedvjudwaedw2d5ts.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#exemploAula.cpp:oiref> 
+*/
+class reference97 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions 
+*/
+class __positions {
+}

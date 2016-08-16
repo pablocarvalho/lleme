@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20110701' xmlns:uml='http://www.omg.org/spec/UML/20110701'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.1.2.0.0'/>
+ <uml:Class xmi:type='uml:Class' xmi:uuid='urn:uuid:74af9973-b647-4af1-ae7a-e206a7e88386'
+   isAbstract='true'
+   isActive='false'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Caractere'
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:813fc606-506c-4bf0-8210-e2a154e4ed4a'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='acenderMostrador'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:edef7abc-f693-45cf-b5d5-7c17a1119f79'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='mostrador'
+     direction='in'>
+    <type href='urn:uuid:27d501ab-2a9e-4beb-b30e-624ccecb846e'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:c801d95f-5dad-47f0-ad16-feea8b580234'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:2e20b722-8872-447d-84f2-71aec9d37790'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:7a68fcf3-e3b8-4dcb-9f51-4c3f5ca00a78'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:72167adb-f4eb-4941-a439-918512ce761a'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:6f961eb8-93c1-4cd5-b7ab-d67a7fa90321'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

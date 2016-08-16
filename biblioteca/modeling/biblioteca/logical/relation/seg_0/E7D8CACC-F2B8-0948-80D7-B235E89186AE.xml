@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="tipo" directorySegmentName="seg_0" id="E7D8CACC-F2B8-0948-80D7-B235E89186AE">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:11:18 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <sourcePk>4D305E29-F12C-2C50-3272-CBE2805F302B</sourcePk>
+    <identifying>false</identifying>
+    <optionalSource>true</optionalSource>
+    <optionalTarget>false</optionalTarget>
+    <sourceCardinality>1</sourceCardinality>
+    <sourceEntity>FB13B3C5-3E97-8CFE-0396-8A489A5694E6</sourceEntity>
+    <targetCardinalityString>*</targetCardinalityString>
+    <targetEntity>DA5A657A-39BB-C296-8201-7C86AE2A940C</targetEntity>
+    <transferable>true</transferable>
+</Relation>

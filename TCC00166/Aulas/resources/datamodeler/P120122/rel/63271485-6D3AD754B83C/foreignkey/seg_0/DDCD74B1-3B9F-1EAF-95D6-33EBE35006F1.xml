@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" id="DDCD74B1-3B9F-1EAF-95D6-33EBE35006F1" directorySegmentName="seg_0" name="possui">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:16:58 UTC</createdTime>
+<generatorID>2DF2F153-F937-6F20-BFB0-07090AB59350</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<containerWithKeyObject>196F65A6-408D-E1A6-D09E-1DF467929E3D</containerWithKeyObject>
+<deleteRule>RESTRICT</deleteRule>
+<localFKIndex>5DC82AB3-E3E5-2952-4DF0-A75213DDBB83</localFKIndex>
+<keyObject>53CE7FF3-0A38-92AD-7C1D-5FBB0652A933</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+</FKIndexAssociation>

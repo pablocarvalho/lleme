@@ -1,0 +1,209 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="76634B5E-4083-A607-AC3A-DA87974B7CC2" name="Usuario">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+    <generatorID>DA5A657A-39BB-C296-8201-7C86AE2A940C</generatorID>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <allowColumnReorder>false</allowColumnReorder>
+    <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+    <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+        <Column name="id" id="2316F7EF-7B16-96A6-2D89-CE479E51D069">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>429705BF-6371-C436-9E80-C16B79C43451</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="nome" id="6CC3F690-5388-5FAF-55B8-76839131F633">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>A500CFCA-9EB4-6C6E-7DBF-A26121E921E2</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="tipo_codigo" id="14026190-73CE-1D56-4E5D-5658BBADAD45">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 20:00:03 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <delegate>6FE5C773-AD75-C81C-E6EB-D0B972A9CE3A</delegate>
+            <previousColumn>false</previousColumn>
+            <autoIncrementCycle>false</autoIncrementCycle>
+            <associations>
+                <colAssociation fkAssociation="1CE88ED2-B08F-A0AB-AD8D-EC910EED566E" referredColumn="6FE5C773-AD75-C81C-E6EB-D0B972A9CE3A"/>
+            </associations>
+        </Column>
+        <Column name="telefone" id="0D6BFF0A-2C99-F9C1-0B0E-471E59D89C82">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>1306BFFB-7626-02EC-F6DC-DB6417B64FFA</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="celular" id="722F7808-D75D-2C8E-FDB6-7B7205668FDA">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>0D3DE766-063E-7D59-D719-0D9C6A7C6D58</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="email" id="3FF67DA6-F779-BB80-A58A-D192FA897F36">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>64C16BCA-D5CF-7579-516E-53459FF51AF2</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="cpf" id="9FB0F003-6688-F108-4FD4-D8B46A7E9EBB">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>BCD3D83A-A82B-C1DE-EA5A-E500AA2FFC21</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="logradouro" id="8DF8F43B-A6CE-3E56-01A9-D1CDB60E23D7">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>2EC41AE5-766D-86F3-1870-9A3DEEFEFAD4</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="complemento" id="2EDA6E6D-5C16-57EA-659D-127FC9D72BCE">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>DA2E0E64-6EDF-6729-9D4F-98D76B67957A</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="bairro" id="77397C92-32B0-83D9-505E-7486969F57D6">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>89F3608C-90F5-1E03-5F45-189F9FFB3F6F</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="cidade" id="70A35FA3-B305-0704-B9A8-C9745AD684C1">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>A4B13B45-E705-7208-018B-62C4BBB849CC</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="cep" id="969AD1BE-8EA4-C608-C719-AC0A8579F1AA">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>278645D6-DA99-89DC-6A24-B1FDB339D320</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="admissao" id="E0CFF175-EF33-532A-2F84-A23A83608F2E">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>ACF9E8E0-6C02-DD85-5ABE-8A1A352F5BE1</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT008</logicalDatatype>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+        <Column name="cancelamento" id="0FE1753F-0142-0C44-D2DE-E949350E3317">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>71B2797B-1D72-AF21-02F1-BD293C79CCCF</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT008</logicalDatatype>
+            <autoIncrementCycle>false</autoIncrementCycle>
+        </Column>
+    </columns>
+    <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+        <ind_PK_UK id="C2257CF8-F0C9-38A8-945A-813D22FD51D7" name="PK_USUA">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>19866F1A-B8DB-2CB1-E3EE-C8FCDC11670E</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <pk>true</pk>
+            <indexState>Primary Constraint</indexState>
+            <isSurrogateKey>false</isSurrogateKey>
+            <indexColumnUsage>
+                <colUsage columnID="2316F7EF-7B16-96A6-2D89-CE479E51D069"/>
+            </indexColumnUsage>
+        </ind_PK_UK>
+        <ind_PK_UK id="2C9BF45B-718A-80C0-2E6B-8CC4B8B6F6DF" name="FK_Tipo_Usuario">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:48:33 UTC</createdTime>
+            <generatorID>E7D8CACC-F2B8-0948-80D7-B235E89186AE</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <indexState>Foreign Key</indexState>
+            <isSurrogateKey>false</isSurrogateKey>
+            <indexColumnUsage>
+                <colUsage columnID="14026190-73CE-1D56-4E5D-5658BBADAD45"/>
+            </indexColumnUsage>
+        </ind_PK_UK>
+    </indexes>
+</Table>

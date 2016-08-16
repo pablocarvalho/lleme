@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9C53BBD9-576C-49E8-08C3-771CADFD0A09" name="Login">
+    <createdBy>Luiz Leme</createdBy>
+    <createdTime>2013-10-03 19:10:54 UTC</createdTime>
+    <ownerDesignName>biblioteca</ownerDesignName>
+    <engineerTo>
+        <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+    </engineerTo>
+    <adequatelyNormalized>NO</adequatelyNormalized>
+    <expectedVolumes>0</expectedVolumes>
+    <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+    <growthPercent>0</growthPercent>
+    <growthType>Year</growthType>
+    <maxVolumes>9999999</maxVolumes>
+    <minVolumes>0</minVolumes>
+    <normalForm>Third</normalForm>
+    <preferredAbbreviation>Login</preferredAbbreviation>
+    <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+        <Attribute name="id" id="BD7FD468-B8B9-763C-4E6B-9706245B0BC4">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:45:01 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+        </Attribute>
+        <Attribute name="nome" id="D4C45E03-9F86-CFC5-CCBA-6500388D987F">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:31:22 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+        </Attribute>
+        <Attribute name="senha" id="680A6940-26A4-5B02-A54A-AEA87620567D">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:31:43 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT037</logicalDatatype>
+            <dataTypeSize>255</dataTypeSize>
+        </Attribute>
+        <Attribute name="expiracao" id="4E8724D3-FF54-A339-23D1-53D6FF311BB5">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:31:57 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <nullsAllowed>true</nullsAllowed>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT008</logicalDatatype>
+        </Attribute>
+        <Attribute name="id1" id="6CFC2D9A-2EBF-0DAD-FD9A-444BF982A235">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:45:22 UTC</createdTime>
+            <generatorID>E2D1F89F-E6FF-610D-4599-8EC21FB16847</generatorID>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <nullsAllowed>true</nullsAllowed>
+            <referedAttribute>429705BF-6371-C436-9E80-C16B79C43451</referedAttribute>
+            <useDomainConstraints>false</useDomainConstraints>
+            <use>1</use>
+            <logicalDatatype>LOGDT026</logicalDatatype>
+            <dataTypePrecision>10</dataTypePrecision>
+            <dataTypeScale>0</dataTypeScale>
+        </Attribute>
+    </attributes>
+    <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+        <identifier id="F9D28874-DBA8-DCA0-9C8C-143F2084830D" name="Login PK">
+            <createdBy>Luiz Leme</createdBy>
+            <createdTime>2013-10-03 19:31:17 UTC</createdTime>
+            <ownerDesignName>biblioteca</ownerDesignName>
+            <engineerTo>
+                <item key="3F3B19F0-B2C9-DA80-FB91-713C13C3D092" value="true"/>
+            </engineerTo>
+            <pk>true</pk>
+            <usedAttributes>
+                <attributeRef>BD7FD468-B8B9-763C-4E6B-9706245B0BC4</attributeRef>
+            </usedAttributes>
+        </identifier>
+    </identifiers>
+</Entity>

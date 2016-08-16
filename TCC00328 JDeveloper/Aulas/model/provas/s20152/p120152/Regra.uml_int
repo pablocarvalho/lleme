@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
+ <uml:Interface xmi:type='uml:Interface' xmi:uuid='urn:uuid:08357cae-b431-4a34-a0c0-87a9bddf8211'
+   isAbstract='true'
+   isFinalSpecialization='false'
+   isLeaf='false'
+   name='Regra'
+   visibility='public'>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:f323e5dd-aef7-49f3-afc0-f8095a7e41d1'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='calcularResultado'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:51a83090-be5d-4edb-aa81-5392cc6c554a'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='carnaval'
+     direction='in'>
+    <type href='urn:uuid:490e1221-bfd6-44a6-8185-b0110d75e0bb'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:b724184a-2704-468c-a1ec-5b5fc4ffadb5'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:7661adf5-9f3d-494c-a594-a75125978e66'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:ebec5ae2-e659-4044-889b-f593b6362608'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/java:uml:NamedElement/util:uml:NamedElement/List:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:e5bcfdb5-b8a5-40f1-9190-08071c6b8593'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:031f8d09-b441-4e1e-a724-a9567db16b02'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:type='uml:Operation' xmi:uuid='urn:uuid:0e899132-2a9c-40a9-838f-206abb4a321c'
+    isAbstract='true'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='registrarQuesitoDesempate'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:2c35f967-c514-43ed-b110-6feabf3e4ddd'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='quesito'
+     direction='in'>
+    <type href='mof:/provas:uml:NamedElement/s20152:uml:NamedElement/p120152:uml:NamedElement/Quesito:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:ba43f387-8a70-4afe-9ad1-c651abed8e75'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:9cc87e65-d597-4ae8-a3b9-0993816fe096'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+   <ownedParameter xmi:type='uml:Parameter' xmi:uuid='urn:uuid:38a263e3-c8d1-4520-a9c8-f0097ff3f699'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name=''
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+    <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:034ab0d9-5259-4b43-a435-898593ffdb55'
+      value='1'
+      visibility='public'/>
+    <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:8948558b-20d4-47a0-b064-d8d2116f3a2b'
+      value='1'
+      visibility='public'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Interface>
+</xmi:XMI>

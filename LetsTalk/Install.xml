@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components>
+	<component>
+		<name>LetsTalk</name>
+		<version>1</version>
+		<entry-point>inf.puc_rio.letstalk.LetsTalkStarter</entry-point>
+		<shared>false</shared>
+		<filename>LetsTalk.jar</filename>
+		<help-info>unavailable</help-info>
+	</component>
+	<component>
+		<name>LetsTalkServer</name>
+		<version>1</version>
+		<entry-point>entry-point</entry-point>
+		<shared>false</shared>
+		<filename>LetsTalkServer.jar</filename>
+		<help-info>unavailable</help-info>
+	</component>
+</components>

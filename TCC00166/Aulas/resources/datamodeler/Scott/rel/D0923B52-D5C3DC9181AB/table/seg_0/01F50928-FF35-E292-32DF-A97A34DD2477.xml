@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="01F50928-FF35-E292-32DF-A97A34DD2477" directorySegmentName="seg_0" name="SALGRADE">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>SCOTT</sourceObjSchema>
+<sourceObjName>SALGRADE</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:03 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<schemaObject>249000D0-6292-FAE5-9DD3-80383AE0252B</schemaObject>
+<fonts>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Title</foType>
+<fontStyle>1</fontStyle>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Column</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Datatype</foType>
+<colorRGB>-16744448</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>PK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>FK Element</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>UK Element</foType>
+<colorRGB>-16776961</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Not Null</foType>
+<colorRGB>-65536</colorRGB>
+</FontObject>
+<FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+<foType>Key</foType>
+<colorRGB>-16777216</colorRGB>
+</FontObject>
+</fonts>
+<columns>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="GRADE" id="ADB93F0A-51EB-C441-D561-539190E0D3E4">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>GRADE</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeSize>22</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="LOSAL" id="7346C38C-BA9D-4100-4D56-71B914425249">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>LOSAL</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeSize>22</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column class="oracle.dbtools.crest.model.design.relational.Column" name="HISAL" id="EDCB18B6-F5CB-CA9C-C2E7-943AD3F5436D">
+<sourceConnName>ORCL</sourceConnName>
+<sourceObjSchema>SALGRADE</sourceObjSchema>
+<sourceObjName>HISAL</sourceObjName>
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-02-25 18:23:04 UTC</createdTime>
+<ownerDesignName>Scott</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypeSize>22</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

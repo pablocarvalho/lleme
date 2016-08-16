@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="C:/Documents and Settings/Luiz Leme/Desktop/RegistryStarter.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/LetsTalk/jardesc/newRegistryStarter.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" useSourceFolders="false"/>
+<manifest generateManifest="false" mainClassHandleIdentifier="=LetsTalk/srcNewRegistry&lt;inf.puc_rio.newregistry{RegistryStarter.java[RegistryStarter" manifestLocation="/LetsTalk/srcNewRegistry/MANIFEST.MF" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+<sealing sealJar="true">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=LetsTalk/srcCORBA"/>
+<javaElement handleIdentifier="=LetsTalk/srcNewRegistry"/>
+</selectedElements>
+</jardesc>

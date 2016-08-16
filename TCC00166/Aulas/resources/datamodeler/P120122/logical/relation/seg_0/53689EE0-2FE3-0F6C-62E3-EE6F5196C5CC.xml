@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="agrupa_mecanico" id="53689EE0-2FE3-0F6C-62E3-EE6F5196C5CC" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:12:47 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F6921761-B49C-C3E2-FBC5-CD7D200EBF6C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>65FE8224-17D3-3D61-90FB-9AA17F4A97CD</targetEntity>
+<transferable>true</transferable>
+</Relation>

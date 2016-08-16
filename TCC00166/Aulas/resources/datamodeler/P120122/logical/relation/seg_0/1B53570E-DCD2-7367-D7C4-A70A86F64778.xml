@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recebe" id="1B53570E-DCD2-7367-D7C4-A70A86F64778" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 18:47:21 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>90DE7412-F6D2-3CD5-E020-23021395AEC7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D1F4B897-34BE-F116-6242-D7F27FD2B50F</targetEntity>
+<transferable>true</transferable>
+</Relation>

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="13B1FDF6-61F9-D26C-86CF-822FB76D7FE3" name="Devolucao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>25938F6B-3C5F-A0B6-B644-EFCC373D4E46</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="operacao_numero" id="A8E4A781-5505-C08A-C025-91064710B234">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>73D2D32C-FE02-FE35-B957-0DD248DA84E4</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>592A087B-385D-43C7-FB25-4DFA4B9A0346</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BC8A01F6-F8D7-C678-1611-A17F0A4A0AAC" referredColumn="592A087B-385D-43C7-FB25-4DFA4B9A0346"/>
+</associations>
+</Column>
+<Column name="emprestimo_numero" id="41BD6C20-6A9F-28D3-8E84-46954806ABFC">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>22E79821-65F1-3DF6-FE14-A6E57202E333</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>8B7FC954-4EDE-DA59-60C7-341309902C5C</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A99187D7-726D-9EC1-98C6-573B0B18BBBF" referredColumn="8B7FC954-4EDE-DA59-60C7-341309902C5C"/>
+</associations>
+</Column>
+<Column name="obs" id="A669905F-CAF8-C243-6BD6-6834E7097A83">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>2A975A37-78C9-ED2E-AEBB-9B1BBD97710A</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4C631C1C-E5DB-E28A-0DB7-6F8121F8EE6E" name="PK_DEVO">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>A12C1212-5584-69B4-468B-998C232A6282</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8E4A781-5505-C08A-C025-91064710B234"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB1422A2-6FE1-A50F-0009-4C7A8A82B552" name="DEVO__IDX">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>8464BA49-8880-2D39-D9BA-FE2209B173D0</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="41BD6C20-6A9F-28D3-8E84-46954806ABFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="22E70CB6-7A15-132D-E64F-C208DD452327" name="FK_ASS_6">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>A38D0D48-02CF-4686-736B-6981863B9532</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8E4A781-5505-C08A-C025-91064710B234"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0EF59385-97D2-945E-8E91-C2A99837A1A1" name="FK_Emprestimo_Devolucao">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>8464BA49-8880-2D39-D9BA-FE2209B173D0</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="41BD6C20-6A9F-28D3-8E84-46954806ABFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

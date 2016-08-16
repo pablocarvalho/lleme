@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Lista4" id="7358AD9A-4F21-5DB1-3366-B3B3F825C5C8" version="3.5">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2012-11-29 20:18:31 UTC</createdTime>
+<ownerDesignName>Lista4</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7358AD9A-4F21-5DB1-3366-B3B3F825C5C8</designId>
+</OSDM_Design>

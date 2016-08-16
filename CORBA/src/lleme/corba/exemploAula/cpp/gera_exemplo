@@ -1,0 +1,10 @@
+# esse exemplo assume o uso mico versão 2.3.8 como ORB C++
+# e que sua instalação está em /Users/rcerq/corba/mico
+
+idl --c++-skel ../property.idl
+
+gcc -c -Wall -Wno-long-double -fpermissive -I/Users/rcerq/corba/mico/include *.cc
+
+gcc -o server server.o property.o property_skel.o -L/Users/rcerq/corba/mico/lib -lmico2.3.8 -lstdc++
+
+gcc -o client client.o property.o -L/Users/rcerq/corba/mico/lib -lmico2.3.8 -lstdc++

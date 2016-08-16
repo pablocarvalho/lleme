@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="agrupa_servico" id="F314909F-56CE-9E10-002C-7923CED5DF6C" directorySegmentName="seg_0">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-01-30 20:13:06 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>P120122</ownerDesignName>
+<engineerTo>
+<item key="63271485-74C3-923D-9902-6D3AD754B83C" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F6921761-B49C-C3E2-FBC5-CD7D200EBF6C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>90DE7412-F6D2-3CD5-E020-23021395AEC7</targetEntity>
+<transferable>true</transferable>
+</Relation>

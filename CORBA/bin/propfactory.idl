@@ -1,0 +1,28 @@
+#ifndef PROPFACTORY_IDL
+#define PROPFACTORY_IDL
+
+#include "property.idl"
+
+module exemploAula {
+module corbaClasses {
+
+exception PropertyAlreadyExists {
+   Property prop;
+};
+
+exception UnknownProperty {
+   string name;
+};
+
+typedef sequence<Property> PropertySeq;
+
+interface PropertyFactory {
+   Property create (in string name, in string initial_value) raises (PropertyAlreadyExists);
+   void destroy (in string name) raises (UnknownProperty);
+   Property get (in string name);
+   PropertySeq getAll();
+};
+
+};
+};
+#endif

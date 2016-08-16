@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+    <schema-selection match-schema="LLEME"/>
+    <table-filter match-name="DEVOLUCAO"/>
+    <table-filter match-name="LIVRO"/>
+    <table-filter match-name="USUARIO"/>
+    <table-filter match-name="TIPO"/>
+    <table-filter match-name="MATERIAL"/>
+    <table-filter match-name="CD"/>
+    <table-filter match-name="REVISTA"/>
+    <table-filter match-name="LOGIN"/>
+    <table-filter match-name="EMPRESTIMO"/>
+    <table-filter match-name="EXEMPLAR"/>
+    <table-filter match-name="OPERACAO"/>
+    <table-filter match-name="RESERVA"/>
+</hibernate-reverse-engineering>

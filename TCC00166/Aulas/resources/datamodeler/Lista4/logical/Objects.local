@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="DDF5D4C6-2DC1-B1EF-74C7-97A243596872" name="Alocacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="71706016-2D37-1DA5-DE96-62A60893303C" name="Aluno" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A560B1C6-9DFD-B1C8-2E07-3C143B92363C" name="Area_Pesquisa" seqName="seg_0"/>
+   <object objectType="Entity" objectID="689D5B36-DD12-7FC4-8C3A-ED5407F8CB7A" name="Assessor" seqName="seg_0"/>
+   <object objectType="Entity" objectID="4092BCE6-4D75-F093-E5D6-520621E37529" name="Curso" seqName="seg_0"/>
+   <object objectType="Entity" objectID="8D583742-924B-D639-FF28-88AFE1EAD2CD" name="Envio" seqName="seg_0"/>
+   <object objectType="Entity" objectID="6BEB0A23-72EB-AE5E-3D6B-5210E18CC9F5" name="Exibicao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A63A5C0F-3483-DF71-DA16-FCF441D3BBE4" name="Filme" seqName="seg_0"/>
+   <object objectType="Entity" objectID="CB476754-37B1-C3C5-3EE3-015B04B89148" name="Funcao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EF8189A1-E777-8F33-5D7D-6AFCED60260D" name="Funcionario" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A28715E4-6EA6-1CC1-E37E-1E2546799B06" name="Horario" seqName="seg_0"/>
+   <object objectType="Entity" objectID="0CE89F60-CA65-0741-667D-B4EBD5D4F4A0" name="Indicacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D2260CEF-E3D2-BF76-9A21-FC3DFD112306" name="Insituicao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D6E48A96-4651-2DD6-D5AD-8A0F631F1BEF" name="Instituicao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="43B6A0E4-2703-64F8-DF7A-785A376E1CB3" name="Instrutor" seqName="seg_0"/>
+   <object objectType="Entity" objectID="FE67A4A9-3125-9B51-AE94-711269296296" name="Item Parecer" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D292B15F-550A-A86A-A4F1-DFB5E3BF7A32" name="Movimentacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="BB97D168-EE60-8817-4AE0-D1C976E3A333" name="Parecer" seqName="seg_0"/>
+   <object objectType="Entity" objectID="9E6BB94E-E244-2921-BED2-9BC6EB36C07E" name="Pesquisador" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D9205ED2-86D3-116A-0FB3-51B8A304C5A6" name="Piloto" seqName="seg_0"/>
+   <object objectType="Entity" objectID="A1D15191-3DDB-611D-69BC-4CF25B51D087" name="Premiacao" seqName="seg_0"/>
+   <object objectType="Entity" objectID="19A846C0-70B2-B1F1-70DE-81E09741B325" name="Projeto" seqName="seg_0"/>
+   <object objectType="Entity" objectID="AFD50028-805D-ECC7-D953-380B51C4ADC2" name="Quesito" seqName="seg_0"/>
+   <object objectType="Entity" objectID="1FFA108C-416E-0D68-E95E-46027132D1A3" name="Resposta" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EA154565-D24B-DF3F-6BBA-1494F888042D" name="Saida" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7765DB3A-7A9D-8B9C-7360-BCD8594A9828" name="Sala" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D2141D3A-16CD-4ADF-C5F0-687E6AFD77F6" name="Socio" seqName="seg_0"/>
+   <object objectType="Relation" objectID="F1990D92-3C06-BF05-F1E8-AE8C4312D455" name="Relation_1" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BF0B22BF-3346-6185-23E8-A5282C8137FE" name="Relation_11" seqName="seg_0"/>
+   <object objectType="Relation" objectID="F1E2D707-3B16-11EC-74D3-75B72CB8FE11" name="Relation_11" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A223B2E5-CC11-2D02-319F-2DA549EDB96F" name="Relation_12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="94F28004-654C-51D4-C4D5-5E6A93C22F1D" name="Relation_12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="2A8F37F6-B112-354C-8326-406988C33FDC" name="Relation_13" seqName="seg_0"/>
+   <object objectType="Relation" objectID="732228E7-433F-3430-21B8-76BBAE65E52D" name="Relation_14" seqName="seg_0"/>
+   <object objectType="Relation" objectID="F8F9A7BF-BCC4-CB4D-ED26-86AC9A23D8BC" name="Relation_16" seqName="seg_0"/>
+   <object objectType="Relation" objectID="46EBCB7A-87EC-F287-F6E0-DDF892896BF9" name="Relation_17" seqName="seg_0"/>
+   <object objectType="Relation" objectID="234716F9-7A5E-AF62-438C-902E2D9731E5" name="Relation_18" seqName="seg_0"/>
+   <object objectType="Relation" objectID="F69D8DAB-B857-6DF3-CDBA-3A6A187CF5C7" name="Relation_19" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A9BAF04C-81B9-A54C-3F78-3DAA28190C08" name="Relation_2" seqName="seg_0"/>
+   <object objectType="Relation" objectID="AC851C42-652C-001C-A2D1-3EE4861DD60B" name="Relation_20" seqName="seg_0"/>
+   <object objectType="Relation" objectID="ABFF43ED-BCED-A019-169D-82A11C478ABF" name="Relation_21" seqName="seg_0"/>
+   <object objectType="Relation" objectID="B0E4D0BA-0778-C1D6-4350-31FDD924A2F2" name="Relation_22" seqName="seg_0"/>
+   <object objectType="Relation" objectID="3AD7D972-0CC9-6283-C3CA-61EC3645F0D4" name="Relation_25" seqName="seg_0"/>
+   <object objectType="Relation" objectID="B9E7BE4A-AB5C-568F-BD33-F610212810C4" name="Relation_26" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A1AE8E92-9135-17D4-9E1C-59C7DCCEF157" name="Relation_27" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4F2BC4BC-A81F-1FE8-06E4-D3DBF132D861" name="Relation_3" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4F1EEE8D-667C-FDDF-C78D-C0110F934A74" name="conhece" seqName="seg_0"/>
+   <object objectType="Relation" objectID="342B6D76-34EE-F953-55E4-68BFE7867EE0" name="recebe_projeto" seqName="seg_0"/>
+   <object objectType="Relation" objectID="DBED362D-88FA-6B27-501F-13D1F6D28F0C" name="tem" seqName="seg_0"/>
+   <object objectType="Relation" objectID="B859BE78-AE2B-1E99-CA38-248C071089BD" name="trabalha" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="E8CD9BE3-FB56-3F61-0E77-E89380C90B9F" name="Hierarchy_1" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="E98D8ED1-2B7A-7D0E-3F21-964277D9B3E0" name="Hierarchy_2" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="B4C1CBFC-8CE0-0FEC-0B9C-84B0B7BE0FC3" name="Hierarchy_3" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="86AEE93D-CCE4-8AC9-97C6-A5039B72BF5F" name="Hierarchy_4" seqName="seg_0"/>
+   <object objectType="Hierarchy relation" objectID="CEBA7B56-7AC3-5F77-4946-8306A1C6EC8F" name="Hierarchy_5" seqName="seg_0"/>
+   <object objectType="Note" objectID="688D607C-D33E-8CF0-5F93-A71462AAD618" name="Note_1" seqName="seg_0"/>
+   <object objectType="Note" objectID="6615A5EB-E1F2-2495-B28B-38D82F2832EE" name="Note_3" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

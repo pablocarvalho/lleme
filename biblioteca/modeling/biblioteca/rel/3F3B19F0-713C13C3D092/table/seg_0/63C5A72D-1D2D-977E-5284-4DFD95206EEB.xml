@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="63C5A72D-1D2D-977E-5284-4DFD95206EEB" name="Login">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>9C53BBD9-576C-49E8-08C3-771CADFD0A09</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="E38EAC97-2FEB-864F-FD79-DEB1948C2396">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>BD7FD468-B8B9-763C-4E6B-9706245B0BC4</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usuario_id" id="365C9E80-04DE-CD34-C929-15E6D5EB6B17">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>6CFC2D9A-2EBF-0DAD-FD9A-444BF982A235</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<delegate>2316F7EF-7B16-96A6-2D89-CE479E51D069</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8CD5E69-9775-DC23-82A6-3B9FCEB4BC77" referredColumn="2316F7EF-7B16-96A6-2D89-CE479E51D069"/>
+</associations>
+</Column>
+<Column name="nome" id="CD809325-423C-D564-91AF-2CEC5D4A5887">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>D4C45E03-9F86-CFC5-CCBA-6500388D987F</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="senha" id="2358BC90-3253-E8D7-2CFF-2B3351064473">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>680A6940-26A4-5B02-A54A-AEA87620567D</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="expiracao" id="21DDFD79-1583-A820-8823-FBDE09284891">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>4E8724D3-FF54-A339-23D1-53D6FF311BB5</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A4B91F09-65FB-6C96-D054-22F1C1E1CC81" name="PK_LOGI">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>F9D28874-DBA8-DCA0-9C8C-143F2084830D</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E38EAC97-2FEB-864F-FD79-DEB1948C2396"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="65E4BCD8-35AB-42EE-BE77-B85AE2E8E2CC" name="LOGI__IDX">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E2D1F89F-E6FF-610D-4599-8EC21FB16847</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="365C9E80-04DE-CD34-C929-15E6D5EB6B17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B1D141C-6388-EE42-71DD-2C11D918D9AA" name="FK_Usuario_Login">
+<createdBy>Luiz Leme</createdBy>
+<createdTime>2013-10-03 19:48:33 UTC</createdTime>
+<generatorID>E2D1F89F-E6FF-610D-4599-8EC21FB16847</generatorID>
+<ownerDesignName>biblioteca</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="365C9E80-04DE-CD34-C929-15E6D5EB6B17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
