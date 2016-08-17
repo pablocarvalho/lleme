@@ -1,0 +1,12 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `select_employees`(IN inputParam VARCHAR(255))
+BEGIN
+drop table if exists tempregado cascade;
+
+create temporary table tempregado as
+select FNOME, UNOME
+from EMPREGADO;
+
+
+select FNOME AS first_name, UNOME AS last_name from tempregado;
+
+END
