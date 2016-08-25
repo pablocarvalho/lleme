@@ -6,7 +6,7 @@ public class Relogio extends Temporizador {
 
     public Relogio() {
         super();
-        setNomeThread("Relógio");
+        setNomeThread("Relogio");
         setIntervaloThread(1000);
         serviceStart();
     }
