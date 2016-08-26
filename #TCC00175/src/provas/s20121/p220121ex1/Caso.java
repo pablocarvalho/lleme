@@ -4,13 +4,13 @@ public class Caso {
 
     public int numero;
     public int usuario;
-    public String descrição;
+    public String descricao;
     public String resposta;
     public Estado estado;
 
-    public Caso(int numero, String desccrição) {
+    public Caso(int numero, String desccricao) {
         this.numero = numero;
-        this.descrição = desccrição;
+        this.descricao = desccricao;
         this.estado = new Registrado(this);
     }
 
