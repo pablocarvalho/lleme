@@ -1,8 +1,8 @@
-package ic.uff.tic10086.examples.jena;
+package uff.ic.tic10086.examples.jena;
 
 import com.opencsv.CSVReader;
-import ic.uff.tic10086.utils.DBpediaSearch;
-import ic.uff.tic10086.utils.JenaSchema;
+import uff.ic.tic10086.utils.DBpediaSearch;
+import uff.ic.tic10086.utils.JenaSchema;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
