@@ -1,8 +1,6 @@
 package uff.ic.tic10086.examples.jena;
 
 import com.opencsv.CSVReader;
-import uff.ic.tic10086.utils.DBpediaSearch;
-import uff.ic.tic10086.utils.JenaSchema;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,6 +32,8 @@ import org.apache.jena.riot.WebContent;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 import org.apache.jena.tdb.TDBFactory;
 import static org.openrdf.model.vocabulary.RDFS.DOMAIN;
+import uff.ic.swlab.utils.DBpediaSearch;
+import uff.ic.swlab.utils.JenaSchema;
 
 public class NewClass {
 

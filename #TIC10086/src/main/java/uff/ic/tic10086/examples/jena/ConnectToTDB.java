@@ -1,6 +1,5 @@
 package uff.ic.tic10086.examples.jena;
 
-import uff.ic.tic10086.utils.JenaSchema;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
@@ -14,6 +13,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.vocabulary.VCARD;
+import uff.ic.swlab.utils.JenaSchema;
 
 public class ConnectToTDB {
 
