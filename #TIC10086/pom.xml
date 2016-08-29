@@ -5,6 +5,7 @@
     <artifactId>tic10086-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>#TIC10086</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -13,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>uff.ic.swlab</groupId>
-            <artifactId>icswlab-utils</artifactId>
+            <artifactId>icswlab-linkeddata-utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -37,5 +38,8 @@
             <version>3.1.0</version>
         </dependency>
     </dependencies>
-    <name>#TIC10086</name>
+    <build>
+        <sourceDirectory>./src/main/java</sourceDirectory>
+        <testSourceDirectory>./src/test/java</testSourceDirectory>
+    </build>
 </project>

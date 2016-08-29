@@ -11,4 +11,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <name>Temporizador</name>
+    <build>
+        <sourceDirectory>./src/main/java</sourceDirectory>
+        <testSourceDirectory>./src/test/java</testSourceDirectory>
+    </build>
 </project>

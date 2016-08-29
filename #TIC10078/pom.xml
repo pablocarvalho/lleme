@@ -5,12 +5,12 @@
     <artifactId>tic10078-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>#TIC10078</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    <name>#TIC10078</name>
     <dependencies>
         <dependency>
             <groupId>org.apache.opennlp</groupId>
@@ -23,4 +23,8 @@
             <version>6.1.0</version>
         </dependency>
     </dependencies>
+    <build>
+        <sourceDirectory>./src/main/java</sourceDirectory>
+        <testSourceDirectory>./src/test/java</testSourceDirectory>
+    </build>
 </project>
