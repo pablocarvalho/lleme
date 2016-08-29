@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
-        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:ORCL</property>
-        <property name="hibernate.connection.username">lleme</property>
-        <property name="hibernate.connection.password">lleme</property>
-        <property name="hibernate.current_session_context_class">thread</property>
-        <mapping resource="ic/tcc00175/biblioteca/model/Tipo.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Exemplar.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Usuario.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Devolucao.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Operacao.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Login.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Revista.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Material.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Reserva.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Emprestimo.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Livro.hbm.xml"/>
-        <mapping resource="ic/tcc00175/biblioteca/model/Cd.hbm.xml"/>
-    </session-factory>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:ORCL</property>
+    <property name="hibernate.connection.username">lleme</property>
+    <property name="hibernate.connection.password">lleme</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="uff/ic/biblioteca/model/Tipo.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Exemplar.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Usuario.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Devolucao.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Operacao.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Login.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Revista.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Material.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Reserva.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Emprestimo.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Livro.hbm.xml"/>
+    <mapping resource="uff/ic/biblioteca/model/Cd.hbm.xml"/>
+  </session-factory>
 </hibernate-configuration>

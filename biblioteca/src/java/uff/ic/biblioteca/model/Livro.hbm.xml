@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="uff.ic.biblioteca.model.Livro" schema="LLEME" table="LIVRO">
+    <id name="materialCodigo" type="long">
+      <column name="MATERIAL_CODIGO" precision="10" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="uff.ic.biblioteca.model.Material" fetch="select" insert="false" name="material" update="false">
+      <column name="MATERIAL_CODIGO" not-null="true" precision="10" scale="0" unique="true"/>
+    </many-to-one>
+    <property name="editora" type="string">
+      <column length="510" name="EDITORA"/>
+    </property>
+    <property name="autores" type="string">
+      <column length="510" name="AUTORES"/>
+    </property>
+    <property name="edicao" type="java.lang.Long">
+      <column name="EDICAO" precision="10" scale="0"/>
+    </property>
+    <property name="anopublicacao" type="java.lang.Long">
+      <column name="ANOPUBLICACAO" precision="10" scale="0"/>
+    </property>
+    <set inverse="true" name="reservas">
+      <key>
+        <column name="LIVRO_MATERIAL_CODIGO" not-null="true" precision="10" scale="0"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Reserva"/>
+    </set>
+  </class>
+</hibernate-mapping>

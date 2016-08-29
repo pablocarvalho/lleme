@@ -1,11 +1,11 @@
 
-import ic.tcc00175.biblioteca.DAO.DAOHibernateUtil;
-import ic.tcc00175.biblioteca.model.Livro;
-import ic.tcc00175.biblioteca.model.Material;
-import ic.tcc00175.biblioteca.model.Operacao;
-import ic.tcc00175.biblioteca.model.Reserva;
-import ic.tcc00175.biblioteca.model.Tipo;
-import ic.tcc00175.biblioteca.model.Usuario;
+import uff.ic.biblioteca.DAO.DAOHibernateUtil;
+import uff.ic.biblioteca.model.Livro;
+import uff.ic.biblioteca.model.Material;
+import uff.ic.biblioteca.model.Operacao;
+import uff.ic.biblioteca.model.Reserva;
+import uff.ic.biblioteca.model.Tipo;
+import uff.ic.biblioteca.model.Usuario;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Set;

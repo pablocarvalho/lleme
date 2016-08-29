@@ -1,0 +1,32 @@
+module testes {
+module javaORB {
+module StockObjects {
+
+ 	struct Quote {
+        string symbol;              // The stock symbol of this quote.
+ 		long long at_time; 			// Time at which the price was updated.
+ 		double price; 				// The current price of the stock.
+ 		long volume; 				// The volume of shares traded.
+ 	};
+
+    exception Unknown{};
+
+    interface Stock {
+    
+        // Returns the current stock quote.
+ 		Quote get_quote() raises(Unknown);
+
+// *** put your operation for setting the quote here
+		void set_quote(in Quote stock_quote);
+
+
+ 		// Provides the stock description, e.g. company name.
+ 		readonly attribute string description;
+
+    };
+
+
+    
+};	// end of module StockObjects
+};
+};

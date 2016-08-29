@@ -4,7 +4,7 @@
     <servlet>
         <display-name>SystemController</display-name>
         <servlet-name>SystemController</servlet-name>
-        <servlet-class>ic.tcc00175.biblioteca.controller.SystemController</servlet-class>
+        <servlet-class>uff.ic.tcc00175.biblioteca.SystemController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SystemController</servlet-name>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="uff.ic.biblioteca.model.Material" schema="LLEME" table="MATERIAL">
+    <id name="codigo" type="long">
+      <column name="CODIGO" precision="10" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="titulo" type="string">
+      <column length="510" name="TITULO" not-null="true"/>
+    </property>
+    <set inverse="true" name="revistas">
+      <key>
+        <column name="MATERIAL_CODIGO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Revista"/>
+    </set>
+    <set inverse="true" name="exemplars">
+      <key>
+        <column name="CODIGO" not-null="true" precision="10" scale="0"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Exemplar"/>
+    </set>
+    <set inverse="true" name="cds">
+      <key>
+        <column name="MATERIAL_CODIGO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Cd"/>
+    </set>
+    <set inverse="true" name="livros">
+      <key>
+        <column name="MATERIAL_CODIGO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Livro"/>
+    </set>
+  </class>
+</hibernate-mapping>

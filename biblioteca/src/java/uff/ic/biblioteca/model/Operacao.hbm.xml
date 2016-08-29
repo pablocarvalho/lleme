@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2013 6:26:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="uff.ic.biblioteca.model.Operacao" schema="LLEME" table="OPERACAO">
+    <id name="numero" type="long">
+      <column name="NUMERO" precision="10" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="uff.ic.biblioteca.model.Usuario" fetch="select" name="usuario">
+      <column name="USUARIO_ID" not-null="true" precision="10" scale="0"/>
+    </many-to-one>
+    <property name="data" type="date">
+      <column length="7" name="DATA" not-null="true"/>
+    </property>
+    <set inverse="true" name="devolucaos">
+      <key>
+        <column name="OPERACAO_NUMERO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Devolucao"/>
+    </set>
+    <set inverse="true" name="reservas">
+      <key>
+        <column name="OPERACAO_NUMERO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Reserva"/>
+    </set>
+    <set inverse="true" name="emprestimos">
+      <key>
+        <column name="OPERACAO_NUMERO" not-null="true" precision="10" scale="0" unique="true"/>
+      </key>
+      <one-to-many class="uff.ic.biblioteca.model.Emprestimo"/>
+    </set>
+  </class>
+</hibernate-mapping>
