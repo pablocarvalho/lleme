@@ -1,6 +1,7 @@
 package uff.ic.tic10086.examples.jena;
 
 import com.opencsv.CSVReader;
+import static com.sun.jmx.defaults.ServiceName.DOMAIN;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,9 +32,8 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.WebContent;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 import org.apache.jena.tdb.TDBFactory;
-import static org.openrdf.model.vocabulary.RDFS.DOMAIN;
 import uff.ic.swlab.utils.DBpediaSearch;
-import uff.ic.swlab.utils.JenaSchema;
+import uff.ic.swlab.utils.JenaSchemaMgr;
 
 public class NewClass {
 
@@ -73,7 +73,7 @@ public class NewClass {
         String ns = "http://ifmt.br/resource/";
         String schemaNS = "http://schema.org/";
 
-        Model schema = JenaSchema.getSchemaOrg();
+        Model schema = JenaSchemaMgr.getSchemaOrg();
 
         String assemblerFile = "./src/main/resources/conf/exemplo.ttl";
         Dataset dataset = TDBFactory.assembleDataset(assemblerFile);

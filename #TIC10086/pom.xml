@@ -16,6 +16,7 @@
             <groupId>uff.ic.swlab</groupId>
             <artifactId>icswlab-linkeddata-utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.opencsv</groupId>

@@ -13,7 +13,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.vocabulary.VCARD;
-import uff.ic.swlab.utils.JenaSchema;
+import uff.ic.swlab.utils.JenaSchemaMgr;
 
 public class ConnectToTDB {
 
@@ -40,7 +40,7 @@ public class ConnectToTDB {
 
         // Get model inside the transaction
         Model model = dataset.getDefaultModel();
-        Model schema = JenaSchema.getSchemaOrg();
+        Model schema = JenaSchemaMgr.getSchemaOrg();
         //Model model = dataset.getNamedModel("http://localhost:3030/graph97");
 
         dataset.begin(ReadWrite.WRITE);
