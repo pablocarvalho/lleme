@@ -1,5 +1,4 @@
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,10 +10,10 @@ public class Task2 implements Runnable {
     public void run() {
         try (Connection conn = connect();) {
             conn.setAutoCommit(false);
-            conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+            conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
             try (Statement st = conn.createStatement();) {
-                Thread.sleep(1000);
+                Thread.sleep(0);
                 st.executeUpdate("INSERT INTO accounts (name,balance) VALUES('Luiz',1000.0);");
                 conn.commit();
                 System.out.println("Terminou thread 2.");
