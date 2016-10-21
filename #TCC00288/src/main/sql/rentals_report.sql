@@ -1,4 +1,4 @@
-DROP FUNCTION rentals_report();
+DROP FUNCTION IF EXISTS rentals_report();
 CREATE OR REPLACE FUNCTION rentals_report()
 RETURNS TABLE (
   rental_id integer,

@@ -1,3 +1,4 @@
+DROP FUNCTION IF EXISTS rent_film();
 CREATE OR REPLACE FUNCTION rent_film(
     p_inventory_id integer,
     p_customer_id integer,

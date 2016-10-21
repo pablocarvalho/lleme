@@ -1,4 +1,4 @@
-DROP FUNCTION update_rental_rate();
+DROP FUNCTION IF EXISTS update_rental_rate();
 CREATE OR REPLACE FUNCTION update_rental_rate(p_rating mpaa_rating, p_factor real) RETURNS VOID AS '
 DECLARE
     c_film CURSOR (k_rating mpaa_rating) FOR SELECT *
