@@ -1,0 +1,9 @@
+DROP FUNCTION IF EXISTS rental_analysis();
+CREATE OR REPLACE FUNCTION rental_analysis()
+RETURNS VOID AS '
+DECLARE
+BEGIN
+
+  RETURN;
+END;
+' LANGUAGE plpgsql

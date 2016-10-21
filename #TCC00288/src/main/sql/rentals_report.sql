@@ -13,8 +13,7 @@ RETURNS TABLE (
   payment_date timestamp without time zone,
   paid_amount numeric,
   due_amount double precision,
-  balance double precision) AS
-'
+  balance double precision) AS '
 DECLARE
 BEGIN
   --#OK, WE NEED TO CALCULATE THE CURRENT BALANCE GIVEN A CUSTOMER_ID AND A DATE
@@ -39,7 +38,8 @@ BEGIN
                 INNER JOIN inventory t2 ON t2.inventory_id = t1.inventory_id
                 INNER JOIN film t3 ON t3.film_id = t2.film_id
                 LEFT JOIN payment t4 ON t4.rental_id = t1.rental_id
-           WHERE t4.rental_id IS NULL),
+           WHERE t4.rental_id IS NULL
+           FOR SHARE OF t1, t2, t3, t4),
     t2 AS (SELECT t1.*,
                   CASE
                     WHEN t1.target_date <= t1.due_date THEN t1.rental_rate
@@ -49,12 +49,10 @@ BEGIN
            FROM t1)
   SELECT *, (t2.paid_amount - t2.due_amount) balance
   FROM t2
-  ORDER BY t2.due_amount DESC
-  FOR SHARE;
+  ORDER BY t2.due_amount DESC;
   -- If FOR UPDATE, FOR NO KEY UPDATE, FOR SHARE or FOR KEY SHARE is specified,
   -- the SELECT statement locks the selected rows against concurrent updates.
 
   RETURN;
 END;
-'
-LANGUAGE plpgsql
+' LANGUAGE plpgsql
