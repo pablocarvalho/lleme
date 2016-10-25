@@ -25,8 +25,8 @@ BEGIN
     IF EXISTS (SELECT rental_id
                FROM rental
                WHERE inventory_id = p_inventory_id
-                     AND (rental_date BETWEEN p_rental_date AND $$infinity$$::TIMESTAMP
-                          OR return_date BETWEEN p_rental_date AND $$infinity$$::TIMESTAMP)
+                     AND (rental_date BETWEEN v_now AND $$infinity$$::TIMESTAMP
+                          OR return_date BETWEEN v_now AND $$infinity$$::TIMESTAMP)
                FOR SHARE OF rental) THEN
         RAISE EXCEPTION $$Erro: midia já alugada!$$;
     END IF;
