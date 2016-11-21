@@ -1,0 +1,8 @@
+DROP FUNCTION IF EXISTS teste();
+CREATE OR REPLACE FUNCTION teste()
+RETURNS void AS '
+DECLARE
+BEGIN
+    RAISE NOTICE $$Uuario: %$$,user;
+END;
+' LANGUAGE plpgsql
