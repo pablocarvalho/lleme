@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
     BEGIN
         IF NOT EXISTS (SELECT staff_id
                        FROM staff
-                       WHERE staff_id = p_staff_id
+                       WHERE staff_id = NEW.staff_id
                              AND active
                              AND store_id = (SELECT store_id
                                              FROM inventory
@@ -91,3 +91,30 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
 DROP TRIGGER IF EXISTS rental_update ON rental;
 CREATE TRIGGER rental_update BEFORE INSERT OR UPDATE ON rental
     FOR EACH ROW EXECUTE PROCEDURE rental_restriction_checking();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
