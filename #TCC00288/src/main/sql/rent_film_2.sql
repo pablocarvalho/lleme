@@ -6,9 +6,6 @@ CREATE OR REPLACE FUNCTION public.rent_film_2(
     RETURNS void AS '
 DECLARE
     v_now timestamp := now()::timestamp;
-    v_delay interval;
-    v_rented boolean := FALSE;
-    v_staff_allowed boolean := FALSE;
 BEGIN
     IF NOT EXISTS (SELECT staff_id
                    FROM staff
