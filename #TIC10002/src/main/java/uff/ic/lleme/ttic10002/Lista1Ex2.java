@@ -1,6 +1,6 @@
 package uff.ic.lleme.ttic10002;
 
-public class NewClass1 {
+public class Lista1Ex2 {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package uff.ic.lleme.ttic10002;
 
 import java.util.Scanner;
 
-public class NewClass {
+public class Lista1Ex1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);  // k1
