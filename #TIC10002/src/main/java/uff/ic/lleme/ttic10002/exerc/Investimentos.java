@@ -1,4 +1,4 @@
-package uff.ic.lleme.ttic10002;
+package uff.ic.lleme.ttic10002.exerc;
 
 public class Investimentos {
 

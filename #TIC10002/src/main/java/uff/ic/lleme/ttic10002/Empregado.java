@@ -1,17 +1,17 @@
 package uff.ic.lleme.ttic10002;
 
-public class Empregado implements Entidade, Comparable<Empregado> {
+public class Empregado extends Entidade<String, Empregado> {
 
-    public String nome = null;
     public String cpf = null;
+    public String nome = null;
 
     @Override
-    public int compareTo(Empregado o) {
-        return this.chave().compareTo(o.chave());
+    public int compareTo(Empregado emp) {
+        return this.cpf.compareTo(emp.cpf);
     }
 
     @Override
-    public String chave() {
+    public String getChave() {
         return cpf;
     }
 

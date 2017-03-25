@@ -1,4 +1,6 @@
-package uff.ic.lleme.ttic10002;
+package uff.ic.lleme.ttic10002.exerc;
+
+import uff.ic.lleme.ttic10002.sort.Sort;
 
 public class Modo {
 

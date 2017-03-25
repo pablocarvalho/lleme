@@ -1,6 +1,6 @@
 package uff.ic.lleme.ttic10002;
 
-public interface Entidade {
+public abstract class Entidade<K extends Comparable<K>, E extends Entidade> implements Comparable<E> {
 
-    public abstract String chave();
+    public abstract K getChave();
 }
