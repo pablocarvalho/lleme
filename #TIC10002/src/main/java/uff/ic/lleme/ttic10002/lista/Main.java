@@ -1,6 +1,5 @@
 package uff.ic.lleme.ttic10002.lista;
 
-import java.util.function.Predicate;
 import uff.ic.lleme.ttic10002.Empregado;
 
 public class Main {
@@ -18,24 +17,32 @@ public class Main {
         Empregado e4 = new Empregado();
         e4.cpf = "111";
         e4.nome = "Luiz";
+        Empregado e5 = new Empregado();
+        e5.cpf = "888";
+        e5.nome = "Luiz 2";
 
-        ListaEstaticaNaoOrdenada<String, Empregado> lista = new ListaEstaticaNaoOrdenada<>();
+        ListaEstaticaOrdenada<String, Empregado> lista = new ListaEstaticaOrdenada<>();
 
-        lista.incluir(e1);
+        Empregado e = lista.buscar("789");
+
         lista.incluir(e2);
-
-        System.out.println(lista.buscar("123").nome);
-        System.out.println(lista.buscar("456").nome);
-
-        lista.incluir(e3);
+        lista.incluir(e5);
+        lista.incluir(e1);
         lista.incluir(e4);
+        lista.incluir(e3);
+
         lista.excluir("456");
 
+        System.out.println(lista.buscar("123").nome);
+        //System.out.println(lista.buscar("456").nome);
+
+        //lista.excluir("456");
         System.out.println(lista.buscar("789").nome);
+        System.out.println(lista.buscar("111").nome);
+        System.out.println(lista.buscar("888").nome);
 
-        Predicate<Empregado> luiz = (e) -> e.nome.equals("Luiz");
-        ListaEstaticaNaoOrdenada<String, Empregado> resultado = lista.buscar(luiz);
-
+        //Predicate<Empregado> luiz = (e) -> e.nome.equals("Luiz");
+        //ListaEstaticaNaoOrdenada<String, Empregado> resultado = lista.buscar(luiz);
         System.out.println("fim");
     }
 }

@@ -21,10 +21,8 @@ public class Sort {
         T x = array[r];
         int i = p - 1;
         for (int j = p; j <= r - 1; j++)
-            if (array[j].compareTo(x) < 0) {
-                i++;
-                exchange(array, i, j);
-            }
+            if (array[j].compareTo(x) < 0)
+                exchange(array, ++i, j);
         exchange(array, i + 1, r);
         return i + 1;
     }
@@ -34,4 +32,5 @@ public class Sort {
         array[i] = array[j];
         array[j] = aux;
     }
+
 }
