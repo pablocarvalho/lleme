@@ -87,4 +87,26 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
         return null;
     }
 
+    @Override
+    public void merge(int p, int q, int r) {
+        if (0 < p && p < q && q < r && r < tamanho) {
+            Entidade[] merge = new Entidade[r - p + 1];
+            int i = p, j = q, k = 0;
+            while (i < q || j <= r)
+                if (i < q && j <= r)
+                    if (buscar(i).compareTo(buscar(j)) < 0)
+                        merge[k++] = lista[i++];
+                    else
+                        merge[k++] = lista[j++];
+                else if (i < q)
+                    merge[k++] = lista[i++];
+                else if (j <= r)
+                    merge[k++] = lista[j++];
+
+            i = p;
+            for (k = 0; k < merge.length; k++)
+                lista[i++] = merge[k];
+        }
+    }
+
 }

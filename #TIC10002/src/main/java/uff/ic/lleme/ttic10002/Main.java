@@ -31,13 +31,13 @@ public class Main {
         lista.incluir(e4);
         lista.incluir(e3);
 
-        Sort.selecao(lista);
+        Sort.mergeSort(lista);
 
-        System.out.println(lista.buscar("1").nome);
-        System.out.println(lista.buscar("2").nome);
-        System.out.println(lista.buscar("3").nome);
-        System.out.println(lista.buscar("4").nome);
-        System.out.println(lista.buscar("5").nome);
+        System.out.println(lista.buscar(0).nome);
+        System.out.println(lista.buscar(1).nome);
+        System.out.println(lista.buscar(2).nome);
+        System.out.println(lista.buscar(3).nome);
+        System.out.println(lista.buscar(4).nome);
 
         System.out.println("fim");
     }

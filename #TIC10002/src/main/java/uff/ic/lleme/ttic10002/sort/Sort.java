@@ -7,14 +7,39 @@ import uff.ic.lleme.ttic10002.lista.ListaNaoOrdenada;
 public class Sort {
 
     public static <E extends ListaNaoOrdenada<?, ?>> E selecao(E lista) {
-        int t, i, j, min;
-        for (i = 0; i < lista.tamanho() - 1; i++) {
-            min = i;
-            for (j = i + 1; j < lista.tamanho(); j++)
-                if (((Entidade) lista.buscar(j)).compareTo((Entidade) lista.buscar(min)) < 0) {
-                    min = j;
-                    lista.trocar(min, i);
+        for (int i = 0; i < lista.tamanho() - 1; i++)
+            for (int j = i + 1; j < lista.tamanho(); j++)
+                if (((Entidade) lista.buscar(j)).compareTo((Entidade) lista.buscar(i)) < 0)
+                    lista.trocar(i, j);
+        return lista;
+    }
+
+    public static <E extends ListaNaoOrdenada<?, ?>> E bubbleSort(E lista) {
+        int trocas;
+        for (int i = lista.tamanho() - 1; i > 0; i--) {
+            trocas = 0;
+            for (int j = 0; j < i; j++)
+                if (((Entidade) lista.buscar(j)).compareTo((Entidade) lista.buscar(j + 1)) > 0) {
+                    lista.trocar(i, j);
+                    trocas++;
                 }
+            if (trocas == 0)
+                break;
+        }
+        return lista;
+    }
+
+    public static <E extends ListaNaoOrdenada<?, ?>> E mergeSort(E lista) {
+        return mergeSort(lista, 0, lista.tamanho() - 1);
+    }
+
+    private static <E extends ListaNaoOrdenada<?, ?>> E mergeSort(E lista, int e, int d) {
+        int meio;
+        if (e < d) {
+            meio = (e + d) / 2;
+            mergeSort(lista, e, meio);
+            mergeSort(lista, meio + 1, d);
+            lista.merge(e, meio, d);
         }
         return lista;
     }
