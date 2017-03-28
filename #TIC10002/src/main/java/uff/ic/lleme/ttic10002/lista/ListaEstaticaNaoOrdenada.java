@@ -3,7 +3,7 @@ package uff.ic.lleme.ttic10002.lista;
 import java.util.function.Predicate;
 import uff.ic.lleme.ttic10002.Entidade;
 
-public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidade<? super K, ?>> implements ListaEstatica<K, E> {
+public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidade<? super K, E>> implements ListaEstatica<K, E>, ListaNaoOrdenada<K, E> {
 
     private final Entidade[] lista = new Entidade[1000];
     private int tamanho = 0;
@@ -22,6 +22,24 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
                         return;
                 lista[tamanho++] = elem;
             } else
+                throw new IndexOutOfBoundsException();
+        else
+            throw new NullPointerException();
+    }
+
+    @Override
+    public void trocar(int i, int j) {
+        Entidade aux = lista[i];
+        lista[i] = lista[j];
+        lista[j] = aux;
+    }
+
+    @Override
+    public void alterar(int pos, E elem) {
+        if (elem != null && elem.getChave() != null)
+            if (pos < lista.length)
+                lista[pos] = elem;
+            else
                 throw new IndexOutOfBoundsException();
         else
             throw new NullPointerException();

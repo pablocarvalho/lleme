@@ -1,36 +1,48 @@
 package uff.ic.lleme.ttic10002.sort;
 
+import java.util.Random;
+import uff.ic.lleme.ttic10002.Entidade;
+import uff.ic.lleme.ttic10002.lista.ListaNaoOrdenada;
+
 public class Sort {
 
-    public static <T extends Comparable> T[] quickSort(T[] array) {
-        return quickSort(array, 0, array.length - 1);
-
-    }
-
-    private static <T extends Comparable> T[] quickSort(T[] array, int p, int r) {
-        if (p < r) {
-            int q = partition(array, p, r);
-            quickSort(array, p, q - 1);
-            quickSort(array, q + 1, r);
+    public static <E extends ListaNaoOrdenada<?, ?>> E selecao(E lista) {
+        int t, i, j, min;
+        for (i = 0; i < lista.tamanho() - 1; i++) {
+            min = i;
+            for (j = i + 1; j < lista.tamanho(); j++)
+                if (((Entidade) lista.buscar(j)).compareTo((Entidade) lista.buscar(min)) < 0) {
+                    min = j;
+                    lista.trocar(min, i);
+                }
         }
-        return array;
+        return lista;
     }
 
-    private static <T extends Comparable> int partition(T[] array, int p, int r) {
-        T aux;
-        T x = array[r];
-        int i = p - 1;
-        for (int j = p; j <= r - 1; j++)
-            if (array[j].compareTo(x) < 0)
-                exchange(array, ++i, j);
-        exchange(array, i + 1, r);
+    public static <E extends ListaNaoOrdenada<?, ?>> E quickSort(E lista) {
+        return quickSort(lista, 0, lista.tamanho() - 1);
+
+    }
+
+    private static <E extends ListaNaoOrdenada<?, ?>> E quickSort(E lista, int p, int r) {
+        if (p < r) {
+            int q = partition(lista, p, r);
+            quickSort(lista, p, q - 1);
+            quickSort(lista, q + 1, r);
+        }
+        return lista;
+    }
+
+    private static <E extends ListaNaoOrdenada<?, ?>> int partition(E lista, int e, int d) {
+        lista.trocar(d, (new Random()).nextInt(d - e + 1) + e);
+
+        Entidade pivot = lista.buscar(d);
+        int i = e - 1;
+        for (int j = e; j < d; j++)
+            if (((Entidade) lista.buscar(j)).compareTo(pivot) <= 0)
+                lista.trocar(++i, j);
+        lista.trocar(i + 1, d);
         return i + 1;
-    }
-
-    private static <T> void exchange(T[] array, int i, int j) {
-        T aux = array[i];
-        array[i] = array[j];
-        array[j] = aux;
     }
 
 }
