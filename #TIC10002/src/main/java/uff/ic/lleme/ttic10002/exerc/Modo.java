@@ -1,12 +1,10 @@
 package uff.ic.lleme.ttic10002.exerc;
 
-import uff.ic.lleme.ttic10002.sort.Sort;
-
 public class Modo {
 
     public static void main(String[] args) {
         Integer[] array = {7, 6, 1, 6, 6, 2, 10, 7}; // não pode conter null
-        array = Sort.quickSort(array);
+        //array = Sort.quickSort(array);
 
         for (Integer elm : array)
             System.out.println(elm);
