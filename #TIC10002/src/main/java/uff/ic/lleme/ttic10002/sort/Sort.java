@@ -34,9 +34,8 @@ public class Sort {
     }
 
     private static <E extends ListaNaoOrdenada<?, ?>> E mergeSort(E lista, int e, int d) {
-        int meio;
         if (e < d) {
-            meio = (e + d) / 2;
+            int meio = (e + d) / 2;
             mergeSort(lista, e, meio);
             mergeSort(lista, meio + 1, d);
             lista.merge(e, meio, d);
