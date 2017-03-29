@@ -25,10 +25,10 @@ public class Main {
 
         ListaNaoOrdenada<String, Empregado> lista = new ListaEstaticaNaoOrdenada<>();
 
+        lista.incluir(e4);
         lista.incluir(e2);
         lista.incluir(e5);
         lista.incluir(e1);
-        lista.incluir(e4);
         lista.incluir(e3);
 
         Sort.mergeSort(lista);
