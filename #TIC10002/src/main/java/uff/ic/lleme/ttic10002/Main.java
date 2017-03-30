@@ -31,7 +31,7 @@ public class Main {
         lista.incluir(e1);
         lista.incluir(e3);
 
-        Sort.mergeSort(lista);
+        Sort.selectSort(lista);
 
         System.out.println(lista.buscar(0).nome);
         System.out.println(lista.buscar(1).nome);

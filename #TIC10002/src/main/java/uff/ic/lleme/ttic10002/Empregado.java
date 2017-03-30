@@ -7,7 +7,7 @@ public class Empregado extends Entidade<String, Empregado> {
 
     @Override
     public int compareTo(Empregado emp) {
-        return this.cpf.compareTo(emp.cpf);
+        return getChave().compareTo(emp.getChave());
     }
 
     @Override

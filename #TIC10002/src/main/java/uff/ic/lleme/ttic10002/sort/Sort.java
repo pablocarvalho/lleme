@@ -6,7 +6,7 @@ import uff.ic.lleme.ttic10002.lista.ListaNaoOrdenada;
 
 public class Sort {
 
-    public static <E extends ListaNaoOrdenada<?, ?>> E selecao(E lista) {
+    public static <E extends ListaNaoOrdenada<?, ?>> E selectSort(E lista) {
         for (int i = 0; i < lista.tamanho() - 1; i++)
             for (int j = i + 1; j < lista.tamanho(); j++)
                 if (((Entidade) lista.buscar(j)).compareTo((Entidade) lista.buscar(i)) < 0)
