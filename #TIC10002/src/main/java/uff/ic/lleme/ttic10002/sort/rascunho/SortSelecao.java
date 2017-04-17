@@ -1,4 +1,4 @@
-package uff.ic.lleme.ttic10002.sort;
+package uff.ic.lleme.ttic10002.sort.rascunho;
 
 public class SortSelecao {
 

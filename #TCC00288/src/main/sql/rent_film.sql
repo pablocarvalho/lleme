@@ -13,7 +13,7 @@ DECLARE
     v_delay interval;
 
 BEGIN
-  SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+  
 
   FOR r IN c_rentals(p_customer_id) LOOP
     v_delay = v_delay + (r.payment_date-r.return_date);
