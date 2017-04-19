@@ -10,7 +10,7 @@ BEGIN
     IF NOT EXISTS (SELECT staff_id
                    FROM staff
                    WHERE staff_id = p_staff_id
-                         AND acive
+                         AND active
                          AND store_id = (SELECT store_id
                                          FROM inventory
                                          WHERE inventory_id = p_inventory_id
