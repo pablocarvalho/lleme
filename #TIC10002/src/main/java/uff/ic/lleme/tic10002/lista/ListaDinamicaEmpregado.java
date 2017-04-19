@@ -6,6 +6,17 @@ public class ListaDinamicaEmpregado {
 
     private No primeiro = null;
 
+    private class No {
+
+        public Object conteudo = null;
+        public No proximo = null;
+
+        public No(Empregado emp) {
+            conteudo = emp;
+        }
+
+    }
+
     public void incluir(Empregado emp) {
         if (primeiro == null)
             primeiro = new No(emp);
