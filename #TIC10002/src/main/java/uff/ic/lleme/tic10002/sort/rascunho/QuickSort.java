@@ -2,7 +2,7 @@ package uff.ic.lleme.tic10002.sort.rascunho;
 
 public class QuickSort {
 
-    private static int[] lista = {3, 6, 10, 1, 34, 13};
+    private static int[] lista = {7, 81, 14, 52, 31, 43, 4, 3, 7, 31};
 
     public static void main(String[] args) {
         quickSort(lista);
@@ -16,6 +16,7 @@ public class QuickSort {
     private static void quickSort(int[] lista, int p, int r) {
         if (p < r) {
             int q = partition(lista, p, r);
+            print(lista);
             quickSort(lista, p, q - 1);
             quickSort(lista, q + 1, r);
         }
@@ -33,6 +34,15 @@ public class QuickSort {
         lista[i] = lista[r];
         lista[r] = aux;
         return i;
+    }
+
+    private static void print(int[] lista) {
+        String[] listaAux = new String[lista.length];
+        for (int i = 0; i < lista.length; i++)
+            listaAux[i] = "" + lista[i];
+
+        System.out.print("{" + String.join(",", listaAux) + "}");
+        System.out.println("");
     }
 
 }
