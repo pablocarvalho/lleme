@@ -13,7 +13,6 @@ public class P120171Q2 {
     }
 
     private No primeiro = null;
-    private No corrente = null;
     private int tamanho = 0;
 
     public void incluir(int elemento) {
@@ -25,18 +24,15 @@ public class P120171Q2 {
 
     public P120171Q2 obter(int n) {
         P120171Q2 selecao = new P120171Q2();
-        corrente = primeiro;
-        return obter(selecao, n, 0);
+        return obter(selecao, primeiro, 0, n);
     }
 
-    public P120171Q2 obter(P120171Q2 selecao, int n, int i) {
+    public P120171Q2 obter(P120171Q2 selecao, No no, int i, int n) {
         int posInvertida = tamanho - i - 1;
-        if (posInvertida < n)
-            selecao.incluir(corrente.conteudo);
-
         if (posInvertida >= 0) {
-            corrente = corrente.proximo;
-            obter(selecao, n, i++);
+            if (posInvertida < n)
+                selecao.incluir(no.conteudo);
+            obter(selecao, no.proximo, n, i++);
         }
         return selecao;
     }
