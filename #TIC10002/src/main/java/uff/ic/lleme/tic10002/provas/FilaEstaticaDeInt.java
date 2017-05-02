@@ -11,7 +11,7 @@ public class FilaEstaticaDeInt extends ListaEstatica {
     }
 
     public Integer desenfileirar() {
-        return super.excluir(super.tamanho());
+        return super.excluir(0);
     }
 
 }

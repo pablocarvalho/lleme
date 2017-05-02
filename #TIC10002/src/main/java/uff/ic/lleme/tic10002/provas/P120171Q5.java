@@ -11,6 +11,6 @@ public class P120171Q5 extends ListaEstaticaDeFilas {
     }
 
     public FilaEstaticaDeInt desenfileirar() {
-        return super.excluir(super.tamanho());
+        return super.excluir(0);
     }
 }

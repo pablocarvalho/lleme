@@ -36,20 +36,4 @@ public class ListaEstaticaDeFilas {
         return resultado;
     }
 
-    private FilaEstaticaDeInt obter(int pos) {
-        if (pos >= 0 && pos < tamanho)
-            return elementos[pos];
-        else
-            return null;
-    }
-
-    public ListaEstaticaDeFilas uniao(ListaEstaticaDeFilas lista) {
-        ListaEstaticaDeFilas resultado = new ListaEstaticaDeFilas(this.tamanho + lista.tamanho());
-        for (int j = 0; j < elementos.length; j++)
-            resultado.incluir(this.elementos[j]);
-        for (int j = 0; j < lista.tamanho(); j++)
-            resultado.incluir(lista.obter(j));
-        return resultado;
-    }
-
 }
