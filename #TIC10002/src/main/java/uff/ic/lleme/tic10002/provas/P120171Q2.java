@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.provas;
 
-public class ListaEncadeada {
+public class P120171Q2 {
 
     private class No {
 
@@ -23,13 +23,13 @@ public class ListaEncadeada {
         tamanho++;
     }
 
-    public ListaEncadeada obter(int n) {
-        ListaEncadeada selecao = new ListaEncadeada();
+    public P120171Q2 obter(int n) {
+        P120171Q2 selecao = new P120171Q2();
         corrente = primeiro;
         return obter(selecao, n, 0);
     }
 
-    public ListaEncadeada obter(ListaEncadeada selecao, int n, int i) {
+    public P120171Q2 obter(P120171Q2 selecao, int n, int i) {
         int posInvertida = tamanho - i - 1;
         if (posInvertida < n)
             selecao.incluir(corrente.conteudo);

@@ -1,8 +1,8 @@
 package uff.ic.lleme.tic10002.provas;
 
-public class FilaEstaticaDeFilas extends ListaEstaticaDeFilas {
+public class P120171Q5 extends ListaEstaticaDeFilas {
 
-    public FilaEstaticaDeFilas(int tamanho) {
+    public P120171Q5(int tamanho) {
         super(tamanho);
     }
 
