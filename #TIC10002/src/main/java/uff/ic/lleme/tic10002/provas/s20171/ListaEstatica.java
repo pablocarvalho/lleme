@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.provas;
+package uff.ic.lleme.tic10002.provas.s20171;
 
 public class ListaEstatica {
 
@@ -50,10 +50,17 @@ public class ListaEstatica {
 
     public ListaEstatica uniao(ListaEstatica lista) {
         ListaEstatica resultado = new ListaEstatica(this.tamanho + lista.tamanho());
-        for (int j = 0; j < elementos.length; j++)
-            resultado.incluir(this.elementos[j]);
-        for (int j = 0; j < lista.tamanho(); j++)
-            resultado.incluir(lista.obter(j));
+        Integer i = 0, e1, e2;
+
+        do {
+            e1 = obter(i);
+            e2 = lista.obter(i);
+            i++;
+            if (e1 != null)
+                resultado.incluir(e1);
+            if (e2 != null)
+                resultado.incluir(e2);
+        } while (e1 != null || e2 != null);
         return resultado;
     }
 

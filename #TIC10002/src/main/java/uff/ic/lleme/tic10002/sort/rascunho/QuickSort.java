@@ -10,13 +10,14 @@ public class QuickSort {
     }
 
     private static void quickSort(int[] lista) {
+        print(lista, 1);
         quickSort(lista, 0, lista.length - 1);
+        print(lista, 1);
     }
 
     private static void quickSort(int[] lista, int p, int r) {
         if (p < r) {
             int q = partition(lista, p, r);
-            print(lista);
             quickSort(lista, p, q - 1);
             quickSort(lista, q + 1, r);
         }
@@ -29,19 +30,24 @@ public class QuickSort {
                 int aux = lista[++i];
                 lista[i] = lista[j];
                 lista[j] = aux;
+                print(lista, 2);
             }
         int aux = lista[++i];
         lista[i] = lista[r];
         lista[r] = aux;
+        print(lista, 1);
         return i;
     }
 
-    private static void print(int[] lista) {
+    private static void print(int[] lista, int tipo) {
         String[] listaAux = new String[lista.length];
         for (int i = 0; i < lista.length; i++)
             listaAux[i] = "" + lista[i];
 
-        System.out.print("{" + String.join(",", listaAux) + "}");
+        if (tipo == 1)
+            System.out.print("--> {" + String.join(",", listaAux) + "}");
+        else
+            System.out.print("    {" + String.join(",", listaAux) + "}");
         System.out.println("");
     }
 

@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.provas;
+package uff.ic.lleme.tic10002.provas.s20171;
 
 public class FilaEstaticaDeInt extends ListaEstatica {
 

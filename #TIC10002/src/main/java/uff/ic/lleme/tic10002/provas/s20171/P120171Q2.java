@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.provas;
+package uff.ic.lleme.tic10002.provas.s20171;
 
 public class P120171Q2 {
 
@@ -23,17 +23,17 @@ public class P120171Q2 {
     }
 
     public P120171Q2 obter(int n) {
-        P120171Q2 selecao = new P120171Q2();
-        return obter(selecao, primeiro, 0, n);
+        P120171Q2 resultado = new P120171Q2();
+        return obter(resultado, primeiro, 0, n);
     }
 
-    public P120171Q2 obter(P120171Q2 selecao, No no, int i, int n) {
+    public P120171Q2 obter(P120171Q2 resultado, No no, int i, int n) {
         int posInvertida = tamanho - i - 1;
         if (posInvertida >= 0) {
             if (posInvertida < n)
-                selecao.incluir(no.conteudo);
-            obter(selecao, no.proximo, n, i++);
+                resultado.incluir(no.conteudo);
+            obter(resultado, no.proximo, n, i++);
         }
-        return selecao;
+        return resultado;
     }
 }
