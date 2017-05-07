@@ -1,5 +1,7 @@
 package uff.ic.lleme.tic10002.provas.s20171;
 
+import java.util.Arrays;
+
 public class QuickSortAdriel {
 
     private static int tam = 10;
@@ -56,20 +58,11 @@ public class QuickSortAdriel {
         return 0;
     }
 
-    private void imprime() {
-        for (int i = 0; i < tam; i++)
-            System.out.println(vetor[i] + "   ");
-    }
-
     private static void print(int[] lista, int tipo) {
-        String[] listaAux = new String[lista.length];
-        for (int i = 0; i < lista.length; i++)
-            listaAux[i] = "" + lista[i];
-
         if (tipo == 1)
-            System.out.print("--> {" + String.join(",", listaAux) + "}");
+            System.out.print("--> " + Arrays.toString(lista));
         else
-            System.out.print("    {" + String.join(",", listaAux) + "}");
+            System.out.print("    " + Arrays.toString(lista));
         System.out.println("");
     }
 }
