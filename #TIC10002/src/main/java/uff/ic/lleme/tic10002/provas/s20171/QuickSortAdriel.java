@@ -2,61 +2,63 @@ package uff.ic.lleme.tic10002.provas.s20171;
 
 public class QuickSortAdriel {
 
-    private static int[] lista = {7, 81, 14, 52, 31, 43, 4, 3, 7, 31};
+    private static int tam = 10;
+    private static int[] vetor = {7, 81, 14, 52, 31, 43, 4, 3, 7, 31};
 
     public static void main(String[] args) {
-        quickSort(lista);
+        quickSort(vetor);
         System.out.println("fim");
     }
 
-    private static void quickSort(int[] lista) {
-        print(lista, 1);
-        quickSort(lista, 0, lista.length - 1);
-        print(lista, 1);
+    public static int ordena() {
+        return ordena(0, tam - 1);
     }
 
-    private static void quickSort(int[] vet, int inicio, int fim) {
-        /* inicia os indices */
-        int i = inicio;
-        int j = fim;
-        int tmp;
-        /* verifica se ainda é necessário a ordenacao (> 2 elementos)  */
-        if (i >= j)
-            return;
-        /*  considera o elemento central como pivo*/
-        int pivo = vet[(int) (inicio + fim) / 2];
-        /* 'corre' todo o vetor até que os indices se encontrem */
-        while (i < j) {
-            /* 'procura' por um elemento menor ou igual ao pivo*/
-            while (i < j && vet[i] < pivo)
-                i++;
-            /* 'procura' por um elemento maior ou igual ao pivo*/
-            while (i < j && vet[j] > pivo)
-                j--;
-            /* troca os elementos encontrados se os indices nao tivem se cruzado*/
-            if (i < j) {
-                tmp = vet[i];
-                vet[i] = vet[j];
-                vet[j] = tmp;
-                i++;
-                j--;
-                print(lista, 2);
+    public static int ordena(int inicio, int fim) {
+        if (inicio <= fim) {
+            int pivo = vetor[(inicio + fim) / 2];
+
+            int i = inicio;
+            int j = fim;
+
+            while (i < j) {
+                while (vetor[i] < pivo)
+                    i++;
+                while (vetor[j] > pivo)
+                    j--;
+
+                if (i < j) {
+                    troca(i, j);
+                    if ((vetor[i] != pivo) || (vetor[(inicio + fim) / 2] == pivo))
+                        i++;
+                    if ((vetor[j] != pivo) || (vetor[(inicio + fim) / 2] == pivo))
+                        j--;
+                }
+                //DIDATICO
+                System.out.println("\nVetor: ");
+                for (int l = 0; l < tam; ++l)
+                    System.out.println(vetor[l] + "   ");
+                System.out.println("   |    pivo: ");
+
             }
+            if (j > inicio)
+                ordena(inicio, j - 1);
+            if (i < fim)
+                ordena(j + 1, fim - 1);
         }
-        /* se os indices se cruzaram, reorganiza os indices*/
-        if (j < i) {
-            tmp = j;
-            j = i;
-            i = tmp;
-        }
-        /* ordernar o subvetor da esquerda */
-        quickSort(vet, inicio, i);
-        /* se o pivo escolhido era o primeiro elemento, ordena os demais à direita*/
-        if (i == inicio)
-            quickSort(vet, i + 1, fim);
-        else
-            /* ordena o subvetor a direta*/
-            quickSort(vet, i, fim);
+        return 0;
+    }
+
+    private static int troca(int i, int j) {
+        int aux = vetor[i];
+        vetor[i] = vetor[j];
+        vetor[j] = aux;
+        return 0;
+    }
+
+    private void imprime() {
+        for (int i = 0; i < tam; i++)
+            System.out.println(vetor[i] + "   ");
     }
 
     private static void print(int[] lista, int tipo) {
