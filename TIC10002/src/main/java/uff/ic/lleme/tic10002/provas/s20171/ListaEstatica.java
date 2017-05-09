@@ -53,7 +53,7 @@ public class ListaEstatica {
         Integer i = 0, e1, e2;
 
         do {
-            e1 = obter(i);
+            e1 = this.obter(i);
             e2 = lista.obter(i);
             i++;
             if (e1 != null)

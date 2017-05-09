@@ -3,7 +3,7 @@ package uff.ic.lleme.tic10002.provas.s20171;
 public class QuickSortKid {
 
     private static int iter = 0;
-    private static int[] pivotIndexes = {2};
+    private static int[] pivotIndexes = {2, 3};
 
     public static int partition(int arr[], int left, int right) {
 

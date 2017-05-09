@@ -1,7 +1,8 @@
-package uff.ic.tic10086.examples.jena;
+package old.uff.ic.tic10086.examples.jena;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.UnsupportedEncodingException;
 import org.apache.jena.query.Dataset;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.Model;
@@ -12,6 +13,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.vocabulary.VCARD;
+import uff.ic.swlab.utils.JenaSchemaMgr;
 
 public class ConnectToTDB {
 
@@ -25,24 +27,25 @@ public class ConnectToTDB {
         }
     }
 
-    public static void run() throws FileNotFoundException {
-        String NS = "http://localhost:3030/myontology/";
+    public static void run() throws FileNotFoundException, UnsupportedEncodingException {
+        String NS = "http://localhost:8080/mydata/";
 
         // Assembler way: Make a TDB-back Jena model in the named directory.
         // This way, you can change the model being used without changing the code.
         // The assembler file is a configuration file.
         // The same assembler description will work in Fuseki.
         String assemblerFile = "./src/main/resources/conf/tdb-assembler.ttl";
+
         Dataset dataset = TDBFactory.assembleDataset(assemblerFile);
+
         // Get model inside the transaction
         Model model = dataset.getDefaultModel();
+        Model schema = JenaSchemaMgr.getSchemaOrg();
         //Model model = dataset.getNamedModel("http://localhost:3030/graph97");
 
         dataset.begin(ReadWrite.WRITE);
         model.removeAll();
-        model.getNsPrefixMap().entrySet().stream().forEach((entry) -> {
-            model.removeNsPrefix(entry.getKey());
-        });
+        model.getNsPrefixMap().clear();
         model.read(VCARD.getURI());
         model.setNsPrefix("", NS);
         model.setNsPrefix("vcard", VCARD.getURI());
@@ -53,8 +56,9 @@ public class ConnectToTDB {
         String givenName = "John";
         String familyName = "Smith";
         String fullName = givenName + " " + familyName;
+        Resource tipo = schema.getResource("http://schema.org/PerformingArtsTheater");
         Resource johnSmith
-                = model.createResource(personURI)
+                = model.createResource(personURI, tipo)
                 .addProperty(VCARD.FN, fullName)
                 .addProperty(VCARD.N,
                         model.createResource()
