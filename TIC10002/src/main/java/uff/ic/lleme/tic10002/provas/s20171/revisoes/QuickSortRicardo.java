@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.provas.s20171;
+package uff.ic.lleme.tic10002.provas.s20171.revisoes;
 
 public class QuickSortRicardo {
 //Declara variáveis globais a serem usadas em todo o algoritmo.
