@@ -41,11 +41,18 @@ public class ListaEstatica {
         return resultado;
     }
 
-    private Integer obter(int pos) {
+    public Integer obter(int pos) {
         if (pos >= 0 && pos < tamanho)
             return elementos[pos];
         else
             return null;
+    }
+
+    public boolean emLista(int elem) {
+        for (int i = 0; i < tamanho; i++)
+            if (elementos[i] == elem)
+                return true;
+        return false;
     }
 
     public ListaEstatica uniao(ListaEstatica lista) {
@@ -58,9 +65,10 @@ public class ListaEstatica {
             i++;
             if (e1 != null)
                 resultado.incluir(e1);
-            if (e2 != null)
+            if (e2 != null && !resultado.emLista(e2))
                 resultado.incluir(e2);
         } while (e1 != null || e2 != null);
+
         return resultado;
     }
 
