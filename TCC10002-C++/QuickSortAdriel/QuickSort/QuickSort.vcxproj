@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{34EE42D6-433D-4E7A-A32B-CC6E80CEB3C3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>QuickSort</RootNamespace>
+    <RootNamespace>QuickSortAdriel</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>QuickSortAdriel</ProjectName>
   </PropertyGroup>
@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="QuickSortAdriel.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

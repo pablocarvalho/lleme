@@ -13,6 +13,6 @@ public class Main {
         ArvoreUtil.No g = ArvoreUtil.filho_esq(adicao, "g");
         ArvoreUtil.No e = ArvoreUtil.filho_esq(multiplicacao2, "e");
 
-        System.out.println(ArvoreUtil.em_ordem(subtracao));
+        System.out.println(ArvoreUtil.em_ordem2(subtracao));
     }
 }

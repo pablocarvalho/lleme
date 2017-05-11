@@ -1,4 +1,4 @@
-DROP FUNCTION IF EXISTS rental_restriction_checking() CASCADE;
+﻿DROP FUNCTION IF EXISTS rental_restriction_checking() CASCADE;
 CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
     BEGIN
         IF NOT EXISTS (SELECT staff_id
@@ -25,8 +25,8 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
 
         IF (WITH
                 t1 AS (SELECT
-                           COALESCE (NEW.return_date,$$infinity$$::TIMESTAMP) -
-                           (NEW.rental_date + t3.rental_duration * $$1 day$$::INTERVAL) as delay
+                           COALESCE (t1.return_date,current_timestamp) -
+                           (t1.rental_date + t3.rental_duration * $$1 day$$::INTERVAL) as delay
                        FROM rental t1
                             INNER JOIN inventory t2 ON t2.inventory_id = t1.inventory_id
                             INNER JOIN film t3 ON t3.film_id = t2.film_id
@@ -60,7 +60,7 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
                            FROM t1
                                 INNER JOIN rental t21 ON t21.rental_date >= t1.target_date - $$6 months$$::INTERVAL
                                                          AND t21.customer_id = NEW.customer_id
-                                                         AND t21.rental_id <> NEW.rental_id
+                                                         AND t21.rental_id <> COALESCE(OLD.rental_id,NEW.rental_id)
                                 INNER JOIN inventory t22 ON t22.inventory_id = t21.inventory_id
                                 INNER JOIN film t23 ON t23.film_id = t22.film_id
                            FOR SHARE OF t21, t22, t23),

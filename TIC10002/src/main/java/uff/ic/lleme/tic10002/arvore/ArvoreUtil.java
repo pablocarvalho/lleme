@@ -90,6 +90,47 @@ public class ArvoreUtil {
             return null;
     }
 
+    public static String pre_ordem2(No no) {
+        String resultado = "";
+        if (no != null) {
+            resultado = visite(no);
+            resultado += pre_ordem2(no.direita);
+            resultado += pre_ordem2(no.esquerda);
+        }
+        return resultado;
+    }
+
+    public static String pos_ordem2(No no) {
+        String resultado = "";
+        if (no != null) {
+            resultado = pos_ordem2(no.direita);
+            resultado += pos_ordem2(no.esquerda);
+            resultado += visite(no);
+        }
+        return resultado;
+    }
+
+    public static String em_ordem2(No no) {
+        String resultado = "";
+        if (no != null) {
+            resultado = em_ordem2(no.direita);
+            resultado += visite(no);
+            resultado += em_ordem2(no.esquerda);
+        }
+        return resultado;
+    }
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
     public static String pre_ordem(No no) {
         if (no != null)
             return visite(no) + pre_ordem(direita(no)) + pre_ordem(esquerda(no));

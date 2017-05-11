@@ -7,9 +7,8 @@ using namespace std;
 
 int main() {
 	QuickSort Lista;
-	cout << "Vetor Original: ";
 	Lista.imprime();
 	Lista.ordena();
-	cout << "\n\nFinal" << endl;
+	Lista.imprime();
 	return 0;
 }
