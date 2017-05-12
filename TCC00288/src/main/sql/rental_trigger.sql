@@ -58,7 +58,7 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
                                    COALESCE (t21.return_date,$$infinity$$::TIMESTAMP) -
                                    (t21.rental_date + t23.rental_duration * $$1 day$$::INTERVAL) as delay
                            FROM t1
-                                INNER JOIN rental t21 ON t21.rental_date >= t1.target_date - $$6 months$$::INTERVAL
+                                INNER JOIN rental t21 ON t21.rental_date between t1.target_date - $$6 months$$::INTERVAL AND t21.rental_date <= t1.target_date
                                                          AND t21.customer_id = NEW.customer_id
                                                          AND t21.rental_id <> COALESCE(OLD.rental_id,NEW.rental_id)
                                 INNER JOIN inventory t22 ON t22.inventory_id = t21.inventory_id
@@ -69,13 +69,10 @@ CREATE OR REPLACE FUNCTION rental_restriction_checking() RETURNS trigger AS '
                                    COALESCE (rt.return_date,$$infinity$$::TIMESTAMP) -
                                    (rt.rental_date + t33.rental_duration * $$1 day$$::INTERVAL) as delay
                                FROM t1
-                                    INNER JOIN rt ON trt.rental_date >= t1.target_date - $$6 months$$::INTERVAL
+                                    INNER JOIN rt ON rt.rental_date between t1.target_date - $$6 months$$::INTERVAL AND rt.rental_date <= t1.target_date
                                                      AND rt.customer_id = NEW.customer_id
                                     INNER JOIN inventory t32 ON t32.inventory_id = rt.inventory_id
-                                    INNER JOIN film t33 ON t33.film_id = t32.film_id
-                               WHERE rt.customer_id = NEW.customer_id
-                                     AND rt.rental_id <> NEW.rental_id
-                                     AND rt.rental_date >= NEW.rental_date - $$6 months$$::INTERVAL)
+                                    INNER JOIN film t33 ON t33.film_id = t32.film_id)
                    SELECT t4.target_date, SUM(t4.delay) AS delay
                    FROM (SELECT * FROM t2 UNION SELECT * FROM t3) t4
                    WHERE t4.delay > $$0 microseconds$$::INTERVAL
