@@ -1,8 +1,9 @@
 package uff.ic.lleme.tic10002.lista;
 
+import uff.ic.lleme.tic10002.ColecaoEmpregado;
 import uff.ic.lleme.tic10002.Empregado;
 
-public class ListaEmpregado {
+public class ListaEstaticaEmpregado implements ColecaoEmpregado {
 
     private final Empregado[] lista = new Empregado[1000];
     private int tamanho = 0;
@@ -11,12 +12,13 @@ public class ListaEmpregado {
         return tamanho;
     }
 
-    public void incluir(Empregado emp) {
+    @Override
+    public Empregado incluir(Empregado emp) {
         if (tamanho < lista.length) {
             for (int i = 0; i < tamanho; i++)
                 if (lista[i].cpf.equals(emp.cpf))
-                    return;
-            lista[tamanho++] = emp;
+                    return null;
+            return lista[tamanho++] = emp;
         } else
             throw new IndexOutOfBoundsException();
 
@@ -38,6 +40,7 @@ public class ListaEmpregado {
             throw new NullPointerException();
     }
 
+    @Override
     public Empregado excluir(String cpf) {
         Empregado resultado = null;
         for (int i = 0; i < tamanho; i++) {
@@ -55,6 +58,7 @@ public class ListaEmpregado {
         return resultado;
     }
 
+    @Override
     public Empregado buscar(String cpf) {
         for (int i = 0; i < tamanho; i++)
             if (lista[i].cpf.equals(cpf))

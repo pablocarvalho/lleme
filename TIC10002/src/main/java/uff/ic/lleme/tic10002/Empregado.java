@@ -15,4 +15,18 @@ public class Empregado extends Entidade<String, Empregado> {
         return cpf;
     }
 
+    public Integer compararChave(String cpf) {
+        if (cpf != null)
+            return getChave().compareTo(cpf);
+        else
+            return null;
+    }
+
+    public Integer compararInstancia(Empregado empregado) {
+        if (empregado != null && empregado.cpf != null)
+            return getChave().compareTo(empregado.cpf);
+        else
+            return null;
+    }
+
 }

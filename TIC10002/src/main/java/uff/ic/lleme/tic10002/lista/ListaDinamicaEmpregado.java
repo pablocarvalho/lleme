@@ -1,8 +1,9 @@
 package uff.ic.lleme.tic10002.lista;
 
+import uff.ic.lleme.tic10002.ColecaoEmpregado;
 import uff.ic.lleme.tic10002.Empregado;
 
-public class ListaDinamicaEmpregado {
+public class ListaDinamicaEmpregado implements ColecaoEmpregado {
 
     private No primeiro = null;
 
@@ -17,13 +18,15 @@ public class ListaDinamicaEmpregado {
 
     }
 
-    public void incluir(Empregado emp) {
-        if (primeiro == null)
+    public Empregado incluir(Empregado emp) {
+        if (primeiro == null) {
             primeiro = new No(emp);
-        else {
+            return emp;
+        } else {
             No novo = new No(emp);
             novo.proximo = this.primeiro;
             this.primeiro = novo;
+            return emp;
         }
     }
 
