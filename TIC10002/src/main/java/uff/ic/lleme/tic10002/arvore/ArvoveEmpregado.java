@@ -63,7 +63,7 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return esquerda != null && esquerda.ehFolha() || direita != null && direita.ehFolha();
         }
 
-        private No connectarPaiADireita(No filho) {
+        private No connectarADireita(No filho) {
             if (pai != null) {
                 pai.direita = filho;
                 if (filho != null)
@@ -72,7 +72,7 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return filho;
         }
 
-        private No connectarPaiAEsquerda(No filho) {
+        private No connectarAEsquerda(No filho) {
             if (pai != null) {
                 pai.esquerda = filho;
                 if (filho != null)
@@ -146,15 +146,15 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         else if (no.conteudo.compararInstancia(empregado) < 0)
             if (no.esquerda == null) {
                 quantidadeNos++;
-                return (no.connectarPaiAEsquerda(new No(empregado))).conteudo;
+                return (no.connectarAEsquerda(new No(empregado))).conteudo;
             } else
-                return incluir(no.direita, empregado);
+                return incluir(no.esquerda, empregado);
         else if (no.conteudo.compararInstancia(empregado) > 0)
             if (no.direita == null) {
                 quantidadeNos++;
-                return (no.connectarPaiADireita(new No(empregado))).conteudo;
+                return (no.connectarADireita(new No(empregado))).conteudo;
             } else
-                return incluir(no.esquerda, empregado);
+                return incluir(no.direita, empregado);
         else
             return null;
     }
@@ -173,24 +173,24 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             excluido = no;
             if (no.ehFolha())
                 if (no.ehDireita())
-                    no.connectarPaiADireita(null);
+                    no.connectarADireita(null);
                 else
-                    no.connectarPaiAEsquerda(null);
+                    no.connectarAEsquerda(null);
             else if (no.temFilhoUnico())
                 if (no.ehDireita())
-                    no.connectarPaiADireita(no.filhoUnico());
+                    no.connectarADireita(no.filhoUnico());
                 else
-                    no.connectarPaiAEsquerda(no.filhoUnico());
+                    no.connectarAEsquerda(no.filhoUnico());
             else if (no.temFolha())
                 if (no.ehDireita()) {
                     No filhoFolha = no.filhoFolha();
                     No irmaoFilhoFolha = filhoFolha.irmao();
-                    no.connectarPaiADireita(filhoFolha);
+                    no.connectarADireita(filhoFolha);
                     filhoFolha.conectar(irmaoFilhoFolha);
                 } else {
                     No filhoFolha = no.filhoFolha();
                     No irmaoFilhoFolha = filhoFolha.irmao();
-                    no.connectarPaiAEsquerda(filhoFolha);
+                    no.connectarAEsquerda(filhoFolha);
                     filhoFolha.conectar(irmaoFilhoFolha);
                 }
             else if (no.ehDireita())
