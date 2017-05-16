@@ -11,24 +11,28 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
     private class No {
 
-        public Empregado conteudo = null;
+        private Empregado conteudo = null;
         private No pai = null;
         private No esquerda = null;
         private No direita = null;
 
-        private boolean ehValido(Empregado empregado) {
-            return empregado != null && empregado.getChave() != null;
-        }
-
-        public No() throws InvalidObjectException {
-            throw new InvalidObjectException("Conteudo invalido.");
+        private No() throws InvalidObjectException {
+            throw new InvalidObjectException("Empregado desconhecido.");
         }
 
         public No(Empregado empregado) throws InvalidObjectException {
             if (ehValido(empregado))
                 this.conteudo = empregado;
             else
-                throw new InvalidObjectException("Conteudo invalido.");
+                throw new InvalidObjectException("Empregado desconhecido ou sem identificacao.");
+        }
+
+        private boolean ehValido(Empregado empregado) {
+            return empregado != null && empregado.getChave() != null;
+        }
+
+        public Empregado getConteudo() {
+            return conteudo;
         }
 
         private boolean ehEsquerda() {
@@ -104,17 +108,19 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         }
 
         private No conectar(No filho) {
-            if (filho != null && filho.conteudo != null)
-                if (conteudo.compararInstancia(filho.conteudo) < 0) {
+            if (filho != null)
+                if (getConteudo().compararInstancia(filho.getConteudo()) < 0) {
                     esquerda = filho;
                     filho.pai = this;
                     return filho;
-                } else if (conteudo.compararInstancia(filho.conteudo) > 0) {
+                } else if (getConteudo().compararInstancia(filho.getConteudo()) > 0) {
                     direita = filho;
                     filho.pai = this;
                     return filho;
-                }
-            return null;
+                } else
+                    return null;
+            else
+                return null;
         }
     }
 
@@ -129,9 +135,9 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
     private Empregado buscar(No no, String cpf) {
         if (no != null)
-            if (no.conteudo.compararChave(cpf) == 0)
-                return no.conteudo;
-            else if (no.conteudo.compararChave(cpf) < 0)
+            if (no.getConteudo().compararChave(cpf) == 0)
+                return no.getConteudo();
+            else if (no.getConteudo().compararChave(cpf) < 0)
                 return buscar(no.esquerda, cpf);
             else
                 return buscar(no.direita, cpf);
@@ -145,27 +151,26 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         if (raiz == null) {
             raiz = new No(empregado);
             quantidadeNos = 1;
-            return raiz.conteudo;
-        } else
-            return incluir(raiz, empregado);
-
+            return raiz.getConteudo();
+        }
+        return incluir(raiz, empregado);
     }
 
     private Empregado incluir(No no, Empregado empregado) throws InvalidObjectException {
-        if (no.conteudo.compararInstancia(empregado) == 0)
-            return null;
-        else if (no.conteudo.compararInstancia(empregado) < 0)
+        if (no.getConteudo().compararInstancia(empregado) == 0)
+            throw new InvalidObjectException("Chave duplicada.");
+        else if (no.getConteudo().compararInstancia(empregado) < 0)
             if (no.esquerda == null) {
                 No filho = no.conectar(new No(empregado));
                 quantidadeNos++;
-                return filho.conteudo;
+                return filho.getConteudo();
             } else
                 return incluir(no.esquerda, empregado);
-        else if (no.conteudo.compararInstancia(empregado) > 0)
+        else if (no.getConteudo().compararInstancia(empregado) > 0)
             if (no.direita == null) {
                 No filho = no.conectar(new No(empregado));
                 quantidadeNos++;
-                return filho.conteudo;
+                return filho.getConteudo();
             } else
                 return incluir(no.direita, empregado);
         else
@@ -174,15 +179,14 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
     @Override
     public Empregado excluir(String cpf) {
-        if (ehValido(raiz, cpf))
+        if (raiz != null)
             return excluir(raiz, cpf);
-        else
-            return null;
+        return null;
     }
 
     private Empregado excluir(No no, String cpf) {
-        No excluido = null;
-        if (no.conteudo.compararChave(cpf) == 0) {
+        No excluido;
+        if (no.getConteudo().compararChave(cpf) == 0) {
             excluido = no;
             if (no.ehFolha())
                 if (no.ehDireita())
@@ -210,10 +214,10 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
                 no.pai.direita = null; //complatar
             else
                 no.pai.esquerda = null; // completar
-            return excluido.conteudo;
-        } else if (no.conteudo.compararChave(cpf) < 0)
+            return excluido.getConteudo();
+        } else if (no.getConteudo().compararChave(cpf) < 0)
             return excluir(no.direita, cpf);
-        else if (no.conteudo.compararChave(cpf) > 0)
+        else if (no.getConteudo().compararChave(cpf) > 0)
             return excluir(no.esquerda, cpf);
         else
             return null;

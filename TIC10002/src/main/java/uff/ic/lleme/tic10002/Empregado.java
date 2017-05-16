@@ -12,20 +12,18 @@ public class Empregado extends Entidade<String, Empregado> {
 
     @Override
     public String getChave() {
-        if (cpf == null)
-            return "";
         return cpf;
     }
 
     public Integer compararChave(String cpf) {
-        if (cpf != null)
+        if (getChave() != null && cpf != null)
             return getChave().compareTo(cpf);
         else
             return null;
     }
 
     public Integer compararInstancia(Empregado empregado) {
-        if (empregado != null && empregado.cpf != null)
+        if (getChave() != null && empregado != null && empregado.getChave() != null)
             return getChave().compareTo(empregado.cpf);
         else
             return null;
