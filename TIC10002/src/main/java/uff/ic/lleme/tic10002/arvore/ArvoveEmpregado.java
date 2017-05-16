@@ -156,23 +156,23 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         return incluir(raiz, new No(empregado));
     }
 
-    private Empregado incluir(No pai, No filho) throws InvalidObjectException {
-        if (pai.getConteudo().compararInstancia(filho.getConteudo()) == 0)
+    private Empregado incluir(No no, No novo) throws InvalidObjectException {
+        if (no.getConteudo().compararInstancia(novo.getConteudo()) == 0)
             throw new InvalidObjectException("Chave duplicada.");
-        else if (pai.getConteudo().compararInstancia(filho.getConteudo()) < 0)
-            if (pai.esquerda == null) {
-                No resultado = pai.conectar(filho);
+        else if (no.getConteudo().compararInstancia(novo.getConteudo()) < 0)
+            if (no.esquerda == null) {
+                No resultado = no.conectar(novo);
                 quantidadeNos++;
                 return resultado.getConteudo();
             } else
-                return incluir(pai.esquerda, filho);
-        else if (pai.getConteudo().compararInstancia(filho.getConteudo()) > 0)
-            if (pai.direita == null) {
-                No resultado = pai.conectar(filho);
+                return incluir(no.esquerda, novo);
+        else if (no.getConteudo().compararInstancia(novo.getConteudo()) > 0)
+            if (no.direita == null) {
+                No resultado = no.conectar(novo);
                 quantidadeNos++;
                 return resultado.getConteudo();
             } else
-                return incluir(pai.direita, filho);
+                return incluir(no.direita, novo);
         else
             return null;
     }
