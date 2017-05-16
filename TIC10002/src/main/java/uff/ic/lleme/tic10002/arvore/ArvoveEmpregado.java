@@ -133,14 +133,14 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         return buscar(raiz, cpf);
     }
 
-    private Empregado buscar(No no, String cpf) {
-        if (no != null)
-            if (no.getConteudo().compararChave(cpf) == 0)
-                return no.getConteudo();
-            else if (no.getConteudo().compararChave(cpf) < 0)
-                return buscar(no.esquerda, cpf);
+    private Empregado buscar(No noCorrente, String cpf) {
+        if (noCorrente != null)
+            if (noCorrente.getConteudo().compararChave(cpf) == 0)
+                return noCorrente.getConteudo();
+            else if (noCorrente.getConteudo().compararChave(cpf) < 0)
+                return buscar(noCorrente.esquerda, cpf);
             else
-                return buscar(no.direita, cpf);
+                return buscar(noCorrente.direita, cpf);
         else
             return null;
 
