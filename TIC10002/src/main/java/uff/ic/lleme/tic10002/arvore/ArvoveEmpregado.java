@@ -19,11 +19,6 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             this.conteudo = empregado;
         }
 
-        private No(Empregado empregado, No pai) {
-            this.conteudo = empregado;
-            this.pai = pai;
-        }
-
         private boolean ehEsquerda() {
             if (pai != null)
                 return pai.esquerda == this;
@@ -68,20 +63,22 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return esquerda != null && esquerda.ehFolha() || direita != null && direita.ehFolha();
         }
 
-        private void connectarPaiADireita(No filho) {
+        private No connectarPaiADireita(No filho) {
             if (pai != null) {
                 pai.direita = filho;
                 if (filho != null)
                     filho.pai = pai;
             }
+            return filho;
         }
 
-        private void connectarPaiAEsquerda(No filho) {
+        private No connectarPaiAEsquerda(No filho) {
             if (pai != null) {
                 pai.esquerda = filho;
                 if (filho != null)
                     filho.pai = pai;
             }
+            return filho;
         }
 
         private No irmao() {
@@ -94,7 +91,7 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
                 return null;
         }
 
-        private void conectar(No filho) {
+        private No conectar(No filho) {
             if (filho != null && filho.conteudo != null && conteudo.compararInstancia(filho.conteudo) < 0) {
                 direita = filho;
                 filho.pai = this;
@@ -102,11 +99,16 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
                 direita = filho;
                 filho.pai = this;
             }
+            return filho;
         }
     }
 
     private static boolean ehValido(Empregado empregado) {
-        return empregado != null && empregado.cpf != null;
+        return empregado != null && empregado.getChave() != null;
+    }
+
+    private boolean ehValido(No no, String cpf) {
+        return no != null && cpf != null;
     }
 
     @Override
@@ -114,14 +116,14 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         return buscar(raiz, cpf);
     }
 
-    private Empregado buscar(No raiz, String cpf) {
-        if (raiz != null)
-            if (raiz.conteudo.compararChave(cpf) == 0)
-                return raiz.conteudo;
-            else if (raiz.conteudo.compararChave(cpf) < 0)
-                return buscar(raiz.esquerda, cpf);
+    private Empregado buscar(No no, String cpf) {
+        if (no != null)
+            if (no.conteudo.compararChave(cpf) == 0)
+                return no.conteudo;
+            else if (no.conteudo.compararChave(cpf) < 0)
+                return buscar(no.esquerda, cpf);
             else
-                return buscar(raiz.direita, cpf);
+                return buscar(no.direita, cpf);
         else
             return null;
 
@@ -131,75 +133,75 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
     public Empregado incluir(Empregado empregado) {
         if (ehValido(empregado))
             if (raiz == null) {
-                quantidadeNos++;
+                quantidadeNos = 1;
                 return (raiz = new No(empregado)).conteudo;
             } else
                 return incluir(raiz, empregado);
         return null;
     }
 
-    private Empregado incluir(No raiz, Empregado empregado) {
-        if (raiz.conteudo.compararInstancia(empregado) == 0)
+    private Empregado incluir(No no, Empregado empregado) {
+        if (no.conteudo.compararInstancia(empregado) == 0)
             return null;
-        else if (raiz.conteudo.compararInstancia(empregado) < 0)
-            if (raiz.esquerda == null) {
+        else if (no.conteudo.compararInstancia(empregado) < 0)
+            if (no.esquerda == null) {
                 quantidadeNos++;
-                return (raiz.esquerda = new No(empregado, raiz)).conteudo;
+                return (no.connectarPaiAEsquerda(new No(empregado))).conteudo;
             } else
-                return incluir(raiz.direita, empregado);
-        else if (raiz.conteudo.compararInstancia(empregado) > 0)
-            if (raiz.direita == null) {
+                return incluir(no.direita, empregado);
+        else if (no.conteudo.compararInstancia(empregado) > 0)
+            if (no.direita == null) {
                 quantidadeNos++;
-                return (raiz.direita = new No(empregado, raiz)).conteudo;
+                return (no.connectarPaiADireita(new No(empregado))).conteudo;
             } else
-                return incluir(raiz.esquerda, empregado);
+                return incluir(no.esquerda, empregado);
         else
             return null;
     }
 
     @Override
     public Empregado excluir(String cpf) {
-        return excluir(raiz, cpf);
+        if (ehValido(raiz, cpf))
+            return excluir(raiz, cpf);
+        else
+            return null;
     }
 
-    private Empregado excluir(No raiz, String cpf) {
+    private Empregado excluir(No no, String cpf) {
         No excluido = null;
-        if (raiz != null && cpf != null)
-            if (raiz.conteudo.compararChave(cpf) == 0) {
-                excluido = raiz;
-                if (raiz.ehFolha())
-                    if (raiz.ehDireita())
-                        raiz.connectarPaiADireita(null);
-                    else
-                        raiz.connectarPaiAEsquerda(null);
-                else if (raiz.temFilhoUnico())
-                    if (raiz.ehDireita())
-                        raiz.connectarPaiADireita(raiz.filhoUnico());
-                    else
-                        raiz.connectarPaiAEsquerda(raiz.filhoUnico());
-                else if (raiz.temFolha())
-                    if (raiz.ehDireita()) {
-                        No filhoFolha = raiz.filhoFolha();
-                        No irmaoFilhoFolha = filhoFolha.irmao();
-                        raiz.connectarPaiADireita(filhoFolha);
-                        filhoFolha.conectar(irmaoFilhoFolha);
-                    } else {
-                        No filhoFolha = raiz.filhoFolha();
-                        No irmaoFilhoFolha = filhoFolha.irmao();
-                        raiz.connectarPaiAEsquerda(filhoFolha);
-                        filhoFolha.conectar(irmaoFilhoFolha);
-                    }
-                else if (raiz.ehDireita())
-                    raiz.pai.direita = null; //complatar
+        if (no.conteudo.compararChave(cpf) == 0) {
+            excluido = no;
+            if (no.ehFolha())
+                if (no.ehDireita())
+                    no.connectarPaiADireita(null);
                 else
-                    raiz.pai.esquerda = null; // completar
-                return excluido.conteudo;
-            } else if (raiz.conteudo.compararChave(cpf) < 0)
-                return excluir(raiz.direita, cpf);
-            else if (raiz.conteudo.compararChave(cpf) > 0)
-                return excluir(raiz.esquerda, cpf);
+                    no.connectarPaiAEsquerda(null);
+            else if (no.temFilhoUnico())
+                if (no.ehDireita())
+                    no.connectarPaiADireita(no.filhoUnico());
+                else
+                    no.connectarPaiAEsquerda(no.filhoUnico());
+            else if (no.temFolha())
+                if (no.ehDireita()) {
+                    No filhoFolha = no.filhoFolha();
+                    No irmaoFilhoFolha = filhoFolha.irmao();
+                    no.connectarPaiADireita(filhoFolha);
+                    filhoFolha.conectar(irmaoFilhoFolha);
+                } else {
+                    No filhoFolha = no.filhoFolha();
+                    No irmaoFilhoFolha = filhoFolha.irmao();
+                    no.connectarPaiAEsquerda(filhoFolha);
+                    filhoFolha.conectar(irmaoFilhoFolha);
+                }
+            else if (no.ehDireita())
+                no.pai.direita = null; //complatar
             else
-                return null;
+                no.pai.esquerda = null; // completar
+            return excluido.conteudo;
+        } else if (no.conteudo.compararChave(cpf) < 0)
+            return excluir(no.direita, cpf);
+        else if (no.conteudo.compararChave(cpf) > 0)
+            return excluir(no.esquerda, cpf);
         else
             return null;
     }
