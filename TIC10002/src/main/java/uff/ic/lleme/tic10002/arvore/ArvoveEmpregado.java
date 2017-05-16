@@ -156,14 +156,14 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return null;
         else if (no.conteudo.compararInstancia(empregado) < 0)
             if (no.esquerda == null) {
-                No filho = no.connectarPaiAEsquerda(new No(empregado));
+                No filho = no.conectar(new No(empregado));
                 quantidadeNos++;
                 return filho.conteudo;
             } else
                 return incluir(no.esquerda, empregado);
         else if (no.conteudo.compararInstancia(empregado) > 0)
             if (no.direita == null) {
-                No filho = no.connectarPaiADireita(new No(empregado));
+                No filho = no.conectar(new No(empregado));
                 quantidadeNos++;
                 return filho.conteudo;
             } else
