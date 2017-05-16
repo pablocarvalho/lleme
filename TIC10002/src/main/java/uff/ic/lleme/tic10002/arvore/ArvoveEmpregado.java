@@ -1,5 +1,6 @@
 package uff.ic.lleme.tic10002.arvore;
 
+import java.io.InvalidObjectException;
 import uff.ic.lleme.tic10002.ColecaoEmpregado;
 import uff.ic.lleme.tic10002.Empregado;
 
@@ -10,13 +11,24 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
     private class No {
 
-        private Empregado conteudo;
+        public Empregado conteudo = null;
         private No pai = null;
         private No esquerda = null;
         private No direita = null;
 
-        public No(Empregado empregado) {
-            this.conteudo = empregado;
+        private boolean ehValido(Empregado empregado) {
+            return empregado != null && empregado.getChave() != null;
+        }
+
+        public No() throws InvalidObjectException {
+            throw new InvalidObjectException("Conteudo invalido.");
+        }
+
+        public No(Empregado empregado) throws InvalidObjectException {
+            if (ehValido(empregado))
+                this.conteudo = empregado;
+            else
+                throw new InvalidObjectException("Conteudo invalido.");
         }
 
         private boolean ehEsquerda() {
@@ -63,7 +75,7 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return esquerda != null && esquerda.ehFolha() || direita != null && direita.ehFolha();
         }
 
-        private No connectarADireita(No filho) {
+        private No connectarPaiADireita(No filho) {
             if (pai != null) {
                 pai.direita = filho;
                 if (filho != null)
@@ -72,7 +84,7 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             return filho;
         }
 
-        private No connectarAEsquerda(No filho) {
+        private No connectarPaiAEsquerda(No filho) {
             if (pai != null) {
                 pai.esquerda = filho;
                 if (filho != null)
@@ -92,19 +104,18 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         }
 
         private No conectar(No filho) {
-            if (filho != null && filho.conteudo != null && conteudo.compararInstancia(filho.conteudo) < 0) {
-                direita = filho;
-                filho.pai = this;
-            } else if (filho != null && filho.conteudo != null && conteudo.compararInstancia(filho.conteudo) > 0) {
-                direita = filho;
-                filho.pai = this;
-            }
-            return filho;
+            if (filho != null && filho.conteudo != null)
+                if (conteudo.compararInstancia(filho.conteudo) < 0) {
+                    esquerda = filho;
+                    filho.pai = this;
+                    return filho;
+                } else if (conteudo.compararInstancia(filho.conteudo) > 0) {
+                    direita = filho;
+                    filho.pai = this;
+                    return filho;
+                }
+            return null;
         }
-    }
-
-    private static boolean ehValido(Empregado empregado) {
-        return empregado != null && empregado.getChave() != null;
     }
 
     private boolean ehValido(No no, String cpf) {
@@ -130,29 +141,31 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
     }
 
     @Override
-    public Empregado incluir(Empregado empregado) {
-        if (ehValido(empregado))
-            if (raiz == null) {
-                quantidadeNos = 1;
-                return (raiz = new No(empregado)).conteudo;
-            } else
-                return incluir(raiz, empregado);
-        return null;
+    public Empregado incluir(Empregado empregado) throws InvalidObjectException {
+        if (raiz == null) {
+            raiz = new No(empregado);
+            quantidadeNos = 1;
+            return raiz.conteudo;
+        } else
+            return incluir(raiz, empregado);
+
     }
 
-    private Empregado incluir(No no, Empregado empregado) {
+    private Empregado incluir(No no, Empregado empregado) throws InvalidObjectException {
         if (no.conteudo.compararInstancia(empregado) == 0)
             return null;
         else if (no.conteudo.compararInstancia(empregado) < 0)
             if (no.esquerda == null) {
+                No filho = no.connectarPaiAEsquerda(new No(empregado));
                 quantidadeNos++;
-                return (no.connectarAEsquerda(new No(empregado))).conteudo;
+                return filho.conteudo;
             } else
                 return incluir(no.esquerda, empregado);
         else if (no.conteudo.compararInstancia(empregado) > 0)
             if (no.direita == null) {
+                No filho = no.connectarPaiADireita(new No(empregado));
                 quantidadeNos++;
-                return (no.connectarADireita(new No(empregado))).conteudo;
+                return filho.conteudo;
             } else
                 return incluir(no.direita, empregado);
         else
@@ -173,24 +186,24 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
             excluido = no;
             if (no.ehFolha())
                 if (no.ehDireita())
-                    no.connectarADireita(null);
+                    no.connectarPaiADireita(null);
                 else
-                    no.connectarAEsquerda(null);
+                    no.connectarPaiAEsquerda(null);
             else if (no.temFilhoUnico())
                 if (no.ehDireita())
-                    no.connectarADireita(no.filhoUnico());
+                    no.connectarPaiADireita(no.filhoUnico());
                 else
-                    no.connectarAEsquerda(no.filhoUnico());
+                    no.connectarPaiAEsquerda(no.filhoUnico());
             else if (no.temFolha())
                 if (no.ehDireita()) {
                     No filhoFolha = no.filhoFolha();
                     No irmaoFilhoFolha = filhoFolha.irmao();
-                    no.connectarADireita(filhoFolha);
+                    no.connectarPaiADireita(filhoFolha);
                     filhoFolha.conectar(irmaoFilhoFolha);
                 } else {
                     No filhoFolha = no.filhoFolha();
                     No irmaoFilhoFolha = filhoFolha.irmao();
-                    no.connectarAEsquerda(filhoFolha);
+                    no.connectarPaiAEsquerda(filhoFolha);
                     filhoFolha.conectar(irmaoFilhoFolha);
                 }
             else if (no.ehDireita())

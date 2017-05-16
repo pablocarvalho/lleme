@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002;
 
-import uff.ic.lleme.tic10002.Empregado;
+import java.io.InvalidObjectException;
 
 public interface ColecaoEmpregado {
 
@@ -8,6 +8,6 @@ public interface ColecaoEmpregado {
 
     public Empregado excluir(String cpf);
 
-    public Empregado incluir(Empregado emp);
+    public Empregado incluir(Empregado emp) throws InvalidObjectException;
 
 }

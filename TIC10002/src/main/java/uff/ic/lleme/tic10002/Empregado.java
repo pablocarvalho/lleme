@@ -12,6 +12,8 @@ public class Empregado extends Entidade<String, Empregado> {
 
     @Override
     public String getChave() {
+        if (cpf == null)
+            return "";
         return cpf;
     }
 
