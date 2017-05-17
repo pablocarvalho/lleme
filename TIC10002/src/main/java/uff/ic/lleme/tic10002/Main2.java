@@ -1,26 +1,29 @@
 package uff.ic.lleme.tic10002;
 
-import java.util.ArrayList;
-import java.util.List;
-import uff.ic.lleme.tic10002.arvore.ArvoreEmpregado2;
-import uff.ic.lleme.tic10002.lista.ListaDinamicaEmpregado;
+import java.io.InvalidObjectException;
+import uff.ic.lleme.tic10002.arvore.ArvoreEmpregado;
 
 public class Main2 {
 
-    public static void main(String[] args) {
-        ColecaoEmpregado lista = new ListaDinamicaEmpregado();
+    public static void main(String[] args) throws InvalidObjectException {
 
-        lista.incluir(new Empregado());
-        Empregado emp = lista.buscar("123");
-        lista.incluir(emp);
+        ColecaoEmpregado col = new ArvoreEmpregado();
+        col.incluir(new Empregado("06"));
+        col.incluir(new Empregado("04"));
+        col.incluir(new Empregado("03"));
+        col.incluir(new Empregado("05"));
+        col.incluir(new Empregado("02"));
+        col.incluir(new Empregado("09"));
+        col.incluir(new Empregado("08"));
+        col.incluir(new Empregado("10"));
+        col.incluir(new Empregado("07"));
 
-        List<Empregado> lista2 = new ArrayList<>();
-        lista2.add(new Empregado());
+        Empregado e = col.excluir("06");
+        if (e != null)
+            System.out.println(e.cpf);
+        else
+            System.out.println("Nao encontrado.");
 
-        ColecaoEmpregado col2 = new ArvoreEmpregado2();
-        col2.incluir(emp);
-        col2.excluir("123");
-        col2.buscar("123");
-
+        System.out.println("Fim.");
     }
 }

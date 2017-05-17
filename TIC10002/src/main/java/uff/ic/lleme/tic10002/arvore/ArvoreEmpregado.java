@@ -4,7 +4,7 @@ import java.io.InvalidObjectException;
 import uff.ic.lleme.tic10002.ColecaoEmpregado;
 import uff.ic.lleme.tic10002.Empregado;
 
-public class ArvoveEmpregado implements ColecaoEmpregado {
+public class ArvoreEmpregado implements ColecaoEmpregado {
 
     private No raiz = null;
     private int quantidadeNos = 0;
@@ -67,10 +67,10 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
         }
 
         private No filhoFolha() {
-            if (esquerda != null && esquerda.ehFolha())
-                return esquerda;
-            else if (direita != null && direita.ehFolha())
+            if (direita != null && direita.ehFolha())
                 return direita;
+            else if (esquerda != null && esquerda.ehFolha())
+                return esquerda;
             else
                 return null;
         }
@@ -109,18 +109,21 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
         private No conectar(No filho) {
             if (filho != null)
-                if (getConteudo().compararInstancia(filho.getConteudo()) < 0) {
-                    esquerda = filho;
-                    filho.pai = this;
-                    return filho;
-                } else if (getConteudo().compararInstancia(filho.getConteudo()) > 0) {
-                    direita = filho;
-                    filho.pai = this;
-                    return filho;
-                } else
-                    return null;
-            else
-                return null;
+                if (getConteudo().compararInstancia(filho.getConteudo()) < 0)
+                    if (esquerda == null) {
+                        esquerda = filho;
+                        filho.pai = this;
+                        return filho;
+                    } else
+                        return esquerda.conectar(filho);
+                else if (getConteudo().compararInstancia(filho.getConteudo()) > 0)
+                    if (direita == null) {
+                        direita = filho;
+                        filho.pai = this;
+                        return filho;
+                    } else
+                        return direita.conectar(filho);
+            return null;
         }
     }
 
@@ -139,11 +142,11 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
                 return noCorrente.getConteudo();
             else if (noCorrente.getConteudo().compararChave(cpf) < 0)
                 return buscar(noCorrente.esquerda, cpf);
-            else
+            else if (noCorrente.getConteudo().compararChave(cpf) < 0)
                 return buscar(noCorrente.direita, cpf);
-        else
-            return null;
-
+            else
+                return null;
+        return null;
     }
 
     @Override
@@ -179,46 +182,66 @@ public class ArvoveEmpregado implements ColecaoEmpregado {
 
     @Override
     public Empregado excluir(String cpf) {
-        if (raiz != null)
+        if (raiz != null) {
+            if (raiz.getConteudo().compararChave(cpf) == 0) {
+                No resultado = raiz;
+                raiz = resultado.direita;
+                raiz.conectar(resultado.esquerda);
+                raiz.pai = null;
+                quantidadeNos--;
+                return resultado.getConteudo();
+            }
             return excluir(raiz, cpf);
+        }
         return null;
     }
 
     private Empregado excluir(No noCorrente, String cpf) {
         No excluido;
-        if (noCorrente.getConteudo().compararChave(cpf) == 0) {
-            excluido = noCorrente;
-            if (noCorrente.ehFolha())
-                if (noCorrente.ehDireita())
-                    noCorrente.connectarPaiADireita(null);
-                else
-                    noCorrente.connectarPaiAEsquerda(null);
-            else if (noCorrente.temFilhoUnico())
-                if (noCorrente.ehDireita())
-                    noCorrente.connectarPaiADireita(noCorrente.filhoUnico());
-                else
-                    noCorrente.connectarPaiAEsquerda(noCorrente.filhoUnico());
-            else if (noCorrente.temFolha())
-                if (noCorrente.ehDireita()) {
-                    No filhoFolha = noCorrente.filhoFolha();
-                    No irmaoFilhoFolha = filhoFolha.irmao();
-                    noCorrente.connectarPaiADireita(filhoFolha);
-                    filhoFolha.conectar(irmaoFilhoFolha);
+        if (noCorrente != null)
+            if (noCorrente.getConteudo().compararChave(cpf) == 0) {
+                excluido = noCorrente;
+                if (noCorrente.ehFolha())
+                    if (noCorrente.ehDireita())
+                        noCorrente.connectarPaiADireita(null);
+                    else
+                        noCorrente.connectarPaiAEsquerda(null);
+                else if (noCorrente.temFilhoUnico())
+                    if (noCorrente.ehDireita())
+                        noCorrente.connectarPaiADireita(noCorrente.filhoUnico());
+                    else
+                        noCorrente.connectarPaiAEsquerda(noCorrente.filhoUnico());
+                else if (noCorrente.temFolha())
+                    if (noCorrente.ehDireita()) {
+                        No filhoFolha = noCorrente.filhoFolha();
+                        No irmaoFilhoFolha = filhoFolha.irmao();
+                        noCorrente.connectarPaiADireita(filhoFolha);
+                        filhoFolha.conectar(irmaoFilhoFolha);
+                    } else {
+                        No filhoFolha = noCorrente.filhoFolha();
+                        No irmaoFilhoFolha = filhoFolha.irmao();
+                        noCorrente.connectarPaiAEsquerda(filhoFolha);
+                        filhoFolha.conectar(irmaoFilhoFolha);
+                    }
+                else if (noCorrente.ehDireita()) {
+                    No esquerda = noCorrente.esquerda;
+                    No direita = esquerda.irmao();
+                    noCorrente.connectarPaiADireita(esquerda);
+                    esquerda.conectar(direita);
                 } else {
-                    No filhoFolha = noCorrente.filhoFolha();
-                    No irmaoFilhoFolha = filhoFolha.irmao();
-                    noCorrente.connectarPaiAEsquerda(filhoFolha);
-                    filhoFolha.conectar(irmaoFilhoFolha);
+                    No esquerda = noCorrente.esquerda;
+                    No direita = esquerda.irmao();
+                    noCorrente.connectarPaiAEsquerda(esquerda);
+                    esquerda.conectar(direita);
                 }
-            else if (noCorrente.ehDireita())
-                noCorrente.pai.direita = null; //complatar
+                quantidadeNos--;
+                return excluido.getConteudo();
+            } else if (noCorrente.getConteudo().compararChave(cpf) < 0)
+                return excluir(noCorrente.esquerda, cpf);
+            else if (noCorrente.getConteudo().compararChave(cpf) > 0)
+                return excluir(noCorrente.direita, cpf);
             else
-                noCorrente.pai.esquerda = null; // completar
-            return excluido.getConteudo();
-        } else if (noCorrente.getConteudo().compararChave(cpf) < 0)
-            return excluir(noCorrente.esquerda, cpf);
-        else if (noCorrente.getConteudo().compararChave(cpf) > 0)
-            return excluir(noCorrente.direita, cpf);
+                return null;
         else
             return null;
     }

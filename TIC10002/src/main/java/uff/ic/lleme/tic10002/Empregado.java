@@ -5,6 +5,10 @@ public class Empregado extends Entidade<String, Empregado> {
     public String cpf = null;
     public String nome = null;
 
+    public Empregado(String cpf) {
+        this.cpf = cpf;
+    }
+
     @Override
     public int compareTo(Empregado emp) {
         return getChave().compareTo(emp.getChave());
