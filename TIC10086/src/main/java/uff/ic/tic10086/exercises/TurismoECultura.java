@@ -28,8 +28,8 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.model.parameters.Imports;
-import uff.ic.swlab.utils.JenaSchemaMgr;
-import uff.ic.swlab.utils.OWLAPISchemaMgr;
+import uff.ic.swlab.commons.util.riot.JenaSchemaMgr;
+import uff.ic.swlab.commons.util.riot.OWLAPISchemaMgr;
 
 public class TurismoECultura extends MyDataset {
 

@@ -13,7 +13,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.vocabulary.VCARD;
-import uff.ic.swlab.utils.JenaSchemaMgr;
+import uff.ic.swlab.commons.util.riot.JenaSchemaMgr;
 
 public class ConnectToTDB {
 
@@ -59,11 +59,11 @@ public class ConnectToTDB {
         Resource tipo = schema.getResource("http://schema.org/PerformingArtsTheater");
         Resource johnSmith
                 = model.createResource(personURI, tipo)
-                .addProperty(VCARD.FN, fullName)
-                .addProperty(VCARD.N,
-                        model.createResource()
-                        .addProperty(VCARD.Given, givenName)
-                        .addProperty(VCARD.Family, familyName));
+                        .addProperty(VCARD.FN, fullName)
+                        .addProperty(VCARD.N,
+                                model.createResource()
+                                        .addProperty(VCARD.Given, givenName)
+                                        .addProperty(VCARD.Family, familyName));
         dataset.commit();
 
         StmtIterator iter = model.listStatements();
