@@ -65,8 +65,8 @@ public class ConnectToSDB {
                 .addProperty(VCARD.FN, fullName)
                 .addProperty(VCARD.N,
                         model.createResource()
-                        .addProperty(VCARD.Given, givenName)
-                        .addProperty(VCARD.Family, familyName));
+                                .addProperty(VCARD.Given, givenName)
+                                .addProperty(VCARD.Family, familyName));
         //dataset.commit();
         //dataset.end();
 
