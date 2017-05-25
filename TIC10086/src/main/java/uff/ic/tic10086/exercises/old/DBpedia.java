@@ -1,4 +1,4 @@
-package old.uff.ic.tic10086.exercises;
+package uff.ic.tic10086.exercises.old;
 
 public class DBpedia extends MyDataset {
 

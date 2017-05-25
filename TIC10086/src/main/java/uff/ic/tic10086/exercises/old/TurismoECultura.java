@@ -1,6 +1,6 @@
-package old.uff.ic.tic10086.exercises;
+package uff.ic.tic10086.exercises.old;
 
-import old.uff.ic.tic10086.exercises.MyDataset;
+import uff.ic.tic10086.exercises.old.MyDataset;
 
 public class TurismoECultura extends MyDataset {
 

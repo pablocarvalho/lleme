@@ -1,4 +1,4 @@
-package old.uff.ic.tic10086.exercises;
+package uff.ic.tic10086.exercises.old;
 
 import java.io.File;
 import org.apache.jena.riot.Lang;
