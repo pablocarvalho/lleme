@@ -48,21 +48,33 @@ public class ArvoreOtima {
         return min;
     }
 
-    private static int[] ordem() {
-        int n = c.length - 1;
-        int[] ordem = new int[n];
-        int[] seq = new int[1];
-        busca(ordem, seq, 0, n);
-        return ordem;
+    private static class Ordem {
+
+        public int[] o = null;
+        public int index = 0;
+
+        public Ordem(int tamanho) {
+            this.o = new int[tamanho];
+        }
+
+        public void insert(int elemento) {
+            o[index++] = elemento;
+        }
     }
 
-    public static void busca(int[] o, int[] s, int i, int j) {
-        if (j > i + 1 && i >= 0 && j >= 0 && i < c.length && j < c.length && s[0] < K.length - 1) {
+    private static int[] ordem() {
+        int n = c.length - 1;
+        Ordem ordem = new Ordem(n);
+        busca(0, n, ordem);
+        return ordem.o;
+    }
+
+    public static void busca(int i, int j, Ordem o) {
+        if (j >= i + 1 && i >= 0 && j >= 0 && i < K.length && j < K.length) {
             int chave = K[i][j];
-            o[s[0]] = chave;
-            s[0]++;
-            busca(o, s, i - 1, chave);
-            busca(o, s, chave, j);
+            o.insert(chave);
+            busca(i, chave - 1, o);
+            busca(chave, j, o);
         }
     }
 
