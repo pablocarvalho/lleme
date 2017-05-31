@@ -8,11 +8,13 @@ public class MainAVL {
     public static void main(String[] args) {
         {
             ArvoreAVL av = new ArvoreAVL(false);
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
                 av.inserir(new Empregado((new Random()).nextInt(1000000)));
 
+            System.out.println("===========================");
             System.out.println("altura = " + av.altura());
             System.out.println("maxSaldo = " + av.maxSaldo());
+            System.out.println("===========================");
             System.out.println("");
         }
 
@@ -25,8 +27,6 @@ public class MainAVL {
                 System.out.println("altura = " + av.altura());
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
-                av = null;
-                System.gc();
             }
         }
 
