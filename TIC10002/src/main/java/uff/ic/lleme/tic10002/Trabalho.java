@@ -1,8 +1,8 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002;
 
 import java.util.Date;
 
-public class NewClass {
+public class Trabalho {
 
     public static void main(String[] args) {
         int filial1 = 10;
