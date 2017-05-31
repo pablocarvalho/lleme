@@ -7,7 +7,6 @@ public class Trabalho {
     public static void main(String[] args) {
         int filial1 = 10;
         int filial2 = 20;
-
         Date data1 = new Date();
         Date data2 = new Date();
 
