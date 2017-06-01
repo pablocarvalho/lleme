@@ -7,7 +7,7 @@ public class MainAVLLuan {
 
     public static void main(String[] args) {
         {
-            int[] chaves = {843779, 227559, 309958, 899394, 986152, 403202, 629179, 101630, 965388, 227560};
+            int[] chaves = {843779, 227559, 309958, 899394, 986152, 403202, 629179, 101630, 965388};
 
             System.out.println("****************************************************************");
             System.out.println("Input: " + Arrays.toString(chaves));
@@ -21,6 +21,7 @@ public class MainAVLLuan {
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
                 av.print();
+                System.out.println("");
             }
             {
                 System.out.println(">>> Sua proposta.");
@@ -31,6 +32,7 @@ public class MainAVLLuan {
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
                 av.print();
+                System.out.println("");
             }
             {
                 System.out.println(">>> Minha proposta.");
@@ -41,6 +43,7 @@ public class MainAVLLuan {
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
                 av.print();
+                System.out.println("");
             }
             System.out.println("****************************************************************");
 
