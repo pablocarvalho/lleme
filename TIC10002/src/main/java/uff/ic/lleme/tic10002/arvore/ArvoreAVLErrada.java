@@ -32,11 +32,7 @@ public class ArvoreAVLErrada {
         }
 
         private void printNodeValue() {
-            String saldo_ = "";
-            int saldo = saldo();
-            if (saldo > 1)
-                saldo_ = String.format("\u001B[31m%d\u001B[0m", saldo);
-            System.out.print("" + conteudo.chave + "/" + saldo_);
+            System.out.print("" + conteudo.chave + "/" + saldo());
             System.out.print('\n');
         }
 
