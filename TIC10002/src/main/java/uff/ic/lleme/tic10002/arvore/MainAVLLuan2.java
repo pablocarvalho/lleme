@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import uff.ic.lleme.tic10002.Empregado;
 
-public class MainAVLLuan1 {
+public class MainAVLLuan2 {
 
     public static void main(String[] args) {
         while (true) {
