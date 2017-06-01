@@ -7,7 +7,7 @@ public class MainAVL {
 
     public static void main(String[] args) {
         {
-            ArvoreAVL av = new ArvoreAVL(false);
+            ArvoreAVLCorrigida av = new ArvoreAVLCorrigida(false);
             for (int i = 0; i < 100; i++)
                 av.inserir(new Empregado((new Random()).nextInt(1000000)));
 
@@ -20,7 +20,7 @@ public class MainAVL {
 
         {
             for (int n = 20; n < 100; n++) {
-                ArvoreAVL av = new ArvoreAVL(true);
+                ArvoreAVLCorrigida av = new ArvoreAVLCorrigida(true);
                 for (int i = 0; i < n; i++)
                     av.inserir(new Empregado((new Random()).nextInt(1000000)));
 
@@ -28,6 +28,7 @@ public class MainAVL {
                 System.out.println("altura = " + av.altura());
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
+
             }
         }
 
