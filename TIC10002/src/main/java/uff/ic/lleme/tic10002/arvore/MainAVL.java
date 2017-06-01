@@ -19,11 +19,12 @@ public class MainAVL {
         }
 
         {
-            for (int k = 20; k < 100; k++) {
+            for (int n = 20; n < 100; n++) {
                 ArvoreAVL av = new ArvoreAVL(true);
-                for (int i = 0; i < k; i++)
+                for (int i = 0; i < n; i++)
                     av.inserir(new Empregado((new Random()).nextInt(1000000)));
 
+                System.out.println("|Elementos| = " + n);
                 System.out.println("altura = " + av.altura());
                 System.out.println("maxSaldo = " + av.maxSaldo());
                 System.out.println("");
