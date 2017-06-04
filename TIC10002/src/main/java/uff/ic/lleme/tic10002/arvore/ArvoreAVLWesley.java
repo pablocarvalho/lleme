@@ -246,9 +246,7 @@ public class ArvoreAVLWesley {
                 n2.saldoAltura = 0;
                 n3.saldoAltura = 0;
             }
-
         }
-
     }
 
     private void balancearAEsquerda(No n1, int delta, int delta2) {
