@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002.heap;
 
 import javax.naming.LimitExceededException;
 import uff.ic.lleme.tic10002.Tarefa;
@@ -25,13 +25,13 @@ public class MainHeap {
         hp.inserir(t6, 66);
         hp.inserir(t7, 70);
         hp.inserir(t8, 33);
-        hp.inserir(t9, 73);
+        //hp.inserir(t9, 73);
         hp.printHeap();
 
         //hp.alterarPrioridade(5, 98);
         //hp.printHeap();
         //hp.alterarPrioridade(0, 66);
-        hp.remover();
-        hp.printHeap();
+        //hp.remover();
+        //hp.printHeap();
     }
 }

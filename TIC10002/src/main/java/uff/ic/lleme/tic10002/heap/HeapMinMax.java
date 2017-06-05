@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002.heap;
 
 import uff.ic.lleme.tic10002.Tarefa;
 
