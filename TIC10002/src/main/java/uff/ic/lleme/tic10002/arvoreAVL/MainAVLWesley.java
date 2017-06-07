@@ -1,5 +1,8 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002.arvoreAVL;
 
+import uff.ic.lleme.tic10002.arvoreAVL.ArvoreAVLCorrigida;
+import uff.ic.lleme.tic10002.arvoreAVL.ArvoreAVLErrada;
+import uff.ic.lleme.tic10002.arvoreAVL.ArvoreAVLWesley;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

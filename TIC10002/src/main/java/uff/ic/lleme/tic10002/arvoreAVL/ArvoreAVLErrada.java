@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002.arvoreAVL;
 
 import uff.ic.lleme.tic10002.Empregado;
 

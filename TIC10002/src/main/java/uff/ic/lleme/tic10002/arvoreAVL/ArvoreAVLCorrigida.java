@@ -1,14 +1,14 @@
-package uff.ic.lleme.tic10002.arvore;
+package uff.ic.lleme.tic10002.arvoreAVL;
 
 import uff.ic.lleme.tic10002.Empregado;
 
-public class ArvoreAVLLuan {
+public class ArvoreAVLCorrigida {
 
     private No raiz = null;
     private boolean balanceada = false;
     private int maxSaldo = 0;
 
-    public ArvoreAVLLuan(boolean balanceada) {
+    public ArvoreAVLCorrigida(boolean balanceada) {
         this.balanceada = balanceada;
     }
 
@@ -234,11 +234,14 @@ public class ArvoreAVLLuan {
             n3.esquerda = t4;
 
             n1.saldoAltura = 0;
-            if (delta2 > 0) {
+            if (t2 == null && t3 == null) {
+                n2.saldoAltura = 0;
+                n3.saldoAltura = 0;
+            } else if (delta2 > 0) {
                 n2.saldoAltura = 0;
                 n3.saldoAltura = -1;
             } else {
-                n2.saldoAltura = 0;
+                n2.saldoAltura = 1;
                 n3.saldoAltura = 0;
             }
         }
@@ -284,12 +287,15 @@ public class ArvoreAVLLuan {
             n3.esquerda = t4;
 
             n1.saldoAltura = 0;
-            if (delta2 < 0) {
+            if (t2 == null && t3 == null) {
+                n2.saldoAltura = 0;
+                n3.saldoAltura = 0;
+            } else if (delta2 < 0) {
                 n2.saldoAltura = 1;
                 n3.saldoAltura = 0;
             } else {
                 n2.saldoAltura = 0;
-                n3.saldoAltura = 0;
+                n3.saldoAltura = -1;
             }
         }
     }
@@ -311,4 +317,5 @@ public class ArvoreAVLLuan {
         else
             return null;
     }
+
 }
