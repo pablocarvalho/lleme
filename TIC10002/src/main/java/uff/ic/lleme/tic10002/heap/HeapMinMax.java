@@ -62,7 +62,7 @@ public class HeapMinMax {
                     int pai = (maior - 1) / 2;
                     if (lista[maior].prioridade < lista[pai].prioridade)
                         trocar(maior, pai);
-                    descerMin(maior);
+                    descerMax(maior);
                 }
             } else if (lista[maior].prioridade > lista[i].prioridade) // eh filho
                 trocar(i, maior);
