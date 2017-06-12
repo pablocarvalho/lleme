@@ -32,19 +32,21 @@ public class ListaEntrada {
             if (no.pagina == null) {
                 No aux = no.proximo;
                 no.proximo = new No(empregado);
-                no.proximo = aux;
+                no.proximo.proximo = aux;
                 n++;
-                if (n > ORDEM)
+                if (n > 2 * ORDEM)
                     return this.dividir();
                 return null;
             } else {
                 Insercao meio = inserir(no.pagina.PRIMEIRO, empregado);
-                No aux = no.proximo;
-                no.proximo = new No(meio.empregado);
-                no.proximo = aux;
-                no.pagina = meio.menores;
-                no.proximo.pagina = meio.maiores;
-                if (n > ORDEM)
+                if (meio != null) {
+                    No aux = no.proximo;
+                    no.proximo = new No(meio.empregado);
+                    no.proximo.proximo = aux;
+                    no.pagina = meio.menores;
+                    no.proximo.pagina = meio.maiores;
+                }
+                if (n > 2 * ORDEM)
                     return this.dividir();
                 return null;
             }
@@ -53,6 +55,7 @@ public class ListaEntrada {
     }
 
     private Insercao dividir() {
+        Empregado empregado = this.PRIMEIRO.proximo.proximo.proximo.conteudo;
         ListaEntrada menores = new ListaEntrada();
         ListaEntrada maiores = new ListaEntrada();
         menores.PRIMEIRO.proximo = PRIMEIRO.proximo;
@@ -60,7 +63,6 @@ public class ListaEntrada {
         PRIMEIRO.proximo.proximo.proximo = null;
         menores.n = 2;
         maiores.n = 2;
-        Empregado empregado = this.PRIMEIRO.proximo.proximo.proximo.conteudo;
         return new Insercao(empregado, menores, maiores);
     }
 }
