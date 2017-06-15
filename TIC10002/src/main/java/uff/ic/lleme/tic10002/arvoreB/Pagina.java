@@ -2,7 +2,7 @@ package uff.ic.lleme.tic10002.arvoreB;
 
 import uff.ic.lleme.tic10002.Empregado;
 
-public class ListaEntrada {
+public class Pagina {
 
     private final int ORDEM = 2;
     private int n = 0;
@@ -11,7 +11,7 @@ public class ListaEntrada {
     private class No {
 
         public Empregado conteudo = null;
-        public ListaEntrada pagina = null;
+        public Pagina pagina = null;
         public No proximo = null;
 
         public No(Empregado conteudo) {
@@ -19,7 +19,7 @@ public class ListaEntrada {
         }
     }
 
-    public Insercao inserir(Empregado empregado) throws IndexOutOfBoundsException, Exception {
+    public Divisao inserir(Empregado empregado) throws IndexOutOfBoundsException, Exception {
         if (empregado != null)
             return inserir(PRIMEIRO, empregado);
         else
@@ -27,7 +27,7 @@ public class ListaEntrada {
 
     }
 
-    private Insercao inserir(No no, Empregado empregado) {
+    private Divisao inserir(No no, Empregado empregado) {
         if (no.proximo == null || empregado.chave < no.proximo.conteudo.chave)
             if (no.pagina == null) {
                 No aux = no.proximo;
@@ -38,7 +38,7 @@ public class ListaEntrada {
                     return this.dividir();
                 return null;
             } else {
-                Insercao meio = inserir(no.pagina.PRIMEIRO, empregado);
+                Divisao meio = inserir(no.pagina.PRIMEIRO, empregado);
                 if (meio != null) {
                     No aux = no.proximo;
                     no.proximo = new No(meio.empregado);
@@ -54,15 +54,15 @@ public class ListaEntrada {
             return inserir(no.proximo, empregado);
     }
 
-    private Insercao dividir() {
+    private Divisao dividir() {
         Empregado empregado = this.PRIMEIRO.proximo.proximo.proximo.conteudo;
-        ListaEntrada menores = new ListaEntrada();
-        ListaEntrada maiores = new ListaEntrada();
+        Pagina menores = new Pagina();
+        Pagina maiores = new Pagina();
         menores.PRIMEIRO.proximo = PRIMEIRO.proximo;
         maiores.PRIMEIRO.proximo = PRIMEIRO.proximo.proximo.proximo.proximo;
         PRIMEIRO.proximo.proximo.proximo = null;
         menores.n = 2;
         maiores.n = 2;
-        return new Insercao(empregado, menores, maiores);
+        return new Divisao(empregado, menores, maiores);
     }
 }

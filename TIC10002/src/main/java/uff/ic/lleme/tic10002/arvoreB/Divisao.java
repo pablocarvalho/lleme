@@ -11,13 +11,13 @@ import uff.ic.lleme.tic10002.Empregado;
  *
  * @author lapaesleme
  */
-public class Insercao {
+public class Divisao {
 
     public Empregado empregado = null;
-    public ListaEntrada menores = null;
-    public ListaEntrada maiores = null;
+    public Pagina menores = null;
+    public Pagina maiores = null;
 
-    public Insercao(Empregado empregado, ListaEntrada menores, ListaEntrada maiores) {
+    public Divisao(Empregado empregado, Pagina menores, Pagina maiores) {
         this.empregado = empregado;
         this.menores = menores;
         this.maiores = maiores;
