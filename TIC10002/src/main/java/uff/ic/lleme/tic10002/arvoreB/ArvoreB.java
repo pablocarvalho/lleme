@@ -4,15 +4,15 @@ import uff.ic.lleme.tic10002.Empregado;
 
 public class ArvoreB {
 
-    private ListaEntrada pagina = null;
+    private ListaEntrada raiz = null;
 
     public void inserir(Empregado empregado) throws Exception {
-        if (pagina == null) {
-            pagina = new ListaEntrada();
-            pagina.inserir(empregado);
+        if (raiz == null) {
+            raiz = new ListaEntrada();
+            raiz.inserir(empregado);
         } else {
-            Insercao meio = pagina.inserir(empregado);
-            pagina = new ListaEntrada();
+            Insercao meio = raiz.inserir(empregado);
+            raiz = new ListaEntrada();
 
         }
     }

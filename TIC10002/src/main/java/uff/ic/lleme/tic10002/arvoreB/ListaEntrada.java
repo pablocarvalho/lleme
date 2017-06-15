@@ -4,7 +4,7 @@ import uff.ic.lleme.tic10002.Empregado;
 
 public class ListaEntrada {
 
-    private final int ORDEM = 4;
+    private final int ORDEM = 2;
     private int n = 0;
     private final No PRIMEIRO = new No(null);
 
