@@ -162,8 +162,8 @@ class ArvoreBinariaBalanceada(object):
         no = self.raiz
 
         if op_busca == 2:
-            filial_codigo_ini = -sys.maxsize
-            filial_codigo_fim = sys.maxsize
+            filial_codigo_ini = -sys.maxint
+            filial_codigo_fim = sys.maxint
 
         if no.conteudo.filial > filial_codigo_fim:
             no = no.esquerda
@@ -191,7 +191,7 @@ def calcula_altura(no):
 
 
 def gera_arquivo(path):
-    print("Gerando arquivo...")
+    print "Gerando arquivo..."
     dados_venda = []
     total_vendido = []
 
@@ -209,7 +209,7 @@ def gera_arquivo(path):
 
         dados_venda = list(set(dados_venda))
 
-        if not ([k for k, v in list(Counter(dados_venda).items()) if v > 1]) == 0 and len(dados_venda) >= 1500:
+        if not ([k for k, v in Counter(dados_venda).items() if v > 1]) == 0 and len(dados_venda) >= 1500:
             for t in range(1500):
                 arq.write(dados_venda[t] + "," + str(total_vendido[t]) + "\n")
         else:
@@ -218,7 +218,7 @@ def gera_arquivo(path):
 
 
 def le_arquivo(path, arvore):
-    print("Lendo arquivo...")
+    print "Lendo arquivo..."
     with open(path, "r") as arq:
         for linha in arq:
             linha_atual = linha.split(",")
@@ -242,7 +242,7 @@ while terminou_consulta is False:
 
     while op_valida is False:
         try:
-            input_busca = eval(input("Digite o numero da operacao de consulta que deseja realizar: "))
+            input_busca = input("Digite o numero da operacao de consulta que deseja realizar: ")
             if 1 <= input_busca <= 6 and type(input_busca) is int:
                 op_busca = input_busca
                 op_valida = True
@@ -250,35 +250,35 @@ while terminou_consulta is False:
                 raise ValueError
 
         except (ValueError, NameError, SyntaxError):
-            print("ALERTA: Opcao invalida, tente novamente.\n")
+            print "ALERTA: Opcao invalida, tente novamente.\n"
 
     if op_busca == 1:
         while codigo_filial_ini_valido is False:
             try:
-                filial_codigo_ini = eval(input("\nDigite o codigo da filial X:  "))
+                filial_codigo_ini = input("\nDigite o codigo da filial X:  ")
                 if type(filial_codigo_ini) is int:
                     codigo_filial_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_filial_fim_valido is False:
             try:
-                filial_codigo_fim = eval(input("Digite o codigo da filial Y:  "))
+                filial_codigo_fim = input("Digite o codigo da filial Y:  ")
                 if type(filial_codigo_fim) is int:
                     codigo_filial_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         totalVendas = arvore_vendas.buscar()
-        print("\nTotal de vendas = ", totalVendas)
+        print "\nTotal de vendas = ", totalVendas
         resposta_valida = False
         op_valida = False
         codigo_filial_ini_valido = False
@@ -288,7 +288,7 @@ while terminou_consulta is False:
     elif op_busca == 2:
         while data_ini_valida is False:
             try:
-                data_ini = input("\nDigite a data de inicio P no formato [mes/ano]:  ")
+                data_ini = raw_input("\nDigite a data de inicio P no formato [mes/ano]:  ")
                 data_temp_ano = int(data_ini.split("/")[1])
                 data_temp_mes = int(data_ini.split("/")[0])
 
@@ -298,13 +298,13 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         while data_fim_valida is False:
             try:
-                data_fim = input("\nDigite a data de termino Q no formato [mes/ano]:  ")
+                data_fim = raw_input("\nDigite a data de termino Q no formato [mes/ano]:  ")
                 data_temp_ano = int(data_fim.split("/")[1])
                 data_temp_mes = int(data_fim.split("/")[0])
                 if 1 <= data_temp_mes <= 12:
@@ -313,12 +313,12 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         totalVendas = arvore_vendas.buscar()
-        print("\nTotal de vendas = ", totalVendas)
+        print "\nTotal de vendas = ", totalVendas
         resposta_valida = False
         op_valida = False
         data_ini_valida = False
@@ -328,31 +328,31 @@ while terminou_consulta is False:
     elif op_busca == 3:
         while codigo_filial_ini_valido is False:
             try:
-                filial_codigo_ini = eval(input("\nDigite o codigo da filial X:  "))
+                filial_codigo_ini = input("\nDigite o codigo da filial X:  ")
                 if type(filial_codigo_ini) is int:
                     codigo_filial_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_filial_fim_valido is False:
             try:
-                filial_codigo_fim = eval(input("Digite o codigo da filial Y:  "))
+                filial_codigo_fim = input("Digite o codigo da filial Y:  ")
                 if type(filial_codigo_fim) is int:
                     codigo_filial_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         while data_ini_valida is False:
             try:
-                data_ini = input("\nDigite a data de inicio P no formato [mes/ano]:  ")
+                data_ini = raw_input("\nDigite a data de inicio P no formato [mes/ano]:  ")
                 data_temp_ano = int(data_ini.split("/")[1])
                 data_temp_mes = int(data_ini.split("/")[0])
 
@@ -362,13 +362,13 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         while data_fim_valida is False:
             try:
-                data_fim = input("\nDigite a data de termino Q no formato [mes/ano]:  ")
+                data_fim = raw_input("\nDigite a data de termino Q no formato [mes/ano]:  ")
                 data_temp_ano = int(data_fim.split("/")[1])
                 data_temp_mes = int(data_fim.split("/")[0])
                 if 1 <= data_temp_mes <= 12:
@@ -377,12 +377,12 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         totalVendas = arvore_vendas.buscar()
-        print("\nTotal de vendas = ", totalVendas)
+        print "\nTotal de vendas = ", totalVendas
         resposta_valida = False
         op_valida = False
         codigo_filial_ini_valido = False
@@ -394,54 +394,54 @@ while terminou_consulta is False:
     elif op_busca == 4:
         while codigo_filial_ini_valido is False:
             try:
-                filial_codigo_ini = eval(input("\nDigite o codigo da filial X:  "))
+                filial_codigo_ini = input("\nDigite o codigo da filial X:  ")
                 if type(filial_codigo_ini) is int:
                     codigo_filial_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_filial_fim_valido is False:
             try:
-                filial_codigo_fim = eval(input("Digite o codigo da filial Y:  "))
+                filial_codigo_fim = input("Digite o codigo da filial Y:  ")
                 if type(filial_codigo_fim) is int:
                     codigo_filial_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         while codigo_vendedor_ini_valido is False:
             try:
-                codigo_vendedor_ini = eval(input("\nDigite o codigo do vendedor A:  "))
+                codigo_vendedor_ini = input("\nDigite o codigo do vendedor A:  ")
                 if type(codigo_vendedor_ini) is int:
                     codigo_vendedor_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_vendedor_fim_valido is False:
             try:
-                codigo_vendedor_fim = eval(input("Digite o codigo do vendedor B:  "))
+                codigo_vendedor_fim = input("Digite o codigo do vendedor B:  ")
                 if type(codigo_vendedor_fim) is int:
                     codigo_vendedor_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         totalVendas = arvore_vendas.buscar()
-        print("\nTotal de vendas = ", totalVendas)
+        print "\nTotal de vendas = ", totalVendas
         resposta_valida = False
         op_valida = False
         codigo_filial_ini_valido = False
@@ -453,55 +453,55 @@ while terminou_consulta is False:
     elif op_busca == 5:
         while codigo_filial_ini_valido is False:
             try:
-                filial_codigo_ini = eval(input("\nDigite o codigo da filial X:  "))
+                filial_codigo_ini = input("\nDigite o codigo da filial X:  ")
                 if type(filial_codigo_ini) is int:
                     codigo_filial_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_filial_fim_valido is False:
             try:
-                filial_codigo_fim = eval(input("Digite o codigo da filial Y:  "))
+                filial_codigo_fim = input("Digite o codigo da filial Y:  ")
                 if type(filial_codigo_fim) is int:
                     codigo_filial_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         while codigo_vendedor_ini_valido is False:
             try:
-                codigo_vendedor_ini = eval(input("\nDigite o codigo do vendedor A:  "))
+                codigo_vendedor_ini = input("\nDigite o codigo do vendedor A:  ")
                 if type(codigo_vendedor_ini) is int:
                     codigo_vendedor_ini_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.")
+                print "ALERTA: Codigo invalido, tente novamente."
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.")
+                print "ALERTA: Codigo invalido, insira apenas numeros."
 
         while codigo_vendedor_fim_valido is False:
             try:
-                codigo_vendedor_fim = eval(input("Digite o codigo do vendedor B:  "))
+                codigo_vendedor_fim = input("Digite o codigo do vendedor B:  ")
                 if type(codigo_vendedor_fim) is int:
                     codigo_vendedor_fim_valido = True
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Codigo invalido, tente novamente.\n")
+                print "ALERTA: Codigo invalido, tente novamente.\n"
             except (NameError, SyntaxError):
-                print("ALERTA: Codigo invalido, insira apenas numeros.\n")
+                print "ALERTA: Codigo invalido, insira apenas numeros.\n"
 
         while data_ini_valida is False:
             try:
-                data_ini = input("\nDigite a data de inicio P no formato [mes/ano]:  ")
+                data_ini = raw_input("\nDigite a data de inicio P no formato [mes/ano]:  ")
                 data_temp_ano = int(data_ini.split("/")[1])
                 data_temp_mes = int(data_ini.split("/")[0])
 
@@ -511,13 +511,13 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         while data_fim_valida is False:
             try:
-                data_fim = input("\nDigite a data de termino Q no formato [mes/ano]:  ")
+                data_fim = raw_input("\nDigite a data de termino Q no formato [mes/ano]:  ")
                 data_temp_ano = int(data_fim.split("/")[1])
                 data_temp_mes = int(data_fim.split("/")[0])
                 if 1 <= data_temp_mes <= 12:
@@ -526,12 +526,12 @@ while terminou_consulta is False:
                 else:
                     raise ValueError
             except ValueError:
-                print("ALERTA: Data invalida, tente novamente.")
+                print "ALERTA: Data invalida, tente novamente."
             except (NameError, SyntaxError, IndexError):
-                print("ALERTA: Data invalida, insira apenas numeros.")
+                print "ALERTA: Data invalida, insira apenas numeros."
 
         totalVendas = arvore_vendas.buscar()
-        print("\nTotal de vendas = ", totalVendas)
+        print "\nTotal de vendas = ", totalVendas
         resposta_valida = False
         op_valida = False
         codigo_filial_ini_valido = False
@@ -548,7 +548,7 @@ while terminou_consulta is False:
 
     while resposta_valida is False:
         try:
-            resposta = input("\nDeseja realizar outra consulta? [Sim/Nao] ")
+            resposta = raw_input("\nDeseja realizar outra consulta? [Sim/Nao] ")
             if resposta.lower() == "sim" or resposta.lower() == "s":
                 resposta_valida = True
             elif resposta.lower() == "nao" or resposta.lower() == "n":
@@ -558,4 +558,4 @@ while terminou_consulta is False:
                 raise ValueError
 
         except ValueError:
-            print("ALERTA: Resposta invalida, responda apenas [Sim ou Nao].")
+            print "ALERTA: Resposta invalida, responda apenas [Sim ou Nao]."
