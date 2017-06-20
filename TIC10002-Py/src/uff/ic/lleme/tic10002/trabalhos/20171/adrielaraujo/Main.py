@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from Sale import Sale
-from Tree import Tree
+from .Sale import Sale
+from .Tree import Tree
 
 class Main:
 
@@ -36,17 +36,17 @@ class Main:
             print("Árvore Data")
             self.treeDate.print_tree(key='date')
             nodes_date = self.treeDate.search_range(min_date,max_date)
-            print('Total de vendas de todas as filias com data entre {} e {}:'.format(min_date, max_date), self.treeFilial.sum_sales(dates=nodes_date))
+            print(('Total de vendas de todas as filias com data entre {} e {}:'.format(min_date, max_date), self.treeFilial.sum_sales(dates=nodes_date)))
 
         if flag != 2:
             print("\n\nArvore Filial")
             self.treeFilial.print_tree(key='filial')
             nodes_filial = self.treeFilial.search_range(min_filial, max_filial)
-            print('Total vendas das filiais {} e {}:'.format(min_filial, max_filial), self.treeFilial.sum_sales(filials=nodes_filial))
+            print(('Total vendas das filiais {} e {}:'.format(min_filial, max_filial), self.treeFilial.sum_sales(filials=nodes_filial)))
 
         if flag ==3:
             sum_sales = Tree.sum_sales(nodes_filial, nodes_date)
-            print("\nTotal de vendas das filiais {} e {} entre os meses de {} e {}:".format(min_filial,max_filial, min_date, max_date), sum_sales)
+            print(("\nTotal de vendas das filiais {} e {} entre os meses de {} e {}:".format(min_filial,max_filial, min_date, max_date), sum_sales))
 
 
 

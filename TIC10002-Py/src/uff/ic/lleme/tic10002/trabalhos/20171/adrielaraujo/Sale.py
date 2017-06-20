@@ -8,11 +8,11 @@ class Sale(object):
         self.total_vendido = total_vendido
 
     def print_venda(self):
-        print("Dados da venda:\nID:", self.id,
+        print(("Dados da venda:\nID:", self.id,
               "\nFilial:", self.filial,
               "\nData:", self.ano_mes,
               "\nCod_Vendedor:", self.cod_vendedor,
-              "\nTotal Vendido: R$", self.total_vendido)
+              "\nTotal Vendido: R$", self.total_vendido))
 
     def get_sale_elements(self):
         return [self.id, self.filial, self.ano_mes, self.cod_vendedor, self.total_vendido]

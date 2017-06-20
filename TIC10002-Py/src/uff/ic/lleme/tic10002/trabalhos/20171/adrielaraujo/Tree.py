@@ -1,5 +1,5 @@
-from List import List
-from Hash import Hash
+from .List import List
+from .Hash import Hash
 
 
 class Tree:
@@ -112,7 +112,7 @@ class Tree:
 
 
     def print_tree(self, indent=0, key="filial"):
-        print("  " * indent + str(self.list.get_value(key)))
+        print(("  " * indent + str(self.list.get_value(key))))
         if self.left:
             self.left.print_tree(indent + 2,key)
         if self.right:

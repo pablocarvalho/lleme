@@ -1,4 +1,4 @@
-from List import List
+from .List import List
 
 class Hash(object):
     def __init__(self, obj, key='filial'):
@@ -24,7 +24,7 @@ class Hash(object):
             current = node.head
             while current != None:
                 self.hash[pos].add(current.value, origem='hash')
-                current = current.next
+                current = current.__next__
 #        self.hash[pos].add(node)
 
 
@@ -42,7 +42,7 @@ class Hash(object):
         current = hash_position.head
         while current != None:
             if value == current.value.get_value('id'): return current
-            current = current.next
+            current = current.__next__
 
     def join(self, nodes):
         intersection = []
@@ -53,7 +53,7 @@ class Hash(object):
                 result = self.find(id)
 
                 if result is not None: intersection.append(result)
-                current = current.next
+                current = current.__next__
         return intersection
 
 
@@ -61,9 +61,9 @@ class Hash(object):
     def print_hash(self):
         print("\nHASH\n")
         for i in self.hash:
-            print("\nValor",i.get_value())
+            print(("\nValor",i.get_value()))
             current = i.head
             while current != None:
-                print("   valor:", current.value.get_value(), " | id:",current.value.get_value('id'))
-                current = current.next
+                print(("   valor:", current.value.get_value(), " | id:",current.value.get_value('id')))
+                current = current.__next__
 

@@ -1,4 +1,4 @@
-import Sale
+from . import Sale
 
 class List:
 
@@ -17,7 +17,7 @@ class List:
                 total = 0.0
                 while current != None:
                     total += float(current.value.total_vendido)
-                    current = current.next
+                    current = current.__next__
                 return total
         else:
             return None
@@ -43,8 +43,8 @@ class List:
     def print_list(self):
         current = self.head
         while current!=None:
-            print(current.value.get_sale_elements())
-            current = current.next
+            print((current.value.get_sale_elements()))
+            current = current.__next__
 
 
 
