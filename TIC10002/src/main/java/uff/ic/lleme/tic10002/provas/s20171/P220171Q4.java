@@ -318,9 +318,15 @@ public class P220171Q4 {
 
     public static void main(String[] args) {
         P220171Q4 a = new P220171Q4(true);
-        Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-        for (int num : nums)
-            a.incluir(num);
-        a.print();
+        for (int i = 2; i <= 8; i = i + 2) {
+            Integer[] nums = new Integer[i];
+            int index = 0;
+            for (int j = 1; j <= i; j++)
+                nums[index++] = j;
+            for (int num : nums)
+                a.incluir(num);
+            a.print();
+            System.out.println("");
+        }
     }
 }
