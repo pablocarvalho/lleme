@@ -32,7 +32,7 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.WebContent;
 import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 import org.apache.jena.tdb.TDBFactory;
-import uff.ic.swlab.commons.util.adapter.DBpediaSearch;
+import uff.ic.swlab.commons.util.DBpediaSearch;
 import uff.ic.swlab.commons.util.riot.JenaSchemaMgr;
 
 public class NewClass {

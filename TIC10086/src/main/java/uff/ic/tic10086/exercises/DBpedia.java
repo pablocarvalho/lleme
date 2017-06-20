@@ -10,7 +10,7 @@ import org.apache.jena.query.Dataset;
 import org.apache.jena.query.ReadWrite;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.tdb.TDBFactory;
-import uff.ic.swlab.commons.util.adapter.DBpediaSearch;
+import uff.ic.swlab.commons.util.DBpediaSearch;
 
 public class DBpedia extends MyDataset {
 
