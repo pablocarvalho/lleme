@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uff.ic.lleme.tic10002.trabalhos._20171.wagnersantos;
+package uff.ic.lleme.tic10002.trabalhos._20171.wagnerguimaraes;
 
 import java.io.IOException;
 import java.text.ParseException;
