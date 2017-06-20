@@ -1,5 +1,5 @@
-from Lista import Lista
-from Hash import Hash
+from .Lista import Lista
+from .Hash import Hash
 
 
 class NoArvore:
@@ -105,7 +105,7 @@ class Arvore:
 		return vendas
 	
 	def imprimeArvore(self, indent=0):
-		print("  " * indent + str(self.raiz.chave))
+		print(("  " * indent + str(self.raiz.chave)))
 		if self.raiz.esq.raiz:
 			self.raiz.esq.imprimeArvore(indent + 2)
 		if self.raiz.dire.raiz:
