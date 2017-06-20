@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.trabalhos._20171.wesleyoliveira.paulolacerda;
+package uff.ic.lleme.tic10002.trabalhos._20171.paulolacerda;
 
 public class Query {
 
