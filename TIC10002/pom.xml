@@ -18,7 +18,11 @@
             <artifactId>joda-time</artifactId>
             <version>2.9.9</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.jdesktop.swingx/jxmapviewer2 -->
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swingx</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
-
 </project>
