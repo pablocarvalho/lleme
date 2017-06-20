@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:uml='http://www.omg.org/spec/UML/20131001'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.0.0'/>
- <uml:Package xmi:type='uml:Package' xmi:uuid='urn:uuid:28bd18c7-0738-4f98-92e7-02b882555154'
-   name='rdf'
-   visibility='public'/>
-</xmi:XMI>
