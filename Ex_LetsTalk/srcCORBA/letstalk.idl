@@ -1,0 +1,56 @@
+#ifndef LETSTALK_IDL
+#define LETSTALK_IDL
+
+#include "scs.idl"
+
+module corbaObjects {
+	module letstalk {
+
+		exception InvalidSubscriptionValues {};
+  
+		typedef sequence<string> stringList;
+
+		interface UserFacet {
+			void subscribe (in string login, in string password) raises (InvalidSubscriptionValues,
+				::corbaObjects::scs::InternalError);
+			::corbaObjects::scs::ConnectionId connect( in string login, in string password, in Object host) 
+				raises (::corbaObjects::scs::InvalidName, 
+				::corbaObjects::scs::InvalidConnection, 
+				::corbaObjects::scs::AlreadyConnected,
+				::corbaObjects::scs::ExceededConnectionLimit,
+				::corbaObjects::scs::InternalError);
+			void disconnect (in string login)
+				raises (::corbaObjects::scs::InvalidConnection, 
+				::corbaObjects::scs::NoConnection, 
+				::corbaObjects::scs::InternalError);
+			stringList listUsers () raises (::corbaObjects::scs::InternalError);	
+		};
+
+		interface CommFacet {
+			void startChatting (in string login, in stringList users)
+				raises (::corbaObjects::scs::InvalidConnection, 
+				::corbaObjects::scs::InternalError);
+			void sendMessage(in string login, in string chatId, in stringList recipients, in string message)
+				raises (::corbaObjects::scs::InternalError,
+				::corbaObjects::scs::InvalidName);   
+		};
+	
+		interface ServerCallBackFacet {
+			void receiveMessage (in string user, in string chatId, in stringList userId, in string message) 
+				raises (::corbaObjects::scs::InternalError);
+			void updateDirectory() raises (::corbaObjects::scs::InternalError);
+		};
+		
+		module usermanager {
+			typedef enum enum_type {OK,WRONGLOGIN,ERROR} Result;
+			typedef string Vector[100];
+
+			interface UserManagerFacet {
+				Result subscribe (in string login, in string password);
+				Result connect( in string login, in string password);  
+				Result desconnect (in string login);
+			};
+		};
+	};
+};
+#endif

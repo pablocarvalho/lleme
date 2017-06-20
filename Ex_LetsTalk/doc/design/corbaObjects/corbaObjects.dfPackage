@@ -1,0 +1,34 @@
+package id22fbueg44b1aleg45z38g;
+
+/**
+@version 2.0
+@physicalPackage
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:design#Class#idduhmehf819bzehf8832r.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#corbaObjects.scs:oiref> 
+*/
+class reference {
+}/**
+@__ref <oiref:design#Class#id1tc2oeg44b1aleg45z45v.diagram:oiref><oihard>
+@__modelType reference
+@__fqn <oiref:#Package#corbaObjects.letstalk:oiref> 
+*/
+class reference39 {
+}}/**
+@__tags
+@shapeType ClassDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions 
+*/
+class __positions {
+}

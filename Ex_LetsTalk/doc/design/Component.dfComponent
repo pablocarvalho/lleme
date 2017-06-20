@@ -1,0 +1,113 @@
+package id1q6iehf819bzehf8akow;
+
+/**
+@version 2.0
+@__modelType diagram 
+*/
+class diagram {
+/**
+@__ref <oiref:design#Class#id1q6iehf819bzehf8akow.node:oiref><oihard>
+@__modelType reference 
+*/
+class reference {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ExecutionNode:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference40 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentRepository:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference41 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentCollection:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference43 {
+}/**
+@__ref <oiref:design#Class#id1q6iehf819bzehf8akow.node45:oiref><oihard>
+@__modelType reference 
+*/
+class reference46 {
+}/**
+@__ref <oiref:design#Class#id1q6iehf819bzehf8akow.node47:oiref><oihard>
+@__modelType reference 
+*/
+class reference48 {
+}/**
+@__ref <oiref:idl#Class#corbaObjects::scs::NodeRegister:oiref><oihard>
+@__modelType reference
+@__imported 
+*/
+class reference49 {
+}}/**
+
+@__tags
+@shapeType ComponentDiagram 
+*/
+class __tags {
+}/**
+@__options 
+*/
+class __options {
+}/**
+@__positions <oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node45.link:oiref>=950,280,809,277:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ExecutionNode:oiref>=-10,120,200,172,1:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node.link:oiref>=392,350,90,292:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node.link44:oiref>=392,413,90,530:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentRepository:oiref>=-10,300,200,211,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::ComponentCollection:oiref>=-10,530,200,147,1:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node47:oiref>=794,460,145,63,1:oigroup>
+<oigroup:<oiref:idl#Class#corbaObjects::scs::NodeRegister:oiref>=610,140,199,147,1:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node.link42:oiref>=320,381,190,381:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node45:oiref>=950,270,145,63,1:oigroup>
+<oigroup:<oiref:design#Class#id1q6iehf819bzehf8akow.node:oiref>=320,350,145,63,1:oigroup> 
+*/
+class __positions {
+}/**
+@shapeType Component
+@__modelType node
+@name Node 
+*/
+class node {
+/**
+@shapeType SupportsLink
+@__modelType link
+@__ref <oiref:idl#Class#corbaObjects::scs::ExecutionNode:oiref><oihard> 
+*/
+class link {
+}/**
+@shapeType SupportsLink
+@__modelType link
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentRepository:oiref><oihard> 
+*/
+class link42 {
+}/**
+@shapeType SupportsLink
+@__modelType link
+@__ref <oiref:idl#Class#corbaObjects::scs::ComponentCollection:oiref><oihard> 
+*/
+class link44 {
+}}/**
+@shapeType Component
+@__modelType node
+@name Registry 
+*/
+class node45 {
+/**
+@shapeType SupportsLink
+@__modelType link
+@__ref <oiref:idl#Class#corbaObjects::scs::NodeRegister:oiref><oihard> 
+*/
+class link {
+}}/**
+@shapeType Component
+@__modelType node
+@name Repository 
+*/
+class node47 {
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="C:/Documents and Settings/Luiz Leme/Desktop/LetsTalkServer.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/LetsTalk/jardesc/LetsTalkServer.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" useSourceFolders="false"/>
+<manifest generateManifest="false" manifestLocation="/LetsTalk/srcServer/MANIFEST.MF" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+<sealing sealJar="true">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=LetsTalk/srcCORBA"/>
+<javaElement handleIdentifier="=LetsTalk/srcServer"/>
+</selectedElements>
+</jardesc>
