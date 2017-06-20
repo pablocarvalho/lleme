@@ -1,4 +1,4 @@
-import Venda
+from . import Venda
 
 class NoLista:
     def __init__(self, venda = None):

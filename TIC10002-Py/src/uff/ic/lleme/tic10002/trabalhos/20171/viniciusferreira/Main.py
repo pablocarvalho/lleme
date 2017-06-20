@@ -1,7 +1,7 @@
-from Venda import Venda
-from Hash import Hash
-from Lista import  Lista
-from Arvore import Arvore, NoArvore
+from .Venda import Venda
+from .Hash import Hash
+from .Lista import  Lista
+from .Arvore import Arvore, NoArvore
 
 arquivo = open('vendas.txt','r')
 linhas = arquivo.readlines()
@@ -30,15 +30,15 @@ arvoreData.imprimeArvore()
 print("Para arvore data entre 2011_03 e 2014_03:\n")
 vendas_data = arvoreData.buscaIntervalo(201103,201403)
 total = arvoreData.somaVendas(vendas_data)
-print('Total:', total)
+print(('Total:', total))
 
 print("Para arvore filiais entre filial 10 e 20:\n")
 vendas_filial = arvoreFilial.buscaIntervalo(10,20)
 total = arvoreFilial.somaVendas(vendas_filial)	
-print('Total:', total)
+print(('Total:', total))
 
 print("Para  arvore data entre 2011_03 e 2014_03 e arvore filiais entre filial 10 e 20:\n")
 inter = Hash()
 vendas_inter = inter.hashJoin(vendas_filial, vendas_data)
 total = inter.somaVendas(vendas_inter)
-print('Total:', total)
+print(('Total:', total))
