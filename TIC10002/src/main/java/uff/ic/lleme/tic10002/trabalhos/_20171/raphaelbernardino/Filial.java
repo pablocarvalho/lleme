@@ -1,18 +1,59 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino;
 
-/**
- *
- * @author Wagner
- */
-public class Filial {
+import java.util.*;
 
-    int filial;
-    int ano_mes;
-    int cod_vendedor;
-    double total_vendido;
+/**
+ * @author bernardino
+ */
+public class Filial
+{
+
+    private final Integer codigo;
+    private final MapaHash hm;
+
+    public Filial(Integer c)
+    {
+        this.codigo = c;
+        this.hm = new MapaHash();
+    }
+
+    public Integer getCodigo()
+    {
+        return codigo;
+    }
+
+    public MapaHash getHashMap()
+    {
+        return hm;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return 42 * this.codigo.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        final Filial other = (Filial) obj;
+        return Objects.equals(this.codigo, other.codigo);
+    }
+
+    public int compareTo(Filial e)
+    {
+        return this.getCodigo().compareTo(e.getCodigo());
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Filial" + this.codigo + "{" + hm.toString() + "}";
+    }
 }
