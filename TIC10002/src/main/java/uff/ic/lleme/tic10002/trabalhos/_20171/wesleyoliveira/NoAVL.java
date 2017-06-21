@@ -10,79 +10,78 @@ package uff.ic.lleme.tic10002.trabalhos._20171.wesleyoliveira;
  * @author Wesley Oliveira
  */
 public class NoAVL {
-  
-	private NoAVL esquerda;
-	private NoAVL direita;
-	private NoAVL pai;
-	private int chave;
-        private ListaEncadeada lista = new ListaEncadeada();
-	private int balanceamento;
 
-	public NoAVL(int k) {
-		setEsquerda(setDireita(setPai(null)));
-		setBalanceamento(0);
-		setChave(k);
-	}
-        public NoAVL(int k, Venda venda) {
-		setEsquerda(setDireita(setPai(null)));
-		setBalanceamento(0);
-		setChave(k);
-                setNovavenda (venda);
-	}
+    private NoAVL esquerda;
+    private NoAVL direita;
+    private NoAVL pai;
+    private int chave;
+    private ListaEncadeada lista = new ListaEncadeada();
+    private int balanceamento;
 
-	public String toString() {
-		return Integer.toString(getChave());
-	}
+    public NoAVL(int k) {
+        setEsquerda(setDireita(setPai(null)));
+        setBalanceamento(0);
+        setChave(k);
+    }
 
-	public int getChave() {
-		return chave;
-	}
+    public NoAVL(int k, Venda venda) {
+        setEsquerda(setDireita(setPai(null)));
+        setBalanceamento(0);
+        setChave(k);
+        setNovavenda(venda);
+    }
 
-	public void setChave(int chave) {
-		this.chave = chave;
-	}
+    public String toString() {
+        return Integer.toString(getChave());
+    }
 
-	public int getBalanceamento() {
-		return balanceamento;
-	}
+    public int getChave() {
+        return chave;
+    }
 
-	public void setBalanceamento(int balanceamento) {
-		this.balanceamento = balanceamento;
-	}
+    public void setChave(int chave) {
+        this.chave = chave;
+    }
 
-	public NoAVL getPai() {
-		return pai;
-	}
+    public int getBalanceamento() {
+        return balanceamento;
+    }
 
-	public NoAVL setPai(NoAVL pai) {
-		this.pai = pai;
-		return pai;
-	}
+    public void setBalanceamento(int balanceamento) {
+        this.balanceamento = balanceamento;
+    }
 
-	public NoAVL getDireita() {
-		return direita;
-	}
+    public NoAVL getPai() {
+        return pai;
+    }
 
-	public NoAVL setDireita(NoAVL direita) {
-		this.direita = direita;
-		return direita;
-	}
+    public NoAVL setPai(NoAVL pai) {
+        this.pai = pai;
+        return pai;
+    }
 
-	public NoAVL getEsquerda() {
-		return esquerda;
-	}
+    public NoAVL getDireita() {
+        return direita;
+    }
 
-	public void setEsquerda(NoAVL esquerda) {
-		this.esquerda = esquerda;
-	}
-        
-        public ListaEncadeada getLista (){
-            return lista;
-        }
-        
-        public void setNovavenda (Venda venda){
-            this.lista.adicionarNo(venda);
-        }
+    public NoAVL setDireita(NoAVL direita) {
+        this.direita = direita;
+        return direita;
+    }
+
+    public NoAVL getEsquerda() {
+        return esquerda;
+    }
+
+    public void setEsquerda(NoAVL esquerda) {
+        this.esquerda = esquerda;
+    }
+
+    public ListaEncadeada getLista() {
+        return lista;
+    }
+
+    public void setNovavenda(Venda venda) {
+        this.lista.adicionarNo(venda);
+    }
 }
-    
-

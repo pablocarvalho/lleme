@@ -10,6 +10,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.gabrielcarvalho;
  * @author Frog33
  */
 public class NoData {
+
     Venda cont;
     NoData pai;
     NoData esq;
@@ -19,33 +20,38 @@ public class NoData {
     public NoData(Venda cont) {
         this.cont = cont;
     }
-    
-    public int getChave(){
+
+    public int getChave() {
         return cont.getChave(true);
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String res = this.cont + " ";
-        
-        if(this.esq != null) res += this.esq.cont + " ";
-        else res += "nil ";
-        
-        if(this.dir != null) res += this.dir.cont + " ";
-        else res += "nil ";
-        
+
+        if (this.esq != null)
+            res += this.esq.cont + " ";
+        else
+            res += "nil ";
+
+        if (this.dir != null)
+            res += this.dir.cont + " ";
+        else
+            res += "nil ";
+
         return res += " alt: " + this.altura;
     }
-    
-    public static int altura(NoData no){
-        if(no == null) return -1;
+
+    public static int altura(NoData no) {
+        if (no == null)
+            return -1;
         return no.altura;
     }
-    
-    int fatorBalanceamento(){
+
+    int fatorBalanceamento() {
         return altura(this.esq) - altura(this.dir);
     }
-    
+
     public void printTree() {
         if (dir != null)
             dir.printTree(false, "");
@@ -55,7 +61,7 @@ public class NoData {
     }
 
     private void printNodeValue() {
-        System.out.print("" + this.cont.getData() + "|"  + this.cont.getTotal() + "/" + this.fatorBalanceamento());
+        System.out.print("" + this.cont.getData() + "|" + this.cont.getTotal() + "/" + this.fatorBalanceamento());
         System.out.print('\n');
     }
 

@@ -24,39 +24,34 @@ public class AVLTree {
 
     //
     List<Vendas> consultaFilial(int x, int y) {
-        if (x > y) {
+        if (x > y)
             throw new IllegalArgumentException("lower > upper");
-        }
         procurarFilial(root, x, y);
         return datosFial;
     }
 
-    private void procurarFilial(AVLNode nodo, int x1, int x2) { // funcion resursiva 
+    private void procurarFilial(AVLNode nodo, int x1, int x2) { // funcion resursiva
         AVLNode filhoIzq = nodo.izquierdo;
         AVLNode filhoDer = nodo.derecho;
-        if (filhoIzq != null && nodo.dato.codFial > x1) {
+        if (filhoIzq != null && nodo.dato.codFial > x1)
             procurarFilial(nodo.izquierdo, x1, x2);
-        }
-        if (nodo.dato.codFial >= x1 && nodo.dato.codFial <= x2) {
-            if (nodo.duplicados != null) {
+        if (nodo.dato.codFial >= x1 && nodo.dato.codFial <= x2)
+            if (nodo.duplicados != null)
                 for (int j = 0; j < nodo.duplicados.size(); j++) {
                     sumaVendas = sumaVendas + nodo.duplicados.get(j).total;
                     datosFial.add(nodo.duplicados.get(j));
                 }
-            } else {
+            else {
                 datosFial.add(nodo.dato);
                 sumaVendas = sumaVendas + nodo.dato.total;
             }
-        }
-        if (filhoDer != null && nodo.dato.codFial < x2) {
+        if (filhoDer != null && nodo.dato.codFial < x2)
             procurarFilial(nodo.derecho, x1, x2);
-        }
     }
 
     List<Vendas> consultaDate(Date x, Date y) {
-        if (x.after(y)) {
+        if (x.after(y))
             throw new IllegalArgumentException("lower > upper");
-        }
         procurarDate(root, x, y);
         return datosDate;
     }
@@ -65,27 +60,23 @@ public class AVLTree {
         AVLNode filhoIzq = nodo.izquierdo;
         AVLNode filhoDer = nodo.derecho;
 
-        if (filhoIzq != null && nodo.dato.fecha.compareTo(x1) > 0) {
+        if (filhoIzq != null && nodo.dato.fecha.compareTo(x1) > 0)
             procurarDate(nodo.izquierdo, x1, x2);
-        }
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        if (nodo.dato.fecha.compareTo(x1) >= 0 && nodo.dato.fecha.compareTo(x2) <= 0) {
+        if (nodo.dato.fecha.compareTo(x1) >= 0 && nodo.dato.fecha.compareTo(x2) <= 0)
             //sumaVendas = sumaVendas + nodo.dato.total;
             //datosDate.add(nodo.dato);
-            if (nodo.duplicados != null) {
+            if (nodo.duplicados != null)
                 for (int j = 0; j < nodo.duplicados.size(); j++) {
                     sumaVendas = sumaVendas + nodo.duplicados.get(j).total;
                     datosDate.add(nodo.duplicados.get(j));
                 }
-            } else {
+            else {
                 datosDate.add(nodo.dato);
                 sumaVendas = sumaVendas + nodo.dato.total;
             }
-
-        }
-        if (filhoDer != null && nodo.dato.fecha.compareTo(x2) < 0) {
+        if (filhoDer != null && nodo.dato.fecha.compareTo(x2) < 0)
             procurarDate(nodo.derecho, x1, x2);
-        }
     }
 
     public void insertDate(Vendas x) {
@@ -93,30 +84,26 @@ public class AVLTree {
     }
 
     private AVLNode insertDate(Vendas x, AVLNode t) {
-        if (t == null) {
+        if (t == null)
             t = new AVLNode(x, null, null);
-        } else if (x.fecha.before(t.dato.fecha)) {
+        else if (x.fecha.before(t.dato.fecha)) {
             t.izquierdo = insertDate(x, t.izquierdo);
-            if (height(t.izquierdo) - height(t.derecho) == 2) {
-                if (x.fecha.before(t.izquierdo.dato.fecha)) {
+            if (height(t.izquierdo) - height(t.derecho) == 2)
+                if (x.fecha.before(t.izquierdo.dato.fecha))
                     t = rotateWithLeftChild(t);
-                    /* Caso 1 */
-                } else {
+                /* Caso 1 */
+                else
                     t = doubleWithLeftChild(t);
-                    /* Caso 2 */
-                }
-            }
+            /* Caso 2 */
         } else if (x.fecha.after(t.dato.fecha)) {
             t.derecho = insertDate(x, t.derecho);
-            if (height(t.derecho) - height(t.izquierdo) == 2) {
-                if (x.fecha.after(t.derecho.dato.fecha)) {
+            if (height(t.derecho) - height(t.izquierdo) == 2)
+                if (x.fecha.after(t.derecho.dato.fecha))
                     t = rotateWithRightChild(t);
-                    /* Caso 4 */
-                } else {
+                /* Caso 4 */
+                else
                     t = doubleWithRightChild(t);
-                    /* Caso 3 */
-                }
-            }
+            /* Caso 3 */
         } else { //; // Duplicado; no hago nada
             t.actiDupli();
             t.duplicados.add(x);
@@ -130,26 +117,22 @@ public class AVLTree {
     }
 
     private AVLNode insertFilial(Vendas x, AVLNode t) {
-        if (t == null) {
+        if (t == null)
             t = new AVLNode(x, null, null);
-        } else if (x.codFial < t.dato.codFial) {
+        else if (x.codFial < t.dato.codFial) {
             t.izquierdo = insertFilial(x, t.izquierdo);
-            if (height(t.izquierdo) - height(t.derecho) == 2) {
-                if (x.codFial < t.izquierdo.dato.codFial) {
+            if (height(t.izquierdo) - height(t.derecho) == 2)
+                if (x.codFial < t.izquierdo.dato.codFial)
                     t = rotateWithLeftChild(t);
-                } else {
+                else
                     t = doubleWithLeftChild(t);
-                }
-            }
         } else if (x.codFial > t.dato.codFial) { // derecha
             t.derecho = insertFilial(x, t.derecho);
-            if (height(t.derecho) - height(t.izquierdo) == 2) {
-                if (x.codFial > t.derecho.dato.codFial) { // recto 11 12 15
+            if (height(t.derecho) - height(t.izquierdo) == 2)
+                if (x.codFial > t.derecho.dato.codFial) // recto 11 12 15
                     t = rotateWithRightChild(t);
-                } else {
+                else
                     t = doubleWithRightChild(t);
-                }
-            }
         } else {  // Duplicado; lo insertamos a la derecha
             t.actiDupli();
             t.duplicados.add(x);

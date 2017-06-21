@@ -6,8 +6,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.carlosdantas;
  */
 public class TrabalhoED {
 
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         Armazenamento base = new Armazenamento();
         base.insere(1, new MesAno("jan/2015"), 1, 10);
         base.insere(1, new MesAno("jan/2015"), 2, 156);
@@ -33,7 +32,7 @@ public class TrabalhoED {
         base.insere(1, new MesAno("jun/2015"), 1, 720);
         base.insere(1, new MesAno("jun/2015"), 2, 430);
         base.insere(1, new MesAno("jun/2015"), 3, 760);
-        
+
         System.out.println(base.totalVendido(1, 11, new MesAno("jun/2015"), new MesAno("dez/2015")));
         System.out.println(base.totalVendido(0, 0, new MesAno("dez/2014"), new MesAno("jan/2015")));
         System.out.println(base.totalVendido(5, 11, new MesAno(), new MesAno()));

@@ -5,8 +5,6 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.cleirissonsilva;
 
-import java.io.InvalidObjectException;
-
 /**
  *
  * @author clerissonss
@@ -57,9 +55,8 @@ public class ListaVenda {
 
         NoLista novoNoLista = new NoLista(venda);
 
-        if (this.ehVazia()) {
+        if (this.ehVazia())
             this.ultimoNo = novoNoLista;
-        }
         novoNoLista.setProx(this.primNo);
         this.primNo = novoNoLista;
         this.qtdNos++;
@@ -88,9 +85,8 @@ public class ListaVenda {
         NoLista atual = this.primNo;
 
         while ((atual != null)) {
-            if (atual.getVenda().getAno_mes() >= anoMesMenor && atual.getVenda().getAno_mes() <= anoMesMaior) {
+            if (atual.getVenda().getAno_mes() >= anoMesMenor && atual.getVenda().getAno_mes() <= anoMesMaior)
                 totalVendidoPorData += atual.getVenda().getTotalVendido();
-            }
 
             atual = atual.getProx();
         }
@@ -127,9 +123,8 @@ public class ListaVenda {
     public String imprimir() {
         String msg = "";
 
-        if (ehVazia()) {
+        if (ehVazia())
             msg = "A lista está vazia";
-        }
         NoLista atual = this.primNo;
 
         while (atual != null) {

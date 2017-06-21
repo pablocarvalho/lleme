@@ -35,7 +35,7 @@ public class HashVenda {
                 return 1;
             }
             //tratamento de colisão por sondagem linear
-            posicao = determinaPosicao(posicao + i, m);            
+            posicao = determinaPosicao(posicao + i, m);
         }
 
         //overflow
@@ -52,9 +52,8 @@ public class HashVenda {
             posicao = buscaPosicao(i);
 
             // Se existir venda para a filial
-            if (posicao != -1) {
+            if (posicao != -1)
                 soma += tabelaHash[posicao].SomaTotalLista();
-            }
         }
 
         return soma;
@@ -70,12 +69,10 @@ public class HashVenda {
         for (int i = 0; i < tabelaHash.length; i++) {
 
             // Se for = a null quer dizer que não existe lista para a filial (Não existem vendas para a filial)
-            if (this.tabelaHash[posicao] == null) {
+            if (this.tabelaHash[posicao] == null)
                 return -1;
-            }
-            if (this.tabelaHash[posicao].primeiro.conteudo.getFilial() == filial) {
+            if (this.tabelaHash[posicao].primeiro.conteudo.getFilial() == filial)
                 return posicao;
-            }
             //colisão
             posicao = determinaPosicao(posicao + i, m);
         }
@@ -92,9 +89,8 @@ public class HashVenda {
             posicao = buscaPosicao(i);
 
             // Se existir venda para a filial
-            if (posicao != -1) {
+            if (posicao != -1)
                 soma += tabelaHash[posicao].SomaTotalLista(data1, data2);
-            }
         }
 
         return soma;

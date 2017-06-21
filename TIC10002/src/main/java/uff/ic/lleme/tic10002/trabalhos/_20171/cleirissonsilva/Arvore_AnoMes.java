@@ -42,15 +42,13 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
         //Compara os CPFs dos empregados de cada nó
         //se o CPF contido no Empregado da raiz atual é == ao CPF do empregado da nova Raiz
         // NÃO INCLUI e passa uma exceção
-        if (raizAtual.getChave() == noFilhoDaRaizAtual.getChave()) {
-            raizAtual.insereNaLista(noFilhoDaRaizAtual.getListaVenda().getPrimNo().getVenda());
-
-            //System.out.println(raizAtual.getListaVenda().imprimir());
-            //Compara os CPFs dos empregados de cada nó
-            //se o CPF contido no Empregado da raiz atual é MENOR(<) que ao CPF do empregado do novoNoArvoreFilhoDaRaizAtual
-            //A comparação retorna -1 < 0
-            //Vai Incluir a ESQUERDA do nó raizAtual
-        } else if (raizAtual.getChave() > noFilhoDaRaizAtual.getChave()) {
+        if (raizAtual.getChave() == noFilhoDaRaizAtual.getChave())
+            raizAtual.insereNaLista(noFilhoDaRaizAtual.getListaVenda().getPrimNo().getVenda()); //System.out.println(raizAtual.getListaVenda().imprimir());
+        //Compara os CPFs dos empregados de cada nó
+        //se o CPF contido no Empregado da raiz atual é MENOR(<) que ao CPF do empregado do novoNoArvoreFilhoDaRaizAtual
+        //A comparação retorna -1 < 0
+        //Vai Incluir a ESQUERDA do nó raizAtual
+        else if (raizAtual.getChave() > noFilhoDaRaizAtual.getChave())
 
             //Se a raiz O FE da raizAtual aponta para null
             //cria um nó só para retornar a chamada do retornada pelo método conectar
@@ -60,35 +58,26 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
                 qtdNos++;
 
                 //Senão caminha na arvore à ESQUERDA até encontrar um filho esquerdo == null onde possa incluir
-            } else {
-                inserir(raizAtual.getfE(), noFilhoDaRaizAtual);
-                // System.out.println(noFilhoDaRaizAtual.getListaVenda().imprimir());
-
-            }
-
-            //Compara os CPFs dos empregados de cada nó
-            //se o CPF contido no Empregado da raiz atual é MAIOR(>) que ao CPF do empregado do novoNoArvoreFilhoDaRaizAtual
-            //A comparação retorna 1 > 0
-            //Vai Incluir a DIREITA do nó raizAtual
-        } else if (raizAtual.getChave() < noFilhoDaRaizAtual.getChave()) {
+            } else
+                inserir(raizAtual.getfE(), noFilhoDaRaizAtual); // System.out.println(noFilhoDaRaizAtual.getListaVenda().imprimir()); //Compara os CPFs dos empregados de cada nó
+        //se o CPF contido no Empregado da raiz atual é MAIOR(>) que ao CPF do empregado do novoNoArvoreFilhoDaRaizAtual
+        //A comparação retorna 1 > 0
+        //Vai Incluir a DIREITA do nó raizAtual
+        else if (raizAtual.getChave() < noFilhoDaRaizAtual.getChave())
 
             if (raizAtual.getfD() == null) {
                 NoArvore_AnoMes noRetorno = raizAtual.conectarFilhoComPai(noFilhoDaRaizAtual);
                 // System.out.println(noFilhoDaRaizAtual.getListaVenda().imprimir());
                 qtdNos++;
 
-            } else {
+            } else
                 //Caminha na arvore até encontrar um filho Direito == null
-                inserir(raizAtual.getfD(), noFilhoDaRaizAtual);
-                //System.out.println(noFilhoDaRaizAtual.getListaVenda().imprimir());
-            }
-        }
+                inserir(raizAtual.getfD(), noFilhoDaRaizAtual); //System.out.println(noFilhoDaRaizAtual.getListaVenda().imprimir());
 
         raizAtual.altura = maior(NoArvore_AnoMes.altura_No(raizAtual.fE), NoArvore_AnoMes.altura_No(raizAtual.fD)) + 1;
 
-        if (Math.abs(raizAtual.fatorDeBalanceamento_No()) >= 2) {
+        if (Math.abs(raizAtual.fatorDeBalanceamento_No()) >= 2)
             balanceia(raizAtual);
-        }
     }
 
     public double buscarTotalVendidoDeTodasAsFiliaisPorData(NoArvore_AnoMes raizAtual, int anoMesMenor, int anoMesMaior) {
@@ -105,20 +94,15 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
 
     public void balanceia(NoArvore_AnoMes noDesbalanceado) {
 
-        if (noDesbalanceado.fatorDeBalanceamento_No() == 2) {
-            if (noDesbalanceado.fE.fatorDeBalanceamento_No() == -1) {
+        if (noDesbalanceado.fatorDeBalanceamento_No() == 2)
+            if (noDesbalanceado.fE.fatorDeBalanceamento_No() == -1)
                 rotacaoEsquerdaDireita(noDesbalanceado);
-            } else {
+            else
                 rotacaoSimplesDireita(noDesbalanceado);
-            }
-        } else {
-            if (noDesbalanceado.fD.fatorDeBalanceamento_No() == 1) {
-                rotacaoDireitaEsquerda(noDesbalanceado);
-            } else {
-                rotacaoSimplesEsquerda(noDesbalanceado);
-            }
-
-        }
+        else if (noDesbalanceado.fD.fatorDeBalanceamento_No() == 1)
+            rotacaoDireitaEsquerda(noDesbalanceado);
+        else
+            rotacaoSimplesEsquerda(noDesbalanceado);
     }
 
     /**
@@ -127,11 +111,10 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
      * *************************************************************************
      */
     public int maior(int altura1, int altura2) {
-        if (altura1 > altura2) {
+        if (altura1 > altura2)
             return altura1;
-        } else {
+        else
             return altura2;
-        }
     }
 
     /**
@@ -145,9 +128,8 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
 
         ptNo = noRaizDesbalanceado.getfD();
         noRaizDesbalanceado.fD = ptNo.fE;
-        if (ptNo.fE != null) {
+        if (ptNo.fE != null)
             noRaizDesbalanceado.fD.pai = noRaizDesbalanceado;
-        }
         ptNo.fE = noRaizDesbalanceado;
         noRaizDesbalanceado.pai = ptNo;
 
@@ -161,11 +143,10 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
 
         if (pai != null) {
             ptNo.pai = pai;
-            if (pai.fE == noRaizDesbalanceado) {
+            if (pai.fE == noRaizDesbalanceado)
                 pai.fE = ptNo;
-            } else {
+            else
                 pai.fD = ptNo;
-            }
         } else {
             ptNo.pai = null;
             raiz = ptNo;
@@ -178,9 +159,8 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
 
         ptNo = noRaizDesbalanceado.getfE();
         noRaizDesbalanceado.fE = ptNo.fD;
-        if (ptNo.fD != null) {
+        if (ptNo.fD != null)
             noRaizDesbalanceado.fE.pai = noRaizDesbalanceado;
-        }
         ptNo.fD = noRaizDesbalanceado;
         noRaizDesbalanceado.pai = ptNo;
 
@@ -194,11 +174,10 @@ public class Arvore_AnoMes extends ArvoreUtilAno_Mes {
 
         if (pai != null) {
             ptNo.pai = pai;
-            if (pai.fE == noRaizDesbalanceado) {
+            if (pai.fE == noRaizDesbalanceado)
                 pai.fE = ptNo;
-            } else {
+            else
                 pai.fD = ptNo;
-            }
         } else {
             ptNo.pai = null;
             raiz = ptNo;

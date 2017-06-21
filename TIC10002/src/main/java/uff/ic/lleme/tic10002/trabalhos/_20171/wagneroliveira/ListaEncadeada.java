@@ -2,7 +2,6 @@ package colecao;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.function.Consumer;
 import util.TemChave;
 
 public class ListaEncadeada<K, Entidade extends TemChave> implements Iterable<Entidade> {
@@ -54,12 +53,10 @@ public class ListaEncadeada<K, Entidade extends TemChave> implements Iterable<En
 
         if (atual.conteudo.getChave().equals(chave)) {
             //se esta na primeira posicao
-            if (anterior == null) {
-                primeiro = atual.proximo;
-                //se esta numa posicao do meio
-            } else {
+            if (anterior == null)
+                primeiro = atual.proximo; //se esta numa posicao do meio
+            else
                 anterior.proximo = atual.proximo;
-            }
             return atual.conteudo;
         }
         //não achou
@@ -68,12 +65,10 @@ public class ListaEncadeada<K, Entidade extends TemChave> implements Iterable<En
 
     public Entidade buscar(K chave) {
         Node atual = primeiro;
-        while (atual.proximo != null && (!atual.conteudo.getChave().equals(chave))) {
+        while (atual.proximo != null && (!atual.conteudo.getChave().equals(chave)))
             atual = atual.proximo;
-        }
-        if (atual.conteudo.getChave().equals(chave)) {
+        if (atual.conteudo.getChave().equals(chave))
             return atual.conteudo;
-        }
         return null;
     }
 
@@ -105,17 +100,15 @@ public class ListaEncadeada<K, Entidade extends TemChave> implements Iterable<En
         }
 
         public boolean hasNext() {
-            if (this.corrente != null) {
+            if (this.corrente != null)
                 return true;
-            } else {
+            else
                 return false;
-            }
         }
 
         public Entidade next() {
-            if (!hasNext()) {
+            if (!hasNext())
                 throw new NoSuchElementException();
-            }
             Entidade conteudo = this.corrente.conteudo;
             this.corrente = this.corrente.proximo;
             return conteudo;

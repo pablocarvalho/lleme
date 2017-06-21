@@ -1,6 +1,7 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.emersonsouza;
 
 public class No {
+
     public Venda conteudo;
     public No esquerda;
     public No direita;
@@ -8,50 +9,50 @@ public class No {
     public int balanceamento;
 
     public No(Venda conteudo) {
-	setEsquerda(setDireita(setPai(null)));
-	setBalanceamento(0);
-	setConteudo(conteudo);
+        setEsquerda(setDireita(setPai(null)));
+        setBalanceamento(0);
+        setConteudo(conteudo);
     }
 
     public Venda getConteudo() {
-	return conteudo;
+        return conteudo;
     }
 
     public void setConteudo(Venda conteudo) {
-    	this.conteudo = conteudo;
+        this.conteudo = conteudo;
     }
 
     public int getBalanceamento() {
-	return balanceamento;
+        return balanceamento;
     }
 
     public void setBalanceamento(int balanceamento) {
-	this.balanceamento = balanceamento;
+        this.balanceamento = balanceamento;
     }
 
     public No getPai() {
-	return pai;
+        return pai;
     }
 
     public No setPai(No pai) {
-	this.pai = pai;
-	return pai;
+        this.pai = pai;
+        return pai;
     }
 
     public No getDireita() {
-    	return direita;
+        return direita;
     }
 
     public No setDireita(No direita) {
-	this.direita = direita;
-	return direita;
+        this.direita = direita;
+        return direita;
     }
 
     public No getEsquerda() {
-	return esquerda;
+        return esquerda;
     }
 
     public void setEsquerda(No esquerda) {
-	this.esquerda = esquerda;
+        this.esquerda = esquerda;
     }
 }

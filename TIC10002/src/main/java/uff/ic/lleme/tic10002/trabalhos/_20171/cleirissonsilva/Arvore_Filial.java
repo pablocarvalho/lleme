@@ -18,7 +18,8 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
     /**
      * *************************************************************************
-     ** Todas as funções e procedimentos responsáveis pela insercção na Arvore AVL **
+     ** Todas as funções e procedimentos responsáveis pela insercção na Arvore
+     * AVL **
      * *************************************************************************
      */
     public void inserir(Venda venda) throws InvalidObjectException {
@@ -42,38 +43,31 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
     private void inserir(NoArvoreFilial raizAtual, NoArvoreFilial noFilhoDaRaizAtual) throws InvalidObjectException {
 
-        if (raizAtual.getChave() == noFilhoDaRaizAtual.getChave()) {
+        if (raizAtual.getChave() == noFilhoDaRaizAtual.getChave())
             raizAtual.insereNaLista(noFilhoDaRaizAtual.getListaVenda().getPrimNo().getVenda());
-
-        } else if (raizAtual.getChave() > noFilhoDaRaizAtual.getChave()) {
+        else if (raizAtual.getChave() > noFilhoDaRaizAtual.getChave())
 
             if (raizAtual.getfE() == null) {
                 NoArvoreFilial noRetorno = raizAtual.conectarFilhoComPai(noFilhoDaRaizAtual);
 
                 qtdNos++;
 
-            } else {
+            } else
                 inserir(raizAtual.getfE(), noFilhoDaRaizAtual);
-
-            }
-
-        } else if (raizAtual.getChave() < noFilhoDaRaizAtual.getChave()) {
+        else if (raizAtual.getChave() < noFilhoDaRaizAtual.getChave())
 
             if (raizAtual.getfD() == null) {
                 NoArvoreFilial noRetorno = raizAtual.conectarFilhoComPai(noFilhoDaRaizAtual);
                 qtdNos++;
 
-            } else {
+            } else
 
                 inserir(raizAtual.getfD(), noFilhoDaRaizAtual);
-            }
-        }
 
         raizAtual.altura = maior(NoArvoreFilial.altura_No(raizAtual.fE), NoArvoreFilial.altura_No(raizAtual.fD)) + 1;
 
-        if (Math.abs(raizAtual.fatorDeBalanceamento_No()) >= 2) {
+        if (Math.abs(raizAtual.fatorDeBalanceamento_No()) >= 2)
             balanceia(raizAtual);
-        }
     }
 
     /**
@@ -113,33 +107,28 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
     /**
      * *************************************************************************
-     ** Todas as funções e procedimentos responsáveis pelo balanceamento da árvore AVL **
+     ** Todas as funções e procedimentos responsáveis pelo balanceamento da
+     * árvore AVL **
      * *************************************************************************
      */
     public void balanceia(NoArvoreFilial noDesbalanceado) {
 
-        if (noDesbalanceado.fatorDeBalanceamento_No() == 2) {
-            if (noDesbalanceado.fE.fatorDeBalanceamento_No() == -1) {
+        if (noDesbalanceado.fatorDeBalanceamento_No() == 2)
+            if (noDesbalanceado.fE.fatorDeBalanceamento_No() == -1)
                 rotacaoEsquerdaDireita(noDesbalanceado);
-            } else {
+            else
                 rotacaoSimplesDireita(noDesbalanceado);
-            }
-        } else {
-            if (noDesbalanceado.fD.fatorDeBalanceamento_No() == 1) {
-                rotacaoDireitaEsquerda(noDesbalanceado);
-            } else {
-                rotacaoSimplesEsquerda(noDesbalanceado);
-            }
-
-        }
+        else if (noDesbalanceado.fD.fatorDeBalanceamento_No() == 1)
+            rotacaoDireitaEsquerda(noDesbalanceado);
+        else
+            rotacaoSimplesEsquerda(noDesbalanceado);
     }
 
     public int maior(int altura1, int altura2) {
-        if (altura1 > altura2) {
+        if (altura1 > altura2)
             return altura1;
-        } else {
+        else
             return altura2;
-        }
     }
 
     public void rotacaoSimplesEsquerda(NoArvoreFilial noRaizDesbalanceado) {
@@ -149,9 +138,8 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
         ptNo = noRaizDesbalanceado.getfD();
         noRaizDesbalanceado.fD = ptNo.fE;
-        if (ptNo.fE != null) {
+        if (ptNo.fE != null)
             noRaizDesbalanceado.fD.pai = noRaizDesbalanceado;
-        }
         ptNo.fE = noRaizDesbalanceado;
         noRaizDesbalanceado.pai = ptNo;
 
@@ -160,11 +148,10 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
         if (pai != null) {
             ptNo.pai = pai;
-            if (pai.fE == noRaizDesbalanceado) {
+            if (pai.fE == noRaizDesbalanceado)
                 pai.fE = ptNo;
-            } else {
+            else
                 pai.fD = ptNo;
-            }
         } else {
             ptNo.pai = null;
             raiz = ptNo;
@@ -177,9 +164,8 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
         ptNo = noRaizDesbalanceado.getfE();
         noRaizDesbalanceado.fE = ptNo.fD;
-        if (ptNo.fD != null) {
+        if (ptNo.fD != null)
             noRaizDesbalanceado.fE.pai = noRaizDesbalanceado;
-        }
         ptNo.fD = noRaizDesbalanceado;
         noRaizDesbalanceado.pai = ptNo;
 
@@ -188,11 +174,10 @@ public class Arvore_Filial extends ArvoreUtil_Filial {//implements ColecaoVenda 
 
         if (pai != null) {
             ptNo.pai = pai;
-            if (pai.fE == noRaizDesbalanceado) {
+            if (pai.fE == noRaizDesbalanceado)
                 pai.fE = ptNo;
-            } else {
+            else
                 pai.fD = ptNo;
-            }
         } else {
             ptNo.pai = null;
             raiz = ptNo;

@@ -3,7 +3,6 @@ package uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.ArvoreVenda.No;
 
 public class ImpressaoEmArvores {
@@ -31,7 +30,7 @@ public class ImpressaoEmArvores {
 //            	if(node.pai() != null)
 //            		System.out.print(node.getConteudoComTipo()+" , "+node.pai().getConteudoComTipo());
 //            	else
-            	System.out.print(node.getConteudoComTipo());
+                System.out.print(node.getConteudoComTipo());
                 newNodes.add(node.esquerda());
                 newNodes.add(node.direita());
             } else {
@@ -86,10 +85,9 @@ public class ImpressaoEmArvores {
     }
 
     private static <T> boolean isAllElementsNull(List<No> list) {
-        for (Object object : list) {
+        for (Object object : list)
             if (object != null)
                 return false;
-        }
 
         return true;
     }

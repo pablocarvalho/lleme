@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.gabrielalves;
 
-public class Venda{
-    
+public class Venda {
+
     public int filial;
     public int ano_mes;
     public int cod_vendedor;
@@ -14,10 +14,10 @@ public class Venda{
         this.total_vendido = Double.parseDouble(total_vendido);
     }
 
-    public int getValor(int valor){
+    public int getValor(int valor) {
         if (valor == 1)
             return filial;
-        else if(valor == 2)
+        else if (valor == 2)
             return ano_mes;
         else
             return 0;

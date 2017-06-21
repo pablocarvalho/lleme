@@ -3,46 +3,37 @@ package uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino;
 /**
  * @author bernardino
  */
-public class MapaHash
-{
+public class MapaHash {
 
     private final int TAM = 13;
     private final EntradaHash tab[] = new EntradaHash[TAM];
     private int colisoes = 0;
 
-    private int calculaHash(int h)
-    {
+    private int calculaHash(int h) {
         return h ^ (h >>> 20) ^ (h >>> 12) ^ (h >>> 7) ^ (h >>> 4);
     }
 
-    private int encontraPosicaoHash(int hash)
-    {
+    private int encontraPosicaoHash(int hash) {
         return hash & (TAM - 1);
     }
 
-    public void adicionaValor(String chave, Double valor)
-    {
+    public void adicionaValor(String chave, Double valor) {
         adiciona("tudo", valor);
         adiciona(chave, valor);
     }
 
-    private void adiciona(String c, Double v)
-    {
+    private void adiciona(String c, Double v) {
         int hash = calculaHash(c.hashCode());
         int pos = encontraPosicaoHash(hash);
         EntradaHash e = tab[pos];
 
-        while (e != null)
-        {
-            if (e.getChave().equals(c))
-            {
+        while (e != null) {
+            if (e.getChave().equals(c)) {
                 e.incValor(v);
                 return;
             } else
-            {
                 //System.out.println("[!] Colisão detectada para a chave " + c + ", adicionando no final da lista.");
                 colisoes++;
-            }
 
             e = e.proximo();
         }
@@ -53,15 +44,13 @@ public class MapaHash
         tab[pos] = hme;
     }
 
-    public EntradaHash busca(String c)
-    {
+    public EntradaHash busca(String c) {
         int hash = calculaHash(c.hashCode());
         int bucket = encontraPosicaoHash(hash);
         EntradaHash e = tab[bucket];
 
         // Se existe algum hash igual ao da chave, percorre a lista
-        while (e != null)
-        {
+        while (e != null) {
             //System.out.println("Percorrendo a lista do hash " + hash + " em busca da chave " + e.getChave());
             if (e.getChave().equals(c))
                 return e;
@@ -72,8 +61,7 @@ public class MapaHash
         return null;
     }
 
-    public String[] getChaves()
-    {
+    public String[] getChaves() {
         String out = "";
         for (EntradaHash e : tab)
             if (e != null && !e.getChave().equals("tudo"))
@@ -83,12 +71,10 @@ public class MapaHash
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String out = "";
         for (int i = 0; i < tab.length; i++)
-            if (tab[i] != null)
-            {
+            if (tab[i] != null) {
                 out += i + "[ " + tab[i].toString() + " ]";
                 if (i < tab.length - 1)
                     out += ", ";

@@ -5,7 +5,6 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro;
 
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.Comparable;
 import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.Sale;
 
 /**
@@ -36,31 +35,27 @@ public class BranchAVL {
         }
 
         private int heigth(Node no) {
-            if (no != null) {
+            if (no != null)
                 return Math.max(heigth(no.right), heigth(no.left)) + 1;
-            }
             return 0;
         }
 
         private int over() {
-            if (this.right != null && this.left != null) {
+            if (this.right != null && this.left != null)
                 return Math.abs(this.right.heigth() - this.left.heigth());
-            } else if (this.right != null && this.left == null) {
+            else if (this.right != null && this.left == null)
                 return Math.abs(this.right.heigth() - 0);
-            } else if (this.right == null && this.left != null) {
+            else if (this.right == null && this.left != null)
                 return Math.abs(0 - this.left.heigth());
-            }
             return 0;
         }
 
         public void printTree() {
-            if (left != null) {
+            if (left != null)
                 left.printTree(false, "");
-            }
             printNodeValue();
-            if (right != null) {
+            if (right != null)
                 right.printTree(true, "");
-            }
         }
 
         private void printNodeValue() {
@@ -69,20 +64,17 @@ public class BranchAVL {
         }
 
         private void printTree(boolean isRight, String indent) {
-            if (left != null) {
+            if (left != null)
                 left.printTree(false, indent + (isRight ? " |      " : "        "));
-            }
             System.out.print(indent);
-            if (isRight) {
+            if (isRight)
                 System.out.print(" \\");
-            } else {
+            else
                 System.out.print(" /");
-            }
             System.out.print("----- ");
             printNodeValue();
-            if (right != null) {
+            if (right != null)
                 right.printTree(true, indent + (isRight ? "        " : " |      "));
-            }
         }
 
         private boolean insert(Sale info) {
@@ -110,9 +102,8 @@ public class BranchAVL {
     }
 
     private int heigth(Node node) {
-        if (node != null) {
+        if (node != null)
             return Math.max(heigth(node.right), heigth(node.left)) + 1;
-        }
         return 0;
     }
 
@@ -127,9 +118,8 @@ public class BranchAVL {
             int alturaDireita = heigth2(no.right);
             int alturaEsquerda = heigth2(no.left);
             int saldoSubArvores = Math.abs(alturaDireita - alturaEsquerda);
-            if (saldoSubArvores > maxOver) {
+            if (saldoSubArvores > maxOver)
                 maxOver = saldoSubArvores;
-            }
             return Math.max(alturaDireita, alturaEsquerda) + 1;
         }
         return 0;
@@ -139,16 +129,15 @@ public class BranchAVL {
         if (root == null) {
             root = new Node(info);
             return true;
-        } else {
+        } else
             return insert(root, info);
-        }
 
     }
 
     private boolean insert(Node no, Sale info) {
-        if (no.branchCode == info.getKey(type)) {
+        if (no.branchCode == info.getKey(type))
             return no.insert(info);
-        } else if (no.branchCode > info.getKey(type)) {
+        else if (no.branchCode > info.getKey(type))
             if (no.right == null) {
                 no.right = new Node(info);
 
@@ -159,31 +148,28 @@ public class BranchAVL {
 
                 int saldoAnteriorU = no.right.heigthOver;
                 int saldoAnteriorV = 0;
-                if (no.right.left != null) {
+                if (no.right.left != null)
                     saldoAnteriorV = no.right.left.heigthOver;
-                }
 
                 boolean inserted = insert(no.right, info);
 
                 int saldoPosteriorU = no.right.heigthOver;
                 int saldoPosteriorV = 0;
-                if (no.right.left != null) {
+                if (no.right.left != null)
                     saldoPosteriorV = no.right.left.heigthOver;
-                }
 
                 int delta1 = saldoPosteriorU - saldoAnteriorU;
                 int delta2 = saldoPosteriorV - saldoAnteriorV;
 
                 if (Math.abs(delta1) > 0 && saldoPosteriorU != 0) {
                     no.heigthOver++;
-                    if (Math.abs(no.heigthOver) > 1 && balanced) {
+                    if (Math.abs(no.heigthOver) > 1 && balanced)
                         balanceRight(no, delta1, delta2);
-                    }
                 }
 
                 return inserted;
             }
-        } else if (no.branchCode < info.getKey(type)) {
+        else if (no.branchCode < info.getKey(type))
             if (no.left == null) {
                 no.left = new Node(info);
 
@@ -194,33 +180,29 @@ public class BranchAVL {
 
                 int saldoAnteriorZ = no.left.heigthOver;
                 int saldoAnteriorY = 0;
-                if (no.left.right != null) {
+                if (no.left.right != null)
                     saldoAnteriorY = no.left.right.heigthOver;
-                }
 
                 boolean inserted = insert(no.left, info);
 
                 int saldoPosteriorZ = no.left.heigthOver;
                 int saldoPosteriorY = 0;
-                if (no.left.right != null) {
+                if (no.left.right != null)
                     saldoPosteriorY = no.left.right.heigthOver;
-                }
 
                 int delta1 = saldoPosteriorZ - saldoAnteriorZ;
                 int delta2 = saldoPosteriorY - saldoAnteriorY;
 
                 if (Math.abs(delta1) > 0 && saldoPosteriorZ != 0) {
                     no.heigthOver--;
-                    if (Math.abs(no.heigthOver) > 1 && balanced) {
+                    if (Math.abs(no.heigthOver) > 1 && balanced)
                         balanceLeft(no, delta1, delta2);
-                    }
                 }
 
                 return inserted;
             }
-        } else {
+        else
             return false;
-        }
     }
 
     private void balanceRight(Node n1, int delta1, int delta2) {
@@ -350,50 +332,44 @@ public class BranchAVL {
     }
 
     public List search(int chave) {
-        if (root != null) {
+        if (root != null)
             return search(root, chave);
-        } else {
+        else
             return null;
-        }
     }
 
     private List search(Node no, int chave) {
-        if (no.branchCode == chave) {
+        if (no.branchCode == chave)
             return no.branchSales;
-        } else if (no.branchCode > chave && no.right != null) {
+        else if (no.branchCode > chave && no.right != null)
             return search(no.right, chave);
-        } else if (no.branchCode < chave && no.left != null) {
+        else if (no.branchCode < chave && no.left != null)
             return search(no.left, chave);
-        } else {
+        else
             return null;
-        }
     }
 
     public List searchBranchRange(int begin, int end) {
-        if (root != null) {
+        if (root != null)
             return searchBranchRange(root, begin, end);
-        } else {
+        else
             return null;
-        }
     }
 
     private List searchBranchRange(Node node, int begin, int end) {
         if (node.branchCode >= begin && node.branchCode <= end) {
             LinkedList list = (LinkedList) node.branchSales;
-            if (node.right != null) {
+            if (node.right != null)
                 list = (LinkedList) list.merge(searchBranchRange(node.right, begin, end));
-            }
-            if (node.left != null) {
+            if (node.left != null)
                 list = (LinkedList) list.merge(searchBranchRange(node.left, begin, end));
-            }
             return list;
-        } else if (node.branchCode > end && node.right != null) {
+        } else if (node.branchCode > end && node.right != null)
             return searchBranchRange(node.right, begin, end);
-        } else if (node.branchCode < begin && node.left != null) {
+        else if (node.branchCode < begin && node.left != null)
             return searchBranchRange(node.left, begin, end);
-        } else {
+        else
             return null;
-        }
     }
 
 }

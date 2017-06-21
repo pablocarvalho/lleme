@@ -10,6 +10,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.gabrielcarvalho;
  * @author Frog33
  */
 public class Venda {
+
     private int filial;
     private MesAno ma;
     private String codVen;
@@ -21,28 +22,31 @@ public class Venda {
         this.codVen = codVen;
         this.total = total;
     }
-    public String getData(){
+
+    public String getData() {
         return ma.toString();
     }
-    public int getChave(boolean ehFilial){
-        if(ehFilial) return this.getchave();
+
+    public int getChave(boolean ehFilial) {
+        if (ehFilial)
+            return this.getchave();
         return ma.getChave();
     }
 
     public void setTotal(int total) {
         this.total += total;
     }
-    
-    private int getchave(){
+
+    private int getchave() {
         return filial;
     }
-    
+
     public int getTotal() {
         return total;
     }
-    
+
     @Override
-    public String toString(){
-        return "||"+filial + ", " + ma + ", " + total + "|| ";
+    public String toString() {
+        return "||" + filial + ", " + ma + ", " + total + "|| ";
     }
 }

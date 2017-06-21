@@ -6,7 +6,6 @@
 package util;
 
 import java.util.Objects;
-import util.TemChave;
 
 /**
  *
@@ -20,8 +19,8 @@ public class Venda implements TemChave<Integer> {
     private Integer codVend;
     private double totalVendido;
 
-    public Venda(Integer id,Integer filial, String anoMes, Integer codVend, double totalVendido) {
-        this.id=id;
+    public Venda(Integer id, Integer filial, String anoMes, Integer codVend, double totalVendido) {
+        this.id = id;
         this.filial = filial;
         this.anoMes = anoMes;
         this.codVend = codVend;
@@ -61,7 +60,7 @@ public class Venda implements TemChave<Integer> {
     }
 
     public Integer getChave() {
-      /*  String chave=filial.toString().concat(anoMes).concat(new Integer(codVend).toString());
+        /*  String chave=filial.toString().concat(anoMes).concat(new Integer(codVend).toString());
         int hash = 7;
         for (int i = 0; i < chave.length(); i++) {
             char character = chave.charAt(i);
@@ -69,7 +68,7 @@ public class Venda implements TemChave<Integer> {
             hash = hash * 31 + ascii;
         }
         return hash;
-         */       
+         */
         return id;
     }
 
@@ -78,28 +77,21 @@ public class Venda implements TemChave<Integer> {
         return "Venda{" + "id=" + id + ", filial=" + filial + ", anoMes=" + anoMes + ", totalVendido=" + totalVendido + '}';
     }
 
-
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
         final Venda other = (Venda) obj;
-        if (this.filial != other.filial) {
+        if (this.filial != other.filial)
             return false;
-        }
-        if (!Objects.equals(this.anoMes, other.anoMes)) {
+        if (!Objects.equals(this.anoMes, other.anoMes))
             return false;
-        }
-        if (this.codVend != other.codVend) {
+        if (this.codVend != other.codVend)
             return false;
-        }
-        if (Double.doubleToLongBits(this.totalVendido) != Double.doubleToLongBits(other.totalVendido)) {
+        if (Double.doubleToLongBits(this.totalVendido) != Double.doubleToLongBits(other.totalVendido))
             return false;
-        }
         return true;
     }
 

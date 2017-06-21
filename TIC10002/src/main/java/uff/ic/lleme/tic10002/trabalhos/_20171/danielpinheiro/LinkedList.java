@@ -44,11 +44,10 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
             last = tmp;
             length++;
             return true;
-        } else if (first.content.compareTo(e) == 0) {
+        } else if (first.content.compareTo(e) == 0)
             return false;
-        } else {
+        else
             return add(first, e);
-        }
     }
 
     private boolean add(Node first, E e) {
@@ -58,17 +57,16 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
             last = tmp;
             length++;
             return true;
-        } else if (first.content.compareTo(e) == 0) {
+        } else if (first.content.compareTo(e) == 0)
             return false;
-        }
         return add(first.next, e);
     }
 
     @Override
     public E remove(E e) {
-        if (first == null) {
+        if (first == null)
             return null;
-        } else if (first.content.compareTo(e) == 0) {
+        else if (first.content.compareTo(e) == 0) {
             E tmp = (E) first.content;
             first = first.next;
             length--;
@@ -78,9 +76,9 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
     }
 
     private E remove(Node first, E e) {
-        if (first == null) {
+        if (first == null)
             return null;
-        } else if (first.next != null && first.next.content.compareTo(e) == 0) {
+        else if (first.next != null && first.next.content.compareTo(e) == 0) {
             E tmp = (E) first.next.content;
             first.next = first.next.next;
             length--;
@@ -91,22 +89,20 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
 
     @Override
     public E find(E e) {
-        if (first == null) {
+        if (first == null)
             return null;
-        } else if (first.content.compareTo(e) == 0) {
+        else if (first.content.compareTo(e) == 0)
             return (E) first.content;
-        }
         return find(first.next, e);
     }
 
     private E find(Node node, E e) {
-        if (node == null) {
+        if (node == null)
             return null;
-        } else {
+        else {
             while (node != null) {
-                if (node.content.compareTo(e) == 0) {
+                if (node.content.compareTo(e) == 0)
                     return (E) node.content;
-                }
                 node = node.next;
             }
             return null;
@@ -147,9 +143,8 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
                 tmp = tmp.next;
             }
             return resp;
-        } else {
+        } else
             return this;
-        }
     }
 
     @Override
@@ -169,9 +164,8 @@ public class LinkedList<E extends uff.ic.lleme.tic10002.trabalhos._20171.danielp
         List<E> resp = new LinkedList();
         Node tmp = first;
         while (tmp != null) {
-            if (another.find(tmp.content) != null) {
+            if (another.find(tmp.content) != null)
                 resp.add((E) tmp.content);
-            }
             tmp = tmp.next;
         }
         return resp;

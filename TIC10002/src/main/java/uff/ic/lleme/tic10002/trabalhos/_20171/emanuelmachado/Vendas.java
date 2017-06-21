@@ -13,7 +13,7 @@ public class Vendas {
         carregar();
     }
 
-    private void carregar() {      
+    private void carregar() {
         try {
 
             FileReader arquivo = new FileReader(getClass().getResource("/T1_20171_emanuel/carregar.txt").getFile());
@@ -24,7 +24,7 @@ public class Vendas {
 
             arvore = new ArvoreVenda();
             hash = new HashVenda();
-            
+
             // Linha
             while ((linha = buffer.readLine()) != null) {
 
@@ -58,6 +58,5 @@ public class Vendas {
     public double totalVenda(int filial1, int filial2, String data_inicial, String data_final) {
         return hash.totalVendas(filial1, filial2, data_inicial, data_final);
     }
-        
+
 }
- 

@@ -10,8 +10,8 @@ package uff.ic.lleme.tic10002.trabalhos._20171.wesleyoliveira;
  * @author Wesley Oliveira
  */
 public class ListaEncadeada {
-    
-        /// Criaçao da classe Nó
+
+    /// Criaçao da classe Nó
     public class NoLista {
 
         private Venda obj = null;
@@ -23,7 +23,6 @@ public class ListaEncadeada {
             this.proximo = null;
         }
     }
-    
 
     public NoLista primeiro;
     public NoLista ultimo;
@@ -40,9 +39,8 @@ public class ListaEncadeada {
     }
 
     public boolean checkVazia() {
-        if (getQuantidade() != 0) {
+        if (getQuantidade() != 0)
             return false;
-        }
         return true;
     }
 
@@ -63,7 +61,7 @@ public class ListaEncadeada {
         NoLista aux = primeiro;
         int vendas = 0;
         int i = 1;
-        if (checkVazia() == false) {
+        if (checkVazia() == false)
             while (i <= getQuantidade()) {
 
                 String ano = aux.obj.getdata().substring(0, 2);
@@ -75,7 +73,6 @@ public class ListaEncadeada {
                 i++;
 
             }
-        }
 
         return vendas;
     }

@@ -5,37 +5,31 @@ import java.util.*;
 /**
  * @author bernardino
  */
-public class Filial
-{
+public class Filial {
 
     private final Integer codigo;
     private final MapaHash hm;
 
-    public Filial(Integer c)
-    {
+    public Filial(Integer c) {
         this.codigo = c;
         this.hm = new MapaHash();
     }
 
-    public Integer getCodigo()
-    {
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public MapaHash getHashMap()
-    {
+    public MapaHash getHashMap() {
         return hm;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return 42 * this.codigo.hashCode();
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
@@ -46,14 +40,12 @@ public class Filial
         return Objects.equals(this.codigo, other.codigo);
     }
 
-    public int compareTo(Filial e)
-    {
+    public int compareTo(Filial e) {
         return this.getCodigo().compareTo(e.getCodigo());
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Filial" + this.codigo + "{" + hm.toString() + "}";
     }
 }

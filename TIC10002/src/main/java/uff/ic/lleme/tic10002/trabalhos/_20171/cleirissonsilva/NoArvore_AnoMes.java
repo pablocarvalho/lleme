@@ -32,11 +32,10 @@ public class NoArvore_AnoMes {
 
         chave = venda.getAno_mes();
 
-        if (ehValido(listaVenda)) {
+        if (ehValido(listaVenda))
             this.listaVenda = listaVenda;
-        } else {
+        else
             throw new InvalidObjectException("Venda desconhecida ou sem identificacao.");
-        }
     }
 
     //Serve para validar um lista na hora de Incluir um empregado
@@ -100,58 +99,49 @@ public class NoArvore_AnoMes {
      * *************************************************************************
      */
     public static int altura_No(NoArvore_AnoMes no) {
-        if (no == null) {
+        if (no == null)
             return -1;
-        } else {
+        else
             return no.altura;
-        }
     }
 
     //Serve para incluir/ excluir
     //Excluir No Raiz que tem dois filho e um deles é filho Folha
     //Excluir nó que tem os 2 filhos com mais filhos abaixo
     public NoArvore_AnoMes conectarFilhoComPai(NoArvore_AnoMes noFilhoDaRaizAtual) {
-        if (noFilhoDaRaizAtual != null) {
+        if (noFilhoDaRaizAtual != null)
 
             //Compara os cod_filia das vendas de cada nó
             //se o  cod_filial contido na venda da raiz atual é MENOR(<) que o cod_filial contido na venda da do noFilhoDaRaizAtual           //A comparação retorna -1 < 0
             //Vai conectar a ESQUERDA do nó raizAtual
-            if (getChave() > noFilhoDaRaizAtual.getChave()) {
+            if (getChave() > noFilhoDaRaizAtual.getChave())
                 if (this.getfE() == null) {
                     this.setfE(noFilhoDaRaizAtual);
                     noFilhoDaRaizAtual.setPai(this);
                     return noFilhoDaRaizAtual;
-                } else {
+                } else
                     //Caminha na arvore até encontrar um filho esquerdo == null
-                    return getfE().conectarFilhoComPai(noFilhoDaRaizAtual);
-                }
-
-                //Compara os cod_filial das vendasde cada nó
-                //se o  cod_filial contido na venda da raiz atual é MAIOR(>) que o cod_filial contido na venda da do noFilhoDaRaizAtual
-                //A comparação retorna -1 < 0
-                //Vai conectar a DIREITA do nó raizAtual
-            } else if (getChave() < noFilhoDaRaizAtual.getChave()) {
+                    return getfE().conectarFilhoComPai(noFilhoDaRaizAtual); //Compara os cod_filial das vendasde cada nó
+            //se o  cod_filial contido na venda da raiz atual é MAIOR(>) que o cod_filial contido na venda da do noFilhoDaRaizAtual
+            //A comparação retorna -1 < 0
+            //Vai conectar a DIREITA do nó raizAtual
+            else if (getChave() < noFilhoDaRaizAtual.getChave())
                 if (this.getfD() == null) {
                     this.setfD(noFilhoDaRaizAtual);
                     noFilhoDaRaizAtual.setPai(this);
                     return noFilhoDaRaizAtual;
-                } else {
+                } else
                     //Caminha na arvore até encontrar um filho Direito == null
                     return getfD().conectarFilhoComPai(noFilhoDaRaizAtual);
-                }
-            }
-        }
         return null;
     }
 
     public void printTree() {
-        if (fD != null) {
+        if (fD != null)
             fD.printTree(false, "");
-        }
         printNodeValue();
-        if (fE != null) {
+        if (fE != null)
             fE.printTree(true, "");
-        }
     }
 
     private void printNodeValue() {
@@ -160,20 +150,17 @@ public class NoArvore_AnoMes {
     }
 
     private void printTree(boolean isRight, String indent) {
-        if (fD != null) {
+        if (fD != null)
             fD.printTree(false, indent + (isRight ? " |      " : "        "));
-        }
         System.out.print(indent);
-        if (isRight) {
+        if (isRight)
             System.out.print(" \\");
-        } else {
+        else
             System.out.print(" /");
-        }
         System.out.print("----- ");
         printNodeValue();
-        if (fE != null) {
+        if (fE != null)
             fE.printTree(true, indent + (isRight ? "        " : " |      "));
-        }
     }
 
 }

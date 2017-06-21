@@ -51,9 +51,8 @@ public class Dados {
             e.printStackTrace();
         } finally {
             try {
-                if (null != fr) {
+                if (null != fr)
                     fr.close();
-                }
             } catch (Exception e2) {
                 e2.printStackTrace();
             }

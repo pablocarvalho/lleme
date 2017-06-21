@@ -31,11 +31,10 @@ public class NoArvoreFilial {
 
         chave = venda.getCod_filial();
 
-        if (ehValido(listaVenda)) {
+        if (ehValido(listaVenda))
             this.listaVenda = listaVenda;
-        } else {
+        else
             throw new InvalidObjectException("Venda desconhecida ou sem identificacao.");
-        }
     }
 
     public boolean ehValido(ListaVenda listaVenda) {
@@ -97,36 +96,30 @@ public class NoArvoreFilial {
      * *************************************************************************
      */
     public static int altura_No(NoArvoreFilial no) {
-        if (no == null) {
+        if (no == null)
             return -1;
-        } else {
+        else
             return no.altura;
-        }
     }
 
     public NoArvoreFilial conectarFilhoComPai(NoArvoreFilial noFilhoDaRaizAtual) {
-        if (noFilhoDaRaizAtual != null) {
+        if (noFilhoDaRaizAtual != null)
 
-            if (getChave() > noFilhoDaRaizAtual.getChave()) {
+            if (getChave() > noFilhoDaRaizAtual.getChave())
                 if (this.getfE() == null) {
                     this.setfE(noFilhoDaRaizAtual);
                     noFilhoDaRaizAtual.setPai(this);
                     return noFilhoDaRaizAtual;
-                } else {
+                } else
 
                     return getfE().conectarFilhoComPai(noFilhoDaRaizAtual);
-                }
-
-            } else if (getChave() < noFilhoDaRaizAtual.getChave()) {
+            else if (getChave() < noFilhoDaRaizAtual.getChave())
                 if (this.getfD() == null) {
                     this.setfD(noFilhoDaRaizAtual);
                     noFilhoDaRaizAtual.setPai(this);
                     return noFilhoDaRaizAtual;
-                } else {
+                } else
                     return getfD().conectarFilhoComPai(noFilhoDaRaizAtual);
-                }
-            }
-        }
         return null;
     }
 
@@ -136,13 +129,11 @@ public class NoArvoreFilial {
      * *************************************************************************
      */
     public void printTree() {
-        if (fD != null) {
+        if (fD != null)
             fD.printTree(false, "");
-        }
         printNodeValue();
-        if (fE != null) {
+        if (fE != null)
             fE.printTree(true, "");
-        }
     }
 
     private void printNodeValue() {
@@ -151,20 +142,17 @@ public class NoArvoreFilial {
     }
 
     private void printTree(boolean isRight, String indent) {
-        if (fD != null) {
+        if (fD != null)
             fD.printTree(false, indent + (isRight ? " |      " : "        "));
-        }
         System.out.print(indent);
-        if (isRight) {
+        if (isRight)
             System.out.print(" \\");
-        } else {
+        else
             System.out.print(" /");
-        }
         System.out.print("----- ");
         printNodeValue();
-        if (fE != null) {
+        if (fE != null)
             fE.printTree(true, indent + (isRight ? "        " : " |      "));
-        }
     }
 
 }

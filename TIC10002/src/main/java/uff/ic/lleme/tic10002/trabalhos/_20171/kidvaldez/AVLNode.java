@@ -5,10 +5,10 @@ import java.util.List;
 
 public class AVLNode {
 
-    public Vendas dato;      	
-    public AVLNode izquierdo;            
-    public AVLNode derecho;              
-    public int height;                  
+    public Vendas dato;
+    public AVLNode izquierdo;
+    public AVLNode derecho;
+    public int height;
     public List<Vendas> duplicados;
 
     // Constructors
@@ -20,7 +20,7 @@ public class AVLNode {
         this.dato = dato;
         this.izquierdo = izq;
         this.derecho = der;
-        height = 0;               
+        height = 0;
     }
 
     public void actiDupli() {
@@ -28,6 +28,6 @@ public class AVLNode {
             duplicados = new LinkedList<>();
             duplicados.add(dato);
         }
-        
+
     }
 }

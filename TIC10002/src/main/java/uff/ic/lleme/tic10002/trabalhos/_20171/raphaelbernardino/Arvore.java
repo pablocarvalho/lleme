@@ -1,17 +1,13 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino;
 
-import uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino.Filial;
-
 /**
  * @author bernardino
  */
-public class Arvore
-{
+public class Arvore {
 
     private NoFilial raiz = null;
 
-    public boolean incluir(Integer id, String data, Double valor)
-    {
+    public boolean incluir(Integer id, String data, Double valor) {
         if (id == null || data == null || valor == null || data.equals(""))
             return false;
 
@@ -27,18 +23,15 @@ public class Arvore
         return true;
     }
 
-    private Filial incluir(NoFilial n, Filial f, String d, Double v)
-    {
+    private Filial incluir(NoFilial n, Filial f, String d, Double v) {
         int r_comp = n.getFilial().compareTo(f);
 
-        if (r_comp == 0)
-        {
+        if (r_comp == 0) {
             //System.out.println("[-] Filial " + f.getCodigo() + " já existe na árvore.");
             n.getFilial().getHashMap().adicionaValor(d, v);
             return n.getFilial();
         } else if (r_comp < 0)
-            if (n.getDir() == null)
-            {
+            if (n.getDir() == null) {
                 //System.out.println("[-] Inserindo Filial " + f.getCodigo() + " na direita.");
                 n.setDir(new NoFilial(f));
                 return f;
@@ -56,13 +49,11 @@ public class Arvore
     }
 
     // total de vendas das filiais com códigos entre {ini} e {fim}
-    public Double consulta1(Integer ini, Integer fim)
-    {
+    public Double consulta1(Integer ini, Integer fim) {
         return execC1(raiz, ini, fim);
     }
 
-    private Double execC1(NoFilial n, Integer min, Integer max)
-    {
+    private Double execC1(NoFilial n, Integer min, Integer max) {
         Double total = 0.0;
 
         if (n == null)
@@ -82,13 +73,11 @@ public class Arvore
     }
 
     // total de vendas de todas as filiais com codigo entre {cini} e {cfim} entre os meses {mini} e {mfim}
-    public Double consulta2(Integer cini, Integer cfim, String mini, String mfim)
-    {
+    public Double consulta2(Integer cini, Integer cfim, String mini, String mfim) {
         return execC2(raiz, cini, cfim, mini, mfim);
     }
 
-    private Double execC2(NoFilial n, Integer ci, Integer cf, String mi, String mf)
-    {
+    private Double execC2(NoFilial n, Integer ci, Integer cf, String mi, String mf) {
         Double total = 0.0;
 
         if (n == null)
@@ -108,13 +97,11 @@ public class Arvore
     }
 
     // total de vendas de todas as filiais entre os meses {ini} e {fim}
-    public Double consulta3(String ini, String fim)
-    {
+    public Double consulta3(String ini, String fim) {
         return execC3(raiz, ini, fim);
     }
 
-    private Double execC3(NoFilial n, String min, String max)
-    {
+    private Double execC3(NoFilial n, String min, String max) {
         Double total = 0.0;
 
         if (n == null)

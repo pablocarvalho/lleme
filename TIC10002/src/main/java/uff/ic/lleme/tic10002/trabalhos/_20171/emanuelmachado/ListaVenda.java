@@ -20,9 +20,8 @@ public class ListaVenda {
         // Cria um nó para o objeto venda
         NoVenda corrente = new NoVenda(venda);
 
-        if (ultimoNo != null) {
+        if (ultimoNo != null)
             ultimoNo.proximo = corrente;
-        }
 
         return corrente;
     }
@@ -31,9 +30,8 @@ public class ListaVenda {
 
         ultimo = incluir_ultimo(ultimo, venda);
 
-        if (primeiro == null) {
+        if (primeiro == null)
             primeiro = ultimo;
-        }
         return venda;
 
     }
@@ -55,9 +53,8 @@ public class ListaVenda {
 
         while (corrente != null) {
             // Se o ano_mes está entre as datas 1 e 2, acrescenta o total vendido à soma.
-            if (Integer.parseInt(corrente.conteudo.getAno_mes()) >= Integer.parseInt(data1) && Integer.parseInt(corrente.conteudo.getAno_mes()) <= Integer.parseInt(data2)) {
+            if (Integer.parseInt(corrente.conteudo.getAno_mes()) >= Integer.parseInt(data1) && Integer.parseInt(corrente.conteudo.getAno_mes()) <= Integer.parseInt(data2))
                 total += corrente.conteudo.getTotal();
-            }
 
             corrente = corrente.proximo;
 

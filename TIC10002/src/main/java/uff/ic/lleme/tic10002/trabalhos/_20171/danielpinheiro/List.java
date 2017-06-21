@@ -13,14 +13,24 @@ import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.LinkedList.Node;
  * @param <E>
  */
 public interface List<E> {
+
     public boolean add(E e);
+
     public E remove(E e);
+
     public E find(E e);
+
     public boolean isEmpty();
+
     public int length();
+
     public void print();
+
     public List merge(List list);
+
     public double sum();
+
     public List intersect(List another);
+
     Node getFirstNode();
 }

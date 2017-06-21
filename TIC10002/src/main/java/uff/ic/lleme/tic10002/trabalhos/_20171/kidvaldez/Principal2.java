@@ -5,17 +5,13 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.kidvaldez;
 
-import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -224,10 +220,9 @@ public class Principal2 extends javax.swing.JFrame {
         ((DefaultTableModel) jTable1.getModel()).setRowCount(0);
         txtTotal.setText("");
         if (!txtMin.getText().equals("") && !txtMax.getText().equals("")) {
-             txtConsul.setText(" FILIAIS");
-            if (resultFial != null && resultFial.size() > 0) {
+            txtConsul.setText(" FILIAIS");
+            if (resultFial != null && resultFial.size() > 0)
                 resultFial.clear();
-            }
             resultFial = arFial.consultaFilial(Integer.parseInt(txtMin.getText()), Integer.parseInt(txtMax.getText()));
             txtTotal.setText(String.valueOf(arFial.getSumaVendas()));
             try {
@@ -235,10 +230,9 @@ public class Principal2 extends javax.swing.JFrame {
             } catch (ParseException ex) {
                 Logger.getLogger(Principal2.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } else {
+        } else
             JOptionPane.showMessageDialog(null, "Deve encher os campos de filial");
-        }
-       
+
     }//GEN-LAST:event_btnFilialActionPerformed
 
     private void btnDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDataActionPerformed
@@ -248,9 +242,8 @@ public class Principal2 extends javax.swing.JFrame {
         txtTotal.setText("");
         if (dataMin.getDate() != null && dataMax.getDate() != null) {
             txtConsul.setText(" DATAS");
-            if (resultDate != null && resultDate.size() > 0) {
+            if (resultDate != null && resultDate.size() > 0)
                 resultDate.clear();
-            }
             resultDate = arDate.consultaDate(dataMin.getDate(), dataMax.getDate());
             txtTotal.setText(String.valueOf(arDate.getSumaVendas()));
             try {
@@ -258,10 +251,9 @@ public class Principal2 extends javax.swing.JFrame {
             } catch (ParseException ex) {
                 Logger.getLogger(Principal2.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } else {
+        } else
             JOptionPane.showMessageDialog(null, "Deve encher os campos de datas");
-        }
-        
+
     }//GEN-LAST:event_btnDataActionPerformed
 
     private void btnJuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJuntosActionPerformed
@@ -277,25 +269,22 @@ public class Principal2 extends javax.swing.JFrame {
             resultDate = arDate.consultaDate(dataMin.getDate(), dataMax.getDate());
             List<Vendas> resultadosQuery = hj.hashJoin(resultFial, resultDate);
 
-            for (int i = 0; i < resultadosQuery.size(); i++) {
+            for (int i = 0; i < resultadosQuery.size(); i++)
                 suma = suma + resultadosQuery.get(i).total;
-            }
             try {
                 llenarJtable(resultadosQuery);
             } catch (ParseException ex) {
                 Logger.getLogger(Principal2.class.getName()).log(Level.SEVERE, null, ex);
             }
             txtTotal.setText("" + suma);
-        } else {
+        } else
             JOptionPane.showMessageDialog(null, "Deve encher os 4 campos para esta consulta");
-        }
-        
+
     }//GEN-LAST:event_btnJuntosActionPerformed
 
     /**
      * @param args the command line arguments
      */
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnData;
     private javax.swing.JButton btnFilial;

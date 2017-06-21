@@ -5,10 +5,6 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro;
 
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.Sale;
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.Storage;
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.DateUtils;
-
 /**
  *
  * @author danieljunior
@@ -36,7 +32,7 @@ public class SalesManager {
         System.out.println("Sold from branchs 0,1: " + branchsSold);
         System.out.println("Sold from date 10/16 - 12/16: " + seasonSold);
         System.out.println("Sold from branchs 0,1 in 10/16 - 12/16: " + intersect);
-        
+
         System.out.println("*************************");
         branchsSold = storage.getTotalSoldFromBranchs(0, 1);
         seasonSold = storage.getTotalSoldFromSeason("09/16", "12/16");
@@ -45,7 +41,7 @@ public class SalesManager {
         System.out.println("Sold from branchs 0,1: " + branchsSold);
         System.out.println("Sold from date 09/16 - 12/16: " + seasonSold);
         System.out.println("Sold from branchs 0,1 in 09/16 - 12/16: " + intersect);
-        
+
     }
 
 }

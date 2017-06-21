@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.emersonsouza;
 
-public class Venda{
-    
+public class Venda {
+
     public int filial;
     public int anoMes;
     public int codVendedor;
@@ -13,18 +13,18 @@ public class Venda{
         this.codVendedor = Integer.parseInt(cod_vendedor);
         this.totalVendido = Double.parseDouble(total_vendido);
     }
-    
-    public void printVenda(Venda dado){
-        System.out.println("Filial: " + this.filial + "\n"+
-                           "Data: " + this.anoMes + "\n"+
-                           "Código do Vendedor: " + this.codVendedor + "\n"+
-                           "Total Vendido: " + this.totalVendido + "\n");
+
+    public void printVenda(Venda dado) {
+        System.out.println("Filial: " + this.filial + "\n"
+                + "Data: " + this.anoMes + "\n"
+                + "Código do Vendedor: " + this.codVendedor + "\n"
+                + "Total Vendido: " + this.totalVendido + "\n");
     }
 
-    public int getValor(int value){
+    public int getValor(int value) {
         if (value == 1)
             return filial;
-        else if(value == 2)
+        else if (value == 2)
             return anoMes;
         else
             return 0;

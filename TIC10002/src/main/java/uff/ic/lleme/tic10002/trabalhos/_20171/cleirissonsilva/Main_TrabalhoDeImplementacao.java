@@ -5,9 +5,7 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.cleirissonsilva;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -52,7 +50,8 @@ public class Main_TrabalhoDeImplementacao {
 
         /**
          * *************************************************************************
-         ** Código responsável por ler o arquivo e inserir as vendas na arvore**
+         ** Código responsável por ler o arquivo e inserir as vendas na
+         * arvore**
          * *************************************************************************
          */
         Arvore_Filial novaArvore = new Arvore_Filial();

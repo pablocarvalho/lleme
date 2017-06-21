@@ -10,6 +10,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.gabrielcarvalho;
  * @author Frog33
  */
 public class No {
+
     private final int chave;
     ArvoreData cont = new ArvoreData();
     No pai;
@@ -20,28 +21,29 @@ public class No {
     public No(int chave) {
         this.chave = chave;
     }
-    
-    public int getChave(){
+
+    public int getChave() {
         return this.chave;
     }
-    
-    public static int altura(No no){
-        if(no == null) return -1;
+
+    public static int altura(No no) {
+        if (no == null)
+            return -1;
         return no.altura;
     }
-          
-    int fatorBalanceamento(){
+
+    int fatorBalanceamento() {
         return altura(this.esq) - altura(this.dir);
     }
-    
-    void incluir(Venda v){
+
+    void incluir(Venda v) {
         this.cont.incluir(v);
     }
-    
-    public int busca(MesAno menor, MesAno maior){
-        return cont.busca(menor,maior);
+
+    public int busca(MesAno menor, MesAno maior) {
+        return cont.busca(menor, maior);
     }
-    
+
     public void printTree() {
         if (dir != null)
             dir.printTree(false, "");

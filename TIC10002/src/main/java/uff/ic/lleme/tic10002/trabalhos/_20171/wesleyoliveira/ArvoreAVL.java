@@ -4,309 +4,251 @@
  * and open the template in the editor.
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.wesleyoliveira;
+
 import java.util.ArrayList;
+
 /**
  *
  * @author Wesley Oliveira
  */
-
 public class ArvoreAVL {
 
-  protected NoAVL raiz;
+    protected NoAVL raiz;
 
-	public void inserir(int k, Venda venda) {
-		NoAVL n = new NoAVL(k,venda);
-		inserirAVL(this.raiz, n, venda);
-	}
+    public void inserir(int k, Venda venda) {
+        NoAVL n = new NoAVL(k, venda);
+        inserirAVL(this.raiz, n, venda);
+    }
 
-	public void inserirAVL(NoAVL aComparar, NoAVL aInserir, Venda venda) {
+    public void inserirAVL(NoAVL aComparar, NoAVL aInserir, Venda venda) {
 
-		if (aComparar == null) {
-			this.raiz = aInserir;
+        if (aComparar == null)
+            this.raiz = aInserir;
+        else if (aInserir.getChave() < aComparar.getChave())
 
-                        
+            if (aComparar.getEsquerda() == null) {
+                aComparar.setEsquerda(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-		} 
-                else {
+            } else
+                inserirAVL(aComparar.getEsquerda(), aInserir, venda);
+        else if (aInserir.getChave() > aComparar.getChave())
 
-			if (aInserir.getChave() < aComparar.getChave()) {
+            if (aComparar.getDireita() == null) {
+                aComparar.setDireita(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-				if (aComparar.getEsquerda() == null) {
-					aComparar.setEsquerda(aInserir);
-					aInserir.setPai(aComparar);
-					verificarBalanceamento(aComparar);
+            } else
+                inserirAVL(aComparar.getDireita(), aInserir, venda);
+        else if (aInserir.getChave() == aComparar.getChave())
+            aComparar.getLista().adicionarNo(venda); //// Achou o nó já existente então o objeto venda deve ser inserido na ListaEncadeada já existente.
+    }
 
-				} else {
-					inserirAVL(aComparar.getEsquerda(), aInserir,venda);
-				}
+    public void verificarBalanceamento(NoAVL atual) {
+        setBalanceamento(atual);
+        int balanceamento = atual.getBalanceamento();
 
-			} else if (aInserir.getChave() > aComparar.getChave()) {
+        if (balanceamento == -2)
 
-				if (aComparar.getDireita() == null) {
-					aComparar.setDireita(aInserir);
-					aInserir.setPai(aComparar);
-					verificarBalanceamento(aComparar);
+            if (altura(atual.getEsquerda().getEsquerda()) >= altura(atual.getEsquerda().getDireita()))
+                atual = rotacaoDireita(atual);
+            else
+                atual = duplaRotacaoEsquerdaDireita(atual);
+        else if (balanceamento == 2)
 
-				} else {
-					inserirAVL(aComparar.getDireita(), aInserir,venda);
-				}
+            if (altura(atual.getDireita().getDireita()) >= altura(atual.getDireita().getEsquerda()))
+                atual = rotacaoEsquerda(atual);
+            else
+                atual = duplaRotacaoDireitaEsquerda(atual);
 
-			} else {
-				if (aInserir.getChave() == aComparar.getChave()){
-                                    aComparar.getLista().adicionarNo(venda); //// Achou o nó já existente então o objeto venda deve ser inserido na ListaEncadeada já existente.
-                                }
-			}
-		}
-	}
+        if (atual.getPai() != null)
+            verificarBalanceamento(atual.getPai());
+        else
+            this.raiz = atual;
+    }
 
-	public void verificarBalanceamento(NoAVL atual) {
-		setBalanceamento(atual);
-		int balanceamento = atual.getBalanceamento();
+    public void remover(int k) {
+        removerAVL(this.raiz, k);
+    }
 
-		if (balanceamento == -2) {
+    public void removerAVL(NoAVL atual, int k) {
+        if (atual == null)
+            return;
+        else if (atual.getChave() > k)
+            removerAVL(atual.getEsquerda(), k);
+        else if (atual.getChave() < k)
+            removerAVL(atual.getDireita(), k);
+        else if (atual.getChave() == k)
+            removerNoEncontrado(atual);
+    }
 
-			if (altura(atual.getEsquerda().getEsquerda()) >= altura(atual.getEsquerda().getDireita())) {
-				atual = rotacaoDireita(atual);
+    public void removerNoEncontrado(NoAVL aRemover) {
+        NoAVL r;
 
-			} else {
-				atual = duplaRotacaoEsquerdaDireita(atual);
-			}
+        if (aRemover.getEsquerda() == null || aRemover.getDireita() == null) {
 
-		} else if (balanceamento == 2) {
+            if (aRemover.getPai() == null) {
+                this.raiz = null;
+                aRemover = null;
+                return;
+            }
+            r = aRemover;
 
-			if (altura(atual.getDireita().getDireita()) >= altura(atual.getDireita().getEsquerda())) {
-				atual = rotacaoEsquerda(atual);
+        } else {
+            r = sucessor(aRemover);
+            aRemover.setChave(r.getChave());
+        }
 
-			} else {
-				atual = duplaRotacaoDireitaEsquerda(atual);
-			}
-		}
+        NoAVL p;
+        if (r.getEsquerda() != null)
+            p = r.getEsquerda();
+        else
+            p = r.getDireita();
 
-		if (atual.getPai() != null) {
-			verificarBalanceamento(atual.getPai());
-		} else {
-			this.raiz = atual;
-		}
-	}
+        if (p != null)
+            p.setPai(r.getPai());
 
-	public void remover(int k) {
-		removerAVL(this.raiz, k);
-	}
+        if (r.getPai() == null)
+            this.raiz = p;
+        else {
+            if (r == r.getPai().getEsquerda())
+                r.getPai().setEsquerda(p);
+            else
+                r.getPai().setDireita(p);
+            verificarBalanceamento(r.getPai());
+        }
+        r = null;
+    }
 
-	public void removerAVL(NoAVL atual, int k) {
-		if (atual == null) {
-			return;
+    public NoAVL rotacaoEsquerda(NoAVL inicial) {
 
-		} else {
+        NoAVL direita = inicial.getDireita();
+        direita.setPai(inicial.getPai());
 
-			if (atual.getChave() > k) {
-				removerAVL(atual.getEsquerda(), k);
+        inicial.setDireita(direita.getEsquerda());
 
-			} else if (atual.getChave() < k) {
-				removerAVL(atual.getDireita(), k);
+        if (inicial.getDireita() != null)
+            inicial.getDireita().setPai(inicial);
 
-			} else if (atual.getChave() == k) {
-				removerNoEncontrado(atual);
-			}
-		}
-	}
+        direita.setEsquerda(inicial);
+        inicial.setPai(direita);
 
-	public void removerNoEncontrado(NoAVL aRemover) {
-		NoAVL r;
+        if (direita.getPai() != null)
 
-		if (aRemover.getEsquerda() == null || aRemover.getDireita() == null) {
+            if (direita.getPai().getDireita() == inicial)
+                direita.getPai().setDireita(direita);
+            else if (direita.getPai().getEsquerda() == inicial)
+                direita.getPai().setEsquerda(direita);
 
-			if (aRemover.getPai() == null) {
-				this.raiz = null;
-				aRemover = null;
-				return;
-			}
-			r = aRemover;
+        setBalanceamento(inicial);
+        setBalanceamento(direita);
 
-		} else {
-			r = sucessor(aRemover);
-			aRemover.setChave(r.getChave());
-		}
+        return direita;
+    }
 
-		NoAVL p;
-		if (r.getEsquerda() != null) {
-			p = r.getEsquerda();
-		} else {
-			p = r.getDireita();
-		}
+    public NoAVL rotacaoDireita(NoAVL inicial) {
 
-		if (p != null) {
-			p.setPai(r.getPai());
-		}
+        NoAVL esquerda = inicial.getEsquerda();
+        esquerda.setPai(inicial.getPai());
 
-		if (r.getPai() == null) {
-			this.raiz = p;
-		} else {
-			if (r == r.getPai().getEsquerda()) {
-				r.getPai().setEsquerda(p);
-			} else {
-				r.getPai().setDireita(p);
-			}
-			verificarBalanceamento(r.getPai());
-		}
-		r = null;
-	}
+        inicial.setEsquerda(esquerda.getDireita());
 
-	public NoAVL rotacaoEsquerda(NoAVL inicial) {
+        if (inicial.getEsquerda() != null)
+            inicial.getEsquerda().setPai(inicial);
 
-		NoAVL direita = inicial.getDireita();
-		direita.setPai(inicial.getPai());
+        esquerda.setDireita(inicial);
+        inicial.setPai(esquerda);
 
-		inicial.setDireita(direita.getEsquerda());
+        if (esquerda.getPai() != null)
 
-		if (inicial.getDireita() != null) {
-			inicial.getDireita().setPai(inicial);
-		}
+            if (esquerda.getPai().getDireita() == inicial)
+                esquerda.getPai().setDireita(esquerda);
+            else if (esquerda.getPai().getEsquerda() == inicial)
+                esquerda.getPai().setEsquerda(esquerda);
 
-		direita.setEsquerda(inicial);
-		inicial.setPai(direita);
+        setBalanceamento(inicial);
+        setBalanceamento(esquerda);
 
-		if (direita.getPai() != null) {
+        return esquerda;
+    }
 
-			if (direita.getPai().getDireita() == inicial) {
-				direita.getPai().setDireita(direita);
-			
-			} else if (direita.getPai().getEsquerda() == inicial) {
-				direita.getPai().setEsquerda(direita);
-			}
-		}
+    public NoAVL duplaRotacaoEsquerdaDireita(NoAVL inicial) {
+        inicial.setEsquerda(rotacaoEsquerda(inicial.getEsquerda()));
+        return rotacaoDireita(inicial);
+    }
 
-		setBalanceamento(inicial);
-		setBalanceamento(direita);
+    public NoAVL duplaRotacaoDireitaEsquerda(NoAVL inicial) {
+        inicial.setDireita(rotacaoDireita(inicial.getDireita()));
+        return rotacaoEsquerda(inicial);
+    }
 
-		return direita;
-	}
+    public NoAVL sucessor(NoAVL q) {
+        if (q.getDireita() != null) {
+            NoAVL r = q.getDireita();
+            while (r.getEsquerda() != null)
+                r = r.getEsquerda();
+            return r;
+        } else {
+            NoAVL p = q.getPai();
+            while (p != null && q == p.getDireita()) {
+                q = p;
+                p = q.getPai();
+            }
+            return p;
+        }
+    }
 
-	public NoAVL rotacaoDireita(NoAVL inicial) {
+    private int altura(NoAVL atual) {
+        if (atual == null)
+            return -1;
 
-		NoAVL esquerda = inicial.getEsquerda();
-		esquerda.setPai(inicial.getPai());
+        if (atual.getEsquerda() == null && atual.getDireita() == null)
+            return 0;
+        else if (atual.getEsquerda() == null)
+            return 1 + altura(atual.getDireita());
+        else if (atual.getDireita() == null)
+            return 1 + altura(atual.getEsquerda());
+        else
+            return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
+    }
 
-		inicial.setEsquerda(esquerda.getDireita());
+    private void setBalanceamento(NoAVL no) {
+        no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
+    }
 
-		if (inicial.getEsquerda() != null) {
-			inicial.getEsquerda().setPai(inicial);
-		}
+    final protected ArrayList<NoAVL> inorder() {
+        ArrayList<NoAVL> ret = new ArrayList<NoAVL>();
+        inorder(raiz, ret);
+        return ret;
+    }
 
-		esquerda.setDireita(inicial);
-		inicial.setPai(esquerda);
+    final protected void inorder(NoAVL no, ArrayList<NoAVL> lista) {
+        if (no == null)
+            return;
+        inorder(no.getEsquerda(), lista);
+        lista.add(no);
+        inorder(no.getDireita(), lista);
+    }
 
-		if (esquerda.getPai() != null) {
-
-			if (esquerda.getPai().getDireita() == inicial) {
-				esquerda.getPai().setDireita(esquerda);
-			
-			} else if (esquerda.getPai().getEsquerda() == inicial) {
-				esquerda.getPai().setEsquerda(esquerda);
-			}
-		}
-
-		setBalanceamento(inicial);
-		setBalanceamento(esquerda);
-
-		return esquerda;
-	}
-
-	public NoAVL duplaRotacaoEsquerdaDireita(NoAVL inicial) {
-		inicial.setEsquerda(rotacaoEsquerda(inicial.getEsquerda()));
-		return rotacaoDireita(inicial);
-	}
-
-	public NoAVL duplaRotacaoDireitaEsquerda(NoAVL inicial) {
-		inicial.setDireita(rotacaoDireita(inicial.getDireita()));
-		return rotacaoEsquerda(inicial);
-	}
-
-	public NoAVL sucessor(NoAVL q) {
-		if (q.getDireita() != null) {
-			NoAVL r = q.getDireita();
-			while (r.getEsquerda() != null) {
-				r = r.getEsquerda();
-			}
-			return r;
-		} else {
-			NoAVL p = q.getPai();
-			while (p != null && q == p.getDireita()) {
-				q = p;
-				p = q.getPai();
-			}
-			return p;
-		}
-	}
-
-	private int altura(NoAVL atual) {
-		if (atual == null) {
-			return -1;
-		}
-
-		if (atual.getEsquerda() == null && atual.getDireita() == null) {
-			return 0;
-		
-		} else if (atual.getEsquerda() == null) {
-			return 1 + altura(atual.getDireita());
-		
-		} else if (atual.getDireita() == null) {
-			return 1 + altura(atual.getEsquerda());
-		
-		} else {
-			return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
-		}
-	}
-
-	private void setBalanceamento(NoAVL no) {
-		no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
-	}
-
-	final protected ArrayList<NoAVL> inorder() {
-		ArrayList<NoAVL> ret = new ArrayList<NoAVL>();
-		inorder(raiz, ret);
-		return ret;
-	}
-
-	final protected void inorder(NoAVL no, ArrayList<NoAVL> lista) {
-		if (no == null) {
-			return;
-		}
-		inorder(no.getEsquerda(), lista);
-		lista.add(no);
-		inorder(no.getDireita(), lista);
-	}
-        
     public NoAVL buscar(int chave) {
-        if (this.raiz != null){
+        if (this.raiz != null)
             return buscar(raiz, chave);
-        }
-        else{
+        else
             return null;
-        }
     }
 
     private NoAVL buscar(NoAVL no, int chave) {
-        if (no.getChave() == chave){
+        if (no.getChave() == chave)
             return no;
-        }
-        
+
         else if (chave > no.getChave() && no.getDireita() != null)
-        {
             return buscar(no.getDireita(), chave);
-        }
         else if (chave < no.getChave() && no.getEsquerda() != null)
-        {
             return buscar(no.getEsquerda(), chave);
-        }
         else
-        {
             return null;
-        }
     }
 
-        
 }
-
-    
-

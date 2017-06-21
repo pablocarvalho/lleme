@@ -19,20 +19,18 @@ public class TesteMe {
         for (int i = 0; i < vendas.getSize(); ++i) {
             Venda v = (Venda) vendas.get(i);
             Object x = h.get(v.filial);
-            if (x == null) {
+            if (x == null)
                 h.set(v.filial, v.total_vendido);
-            } else {
+            else
                 h.set(v.filial, (double) x + v.total_vendido);
-            }
         }
 
         double total = 0;
         for (int i = fi; i <= fj; ++i) {
             Object x = h.get(i);
 
-            if (x != null) {
+            if (x != null)
                 total = total + (double) x;
-            }
         }
 
         System.out.format("Total de vendas das filiais %d a %d: %.2f\n",
@@ -40,9 +38,8 @@ public class TesteMe {
     }
 
     public static void showVendas() {
-        for (int i = 0; i < vendas.getSize(); ++i) {
+        for (int i = 0; i < vendas.getSize(); ++i)
             System.out.println(vendas.get(i));
-        }
     }
 
     public static void makeVendas2() {
@@ -70,7 +67,7 @@ public class TesteMe {
         vendas.add(new Venda(210, 2017, 7, 4, 1000 * 2));
         vendas.add(new Venda(210, 2017, 8, 4, 1000 * 2));
     }
-    
+
     public static void makeVendas() {
         /* vendedor 1 */
         vendas.add(new Venda(180, 2017, 5, 1, 1506.60));
@@ -96,15 +93,15 @@ public class TesteMe {
         vendas.add(new Venda(210, 2017, 7, 4, 1000.0 * 2));
         vendas.add(new Venda(210, 2017, 8, 4, 2569.40 * 2));
     }
-    
+
     private void makeDb2() {
-        /* 
+        /*
            Simula os dados para o trabalho.
            Sintaxe:
            Venda(filial, ano, mês, cod_vendedor, total_vendido)
          */
 
-        /* vendedor 1 */
+ /* vendedor 1 */
 //        db.add(new Venda(18, 2017, 1, 1, 100));
 //        db.add(new Venda(18, 2017, 2, 1, 100));
 //        db.add(new Venda(18, 2017, 3, 1, 100));
@@ -124,7 +121,7 @@ public class TesteMe {
 //        db.add(new Venda(9008, 2017, 2, 4, 400));
 //        db.add(new Venda(9008, 2017, 3, 4, 400));
     }
-    
+
     public static void testHashTable() {
         HashTable ht = new HashTable();
         ht.set(1, 15);
@@ -214,7 +211,7 @@ public class TesteMe {
             System.out.println("Filial:" + v.filial + "@" + v.ano_mes);
         }
 
-        /*        
+        /*
         for (int i = fi; i <= fj; ++i) {
             Filial x = (Filial) ht.get(i);
             System.out.println(x);
@@ -227,10 +224,10 @@ public class TesteMe {
         double ret = 0;
 
         System.out.format("Período: %d a %d\n", user_y1 * 100 + user_m1, user_y2 * 100 + user_m2);
-        for (int fx = fi; fx <= fj; ++fx) {
+        for (int fx = fi; fx <= fj; ++fx)
             for (int m = user_m1, y1 = user_y1, i = user_y1 * 100 + user_m1; i <= user_y2 * 100 + user_m2; ++m, i = y1 * 100 + m) {
                 System.out.println("Filial: " + fx + " mês: " + m);
-                /* 
+                /*
                 pra cada mês do intervalo mês1/ano1 até mês2/ano2 ...
                 encontre o montante do mês e acumule-o em ret.
                  */
@@ -250,14 +247,12 @@ public class TesteMe {
                         //System.out.println(mcurrent.total);
                     }
                 }
-                if (m == user_m2) {
+                if (m == user_m2)
                     ++y1;
-                }
                 //if (y1 > user_y2) {
                 //    y1 = user_y1;
                 //}
             }
-        }
         return ret;
     }
 
@@ -291,33 +286,30 @@ public class TesteMe {
         //System.out.println(f.tree.get(201707));
         //System.out.println(f.tree.get(201708));
     }
-    
+
     public static void testJodaTime() {
         java.util.Date juDate = new Date();
         DateTime dt = new DateTime(juDate);
         System.out.println(dt);
         System.out.println(dt.getMonthOfYear());
         System.out.println(dt.getYear());
-        
+
         DateTime dt2 = new DateTime("2017-01");
         System.out.println(dt2);
         System.out.println(dt2.plusMonths(1));
-        
-        for (DateTime d = new DateTime("2017-01"); d.isBefore(new DateTime("2018-06")); d = d.plusMonths(1)) {
+
+        for (DateTime d = new DateTime("2017-01"); d.isBefore(new DateTime("2018-06")); d = d.plusMonths(1))
             System.out.println(d);
-        }
-        
+
         //String s = dt2.getYear() + "" + dt2.getMonthOfYear();
     }
-    
+
     public static int getKeyFromDate(DateTime d) {
         String ret = null;
-        if (d.getMonthOfYear() < 10) {
+        if (d.getMonthOfYear() < 10)
             ret = d.getYear() + "0" + d.getMonthOfYear();
-        }
-        else {
+        else
             ret = d.getYear() + "" + d.getMonthOfYear();
-        }
         return parseInt(ret);
     }
 
@@ -325,11 +317,11 @@ public class TesteMe {
         double ret = 0;
 
         System.out.format("Período: %s a %s\n", d1, d2);
-        for (int fx = fi; fx <= fj; ++fx) {
+        for (int fx = fi; fx <= fj; ++fx)
             //System.out.println("Filial: " + fx);
             for (DateTime d = new DateTime(d1); d.isBefore(new DateTime(d2).plusSeconds(1)); d = d.plusMonths(1)) {
                 //System.out.println("Filial: " + fx + " mês: " + getKeyFromDate(d));
-                /* 
+                /*
                 pra cada mês do intervalo mês1/ano1 até mês2/ano2 ...
                 encontre o montante do mês e acumule-o em ret.
                  */
@@ -349,10 +341,9 @@ public class TesteMe {
                     }
                 }
             }
-        }
         return ret;
     }
-    
+
     public static void main(String[] args) {
 
         //testHashTable();
@@ -370,11 +361,8 @@ public class TesteMe {
         //System.out.println(totalFiliaisPeriodo(18, 21, 2017, 10, 2017, 11));
         //System.out.println(totalFiliaisPeriodo(18, 21, 2017, 5, 2017, 8));
         //System.out.println(totalFiliaisPeriodo(makeHashFiliais2(), 170, 210, 2017, 5, 2019, 6));
-
         //fixMakeHashFiliais();
-        
         //testJodaTime();
-        
         //makeVendas2();
         //System.out.println(totalFiliaisPeriodoJoda(makeHashFiliais2(), 170, 210, "2017-01", "2019-06"));
         //System.out.println(totalFiliaisPeriodoJoda(makeHashFiliais2(), 180, 210, "2017-05", "2017-05"));

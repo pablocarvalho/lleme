@@ -5,9 +5,7 @@
  */
 package colecao;
 
-import java.util.Random;
 import util.TemChave;
-import util.Venda;
 
 /**
  *
@@ -32,9 +30,8 @@ public class Hash<Chave extends Number, Entidade extends TemChave> {
     public void put(Integer k, Entidade ent) {
         int pos = calculaHash(k);
 
-        if (tabela[pos] == null) {
+        if (tabela[pos] == null)
             tabela[pos] = new ListaEncadeada<Chave, Entidade>();
-        }
         tabela[pos].incluir(ent);
     }
 
@@ -42,9 +39,8 @@ public class Hash<Chave extends Number, Entidade extends TemChave> {
         int pos = calculaHash(k);
         Entidade ent = null;
         ListaEncadeada listaEncadeada = tabela[pos];
-        if (listaEncadeada != null) {
+        if (listaEncadeada != null)
             ent = (Entidade) listaEncadeada.buscar(k);
-        }
         return ent;
     }
 

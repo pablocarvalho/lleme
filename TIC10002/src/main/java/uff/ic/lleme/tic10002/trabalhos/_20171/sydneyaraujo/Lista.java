@@ -10,22 +10,22 @@ package uff.ic.lleme.tic10002.trabalhos._20171.sydneyaraujo;
  * @author SidneyMelo
  */
 public class Lista {
+
     public NoLista inicio;
     public int tamanho;
-    
-    public Lista(){
+
+    public Lista() {
         inicio = null;
         tamanho = 0;
     }
-    
-    public void inserir(NoLista no){
-        if (this.inicio == null){
+
+    public void inserir(NoLista no) {
+        if (this.inicio == null)
             this.inicio = no;
-        } else {
+        else {
             NoLista atual = this.inicio;
-            while (atual.proximo != null){
+            while (atual.proximo != null)
                 atual = atual.proximo;
-            }
             atual.proximo = no;
         }
         tamanho++;

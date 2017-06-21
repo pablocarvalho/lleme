@@ -9,17 +9,15 @@ class MyLinkedList {
     }
 
     public void add(Object data) {
-        if (head == null) {
+        if (head == null)
             head = new Node(data);
-        }
 
         Node t = new Node(data);
         Node cur = head;
 
         if (cur != null) {
-            while (cur.getNext() != null) {
+            while (cur.getNext() != null)
                 cur = cur.getNext();
-            }
             cur.setNext(t);
         }
         size = size + 1;
@@ -30,9 +28,8 @@ class MyLinkedList {
         if (head != null) {
             cur = head.getNext();
             for (int i = 0; i < index; i++) {
-                if (cur.getNext() == null) {
+                if (cur.getNext() == null)
                     return null;
-                }
                 cur = cur.getNext();
             }
             return cur.getData();
@@ -44,9 +41,8 @@ class MyLinkedList {
         Node cur = head;
         if (head != null) {
             for (int i = 0; i < index; i++) {
-                if (cur.getNext() == null) {
+                if (cur.getNext() == null)
                     return false;
-                }
                 cur = cur.getNext();
             }
             cur.setNext(cur.getNext().getNext());

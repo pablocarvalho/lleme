@@ -27,20 +27,19 @@ public class HashMapKid<K, V> {
     }
 
     public void put(K newKey, V data) {
-        if (newKey == null) {
+        if (newKey == null)
             return;
-        }
         int hash = hash(newKey);
         Entry<K, V> newEntry = new Entry<K, V>(newKey, data, null);
 
-        if (table[hash] == null) {
+        if (table[hash] == null)
             table[hash] = newEntry;
-        } else {
+        else {
             Entry<K, V> previous = null;
             Entry<K, V> current = table[hash];
 
             while (current != null) {
-                if (current.key.equals(newKey)) {
+                if (current.key.equals(newKey))
                     if (previous == null) {
                         newEntry.next = current.next;
                         table[hash] = newEntry;
@@ -50,7 +49,6 @@ public class HashMapKid<K, V> {
                         previous.next = newEntry;
                         return;
                     }
-                }
                 previous = current;
                 current = current.next;
             }
@@ -60,14 +58,13 @@ public class HashMapKid<K, V> {
 
     public V get(K key) {
         int hash = hash(key);
-        if (table[hash] == null) {
+        if (table[hash] == null)
             return null;
-        } else {
+        else {
             Entry<K, V> temp = table[hash];
             while (temp != null) {
-                if (temp.key.equals(key)) {
+                if (temp.key.equals(key))
                     return temp.value;
-                }
                 temp = temp.next;
             }
             return null;
@@ -76,25 +73,24 @@ public class HashMapKid<K, V> {
 
     V getOrDefault(K key, V defaultValue) {
         V v;
-        if ((v = get(key)) != null) {
+        if ((v = get(key)) != null)
             return v;
-        } else {
+        else
             return defaultValue;
-        }
     }
 
     public boolean remove(K deleteKey) {
 
         int hash = hash(deleteKey);
 
-        if (table[hash] == null) {
+        if (table[hash] == null)
             return false;
-        } else {
+        else {
             Entry<K, V> previous = null;
             Entry<K, V> current = table[hash];
 
             while (current != null) {
-                if (current.key.equals(deleteKey)) {
+                if (current.key.equals(deleteKey))
                     if (previous == null) {
                         table[hash] = table[hash].next;
                         return true;
@@ -102,7 +98,6 @@ public class HashMapKid<K, V> {
                         previous.next = current.next;
                         return true;
                     }
-                }
                 previous = current;
                 current = current.next;
             }
@@ -111,7 +106,7 @@ public class HashMapKid<K, V> {
     }
 
     public void display() {
-        for (int i = 0; i < capacity; i++) {
+        for (int i = 0; i < capacity; i++)
             if (table[i] != null) {
                 Entry<K, V> entry = table[i];
                 while (entry != null) {
@@ -119,6 +114,5 @@ public class HashMapKid<K, V> {
                     entry = entry.next;
                 }
             }
-        }
     }
 }

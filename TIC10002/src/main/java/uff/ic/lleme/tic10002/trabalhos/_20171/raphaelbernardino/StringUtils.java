@@ -3,44 +3,37 @@ package uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino;
 /**
  * @author bernardino
  */
-public class StringUtils
-{
+public class StringUtils {
 
     private static final StringUtils INSTANCE = new StringUtils();
 
-    private StringUtils()
-    {
+    private StringUtils() {
     }
 
-    public static StringUtils getInstance()
-    {
+    public static StringUtils getInstance() {
         return INSTANCE;
     }
 
-    public String mapeia_mes_ano(String mes_ano)
-    {
+    public String mapeia_mes_ano(String mes_ano) {
         mes_ano = mes_ano.replace(" ", "");
 
         if (mes_ano == null || mes_ano.equals(""))
             return "";
 
         String[] arr = mes_ano.split("/");
-        if (arr.length > 1)
-        {
+        if (arr.length > 1) {
             String mes = arr[0].length() > 3 ? arr[0].substring(0, 3) : arr[0];
-            String ano = arr[1].length() > 2? arr[1].substring(arr[1].length() - 2, arr[1].length()) : arr[1];
+            String ano = arr[1].length() > 2 ? arr[1].substring(arr[1].length() - 2, arr[1].length()) : arr[1];
             return mapeia_mes(mes, ano);
         }
 
         return "";
     }
 
-    private String mapeia_mes(String mes, String ano)
-    {
+    private String mapeia_mes(String mes, String ano) {
         mes = mes.toLowerCase();
 
-        switch (mes)
-        {
+        switch (mes) {
             case "jan":
                 return ano + "01";
             case "fev":

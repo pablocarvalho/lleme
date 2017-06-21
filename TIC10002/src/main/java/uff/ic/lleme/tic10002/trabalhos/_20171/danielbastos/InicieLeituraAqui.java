@@ -17,7 +17,7 @@
 
     As estruturas de dados que implementei foram MyLinkedList
     (MyLinkedList.java), HashTable (HashTable.java) e AVLTree
-    (AVLTree.java).  
+    (AVLTree.java).
 
     O construtor de InicieLeituraAqui inicializa cada uma das
     estruturas de dados usadas de forma que quando uma pergunta tipo
@@ -34,7 +34,7 @@
 
     // Tabela hash (equipada com árvore AVL) para perguntas tipo 2.
     HashTable filiaisPeriodo = new HashTable();
-    
+
     // Lista para otimizar a pergunta tipo 3.
     MyLinkedList todasFiliais = new MyLinkedList();
 
@@ -73,7 +73,7 @@
         }
         return total;
     }
-    
+
     A construção da tabela hash é feita pela função makeHashFiliais().
 
     private void makeHashFiliais() {
@@ -107,8 +107,8 @@
     mês, tempo Theta(lg m) é gasto onde m é o números de meses
     inseridos na árvore AVL.
 
-    O algoritmo tem complexidade 
-    
+    O algoritmo tem complexidade
+
         O(f * m lg m)
 
     sendo f = |f2 - f1|, o número de filials, m = |d2 - d1|, o número
@@ -119,30 +119,30 @@
         String d2 = null;
         int f = 0;
         int t = 0;
-        
+
         System.out.println("Pergunta tipo 2.\n");
-        
+
         f = t = 18; d1 = "2017-07"; d2 = "2017-08";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, f, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
-        
+
         f = 18; t = 21; d1 = "2017-01"; d2 = "2018-12";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, t, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
-        
+
         f = 1; t = 100; d1 = "2017-10"; d2 = "2017-11";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, t, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
 
         System.out.println();
-    }    
+    }
 
-    public double totalFiliaisPeriodoIntersecao(int fi, int fj, 
+    public double totalFiliaisPeriodoIntersecao(int fi, int fj,
             String d1, String d2) {
         double ret = 0;
         for (int fx = fi; fx <= fj; ++fx) {
-            for (DateTime d = new DateTime(d1); 
-                    d.isBefore(new DateTime(d2).plusSeconds(1)); 
+            for (DateTime d = new DateTime(d1);
+                    d.isBefore(new DateTime(d2).plusSeconds(1));
                     d = d.plusMonths(1)) {
                 Filial f = (Filial) filiaisPeriodo.get(fx);
                 if (f != null) {
@@ -173,7 +173,7 @@
             x.tree.insert(new Montante(v.ano_mes, v.total_vendido));
         }
     }
-    
+
     (*) Pergunta tipo 3
 
     Na pergunta tipo 3 já sabemos que queremos todas as filiais.  Por
@@ -192,7 +192,7 @@
         return total;
     }
 
-    A complexidade é O(n^2 lg(m)), onde n é o número de filiais e 
+    A complexidade é O(n^2 lg(m)), onde n é o número de filiais e
     m = |d2 - d1|, o número meses no intervalo.
 
     (*) Sobre a implementação da tabela hash
@@ -207,22 +207,21 @@
 
     run:
     Pergunta tipo 1.
-    
+
     Total filiais 10 a 20: R$ 43406,10
-    
+
     Pergunta tipo 2.
-    
+
     Total filiais 18 a 18, período 2017-07 a 2017-08: R$ 5138,80
     Total filiais 18 a 21, período 2017-01 a 2018-12: R$ 60444,20
     Total filiais 1 a 100, período 2017-10 a 2017-11: R$ 25694,00
-    
+
     Pergunta tipo 3.
-    
+
     Total todas filiais, período 2017-05 a 2017-09: R$ 34750,20
     Total todas filiais, período 2000-01 a 2020-12: R$ 60444,20
 
  */
-
 package uff.ic.lleme.tic10002.trabalhos._20171.danielbastos;
 
 import static java.lang.Integer.parseInt;
@@ -238,7 +237,7 @@ public class InicieLeituraAqui {
 
     // Tabela hash (equipada com árvore AVL) para perguntas tipo 2.
     HashTable filiaisPeriodo = new HashTable();
-    
+
     // Lista para otimizar a pergunta tipo 3.
     MyLinkedList todasFiliais = new MyLinkedList();
 
@@ -253,11 +252,11 @@ public class InicieLeituraAqui {
 
         // Constrói tabela hash em que cada item da tabela guarda um
         // objeto Filial que está equipado com uma árvore AVL que guarda
-        // os Montantes de cada mês.  Equipado com tabela hash mais AVL, 
+        // os Montantes de cada mês.  Equipado com tabela hash mais AVL,
         // conseguimos fazer a interseção entre meses para somar os totais
         // de cada mês.
         makeHashWithAVL();
-        
+
     }
 
     public void perguntaTipo1() {
@@ -272,18 +271,26 @@ public class InicieLeituraAqui {
         String d2 = null;
         int f = 0;
         int t = 0;
-        
+
         System.out.println("Pergunta tipo 2.\n");
-        
-        f = t = 18; d1 = "2017-07"; d2 = "2017-08";
+
+        f = t = 18;
+        d1 = "2017-07";
+        d2 = "2017-08";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, f, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
-        
-        f = 18; t = 21; d1 = "2017-01"; d2 = "2018-12";
+
+        f = 18;
+        t = 21;
+        d1 = "2017-01";
+        d2 = "2018-12";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, t, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
-        
-        f = 1; t = 100; d1 = "2017-10"; d2 = "2017-11";
+
+        f = 1;
+        t = 100;
+        d1 = "2017-10";
+        d2 = "2017-11";
         System.out.format("Total filiais %d a %d, período %s a %s: R$ %.2f\n",
                 f, t, d1, d2, totalFiliaisPeriodoIntersecao(f, t, d1, d2));
 
@@ -293,20 +300,22 @@ public class InicieLeituraAqui {
     public void perguntaTipo3() {
         String d1 = null;
         String d2 = null;
-        
+
         System.out.println("Pergunta tipo 3.\n");
-        
-        d1 = "2017-05"; d2 = "2017-09";
+
+        d1 = "2017-05";
+        d2 = "2017-09";
         System.out.format("Total todas filiais, período %s a %s: R$ %.2f\n",
                 d1, d2, totalTodasFiliais(d1, d2));
 
-        d1 = "2000-01"; d2 = "2020-12";
+        d1 = "2000-01";
+        d2 = "2020-12";
         System.out.format("Total todas filiais, período %s a %s: R$ %.2f\n",
                 d1, d2, totalTodasFiliais(d1, d2));
-        
+
         System.out.println();
     }
-    
+
     public double totalTodasFiliais(String d1, String d2) {
         double total = 0.0;
         for (int i = 0; i < todasFiliais.getSize(); ++i) {
@@ -320,19 +329,18 @@ public class InicieLeituraAqui {
         double total = 0;
         for (int i = filial_i; i <= filial_j; ++i) {
             Object x = filiais.get(i);
-            if (x != null) {
+            if (x != null)
                 total = total + (double) x;
-            }
         }
         return total;
     }
-    
-    public double totalFiliaisPeriodoIntersecao(int fi, int fj, 
+
+    public double totalFiliaisPeriodoIntersecao(int fi, int fj,
             String d1, String d2) {
         double ret = 0;
-        for (int fx = fi; fx <= fj; ++fx) {
-            for (DateTime d = new DateTime(d1); 
-                    d.isBefore(new DateTime(d2).plusSeconds(1)); 
+        for (int fx = fi; fx <= fj; ++fx)
+            for (DateTime d = new DateTime(d1);
+                    d.isBefore(new DateTime(d2).plusSeconds(1));
                     d = d.plusMonths(1)) {
                 Filial f = (Filial) filiaisPeriodo.get(fx);
                 if (f != null) {
@@ -343,10 +351,9 @@ public class InicieLeituraAqui {
                     }
                 }
             }
-        }
         return ret;
     }
-    
+
     private void makeHashWithAVL() {
         for (int i = 0; i < db.getSize(); ++i) {
             Venda v = (Venda) db.get(i);
@@ -357,8 +364,8 @@ public class InicieLeituraAqui {
                 filiaisPeriodo.set(v.filial, x);
 
                 // Para responder a pergunta tipo 3 é melhor manter numa lista
-                // o id de cada filial para evitar procurar na tabela hash 
-                // filiaisPeriodo uma por uma (a partir do intervalo 
+                // o id de cada filial para evitar procurar na tabela hash
+                // filiaisPeriodo uma por uma (a partir do intervalo
                 // fornecido pelo usuário).  Com essa lista, não precisamos
                 // verificar de uma determinada do intervalo do usuário existe.
                 // Já sabemos quais existem.
@@ -368,32 +375,30 @@ public class InicieLeituraAqui {
             x.tree.insert(new Montante(v.ano_mes, v.total_vendido));
         }
     }
-    
+
     private void makeHashFiliais() {
-        
+
         // Constrói tabela hash contendo o total de vendas de uma
         // filial.  Com essa tabela hash, obtemos o total de uma
         // filial em tempo constante.
-
         for (int i = 0; i < db.getSize(); ++i) {
             Venda v = (Venda) db.get(i);
             Object x = filiais.get(v.filial);
-            if (x == null) {
+            if (x == null)
                 filiais.set(v.filial, v.total_vendido);
-            } else {
+            else
                 filiais.set(v.filial, (double) x + v.total_vendido);
-            }
         }
     }
 
     private void makeDb() {
-        /* 
+        /*
            Simula os dados para o trabalho.
            Sintaxe:
            Venda(filial, ano, mês, cod_vendedor, total_vendido)
          */
 
-        /* vendedor 1 */
+ /* vendedor 1 */
         db.add(new Venda(18, 2017, 5, 1, 1506.60));
         db.add(new Venda(18, 2017, 6, 1, 3000.40));
         db.add(new Venda(18, 2017, 7, 1, 2569.40));
@@ -417,14 +422,13 @@ public class InicieLeituraAqui {
         db.add(new Venda(21, 2017, 10, 4, 2569.40 * 2));
         db.add(new Venda(21, 2017, 11, 4, 2569.40 * 2));
     }
-    
+
     public static int getKeyFromDate(DateTime d) {
         String ret = null;
-        if (d.getMonthOfYear() < 10) {
+        if (d.getMonthOfYear() < 10)
             ret = d.getYear() + "0" + d.getMonthOfYear();
-        } else {
+        else
             ret = d.getYear() + "" + d.getMonthOfYear();
-        }
         return parseInt(ret);
     }
 

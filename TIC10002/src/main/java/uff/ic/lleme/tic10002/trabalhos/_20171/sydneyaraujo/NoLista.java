@@ -10,21 +10,22 @@ package uff.ic.lleme.tic10002.trabalhos._20171.sydneyaraujo;
  * @author SidneyMelo
  */
 public class NoLista {
+
     private int chave;
     private Object conteudo;
     public NoLista anterior;
     public NoLista proximo;
-    
-    public NoLista(int chave, Object conteudo){
+
+    public NoLista(int chave, Object conteudo) {
         this.chave = chave;
         this.conteudo = conteudo;
     }
-    
-    public void setConteudo(Object conteudo){
+
+    public void setConteudo(Object conteudo) {
         this.conteudo = conteudo;
     }
-    
-    public Object getConteudo(){
+
+    public Object getConteudo() {
         return this.conteudo;
     }
 }

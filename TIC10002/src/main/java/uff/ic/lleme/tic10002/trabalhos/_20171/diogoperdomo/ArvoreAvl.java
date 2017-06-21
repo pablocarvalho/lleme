@@ -29,32 +29,30 @@ public class ArvoreAvl {
 
         if (aComparar == null)
             this.raiz = aInserir;
-        else
+        else if (aInserir.getChave() < aComparar.getChave())
 
-            if (aInserir.getChave() < aComparar.getChave())
+            if (aComparar.getEsquerda() == null) {
+                aComparar.setEsquerda(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-                if (aComparar.getEsquerda() == null) {
-                    aComparar.setEsquerda(aInserir);
-                    aInserir.setPai(aComparar);
-                    verificarBalanceamento(aComparar);
+            } else
+                inserirAVL(aComparar.getEsquerda(), aInserir);
+        else if (aInserir.getChave() > aComparar.getChave())
 
-                } else
-                    inserirAVL(aComparar.getEsquerda(), aInserir);
-            else if (aInserir.getChave() > aComparar.getChave())
+            if (aComparar.getDireita() == null) {
+                aComparar.setDireita(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-                if (aComparar.getDireita() == null) {
-                    aComparar.setDireita(aInserir);
-                    aInserir.setPai(aComparar);
-                    verificarBalanceamento(aComparar);
+            } else
+                inserirAVL(aComparar.getDireita(), aInserir);
+        else {
+            ListaFilial l_filial = aInserir.getFilial();
 
-                } else
-                    inserirAVL(aComparar.getDireita(), aInserir);
-            else {
-                ListaFilial l_filial = aInserir.getFilial();
-
-                aComparar.insertvenda(l_filial.getFilial(), l_filial.getAno_mes(), l_filial.getcod_vendedor(), l_filial.gettotalvendido());
-                // System.out.println("O no" + aInserir + " ja existe");// O nó já existe
-            }
+            aComparar.insertvenda(l_filial.getFilial(), l_filial.getAno_mes(), l_filial.getcod_vendedor(), l_filial.gettotalvendido());
+            // System.out.println("O no" + aInserir + " ja existe");// O nó já existe
+        }
     }
     //public void inserirAVL(No aComparar, No aInserir)
 
@@ -145,14 +143,12 @@ public class ArvoreAvl {
     public void removerAVL(No atual, int k) {
         if (atual == null)
             return;
-        else
-
-            if (atual.getChave() > k)
-                removerAVL(atual.getEsquerda(), k);
-            else if (atual.getChave() < k)
-                removerAVL(atual.getDireita(), k);
-            else if (atual.getChave() == k)
-                removerNoEncontrado(atual);
+        else if (atual.getChave() > k)
+            removerAVL(atual.getEsquerda(), k);
+        else if (atual.getChave() < k)
+            removerAVL(atual.getDireita(), k);
+        else if (atual.getChave() == k)
+            removerNoEncontrado(atual);
     }
 
     public void removerNoEncontrado(No aRemover) {

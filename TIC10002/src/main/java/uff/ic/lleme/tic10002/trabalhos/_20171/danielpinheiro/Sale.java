@@ -6,7 +6,6 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro;
 
 import java.util.Date;
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.BranchAVL;
 
 /**
  *
@@ -32,9 +31,8 @@ public class Sale implements Comparable<Sale> {
     @Override
     public int compareTo(Sale e) {
         if (this.branchCode == e.getBranchCode() && this.salesmanCode == e.getSalesmanCode()
-                && this.value == e.getValue() && this.date.equals(e.getDate())) {
+                && this.value == e.getValue() && this.date.equals(e.getDate()))
             return 0;
-        }
         return 1;
     }
 
@@ -72,18 +70,15 @@ public class Sale implements Comparable<Sale> {
 
     @Override
     public long getKey(int type) {
-        if (type == BranchAVL.BRANCH_TYPE) {
+        if (type == BranchAVL.BRANCH_TYPE)
             return branchCode;
-        } else {
+        else
             return date.getTime();
-        }
     }
 
     @Override
     public String toString() {
         return "Sale{" + "branchCode=" + branchCode + ", date=" + date + ", salesmanCode=" + salesmanCode + ", value=" + value + '}';
     }
-    
-    
 
 }

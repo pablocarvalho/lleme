@@ -9,19 +9,17 @@ class AVLTree {
     }
 
     private int height(AVLNode t) {
-        if (t == null) {
+        if (t == null)
             return -1;
-        } else {
+        else
             return t.height;
-        }
     }
 
     private int max(int left, int right) {
-        if (right < left) {
+        if (right < left)
             return left;
-        } else {
+        else
             return right;
-        }
     }
 
     public void insert(Montante m) {
@@ -37,26 +35,22 @@ class AVLTree {
     }
 
     private AVLNode insert(Montante m, AVLNode t) {
-        if (t == null) {
+        if (t == null)
             t = new AVLNode(m);
-        } else if (m.key < t.key) {
+        else if (m.key < t.key) {
             t.left = insert(m, t.left);
-            if (height(t.left) - height(t.right) == 2) {
-                if (m.key < t.left.key) {
+            if (height(t.left) - height(t.right) == 2)
+                if (m.key < t.left.key)
                     t = rotateLeft(t);
-                } else {
+                else
                     t = doubleLeft(t);
-                }
-            }
         } else if (t.key < m.key) {
             t.right = insert(m, t.right);
-            if (height(t.right) - height(t.left) == 2) {
-                if (m.key > t.right.key) {
+            if (height(t.right) - height(t.left) == 2)
+                if (m.key > t.right.key)
                     t = rotateRight(t);
-                } else {
+                else
                     t = doubleRight(t);
-                }
-            }
         } else {
             /* Esse mês já apareceu antes.  Adicionemo-o. */
             Montante u = (Montante) t.data;
@@ -67,26 +61,22 @@ class AVLTree {
     }
 
     private AVLNode insert(Venda v, AVLNode t) {
-        if (t == null) {
+        if (t == null)
             t = new AVLNode(v);
-        } else if (v.key < t.key) {
+        else if (v.key < t.key) {
             t.left = insert(v, t.left);
-            if (height(t.left) - height(t.right) == 2) {
-                if (v.key < t.left.key) {
+            if (height(t.left) - height(t.right) == 2)
+                if (v.key < t.left.key)
                     t = rotateLeft(t);
-                } else {
+                else
                     t = doubleLeft(t);
-                }
-            }
         } else if (t.key < v.key) {
             t.right = insert(v, t.right);
-            if (height(t.right) - height(t.left) == 2) {
-                if (v.key > t.right.key) {
+            if (height(t.right) - height(t.left) == 2)
+                if (v.key > t.right.key)
                     t = rotateRight(t);
-                } else {
+                else
                     t = doubleRight(t);
-                }
-            }
         } else {
             Venda u = (Venda) t.data;
             u.total_vendido = u.total_vendido + v.total_vendido;
@@ -96,27 +86,23 @@ class AVLTree {
     }
 
     private AVLNode insert(int x, AVLNode t) {
-        if (t == null) {
+        if (t == null)
             t = new AVLNode(x);
-        } else if (x < t.key) {
+        else if (x < t.key) {
 
             t.left = insert(x, t.left);
-            if (height(t.left) - height(t.right) == 2) {
-                if (x < t.left.key) {
+            if (height(t.left) - height(t.right) == 2)
+                if (x < t.left.key)
                     t = rotateLeft(t);
-                } else {
+                else
                     t = doubleLeft(t);
-                }
-            }
         } else if (x > t.key) {
             t.right = insert(x, t.right);
-            if (height(t.right) - height(t.left) == 2) {
-                if (x > t.right.key) {
+            if (height(t.right) - height(t.left) == 2)
+                if (x > t.right.key)
                     t = rotateRight(t);
-                } else {
+                else
                     t = doubleRight(t);
-                }
-            }
         } else
            ;  // já inserido
         t.height = max(height(t.left), height(t.right)) + 1;
@@ -159,13 +145,13 @@ class AVLTree {
         if (r != null) {
             if (r.key == val)
                 return r.data;
-            
+
             if (val < r.key)
                 return get(r.left, val);
-            
+
             return get(r.right, val);
         }
-        
+
         return null;
     }
 
@@ -177,9 +163,8 @@ class AVLTree {
         if (r != null) {
             inorder(r.left, sep);
             System.out.print(r.key + sep);
-            if (r.data != null) {
+            if (r.data != null)
                 System.out.print(r.data + sep);
-            }
             inorder(r.right, sep);
         }
     }
@@ -191,9 +176,8 @@ class AVLTree {
     private void preorder(AVLNode r, String sep) {
         if (r != null) {
             System.out.print(r.key + sep);
-            if (r.data != null) {
+            if (r.data != null)
                 System.out.print(r.data + sep);
-            }
             preorder(r.left, sep);
             preorder(r.right, sep);
         }
