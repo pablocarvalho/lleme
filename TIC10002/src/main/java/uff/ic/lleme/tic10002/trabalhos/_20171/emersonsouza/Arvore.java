@@ -16,6 +16,7 @@ public class Arvore {
     public double efetuaSoma(No no, int menor1, int maior1, int chave) {
         double soma;
         if (no != null) {
+            // CORRECAO: nao esta limitando o espaco de busca
             soma = efetuaSoma(no.getDireita(), menor1, maior1, chave);
             soma += getTotalVendido(no, menor1, maior1, chave);
             soma += efetuaSoma(no.getEsquerda(), menor1, maior1, chave);

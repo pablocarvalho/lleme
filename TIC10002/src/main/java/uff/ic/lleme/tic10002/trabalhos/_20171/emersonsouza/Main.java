@@ -57,6 +57,7 @@ public class Main {
         totalVendido = arvoreData.efetuaSoma(arvoreData.raiz, datavendap, datavendau, 2);
         System.out.println("Total de vendido das entre as datas " + datavendap + " a " + datavendau + " : " + totalVendido);
 
+        // CORRECAO: extrair das duas arvores, jogar em um hash e depois verificar vendas que atendem aos dois critérios
         totalVendido = arvorelFilial.efetuaSoma(arvorelFilial.raiz, filialcompp, filialcompu, datacompp, datacompu, 1, 2);
         System.out.println("Total de vendido das filias " + filialcompp + " a " + filialcompu + " e entre as datas " + datacompp + " a " + datacompu + " : " + totalVendido);
 

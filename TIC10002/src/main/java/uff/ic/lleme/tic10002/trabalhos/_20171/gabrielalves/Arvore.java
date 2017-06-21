@@ -181,6 +181,7 @@ public class Arvore {
 
     public double calculaSoma(ArvoreNo no, int min1, int max1, int min2, int max2) {
         double total;
+        // CORRECAO: extrai de duas arvores e depois faz a juncao
         if (no != null) {
             total = calculaSoma(no.getDir(), min1, max1, min2, max2);
             total += totalVendido(no, min1, max1, min2, max2);

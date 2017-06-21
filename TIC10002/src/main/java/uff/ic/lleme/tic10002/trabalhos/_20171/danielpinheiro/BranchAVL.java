@@ -5,8 +5,6 @@
  */
 package uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro;
 
-import uff.ic.lleme.tic10002.trabalhos._20171.danielpinheiro.Sale;
-
 /**
  *
  * @author danieljr
@@ -360,6 +358,7 @@ public class BranchAVL {
         if (node.branchCode >= begin && node.branchCode <= end) {
             LinkedList list = (LinkedList) node.branchSales;
             if (node.right != null)
+                // CORRECAO: armazenar em um hash é mais eficiente.
                 list = (LinkedList) list.merge(searchBranchRange(node.right, begin, end));
             if (node.left != null)
                 list = (LinkedList) list.merge(searchBranchRange(node.left, begin, end));

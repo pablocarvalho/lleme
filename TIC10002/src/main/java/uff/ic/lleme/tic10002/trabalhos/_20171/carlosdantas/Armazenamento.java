@@ -23,6 +23,7 @@ public class Armazenamento {
     public float totalVendido(int id_filialInicial, int id_filialFinal, MesAno mInicial, MesAno mFinal) {
         if (id_filialInicial > 0 && id_filialFinal > 0)
             if (mInicial.eValido() && mFinal.eValido()) {
+                // CORRECAO: as duas consultas armazenar vendas em hash
                 TabelaHash hash = avlFilial.buscaFiliais(id_filialInicial, id_filialFinal);
                 ListaVendas vendas = avlMesAno.buscaVendas(mInicial, mFinal);
                 Venda venda = vendas.pop();

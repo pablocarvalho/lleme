@@ -200,6 +200,7 @@ class AVLTree {
         AVLNode left, right;
         int key;
         int height;
+        // CORRECAO: a arvore deve armazenar lista de vendas.
         Object data;
 
         public AVLNode(Montante m) {

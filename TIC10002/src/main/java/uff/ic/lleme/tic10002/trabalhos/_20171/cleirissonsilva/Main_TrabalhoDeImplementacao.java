@@ -105,6 +105,7 @@ public class Main_TrabalhoDeImplementacao {
                     System.out.println("2 -Entre com o código da 2ª FILIAL: (ATENÇÃO: Deve ser no intervalo de FILIAIS de 00 a 100)");
                     cod_filial2 = scan.nextInt();
 
+                    // CORRECAO: deve ser mdetodo da arvore e nao do no
                     totalVendido = (long) novaArvore.buscarTotalVendidoPorFilial(novaArvore.raiz, cod_filial1, cod_filial2);
 
                     System.out.println("");

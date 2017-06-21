@@ -84,6 +84,7 @@ public class HashVenda {
         double soma = 0;
         int posicao;
 
+        // CORRECAO: buscar em arvore é mais eficiente
         // Percorre a tabela Hash somando as vendas das filiais desejadas
         for (int i = filial1; i <= filial2; i++) {
             posicao = buscaPosicao(i);

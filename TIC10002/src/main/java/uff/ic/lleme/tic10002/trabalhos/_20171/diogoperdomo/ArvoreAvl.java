@@ -7,6 +7,7 @@ public class ArvoreAvl {
     protected No raiz;
     protected String tipo;
     private Double Total = 0.0;
+    // CORRECAO: uma lista de vendas é mais eficiente porque sempre extrairemos todas as vendas.
     Hash hash = new Hash();
 
     public ArvoreAvl(String tipo) {
