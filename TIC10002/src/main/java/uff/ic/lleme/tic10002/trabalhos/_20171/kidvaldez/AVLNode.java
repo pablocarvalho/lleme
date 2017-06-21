@@ -9,6 +9,7 @@ public class AVLNode {
     public AVLNode izquierdo;
     public AVLNode derecho;
     public int height;
+    // CORRECAO: nao pode usar classes Java
     public List<Vendas> duplicados;
 
     // Constructors

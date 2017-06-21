@@ -11,6 +11,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.gabrielcarvalho;
  */
 public class NoData {
 
+    // CORRECAO: deveria ser uma lista
     Venda cont;
     NoData pai;
     NoData esq;

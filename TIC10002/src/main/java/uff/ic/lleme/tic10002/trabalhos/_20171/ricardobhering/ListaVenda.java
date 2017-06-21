@@ -4,6 +4,7 @@ public class ListaVenda {
 
     protected int codFunc;
     protected double valor;
+    // CORRECAO: deveria apontar para um no e nao uma lista
     protected ListaVenda proximo;
 
     public ListaVenda() {

@@ -50,6 +50,7 @@ public class ArvoreVenda {
     public class No {
 
         private String tipo;
+        // CORRECAO: nao possui uma venda
         private Venda conteudo = null;
         private ListaDinamicaDeVenda vendas;
         private No pai = null;

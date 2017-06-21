@@ -5,6 +5,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.raphaelbernardino;
  */
 public class NoFilial {
 
+    // CORRECAO: deveria ter uma lista
     private final Filial filial;
     private NoFilial esq = null;
     private NoFilial dir = null;

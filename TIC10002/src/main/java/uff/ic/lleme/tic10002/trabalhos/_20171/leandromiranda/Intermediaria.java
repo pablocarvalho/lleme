@@ -1,14 +1,8 @@
 package uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda;
 
 import java.io.InvalidObjectException;
-
 import javax.swing.JOptionPane;
-
-import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.Venda;
 import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.ArvoreVenda.No;
-import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.ArvoreVenda;
-import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.ListaDinamicaDeVenda;
-import uff.ic.lleme.tic10002.trabalhos._20171.leandromiranda.TabelaHash;
 
 public class Intermediaria {
 
@@ -149,6 +143,7 @@ public class Intermediaria {
 
     public int resolverLetraC(ListaDinamicaDeVenda listaLetraC, String inicioMesAno, String fimMesAno) throws InvalidObjectException {
 
+        // CORRECAO: onde está a busaca na árvore?
         tabela.printIntervalo(inicioMesAno, fimMesAno,
                 listaLetraC);
         listaLetraC.print();
