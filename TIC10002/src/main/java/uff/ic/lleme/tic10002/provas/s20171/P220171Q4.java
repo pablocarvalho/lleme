@@ -318,7 +318,7 @@ public class P220171Q4 {
 
     public static void main(String[] args) {
         P220171Q4 a = new P220171Q4(true);
-        for (int i = 2; i <= 8; i = i + 2) {
+        for (int i = 2; i <= 10; i = i + 2) {
             Integer[] nums = new Integer[i];
             int index = 0;
             for (int j = 1; j <= i; j++)

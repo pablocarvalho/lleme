@@ -28,7 +28,6 @@ public class P220171Q2 {
             else if (x < no.chave)
                 return encontrarX(no.direita, x);
             else
-
                 return encontrarX(no.esquerda, x);
         return null;
     }
