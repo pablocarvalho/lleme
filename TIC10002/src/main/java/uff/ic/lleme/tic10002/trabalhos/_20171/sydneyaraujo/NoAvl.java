@@ -16,6 +16,7 @@ public class NoAvl {
     private NoAvl pai;
     private int chave;
     private int balanceamento;
+    // CORRECAO: deveria ser uma lista
     private Object conteudo;
 
     public NoAvl(int chave) {

@@ -5,6 +5,7 @@ public class ArvoreNo {
     public int balanceamento;
     public ArvoreNo esq;
     public ArvoreNo dir;
+    // CORRECAO: deveria ser uma lista
     public Venda conteudo;
     public ArvoreNo pai;
 

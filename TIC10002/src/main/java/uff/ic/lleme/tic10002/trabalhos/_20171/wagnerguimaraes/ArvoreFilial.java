@@ -65,6 +65,7 @@ public class ArvoreFilial {
 
         NoFilial no = new NoFilial();
 
+        // CORRECAO: busca binaria + busca em hash
         for (int k = cFilial1; k <= cFilial2; k++) {
             no = buscar(k);
             if (no != null) {

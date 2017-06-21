@@ -11,6 +11,7 @@ package uff.ic.lleme.tic10002.trabalhos._20171.wagnerguimaraes;
  */
 public class ArvoreB {
 
+    // CORRECAO: deveria ser arvore AVL
     //Atributos da Classe ArvoreB
     private NoB raiz; //Atributo do Nó raiz;
     private int ordem; //Ordem da Arvore-B;

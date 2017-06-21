@@ -14,6 +14,7 @@ import java.text.ParseException;
  */
 public class main {
 
+    // CORRECAO: nao era necessario a solucao por lista
     //conjuntos para cada tipo de busca onde
     //cada elemento do vetor é um objeto do tipo lista encadeada de vendas
     public static ListaEncadeadaVendas[] set_Ids;
