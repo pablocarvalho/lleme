@@ -1,5 +1,5 @@
-from .List import List
 from .Hash import Hash
+from .List import List
 
 
 class Tree:
@@ -30,7 +30,7 @@ class Tree:
 
 
     def add(self, sale, key):
-        self.__add(self, sale,key)
+        self.__add(self, sale, key)
 
     def executeBalance(self):
         bal = self.balance()
@@ -43,7 +43,7 @@ class Tree:
             else: self.right_left_rotation()
 
     def balance(self, depth=False):
-        depth_left, depth_right = 0,0
+        depth_left, depth_right = 0, 0
         if self.left:
             depth_left = self.left.balance(depth=True)
         if self.right:
@@ -73,8 +73,8 @@ class Tree:
         self.left_rotation()
 
     def search_range(self, minimum, maximum):
-        if type(minimum) == int and type(maximum)== int: key = 'filial'
-        elif type(minimum) == str and type(maximum)== str: key = 'date'
+        if type(minimum) == int and type(maximum) == int: key = 'filial'
+        elif type(minimum) == str and type(maximum) == str: key = 'date'
         else: return "Invalid Range"
         nodes = []
 
@@ -85,7 +85,7 @@ class Tree:
             if node.list.get_value(key) > minimum:
                 recursive_search(node.left)
             if minimum <= node.list.get_value(key) <= maximum:
-                nodes.append(node)#nodes.append([node.list.get_value(key), node])
+                nodes.append(node)  # nodes.append([node.list.get_value(key), node])
             if node.list.get_value(key) < maximum:
                 recursive_search(node.right)
 
@@ -95,12 +95,12 @@ class Tree:
     @staticmethod
     def sum_sales(filials=None, dates=None):
         total = 0
-        if (filials !=None and dates == None):
+        if (filials != None and dates == None):
             for node in filials:
-                total+= node.list.get_value('total_vendido')
+                total += node.list.get_value('total_vendido')
         elif filials is None and dates != None:
             for node in dates:
-                total+= node.list.get_value('total_vendido')
+                total += node.list.get_value('total_vendido')
         else:
             hashFilials = Hash(filials, key='id')
             nodes_intersection = hashFilials.join(dates)
@@ -114,8 +114,8 @@ class Tree:
     def print_tree(self, indent=0, key="filial"):
         print(("  " * indent + str(self.list.get_value(key))))
         if self.left:
-            self.left.print_tree(indent + 2,key)
+            self.left.print_tree(indent + 2, key)
         if self.right:
-            self.right.print_tree(indent + 2,key)
+            self.right.print_tree(indent + 2, key)
 
         return
