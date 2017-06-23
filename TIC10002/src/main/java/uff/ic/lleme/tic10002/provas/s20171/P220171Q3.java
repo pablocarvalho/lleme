@@ -19,17 +19,17 @@ public class P220171Q3 {
 
     }
 
-    public boolean emOrdem() {
+    public boolean ehAVL() {
         avl = true;
-        emOrdem(raiz, 1);
+        ehAVL(raiz, 1);
         return avl;
     }
 
-    private int emOrdem(No no, int nivel) {
+    private int ehAVL(No no, int nivel) {
         if (no == null)
             return nivel + 1;
-        int nivelD = emOrdem(no.direita, nivel + 1);
-        int nivelE = emOrdem(no.esquerda, nivel + 1);
+        int nivelD = ehAVL(no.direita, nivel + 1);
+        int nivelE = ehAVL(no.esquerda, nivel + 1);
         no.saldo = Math.abs(nivelD - nivelE);
         if (no.saldo > 1)
             avl = false;
@@ -64,6 +64,6 @@ public class P220171Q3 {
         int[] nums = {34, 1, 78, 12, 3, 14, 67, 7, 6, 24};
         for (int num : nums)
             a.incluir(num);
-        System.out.println("" + a.emOrdem());
+        System.out.println("" + a.ehAVL());
     }
 }
