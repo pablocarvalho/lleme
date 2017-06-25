@@ -81,9 +81,9 @@ public class P220171Q3_Ashey {
         if (d.eBalanceada == false)
             r.eBalanceada = false;
         if (e.altura > d.altura)
-            r.altura = ealtura;
+            r.altura = e.altura;
         else
-            r.altura = daltura;
+            r.altura = d.altura;
 
         r.eBalanceada = Math.abs(e.altura - d.altura) <= 1;
 
