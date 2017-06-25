@@ -58,7 +58,7 @@ public class P220171Q3_Ashey {
         if (raiz == null)
             return true;
         int att = 0;
-        return altura(raiz, att).eBalanceada; // Em vez de att você colocou altura na prova, etsva errado.
+        return altura(raiz, att).eBalanceada; // Em vez de att você colocou altura na prova, estava errado.
     }
 
     public Retorno altura(No no, int altura) {
@@ -78,7 +78,7 @@ public class P220171Q3_Ashey {
 
         if (e.eBalanceada == false)
             r.eBalanceada = false;
-        if (!d.eBalanceada == false)
+        if (d.eBalanceada == false)
             r.eBalanceada = false;
         if (e.altura > d.altura)
             r.altura = ealtura;
