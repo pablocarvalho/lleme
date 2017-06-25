@@ -78,7 +78,7 @@ public class P220171Q3_Ashey {
 
         if (e.eBalanceada == false)
             r.eBalanceada = false;
-        if (!d.eBalanceada == false)
+        if (d.eBalanceada == false)
             r.eBalanceada = false;
         if (e.altura > d.altura)
             r.altura = ealtura;
