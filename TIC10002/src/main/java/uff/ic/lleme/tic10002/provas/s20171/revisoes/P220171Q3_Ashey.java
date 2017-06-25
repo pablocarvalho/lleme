@@ -50,7 +50,7 @@ public class P220171Q3_Ashey {
 
     public class Retorno {
 
-        public boolean eBalanceada = false;
+        public boolean ehBalanceada = false;
         public int altura = 0;
     }
 
@@ -58,7 +58,7 @@ public class P220171Q3_Ashey {
         if (raiz == null)
             return true;
         int att = 0;
-        return altura(raiz, att).eBalanceada; // Em vez de att você colocou altura na prova, estava errado.
+        return altura(raiz, att).ehBalanceada; // Em vez de att você colocou altura na prova, estava errado.
     }
 
     public Retorno altura(No no, int altura) {
@@ -66,7 +66,7 @@ public class P220171Q3_Ashey {
 
         if (no == null) {
             r.altura = 0;
-            r.eBalanceada = true;
+            r.ehBalanceada = true;
             return r;
         }
 
@@ -76,16 +76,16 @@ public class P220171Q3_Ashey {
         Retorno e = altura(no.efilho, ealtura);
         Retorno d = altura(no.dfilho, daltura);
 
-        if (e.eBalanceada == false)
-            r.eBalanceada = false;
-        if (!d.eBalanceada == false)
-            r.eBalanceada = false;
+        if (e.ehBalanceada == false)
+            r.ehBalanceada = false;
+        if (!d.ehBalanceada == false)
+            r.ehBalanceada = false;
         if (e.altura > d.altura)
             r.altura = ealtura;
         else
             r.altura = daltura;
 
-        r.eBalanceada = Math.abs(e.altura - d.altura) <= 1;
+        r.ehBalanceada = Math.abs(e.altura - d.altura) <= 1;
 
         return r;
     }
