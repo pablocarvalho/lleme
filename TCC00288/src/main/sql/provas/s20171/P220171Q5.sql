@@ -36,7 +36,7 @@ begin
                    transpor(array_agg(array[t1.ano_mes,1])),
                    transpor(array[array_agg(t1.valor)]) into x,xl,r from t1 ;
         c1 = multiplicar(xl,x);
-        --c2 = multiplicar(xl,r);
+        c2 = multiplicar(xl,r);
         coef = resolver(c1,c2);
         return next prod, coef[1] * p_ano_mes + coef[2];
     end loop;
