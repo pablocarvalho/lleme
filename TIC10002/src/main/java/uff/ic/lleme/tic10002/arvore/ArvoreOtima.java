@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ArvoreOtima {
 
-    private static double[] f = {0, 10, 1, 3, 2};
-    private static double[] f2 = {2, 1, 1, 1, 1};
+    private static double[] f = {0, 3, 2, 1, 2, 5};
+    private static double[] f2 = {2, 1, 3, 1, 2, 1};
 
     private static double[][] F = new double[f2.length][f2.length];
     private static double[][] c = new double[f2.length][f2.length];
@@ -13,8 +13,7 @@ public class ArvoreOtima {
 
     public static void main(String[] args) {
         custo(f, f2);
-        print(c);
-        print(K);
+        print(c, K);
         print(ordem());
     }
 
@@ -80,6 +79,19 @@ public class ArvoreOtima {
 
     public static void print(int[] c) {
         System.out.println(Arrays.toString(c).replaceAll(" ", "\t"));
+        System.out.println("");
+    }
+
+    public static void print(double[][] c, int[][] k) {
+        String[][] s = new String[c.length][c[0].length];
+        for (int i = 0; i < k.length; i++)
+            for (int j = 0; j < k.length; j++)
+                if (j > i)
+                    s[i][j] = c[i][j] + "/" + k[i][j];
+                else
+                    s[i][j] = c[i][j] + "";
+        for (String[] s1 : s)
+            System.out.println(Arrays.toString(s1).replaceAll(" ", "\t"));
         System.out.println("");
     }
 

@@ -1,4 +1,4 @@
-drop table if exists venda;
+﻿drop table if exists venda;
 create table venda(
     ano_mes int not null,
     unidade int,
@@ -18,7 +18,8 @@ insert into venda values(201703,1,2,10,200.0);
 insert into venda values(201703,1,3,10,500.0);
 
 drop function if exists projecao(int);
-create or replace function projecao(p_ano_mes int) returns table(produto int, previsao float) as $$
+create or replace function projecao(p_ano_mes int) 
+returns table(produto int, previsao float) as $$
 declare
     x float[][];
     xl float[][];
@@ -31,10 +32,16 @@ begin
 
     for prod in select distinct t1.produto from venda t1 loop
         with
-            t1 as (select t1.ano_mes, sum(t1.valor) as valor from venda t1 group by t1.ano_mes, t1.produto)
-            select array_agg(array[t1.ano_mes,1]),
-                   transpor(array_agg(array[t1.ano_mes,1])),
-                   transpor(array[array_agg(t1.valor)]) into x,xl,r from t1 ;
+            t1 as (select t1.ano_mes, sum(t1.valor) as valor 
+                   from venda t1 
+                   where t1.produto=prod
+                   group by t1.ano_mes, t1.produto)
+        select array_agg(array[t1.ano_mes,1]),
+               transpor(array_agg(array[t1.ano_mes,1])),
+               transpor(array[array_agg(t1.valor)]) 
+        into x,xl,r 
+        from t1;
+        
         c1 = multiplicar(xl,x);
         c2 = multiplicar(xl,r);
         coef = resolver(c1,c2);
