@@ -13,7 +13,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.tdb.TDBFactory;
 import org.apache.jena.vocabulary.VCARD;
-import uff.ic.swlab.commons.util.riot.JenaSchemaMgr;
+import uff.ic.swlab.commons.riot.JenaSchemaMgr;
 
 public class ConnectToTDB {
 
