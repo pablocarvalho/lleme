@@ -30,9 +30,9 @@ public class ConnectToSDB {
     public static void run() throws SQLException, ClassNotFoundException, FileNotFoundException {
         String NS = "http://localhost:3030/myontology/";
 
-        String jdbcurl = "jdbc:postgresql://localhost:5432/jena";
+        String jdbcurl = "jdbc:postgresql://192.168.1.10:5432/jena-sdb";
         String username = "postgres";
-        String password = "fluminense";
+        String password = "Fluzao00!";
         Class.forName("org.postgresql.Driver");
         Connection jdbcConnection = DriverManager.getConnection(jdbcurl, username, password);
         jdbcConnection.setSchema("sdb");
