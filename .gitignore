@@ -4,6 +4,7 @@ Thumbs.db
 *.class
 *.cdi
 /build/
+/target/
 
 
 /CORBA/nbproject/private/
