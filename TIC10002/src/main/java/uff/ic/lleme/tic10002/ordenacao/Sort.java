@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.sort;
+package uff.ic.lleme.tic10002.ordenacao;
 
 import java.util.Random;
 import uff.ic.lleme.tic10002.Entidade;

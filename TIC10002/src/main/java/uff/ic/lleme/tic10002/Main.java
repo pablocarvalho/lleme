@@ -2,7 +2,7 @@ package uff.ic.lleme.tic10002;
 
 import uff.ic.lleme.tic10002.lista.ListaEstaticaNaoOrdenada;
 import uff.ic.lleme.tic10002.lista.ListaNaoOrdenada;
-import uff.ic.lleme.tic10002.sort.Sort;
+import uff.ic.lleme.tic10002.ordenacao.Sort;
 
 public class Main {
 

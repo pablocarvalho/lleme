@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.sort.rascunho;
+package uff.ic.lleme.tic10002.ordenacao.rascunho;
 
 public class QuickSort {
 
