@@ -30,12 +30,10 @@ public class QuickSort {
                 int aux = lista[++i];
                 lista[i] = lista[j];
                 lista[j] = aux;
-                print(lista, 2);
             }
         int aux = lista[++i];
         lista[i] = lista[r];
         lista[r] = aux;
-        print(lista, 1);
         return i;
     }
 

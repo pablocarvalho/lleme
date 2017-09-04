@@ -10,34 +10,33 @@ public class MergeSort {
     }
 
     public static void mergeSort(int[] lista) {
-        mergeSort(lista, 0, lista.length - 1);
+        dividir(lista, 0, lista.length - 1);
     }
 
-    private static void mergeSort(int[] lista, int e, int d) {
+    private static void dividir(int[] lista, int e, int d) {
         if (e < d) {
             int m = (e + d) / 2;
-            mergeSort(lista, e, m);
-            mergeSort(lista, m + 1, d);
+            dividir(lista, e, m);
+            dividir(lista, m + 1, d);
             merge(lista, e, m, d);
         }
-
     }
 
     private static void merge(int[] lista, int e, int m, int d) {
-        int[] aux = new int[d - e + 1];
+        int[] result = new int[d - e + 1];
         int i = e, j = m + 1, k = 0;
         while (i <= m || j <= d)
             if (i <= m && j <= d)
                 if (lista[i] <= lista[j])
-                    aux[k++] = lista[i++];
+                    result[k++] = lista[i++];
                 else
-                    aux[k++] = lista[j++];
+                    result[k++] = lista[j++];
             else if (i <= m)
-                aux[k++] = lista[i++];
+                result[k++] = lista[i++];
             else
-                aux[k++] = lista[j++];
+                result[k++] = lista[j++];
         i = e;
-        for (int l = 0; l < aux.length; l++)
-            lista[i++] = aux[l];
+        for (int l = 0; l < result.length; l++)
+            lista[i++] = result[l];
     }
 }

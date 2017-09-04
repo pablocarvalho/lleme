@@ -24,12 +24,12 @@ public class ListaEncadeadaNaoOrdenadaDeEmpregado implements ListaDeEmpregado {
         return buscar(primeiro, matricula);
     }
 
-    private Empregado buscar(NoLEEmpregado p, int matricula) {
-        if (p != null)
-            if (p.empregado.matricula == matricula)
-                return p.empregado;
+    private Empregado buscar(NoLEEmpregado noCorrente, int matricula) {
+        if (noCorrente != null)
+            if (noCorrente.empregado.matricula == matricula)
+                return noCorrente.empregado;
             else
-                return buscar(p.proximo, matricula);
+                return buscar(noCorrente.proximo, matricula);
         else
             return null;
     }
