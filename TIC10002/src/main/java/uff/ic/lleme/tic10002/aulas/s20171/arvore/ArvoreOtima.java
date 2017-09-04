@@ -1,8 +1,8 @@
-package uff.ic.lleme.tic10002.provas.s20171;
+package uff.ic.lleme.tic10002.aulas.s20171.arvore;
 
 import java.util.Arrays;
 
-public class VS20171Q2 {
+public class ArvoreOtima {
 
     private static double[] f = {0, 3, 2, 1, 2, 5};
     private static double[] f2 = {2, 1, 3, 1, 2, 1};
