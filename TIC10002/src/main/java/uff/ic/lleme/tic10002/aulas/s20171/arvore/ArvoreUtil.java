@@ -90,6 +90,41 @@ public class ArvoreUtil {
             return null;
     }
 
+    public static void preOrdem3(No no) {
+        if (no != null) {
+            System.out.print(visite(no));
+            preOrdem3(no.direita);
+            preOrdem3(no.esquerda);
+        }
+    }
+
+    public static void emOrdem3(No no) {
+        if (no != null) {
+            emOrdem3(no.direita);
+            System.out.print(visite(no));
+            emOrdem3(no.esquerda);
+        }
+    }
+
+    public static void posOrdem3(No no) {
+        if (no != null) {
+            posOrdem3(no.direita);
+            posOrdem3(no.esquerda);
+            System.out.print(visite(no));
+        }
+    }
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
     public static String pre_ordem2(No no) {
         String resultado = "";
         if (no != null) {
