@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArvoreOtima {
 
-    private static double[] f = {0, 3, 2, 1, 2, 5};
+    private static double[] f = {0, 10, 2, 1, 2, 5};
     private static double[] f2 = {2, 1, 3, 1, 2, 1};
 
     private static double[][] F = new double[f2.length][f2.length];
@@ -32,6 +32,17 @@ public class ArvoreOtima {
                 F[i][j] = F[i][j - 1] + f[j] + f2[j];
                 c[i][j] = min(i, j) + F[i][j];
             }
+
+        //d=1; i=0; j=1
+        //d=1; i=1; j=2
+        //d=1; i=2; j=3
+        //d=1; i=3; j=4
+        //d=2; i=0; j=2
+        //d=2; i=1; j=3
+        //d=2; i=2; j=4
+        //d=3; i=0; j=3
+        //d=3; i=1; j=4
+        //d=4; i=0; j=4
         return c[0][n];
     }
 
@@ -68,6 +79,20 @@ public class ArvoreOtima {
         return ordem.o;
     }
 
+    //i=0; j=4;
+    //     k=1; i=0; j=k-1=0;
+    //          --
+    //     k=1; i=k=1; j=4
+    //          k=3; i==1=1; j=k-1=2
+    //               k=2; i=i=1; j=k-1=1
+    //                    --
+    //               k=2; i=k=2; j=j=2
+    //                    --
+    //          k=3; i=k=3; j=j=4
+    //               k=4; i=i=3; j=k-1=3
+    //                    --
+    //               k=4; i=k=4; j=j=4
+    //                    --
     public static void busca(int i, int j, Ordem o) {
         if (j >= i + 1 && i >= 0 && j >= 0 && i < K.length && j < K.length) {
             int chave = K[i][j];
