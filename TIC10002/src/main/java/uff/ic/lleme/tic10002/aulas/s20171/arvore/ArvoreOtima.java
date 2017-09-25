@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ArvoreOtima {
 
-    private static double[] f = {0, 10, 2, 1, 2, 5};
-    private static double[] f2 = {2, 1, 3, 1, 2, 1};
+    private static double[] f = {0, 10, 1, 3, 2};
+    private static double[] f2 = {2, 1, 1, 1, 1};
 
     private static double[][] F = new double[f2.length][f2.length];
     private static double[][] c = new double[f2.length][f2.length];
