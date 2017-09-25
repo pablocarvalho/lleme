@@ -8,13 +8,11 @@ public class FilaEstaticaComRotacaoDePonteiro {
     public int n = 0;
 
     private void incJ() {
-        if (n < lista.length)
-            j = ++j % lista.length;
+        j = ++j % lista.length;
     }
 
     private void incI() {
-        if (n < lista.length)
-            i = ++i % lista.length;
+        i = ++i % lista.length;
     }
 
     public void incluir(int num) throws Exception {
