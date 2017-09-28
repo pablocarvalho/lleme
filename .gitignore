@@ -5,7 +5,7 @@ Thumbs.db
 *.cdi
 /build/
 /target/
-/**/prova/atual/**
+/TCC00288/src/main/sql/prova/atual/**
 
 
 /CORBA/nbproject/private/
