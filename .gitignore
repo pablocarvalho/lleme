@@ -3,9 +3,9 @@ Thumbs.db
 
 *.class
 *.cdi
-/build/
-/target/
-/prova/atual/**
+**/build/
+**/target/
+**/prova/atual/
 
 
 /CORBA/nbproject/private/
@@ -59,6 +59,6 @@ Thumbs.db
 
 /#TCC00288/target/
 /#TIC10002/target/
-/TIC10002/target/
+
 /Ex-LetsTalk/nbproject/private/
 /Ex_LetsTalk/nbproject/private/
