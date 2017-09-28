@@ -6,8 +6,7 @@ Thumbs.db
 **/build/
 **/target/
 **/prova/atual/
-*/nbproject/private/
-
-/TIC10086/src/main/resources/dat/tdb/
+**/nbproject/private/
+**/resources/dat/tdb/
 
 
