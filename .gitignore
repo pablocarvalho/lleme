@@ -1,12 +1,11 @@
 .DS_Store
 Thumbs.db
-
 *.class
 *.cdi
+
 **/build/
 **/target/
 **/prova/atual/
+**/provas/atual/
 **/nbproject/private/
 **/resources/dat/tdb/
-
-
