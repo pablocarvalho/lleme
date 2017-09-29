@@ -26,6 +26,7 @@
         </dependency>
     </dependencies>
     <build>
+        <sourceDirectory>src/main/java, src/private/java</sourceDirectory>
         <resources>
             <resource>
                 <directory>src/private/java</directory>
