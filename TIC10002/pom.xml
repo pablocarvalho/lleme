@@ -25,11 +25,4 @@
             <version>1.0</version>
         </dependency>
     </dependencies>
-    <build>
-        <resources>
-            <resource>
-                <directory>src/private/java</directory>
-            </resource>
-        </resources>
-    </build>
 </project>
