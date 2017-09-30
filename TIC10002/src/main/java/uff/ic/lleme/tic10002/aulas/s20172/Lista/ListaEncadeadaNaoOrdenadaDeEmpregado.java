@@ -1,4 +1,7 @@
-package uff.ic.lleme.tic10002.aulas.s20172;
+package uff.ic.lleme.tic10002.aulas.s20172.Lista;
+
+import uff.ic.lleme.tic10002.aulas.s20172.oo.Empregado;
+import uff.ic.lleme.tic10002.aulas.s20172.oo.NoLEEmpregado;
 
 public class ListaEncadeadaNaoOrdenadaDeEmpregado implements ListaDeEmpregado {
 

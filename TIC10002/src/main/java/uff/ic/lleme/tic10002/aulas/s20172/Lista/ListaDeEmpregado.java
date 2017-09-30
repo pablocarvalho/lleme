@@ -1,4 +1,6 @@
-package uff.ic.lleme.tic10002.aulas.s20172;
+package uff.ic.lleme.tic10002.aulas.s20172.Lista;
+
+import uff.ic.lleme.tic10002.aulas.s20172.oo.Empregado;
 
 public interface ListaDeEmpregado {
 

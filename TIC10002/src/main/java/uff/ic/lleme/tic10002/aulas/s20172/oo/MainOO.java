@@ -1,4 +1,7 @@
-package uff.ic.lleme.tic10002.aulas.s20172;
+package uff.ic.lleme.tic10002.aulas.s20172.oo;
+
+import uff.ic.lleme.tic10002.aulas.s20172.Lista.ListaEstaticaDeEmpregados;
+import uff.ic.lleme.tic10002.aulas.s20172.Lista.ListaDeEmpregado;
 
 public class MainOO {
 

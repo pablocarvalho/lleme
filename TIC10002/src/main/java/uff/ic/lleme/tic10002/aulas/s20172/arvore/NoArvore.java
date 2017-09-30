@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20172.arvore;
 
-import uff.ic.lleme.tic10002.aulas.s20172.Empregado;
+import uff.ic.lleme.tic10002.aulas.s20172.oo.Empregado;
 
 public class NoArvore {
 
