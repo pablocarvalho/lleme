@@ -1,6 +1,5 @@
 package uff.ic.lleme.tic10002.aulas.s20172.arvoreAvl;
 
-import protegido.provas.s20172.P120172Q4.*;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -28,22 +27,22 @@ public class ABB {
         }
 
         private void printNodeValue() {
-            System.out.print("" + conteudo + "/");
+            System.out.print("O " + conteudo);
             System.out.print('\n');
         }
 
         private void printTree(boolean isRight, String indent) {
             if (esquerda != null)
-                esquerda.printTree(false, indent + (isRight ? " |      " : "        "));
+                esquerda.printTree(false, indent + (isRight ? "|        " : "         "));
             System.out.print(indent);
             if (isRight)
-                System.out.print(" \\");
+                System.out.print("\\");
             else
-                System.out.print(" /");
-            System.out.print("----- ");
+                System.out.print("/");
+            System.out.print("------- ");
             printNodeValue();
             if (direita != null)
-                direita.printTree(true, indent + (isRight ? "        " : " |      "));
+                direita.printTree(true, indent + (isRight ? "         " : "|        "));
         }
 
     }
