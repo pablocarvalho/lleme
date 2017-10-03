@@ -118,6 +118,7 @@ public class ArvoreAVL {
             if (no.direita == null) {
                 no.direita = new No(conteudo);
 
+                //inserido à direita do nó: casos a) e e) pág. 109
                 //<editor-fold defaultstate="collapsed" desc="balanceamento">
                 no.saldoAltura++;
                 //</editor-fold>
@@ -140,13 +141,13 @@ public class ArvoreAVL {
                 if (no.direita.esquerda != null)
                     saldoPosteriorV = no.direita.esquerda.saldoAltura;
 
-                int delta1 = saldoPosteriorU - saldoAnteriorU;
-                int delta2 = saldoPosteriorV - saldoAnteriorV;
+                int deltaU = saldoPosteriorU - saldoAnteriorU;
+                int deltaV = saldoPosteriorV - saldoAnteriorV;
 
-                if (Math.abs(delta1) > 0 && saldoPosteriorU != 0) {
+                if (Math.abs(deltaU) > 0 && saldoPosteriorU != 0) {
                     no.saldoAltura++;
                     if (Math.abs(no.saldoAltura) > 1 && balanceada)
-                        balancearADireita(no, delta1, delta2);
+                        balancearADireita(no, deltaU, deltaV);
                 }
                 //</editor-fold>
 
@@ -156,6 +157,7 @@ public class ArvoreAVL {
             if (no.esquerda == null) {
                 no.esquerda = new No(conteudo);
 
+                //inserido à esquerda do nó: casos c) e g) pág. 109
                 //<editor-fold defaultstate="collapsed" desc="balanceamento">
                 no.saldoAltura--;
                 //</editor-fold>
@@ -178,13 +180,13 @@ public class ArvoreAVL {
                 if (no.esquerda.direita != null)
                     saldoPosteriorY = no.esquerda.direita.saldoAltura;
 
-                int delta1 = saldoPosteriorZ - saldoAnteriorZ;
-                int delta2 = saldoPosteriorY - saldoAnteriorY;
+                int deltaZ = saldoPosteriorZ - saldoAnteriorZ;
+                int deltaY = saldoPosteriorY - saldoAnteriorY;
 
-                if (Math.abs(delta1) > 0 && saldoPosteriorZ != 0) {
+                if (Math.abs(deltaZ) > 0 && saldoPosteriorZ != 0) {
                     no.saldoAltura--;
                     if (Math.abs(no.saldoAltura) > 1 && balanceada)
-                        balancearAEsquerda(no, delta1, delta2);
+                        balancearAEsquerda(no, deltaZ, deltaY);
                 }
                 //</editor-fold>
 
@@ -194,8 +196,8 @@ public class ArvoreAVL {
             return false;
     }
 
-    private void balancearADireita(No n1, int delta1, int delta2) {
-        if (delta1 > 0) {
+    private void balancearADireita(No n1, int deltaU, int deltaV) {
+        if (deltaU > 0) {
             No n2 = n1.direita;
             Empregado p = n1.conteudo;
             Empregado u = n2.conteudo;
@@ -212,7 +214,7 @@ public class ArvoreAVL {
 
             n1.saldoAltura = 0;
             n2.saldoAltura = 0;
-        } else if (delta1 < 0) {
+        } else if (deltaU < 0) {
             No n2 = n1.direita;
             No n3 = n2.esquerda;
             Empregado p = n1.conteudo;
@@ -237,7 +239,7 @@ public class ArvoreAVL {
             if (t2 == null && t3 == null) {
                 n2.saldoAltura = 0;
                 n3.saldoAltura = 0;
-            } else if (delta2 > 0) {
+            } else if (deltaV > 0) {
                 n2.saldoAltura = 0;
                 n3.saldoAltura = -1;
             } else {
@@ -247,8 +249,8 @@ public class ArvoreAVL {
         }
     }
 
-    private void balancearAEsquerda(No n1, int delta, int delta2) {
-        if (delta < 0) {
+    private void balancearAEsquerda(No n1, int deltaZ, int deltaY) {
+        if (deltaZ < 0) {
             No n2 = n1.esquerda;
             Empregado p = n1.conteudo;
             Empregado z = n2.conteudo;
@@ -265,7 +267,7 @@ public class ArvoreAVL {
 
             n1.saldoAltura = 0;
             n2.saldoAltura = 0;
-        } else if (delta > 0) {
+        } else if (deltaZ > 0) {
             No n2 = n1.esquerda;
             No n3 = n2.direita;
             Empregado p = n1.conteudo;
@@ -290,7 +292,7 @@ public class ArvoreAVL {
             if (t2 == null && t3 == null) {
                 n2.saldoAltura = 0;
                 n3.saldoAltura = 0;
-            } else if (delta2 < 0) {
+            } else if (deltaY < 0) {
                 n2.saldoAltura = 1;
                 n3.saldoAltura = 0;
             } else {
