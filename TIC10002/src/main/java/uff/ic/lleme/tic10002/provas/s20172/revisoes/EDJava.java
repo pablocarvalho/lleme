@@ -70,7 +70,7 @@ public class EDJava {
                     imprime(atual.prox);
             } else {
                 // System.out.println("FIM");
-                // return "Fim";// CORRECAO: 2) na sua prova
+                // return "Fim";// CORRECAO: 2) na sua prova existia essa instrução
                 // REMOVI O ELSE  *** MODIFICADO
             }
         else {
