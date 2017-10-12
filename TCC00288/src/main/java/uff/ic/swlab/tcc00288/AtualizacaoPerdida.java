@@ -23,7 +23,7 @@ public class AtualizacaoPerdida {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
                         try (Statement st = conn.createStatement();) {
                             //st.executeUpdate("set schema 'schema';");
@@ -89,7 +89,7 @@ public class AtualizacaoPerdida {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
                         try (Statement st = conn.createStatement();) {
                             long x = 0;

@@ -146,7 +146,7 @@ public class ArvoreAVL {
 
                 if (Math.abs(deltaU) > 0 && saldoPosteriorU != 0) {
                     no.saldoAltura++;
-                    if (Math.abs(no.saldoAltura) > 1 && balanceada)
+                    if (Math.abs(no.saldoAltura) > 1)
                         balancearADireita(no, deltaU, deltaV);
                 }
                 //</editor-fold>
