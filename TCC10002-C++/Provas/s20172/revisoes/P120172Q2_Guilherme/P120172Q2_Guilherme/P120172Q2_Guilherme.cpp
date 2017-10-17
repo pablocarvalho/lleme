@@ -1,5 +1,3 @@
-#include<iostream>
-#include<stdlib.h>
 #include "stdafx.h"
 
 using namespace std;
