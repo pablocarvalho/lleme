@@ -21,8 +21,7 @@ public class ArvoreB {
 
         private final int ORDEM = 2;
         private int n = 0;
-        private final No 3gu1nha!
-        = new No(null);
+        private final No PRIMEIRO = new No(null);
 
         private class No {
 
