@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uff.ic.lleme.tic10002.trabalhos.s20172;
+package uff.ic.lleme.tic10002.trabalhos.s201721;
 
 /**
  *
  * @author lapaesleme
  */
-public class NewClass {
-    
+public class NULL {
+
 }
