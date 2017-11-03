@@ -55,7 +55,7 @@ void funcao(No **no, No *aux, int *i) {
 		return;
 	if (aux == NULL)
 		aux = *no;
-	if (aux->valor >= -1) { // na prova era >=-1 e você corrigiu para >=0
+	if (aux->valor != -1) { // na prova era !=-1 e você corrigiu para >= 0
 		*i = -1;
 		funcao(no, aux->prox, i);
 		if ((*i >= 0) && (*i < 5)) {
@@ -63,7 +63,7 @@ void funcao(No **no, No *aux, int *i) {
 			cout << aux->valor << " ";
 			aux->prox = NULL;
 			free(aux);
-		}else if ((*i == 5) && (*no != NULL)) { // na prova existia um else que voc6e corrigiu
+		}else if ((*i == 5) && (*no != NULL)) { // na prova existia um else que voce excluiu
 			cout << endl;
 			aux = NULL;
 			funcao(no, aux, i);
