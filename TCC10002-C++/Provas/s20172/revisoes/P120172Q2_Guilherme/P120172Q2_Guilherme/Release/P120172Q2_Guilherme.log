@@ -1,4 +1,0 @@
-﻿  P120172Q2_Guilherme.cpp
-P120172Q2_Guilherme.cpp(1): fatal error C1083: Cannot open precompiled header file: 'Release\P120172Q2_Guilherme.pch': No such file or directory
-  stdafx.cpp
-stdafx.cpp(5): fatal error C1083: Cannot open precompiled header file: 'Release\P120172Q2_Guilherme.pch': No such file or directory
