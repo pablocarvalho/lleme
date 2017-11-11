@@ -2,17 +2,18 @@
  * Trabalho de Estruturas de Dados.
  * Professor: Luis André Portes Paes Leme
  */
-package trabalho.mario;
+package uff.ic.lleme.tic10002.trabalhos.s20172.TrabalhoMario;
 
 /**
  *
  * @author Mario João Jr.
  */
 public class TSetorDia {
+
     int setor;
     int dia;
-    
-    public TSetorDia (int setor, int dia) {
+
+    public TSetorDia(int setor, int dia) {
         this.setor = setor;
         this.dia = dia;
     }
@@ -24,11 +25,9 @@ public class TSetorDia {
     public int getDia() {
         return dia;
     }
-    
+
     @Override
-    public String toString () {
-        return "(Setor: "+String.valueOf(setor)+", Dia: "+String.valueOf(dia)+")";
+    public String toString() {
+        return "(Setor: " + String.valueOf(setor) + ", Dia: " + String.valueOf(dia) + ")";
     }
 }
-
-
