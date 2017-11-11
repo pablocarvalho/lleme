@@ -2,7 +2,7 @@
  * Trabalho de Estruturas de Dados.
  * Professor: Luis André Portes Paes Leme
  */
-package uff.ic.lleme.tic10002.trabalhos.s20172.TrabalhoMario;
+package uff.ic.lleme.tic10002.trabalhos.s20172.mariojoao;
 
 import java.io.*;
 import java.util.*;
