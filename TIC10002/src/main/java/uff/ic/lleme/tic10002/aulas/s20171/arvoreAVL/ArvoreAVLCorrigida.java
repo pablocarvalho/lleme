@@ -143,7 +143,7 @@ public class ArvoreAVLCorrigida {
                 int delta1 = saldoPosteriorU - saldoAnteriorU;
                 int delta2 = saldoPosteriorV - saldoAnteriorV;
 
-                if (Math.abs(delta1) > 0 && saldoPosteriorU != 0) {
+                if (Math.abs(saldoPosteriorU) > Math.abs(saldoAnteriorU)) {
                     no.saldoAltura++;
                     if (Math.abs(no.saldoAltura) > 1 && balanceada)
                         balancearADireita(no, delta1, delta2);
@@ -181,7 +181,7 @@ public class ArvoreAVLCorrigida {
                 int delta1 = saldoPosteriorZ - saldoAnteriorZ;
                 int delta2 = saldoPosteriorY - saldoAnteriorY;
 
-                if (Math.abs(delta1) > 0 && saldoPosteriorZ != 0) {
+                if (Math.abs(saldoPosteriorZ) > Math.abs(saldoAnteriorZ)) {
                     no.saldoAltura--;
                     if (Math.abs(no.saldoAltura) > 1 && balanceada)
                         balancearAEsquerda(no, delta1, delta2);
