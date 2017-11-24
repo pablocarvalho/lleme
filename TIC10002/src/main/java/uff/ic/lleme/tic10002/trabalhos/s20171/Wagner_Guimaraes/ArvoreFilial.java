@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uff.ic.lleme.tic10002.trabalhos.s20171.wagnerguimaraes;
+package uff.ic.lleme.tic10002.trabalhos.s20171.Wagner_Guimaraes;
 
 import java.util.ArrayList;
 
