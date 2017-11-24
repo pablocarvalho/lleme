@@ -3,7 +3,7 @@
  * Refer to the MIT License
  *
  */
-package uff.ed.trabalho;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 import java.util.Objects;
 

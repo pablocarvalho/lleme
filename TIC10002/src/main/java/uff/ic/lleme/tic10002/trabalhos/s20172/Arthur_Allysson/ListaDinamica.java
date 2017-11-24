@@ -1,4 +1,4 @@
-package uff.ed.trabalho;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 /**
  *
@@ -56,8 +56,7 @@ public class ListaDinamica {
         if (no != null) {
             if (!no.getElemento().equals(elemento))
                 referenciarProximo(no.getProximo(), elemento);
-        }
-        else {
+        } else {
             primeiro = new No(primeiro, elemento);
             tamanho++;
         }
@@ -73,8 +72,7 @@ public class ListaDinamica {
                 // se já existe, totaliza
                 Double fluxo = no.getElemento().getFluxo() + elemento.getFluxo();
                 no.getElemento().setFluxo(fluxo);
-            }
-            else
+            } else
                 adicionarProximo(no.getProximo(), elemento);
         else {
             primeiro = new No(primeiro, elemento);

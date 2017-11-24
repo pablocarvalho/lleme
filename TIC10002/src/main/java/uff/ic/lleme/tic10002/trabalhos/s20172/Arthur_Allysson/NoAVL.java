@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uff.ed.trabalho;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 /**
  *
@@ -115,11 +115,10 @@ public class NoAVL {
         if (chave > regra)
             lista.imprimirListaLn();
 
-        if (esquerda != null && esquerda.getChave() > regra) {
+        if (esquerda != null && esquerda.getChave() > regra)
             esquerda.imprimirResposta(regra);
-        }
-        if (direita != null && direita.getChave() > regra) {
-            direita.imprimirResposta(regra);}
+        if (direita != null && direita.getChave() > regra)
+            direita.imprimirResposta(regra);
 
     }
 }

@@ -1,6 +1,4 @@
-package uff.ed.trabalho;
-
-import uff.ed.trabalho.Trafego;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 /**
  *
@@ -12,17 +10,16 @@ public class ListaEstatica {
     private int totalDeObjetos = 0;
     private Double min = null;
     private Double max = null;
-    
 
     public ListaEstatica(int tam) {
         listaObjetos = new Trafego[tam];
     }
-    
-    public Double max(){
+
+    public Double max() {
         return max;
     }
-    
-    public Double min(){
+
+    public Double min() {
         return min;
     }
 
@@ -43,8 +40,7 @@ public class ListaEstatica {
             listaObjetos[totalDeObjetos] = objeto;
             aux = listaObjetos[totalDeObjetos].getFluxo();
             totalDeObjetos++;
-        }
-        else {
+        } else {
             Double total = listaObjetos[posicao].getFluxo() + objeto.getFluxo();
             listaObjetos[posicao].setFluxo(total);
             min = max;
@@ -82,8 +78,8 @@ public class ListaEstatica {
 
     public void remover(int chave) {
         int posicao = pesquisar(chave);
-        if (posicao >= 0){
-            listaObjetos[posicao] = listaObjetos[tamanho()-1];
+        if (posicao >= 0) {
+            listaObjetos[posicao] = listaObjetos[tamanho() - 1];
             totalDeObjetos--;
         }
     }

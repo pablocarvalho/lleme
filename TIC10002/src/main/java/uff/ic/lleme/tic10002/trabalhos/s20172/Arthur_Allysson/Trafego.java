@@ -3,7 +3,7 @@
  * Refer to the MIT License
  *
  */
-package uff.ed.trabalho;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 import java.util.Date;
 
@@ -26,7 +26,7 @@ public class Trafego {
     public Trafego copia() {
         return new Trafego(setor, dia, fluxo);
     }
-    
+
     public int getChave() {
         return Util.stringToInt(this.setor) + Util.dataToInt(this.dia);
     }

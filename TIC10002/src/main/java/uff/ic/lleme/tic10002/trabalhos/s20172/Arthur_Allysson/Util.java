@@ -3,7 +3,7 @@
  * Refer to the MIT License
  *
  */
-package uff.ed.trabalho;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Arthur_Allysson;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -40,15 +40,15 @@ public class Util {
     public static Date parseData(String data) throws ParseException {
         return DATEFORMAT.parse(data);
     }
-    
+
     public static int dataToInt(Date data) {
         return Integer.parseInt(INTFORMAT.format(data));
     }
-    
+
     public static int stringToInt(String elemento) {
         return Integer.parseInt(elemento);
     }
-    
+
     public static final int TAM = 10000000;
 
 }
