@@ -1,252 +1,213 @@
-package controleTrafego;
+package uff.ic.lleme.tic10002.trabalhos.s20172.Luana_Uchoa;
 
-public class Arvore <E extends Elemento<String, Integer>>{
+public class Arvore<E extends Elemento<String, Integer>> {
 
-	No<E> raiz = null;
-	int tamanho = 0;
+    No<E> raiz = null;
+    int tamanho = 0;
 
-	public void insere(E obj) {
-		No<E> n = new No<E>(obj);
-		insere(this.raiz, n);
-		tamanho++;
-	}
+    public void insere(E obj) {
+        No<E> n = new No<E>(obj);
+        insere(this.raiz, n);
+        tamanho++;
+    }
 
-	public void insere(No<E> aComparar, No<E> aInserir) {
+    public void insere(No<E> aComparar, No<E> aInserir) {
 
-		if (aComparar == null) {
-			this.raiz = aInserir;
+        if (aComparar == null)
+            this.raiz = aInserir;
+        else if ((Integer) aInserir.getChave() < (Integer) aComparar.getChave())
 
-		} else {
+            if (aComparar.getEsquerda() == null) {
+                aComparar.setEsquerda(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-			if ((Integer)aInserir.getChave() < (Integer)aComparar.getChave()) {
+            } else
+                insere(aComparar.getEsquerda(), aInserir);
+        else if ((Integer) aInserir.getChave() > (Integer) aComparar.getChave())
 
-				if (aComparar.getEsquerda() == null) {
-					aComparar.setEsquerda(aInserir);
-					aInserir.setPai(aComparar);
-					verificarBalanceamento(aComparar);
+            if (aComparar.getDireita() == null) {
+                aComparar.setDireita(aInserir);
+                aInserir.setPai(aComparar);
+                verificarBalanceamento(aComparar);
 
-				} else {
-					insere(aComparar.getEsquerda(), aInserir);
-				}
+            } else
+                insere(aComparar.getDireita(), aInserir);
+        else {
+            // O nï¿½ jï¿½ existe
+        }
+    }
 
-			} else if ((Integer)aInserir.getChave() > (Integer)aComparar.getChave()) {
+    public void verificarBalanceamento(No atual) {
+        setBalanceamento(atual);
+        int balanceamento = atual.getBalanceamento();
 
-				if (aComparar.getDireita() == null) {
-					aComparar.setDireita(aInserir);
-					aInserir.setPai(aComparar);
-					verificarBalanceamento(aComparar);
+        if (balanceamento == -2)
 
-				} else {
-					insere(aComparar.getDireita(), aInserir);
-				}
+            if (altura(atual.getEsquerda().getEsquerda()) >= altura(atual.getEsquerda().getDireita()))
+                atual = rotacaoDireita(atual);
+            else
+                atual = duplaRotacaoEsquerdaDireita(atual);
+        else if (balanceamento == 2)
 
-			} else {
-				// O nó já existe
-			}
-		}
-	}
+            if (altura(atual.getDireita().getDireita()) >= altura(atual.getDireita().getEsquerda()))
+                atual = rotacaoEsquerda(atual);
+            else
+                atual = duplaRotacaoDireitaEsquerda(atual);
 
-	public void verificarBalanceamento(No atual) {
-		setBalanceamento(atual);
-		int balanceamento = atual.getBalanceamento();
+        if (atual.getPai() != null)
+            verificarBalanceamento(atual.getPai());
+        else
+            this.raiz = atual;
+    }
 
-		if (balanceamento == -2) {
+    public void remover(int k) {
+        remover(this.raiz, k);
+    }
 
-			if (altura(atual.getEsquerda().getEsquerda()) >= altura(atual.getEsquerda().getDireita())) {
-				atual = rotacaoDireita(atual);
+    public void remover(No atual, int k) {
+        if (atual == null)
+            return;
+        else if ((Integer) atual.getChave() > k)
+            remover(atual.getEsquerda(), k);
+        else if ((Integer) atual.getChave() < k)
+            remover(atual.getDireita(), k);
+        else if ((Integer) atual.getChave() == k)
+            removerNoEncontrado(atual);
+    }
 
-			} else {
-				atual = duplaRotacaoEsquerdaDireita(atual);
-			}
+    public void removerNoEncontrado(No<E> aRemover) {
+        No<E> r;
 
-		} else if (balanceamento == 2) {
+        if (aRemover.getEsquerda() == null || aRemover.getDireita() == null) {
 
-			if (altura(atual.getDireita().getDireita()) >= altura(atual.getDireita().getEsquerda())) {
-				atual = rotacaoEsquerda(atual);
+            if (aRemover.getPai() == null) {
+                this.raiz = null;
+                aRemover = null;
+                return;
+            }
+            r = aRemover;
 
-			} else {
-				atual = duplaRotacaoDireitaEsquerda(atual);
-			}
-		}
+        } else {
+            r = sucessor(aRemover);
+            aRemover.setChave(r.getChave());
+        }
 
-		if (atual.getPai() != null) {
-			verificarBalanceamento(atual.getPai());
-		} else {
-			this.raiz = atual;
-		}
-	}
+        No<E> p;
+        if (r.getEsquerda() != null)
+            p = r.getEsquerda();
+        else
+            p = r.getDireita();
 
-	public void remover(int k) {
-		remover(this.raiz, k);
-	}
+        if (p != null)
+            p.setPai(r.getPai());
 
-	public void remover(No atual, int k) {
-		if (atual == null) {
-			return;
+        if (r.getPai() == null)
+            this.raiz = p;
+        else {
+            if (r == r.getPai().getEsquerda())
+                r.getPai().setEsquerda(p);
+            else
+                r.getPai().setDireita(p);
+            verificarBalanceamento(r.getPai());
+        }
+        r = null;
+    }
 
-		} else {
+    public No<E> rotacaoEsquerda(No<E> inicial) {
 
-			if ((Integer)atual.getChave() > k) {
-				remover(atual.getEsquerda(), k);
+        No<E> direita = inicial.getDireita();
+        direita.setPai(inicial.getPai());
 
-			} else if ((Integer)atual.getChave() < k) {
-				remover(atual.getDireita(), k);
+        inicial.setDireita(direita.getEsquerda());
 
-			} else if ((Integer)atual.getChave() == k) {
-				removerNoEncontrado(atual);
-			}
-		}
-	}
+        if (inicial.getDireita() != null)
+            inicial.getDireita().setPai(inicial);
 
-	public void removerNoEncontrado(No<E> aRemover) {
-		No<E> r;
+        direita.setEsquerda(inicial);
+        inicial.setPai(direita);
 
-		if (aRemover.getEsquerda() == null || aRemover.getDireita() == null) {
+        if (direita.getPai() != null)
 
-			if (aRemover.getPai() == null) {
-				this.raiz = null;
-				aRemover = null;
-				return;
-			}
-			r = aRemover;
+            if (direita.getPai().getDireita() == inicial)
+                direita.getPai().setDireita(direita);
+            else if (direita.getPai().getEsquerda() == inicial)
+                direita.getPai().setEsquerda(direita);
 
-		} else {
-			r = sucessor(aRemover);
-			aRemover.setChave(r.getChave());
-		}
+        setBalanceamento(inicial);
+        setBalanceamento(direita);
 
-		No<E> p;
-		if (r.getEsquerda() != null) {
-			p = r.getEsquerda();
-		} else {
-			p = r.getDireita();
-		}
+        return direita;
+    }
 
-		if (p != null) {
-			p.setPai(r.getPai());
-		}
+    public No<E> rotacaoDireita(No<E> inicial) {
 
-		if (r.getPai() == null) {
-			this.raiz = p;
-		} else {
-			if (r == r.getPai().getEsquerda()) {
-				r.getPai().setEsquerda(p);
-			} else {
-				r.getPai().setDireita(p);
-			}
-			verificarBalanceamento(r.getPai());
-		}
-		r = null;
-	}
+        No<E> esquerda = inicial.getEsquerda();
+        esquerda.setPai(inicial.getPai());
 
-	public No<E> rotacaoEsquerda(No<E> inicial) {
+        inicial.setEsquerda(esquerda.getDireita());
 
-		No<E> direita = inicial.getDireita();
-		direita.setPai(inicial.getPai());
+        if (inicial.getEsquerda() != null)
+            inicial.getEsquerda().setPai(inicial);
 
-		inicial.setDireita(direita.getEsquerda());
+        esquerda.setDireita(inicial);
+        inicial.setPai(esquerda);
 
-		if (inicial.getDireita() != null) {
-			inicial.getDireita().setPai(inicial);
-		}
+        if (esquerda.getPai() != null)
 
-		direita.setEsquerda(inicial);
-		inicial.setPai(direita);
+            if (esquerda.getPai().getDireita() == inicial)
+                esquerda.getPai().setDireita(esquerda);
+            else if (esquerda.getPai().getEsquerda() == inicial)
+                esquerda.getPai().setEsquerda(esquerda);
 
-		if (direita.getPai() != null) {
+        setBalanceamento(inicial);
+        setBalanceamento(esquerda);
 
-			if (direita.getPai().getDireita() == inicial) {
-				direita.getPai().setDireita(direita);
+        return esquerda;
+    }
 
-			} else if (direita.getPai().getEsquerda() == inicial) {
-				direita.getPai().setEsquerda(direita);
-			}
-		}
+    public No<E> duplaRotacaoEsquerdaDireita(No<E> inicial) {
+        inicial.setEsquerda(rotacaoEsquerda(inicial.getEsquerda()));
+        return rotacaoDireita(inicial);
+    }
 
-		setBalanceamento(inicial);
-		setBalanceamento(direita);
+    public No<E> duplaRotacaoDireitaEsquerda(No<E> inicial) {
+        inicial.setDireita(rotacaoDireita(inicial.getDireita()));
+        return rotacaoEsquerda(inicial);
+    }
 
-		return direita;
-	}
+    public No<E> sucessor(No<E> q) {
+        if (q.getDireita() != null) {
+            No<E> r = q.getDireita();
+            while (r.getEsquerda() != null)
+                r = r.getEsquerda();
+            return r;
+        } else {
+            No<E> p = q.getPai();
+            while (p != null && q == p.getDireita()) {
+                q = p;
+                p = q.getPai();
+            }
+            return p;
+        }
+    }
 
-	public No<E> rotacaoDireita(No<E> inicial) {
+    private int altura(No<E> atual) {
+        if (atual == null)
+            return -1;
 
-		No<E> esquerda = inicial.getEsquerda();
-		esquerda.setPai(inicial.getPai());
+        if (atual.getEsquerda() == null && atual.getDireita() == null)
+            return 0;
+        else if (atual.getEsquerda() == null)
+            return 1 + altura(atual.getDireita());
+        else if (atual.getDireita() == null)
+            return 1 + altura(atual.getEsquerda());
+        else
+            return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
+    }
 
-		inicial.setEsquerda(esquerda.getDireita());
-
-		if (inicial.getEsquerda() != null) {
-			inicial.getEsquerda().setPai(inicial);
-		}
-
-		esquerda.setDireita(inicial);
-		inicial.setPai(esquerda);
-
-		if (esquerda.getPai() != null) {
-
-			if (esquerda.getPai().getDireita() == inicial) {
-				esquerda.getPai().setDireita(esquerda);
-
-			} else if (esquerda.getPai().getEsquerda() == inicial) {
-				esquerda.getPai().setEsquerda(esquerda);
-			}
-		}
-
-		setBalanceamento(inicial);
-		setBalanceamento(esquerda);
-
-		return esquerda;
-	}
-
-	public No<E> duplaRotacaoEsquerdaDireita(No<E> inicial) {
-		inicial.setEsquerda(rotacaoEsquerda(inicial.getEsquerda()));
-		return rotacaoDireita(inicial);
-	}
-
-	public No<E> duplaRotacaoDireitaEsquerda(No<E> inicial) {
-		inicial.setDireita(rotacaoDireita(inicial.getDireita()));
-		return rotacaoEsquerda(inicial);
-	}
-
-	public No<E> sucessor(No<E> q) {
-		if (q.getDireita() != null) {
-			No<E> r = q.getDireita();
-			while (r.getEsquerda() != null) {
-				r = r.getEsquerda();
-			}
-			return r;
-		} else {
-			No<E> p = q.getPai();
-			while (p != null && q == p.getDireita()) {
-				q = p;
-				p = q.getPai();
-			}
-			return p;
-		}
-	}
-
-	private int altura(No<E> atual) {
-		if (atual == null) {
-			return -1;
-		}
-
-		if (atual.getEsquerda() == null && atual.getDireita() == null) {
-			return 0;
-
-		} else if (atual.getEsquerda() == null) {
-			return 1 + altura(atual.getDireita());
-
-		} else if (atual.getDireita() == null) {
-			return 1 + altura(atual.getEsquerda());
-
-		} else {
-			return 1 + Math.max(altura(atual.getEsquerda()), altura(atual.getDireita()));
-		}
-	}
-
-	private void setBalanceamento(No<E> no) {
-		no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
-	}
+    private void setBalanceamento(No<E> no) {
+        no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
+    }
 
 }
