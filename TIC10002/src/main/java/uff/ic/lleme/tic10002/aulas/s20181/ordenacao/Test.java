@@ -10,6 +10,14 @@ public class Test {
         Objeto[] lista2 = {new Objeto(22), new Objeto(4), new Objeto(1), new Objeto(2), new Objeto(10), new Objeto(5)};
         lista2 = BubleSort.sort(lista2);
         print(lista2, "Buble Sort");
+
+        Objeto[] lista3 = {new Objeto(22), new Objeto(4), new Objeto(1), new Objeto(2), new Objeto(10), new Objeto(5)};
+        lista3 = BubleSort.sort(lista3);
+        print(lista3, "Merge Sort");
+
+        Objeto[] lista4 = {new Objeto(22), new Objeto(4), new Objeto(1), new Objeto(2), new Objeto(10), new Objeto(5)};
+        lista4 = BubleSort.sort(lista4);
+        print(lista4, "Quick Sort");
     }
 
     public static void print(Objeto[] lista, String algoritmo) {
