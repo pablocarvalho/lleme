@@ -1,22 +1,22 @@
 package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 import java.util.Random;
+import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
 public class QuickSort {
 
     private static Random random = new Random();
 
-    public static Objeto[] quickSort(Objeto[] lista) {
-        return quickSort(lista, 0, lista.length - 1);
+    public static Objeto[] sort(Objeto[] lista) {
+        return sort(lista, 0, lista.length - 1);
 
     }
 
-    private static Objeto[] quickSort(Objeto[] lista, int p, int r) {
+    private static Objeto[] sort(Objeto[] lista, int p, int r) {
         if (p < r) {
             int q = partition(lista, p, r);
-            quickSort(lista, p, q - 1);
-            quickSort(lista, q + 1, r);
+            sort(lista, p, q - 1);
+            sort(lista, q + 1, r);
         }
         return lista;
     }
