@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181.oo;
+package uff.ic.lleme.tic10002.aulas.s20181.poo;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,5 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
 
+import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+
 public class SelectSort {
 
     public static Objeto[] sort(Objeto[] lista) {

@@ -1,5 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
 
+import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 import java.util.Random;
 
 public class QuickSort {
