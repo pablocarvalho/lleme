@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181;
+package uff.ic.lleme.tic10002.aulas.s20181.oo;
 
 public class Pessoa {
 

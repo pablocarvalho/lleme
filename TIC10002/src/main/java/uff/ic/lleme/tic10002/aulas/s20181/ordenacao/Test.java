@@ -1,0 +1,20 @@
+package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Objeto[] lista1 = {new Objeto(22), new Objeto(4), new Objeto(1), new Objeto(2), new Objeto(10), new Objeto(5)};
+        lista1 = SelectSort.sort(lista1);
+        print(lista1, "Select Sort");
+
+        Objeto[] lista2 = {new Objeto(22), new Objeto(4), new Objeto(1), new Objeto(2), new Objeto(10), new Objeto(5)};
+        lista2 = BubleSort.sort(lista2);
+        print(lista2, "Buble Sort");
+    }
+
+    public static void print(Objeto[] lista, String algoritmo) {
+        for (Objeto o : lista)
+            System.out.print(o.chave + " ");
+        System.out.println("<-- " + algoritmo);
+    }
+}
