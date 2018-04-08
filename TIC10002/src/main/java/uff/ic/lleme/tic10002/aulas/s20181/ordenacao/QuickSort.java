@@ -21,16 +21,16 @@ public class QuickSort {
         return lista;
     }
 
-    private static int partition(Objeto[] lista, int e, int d) {
-        int sorteio = random.nextInt(d - e + 1) + e;
-        trocar(lista, d, sorteio);
+    private static int partition(Objeto[] lista, int p, int r) {
+        int sorteio = random.nextInt(r - p + 1) + p;
+        trocar(lista, r, sorteio);
 
-        Objeto pivot = lista[d];
-        int i = e - 1;
-        for (int j = e; j < d; j++)
+        Objeto pivot = lista[r];
+        int i = p - 1;
+        for (int j = p; j < r; j++)
             if (lista[j].chave < pivot.chave)
                 trocar(lista, ++i, j);
-        trocar(lista, i + 1, d);
+        trocar(lista, i + 1, r);
         return i + 1;
     }
 

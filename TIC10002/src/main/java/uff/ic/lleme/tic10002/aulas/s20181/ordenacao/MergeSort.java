@@ -4,6 +4,8 @@ import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
 public class MergeSort {
 
+    Objeto[] merge;
+
     public static Objeto[] sort(Objeto[] lista) {
         return sort(lista, 0, lista.length - 1);
     }
