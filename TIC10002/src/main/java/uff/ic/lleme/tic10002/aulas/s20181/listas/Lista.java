@@ -4,11 +4,12 @@ import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
 public interface Lista {
 
-    public Objeto busca(int chave);
+    public Objeto buscar(int chave);
 
-    public Objeto[] busca(String nome);
+    public Objeto obter(int pos);
 
-    public void inserir(Objeto objeto);
+    public void incluir(Objeto objeto);
 
     public void excluir(int chave);
+
 }

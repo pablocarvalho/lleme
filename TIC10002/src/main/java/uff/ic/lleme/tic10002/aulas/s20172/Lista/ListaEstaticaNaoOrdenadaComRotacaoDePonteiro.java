@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20172.Lista;
 
-public class FilaEstaticaComRotacaoDePonteiro {
+public class ListaEstaticaNaoOrdenadaComRotacaoDePonteiro {
 
     public int[] lista = new int[50];
     public int i = 0;
