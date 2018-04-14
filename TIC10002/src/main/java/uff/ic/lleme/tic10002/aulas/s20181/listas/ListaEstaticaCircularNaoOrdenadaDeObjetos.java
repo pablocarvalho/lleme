@@ -19,10 +19,14 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
     }
 
     private void expandir() {
+        int fim = this.fim;
+        if (fim < inicio)
+            fim = fim + lista.length;
+
         Objeto[] lista = new Objeto[this.lista.length + delta];
         int l = 0;
-        for (int k = inicio; k < fim + lista.length + 1; k++)
-            lista[l++] = this.lista[k % lista.length];
+        for (int k = inicio; k < fim + 1; k++)
+            lista[l++] = this.lista[k % this.lista.length];
         this.lista = lista;
         this.inicio = 0;
         this.fim = tamanho;
@@ -49,8 +53,10 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
             return lista[meio_];
         else if (chave < lista[meio_].chave)
             return buscar(chave, i, meio - 1);
-        else
+        else if (chave > lista[meio_].chave)
             return buscar(chave, meio + 1, j);
+        else
+            return null;
     }
 
     @Override
