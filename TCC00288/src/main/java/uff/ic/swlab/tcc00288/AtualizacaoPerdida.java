@@ -1,11 +1,11 @@
-package uff.ic.lleme.tcc00288.aulas;
+package uff.ic.swlab.tcc00288;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class AtualizacaoTemporaria {
+public class AtualizacaoPerdida {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = startT1();
@@ -23,7 +23,7 @@ public class AtualizacaoTemporaria {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
                         try (Statement st = conn.createStatement();) {
                             //st.executeUpdate("set schema 'schema';");
@@ -35,8 +35,6 @@ public class AtualizacaoTemporaria {
                                 System.out.println(String.format("Transacao 1 le x=%d", x));
                                 x = x - 5; // x=10
                                 System.out.println(String.format("Transacao 1 faz x=%d", x));
-                                st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
-                                System.out.println(String.format("Transacao 1 salva x=%d", x));
                                 System.out.println("Transacao 1 em processamento...");
                                 Thread.sleep(2000);
                                 System.out.println("Transacao 1 continua.");
@@ -44,16 +42,24 @@ public class AtualizacaoTemporaria {
 
                             long y = 0;
                             {// Bloco 2
+                                st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
+                                System.out.println(String.format("Transacao 1 salva x=%d", x));
                                 ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y';");
                                 if (rs2.next())
                                     y = rs2.getLong("valor");
                                 System.out.println(String.format("Transacao 1 le y=%d", y));
                                 System.out.println("Transacao 1 em processamento...");
-                                Thread.sleep(2000);
+                                Thread.sleep(3000);
                                 System.out.println("Transacao 1 continua.");
                             }
 
-                            throw new Exception("Erro provovado na transacao 1.");
+                            {// Bloco 3
+                                y = y + 3;// y=20
+                                System.out.println(String.format("Transacao 1 faz y=%d", y));
+                                st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
+                                System.out.println(String.format("Transacao 1 salva y=%d", y));
+                            }
+                            conn.commit();
                         } catch (Exception e) {
                             conn.rollback();
                             System.out.println("Erro transacao 1");
@@ -83,7 +89,7 @@ public class AtualizacaoTemporaria {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
                         try (Statement st = conn.createStatement();) {
                             long x = 0;
@@ -94,13 +100,15 @@ public class AtualizacaoTemporaria {
                                 System.out.println(String.format("Transacao 2 le x=%d", x));
                                 x = x - 8; // x=10
                                 System.out.println(String.format("Transacao 2 faz x=%d", x));
-                                st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
-                                System.out.println(String.format("Transacao 2 salva x=%d", x));
                                 System.out.println("Transacao 2 em processamento...");
                                 Thread.sleep(2000);
                                 System.out.println("Transacao 2 continua.");
                             }
 
+                            {// Bloco 2
+                                st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
+                                System.out.println(String.format("Transacao 2 salva x=%d", x));
+                            }
                             conn.commit();
                         } catch (Exception e) {
                             conn.rollback();
