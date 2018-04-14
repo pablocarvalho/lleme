@@ -7,24 +7,24 @@ create table venda(
     valor double precision
 );
 
-insert into venda values(201701,1,1,10,100.0);
-insert into venda values(201701,1,2,10,200.0);
-insert into venda values(201701,1,3,10,300.0);
-insert into venda values(201702,1,1,10,200.0);
-insert into venda values(201702,1,2,10,300.0);
-insert into venda values(201702,1,3,10,500.0);
-insert into venda values(201703,1,1,10,800.0);
-insert into venda values(201703,1,2,10,200.0);
-insert into venda values(201703,1,3,10,500.0);
-insert into venda values(201704,1,1,10,200.0);
-insert into venda values(201704,1,2,10,100.0);
-insert into venda values(201704,1,3,10,500.0);
-insert into venda values(201705,1,1,10,500.0);
-insert into venda values(201705,1,2,10,300.0);
-insert into venda values(201705,1,3,10,700.0);
-insert into venda values(201706,1,1,10,200.0);
-insert into venda values(201706,1,2,10,200.0);
-insert into venda values(201706,1,3,10,200.0);
+insert into venda values(1,1,1,10,100.0);
+insert into venda values(1,1,2,10,200.0);
+insert into venda values(1,1,3,10,300.0);
+insert into venda values(2,1,1,10,200.0);
+insert into venda values(2,1,2,10,300.0);
+insert into venda values(2,1,3,10,500.0);
+insert into venda values(3,1,1,10,900.0);
+insert into venda values(3,1,2,10,200.0);
+insert into venda values(3,1,3,10,500.0);
+insert into venda values(4,1,1,10,200.0);
+insert into venda values(4,1,2,10,150.0);
+insert into venda values(4,1,3,10,500.0);
+insert into venda values(5,1,1,10,500.0);
+insert into venda values(5,1,2,10,300.0);
+insert into venda values(5,1,3,10,700.0);
+insert into venda values(6,1,1,10,200.0);
+insert into venda values(6,1,2,10,200.0);
+insert into venda values(6,1,3,10,200.0);
 
 
 
@@ -126,5 +126,5 @@ begin
     return coef[1] * p_anomes + coef[2];
 end;$$ language plpgsql;
 
-select projecao(201707,10);
+select projecao(12,10);
 
