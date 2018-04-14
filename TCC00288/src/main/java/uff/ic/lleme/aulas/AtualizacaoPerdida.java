@@ -1,4 +1,4 @@
-package uff.ic.swlab.tcc00288;
+package uff.ic.lleme.aulas;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
