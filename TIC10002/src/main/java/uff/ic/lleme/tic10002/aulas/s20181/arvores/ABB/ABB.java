@@ -1,10 +1,9 @@
-package uff.ic.lleme.tic10002.aulas.s20181.arvores.binariaDeBusca;
+package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 
-import java.io.InvalidObjectException;
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
-import uff.ic.lleme.tic10002.aulas.s20181.arvores.ArvoreBinaria;
+import uff.ic.lleme.tic10002.aulas.s20181.arvores.AB;
 
-public class ABB extends ArvoreBinaria {
+public class ABB extends AB {
 
     public Objeto buscar(int chave) {
         return buscar(raiz, chave);
@@ -21,7 +20,7 @@ public class ABB extends ArvoreBinaria {
         return null;
     }
 
-    public void incluir(Objeto conteudo) throws InvalidObjectException {
+    public void incluir(Objeto conteudo) {
         No novoNo = new No(conteudo);
         if (raiz == null) {
             raiz = novoNo;

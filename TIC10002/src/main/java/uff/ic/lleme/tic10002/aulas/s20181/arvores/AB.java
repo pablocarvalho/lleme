@@ -1,9 +1,8 @@
 package uff.ic.lleme.tic10002.aulas.s20181.arvores;
 
-import java.io.InvalidObjectException;
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
-public class ArvoreBinaria {
+public class AB {
 
     protected No raiz = null;
     protected int quantidadeNos = 0;
@@ -15,12 +14,12 @@ public class ArvoreBinaria {
         public No esquerda = null;
         public No direita = null;
 
-        public No(Objeto conteudo) throws InvalidObjectException {
+        public No(Objeto conteudo) {
             this.conteudo = conteudo;
         }
 
         private void printNodeValue() {
-            System.out.print("" + conteudo.chave + "/" + conteudo.chave);
+            System.out.print("" + conteudo.chave);
             System.out.print('\n');
         }
 
@@ -50,5 +49,6 @@ public class ArvoreBinaria {
 
     public void printTree() {
         raiz.print();
+        System.out.println("");
     }
 }

@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181.arvores.estruturais;
+package uff.ic.lleme.tic10002.aulas.s20181.arvores.estrutural;
 
 public class Operacao {
 
