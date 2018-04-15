@@ -11,8 +11,8 @@ __pycache__/
 
 **/build/
 **/target/
-TCC00288/src/test/java
-Tic10002/src/test/java
+TCC00288/src/test/
+TIC10002/src/test/
 **/protegido/
 **/private/
 **/resources/dat/tdb/
