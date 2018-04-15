@@ -7,6 +7,7 @@ create table venda(
     valor double precision
 );
 
+
 insert into venda values(1,1,1,10,100.0);
 insert into venda values(1,1,2,10,200.0);
 insert into venda values(1,1,3,10,300.0);
@@ -29,7 +30,7 @@ insert into venda values(6,1,3,10,200.0);
 
 
 drop function if exists transpor(double precision[][]);
-create or replace function transpor(matriz double precision[][]) 
+create or replace function transpor(matriz double precision[][])
 returns double precision[][] as $$
 declare
     i int;
@@ -53,7 +54,7 @@ end;$$ language plpgsql;
 
 
 drop function if exists multiplicar(double precision[][],double precision[][]);
-create or replace function multiplicar(ma double precision[][], mb double precision[][]) 
+create or replace function multiplicar(ma double precision[][], mb double precision[][])
 returns double precision[][] as $$
 declare
     i int;
@@ -85,7 +86,7 @@ end;$$ language plpgsql;
 
 
 drop function if exists resolver(double precision[][], double precision[][]);
-create or replace function resolver(m1 double precision[][], m2 double precision[][]) 
+create or replace function resolver(m1 double precision[][], m2 double precision[][])
 returns double precision[] as $$
 declare
     sol double precision[] = '{0.,0.}';
@@ -100,7 +101,7 @@ end;$$ language plpgsql;
 
 
 drop function if exists projecao(int, int);
-create or replace function projecao(p_anomes int, p_produto int) 
+create or replace function projecao(p_anomes int, p_produto int)
 returns double precision as $$
 declare
     x double precision[][];
@@ -109,19 +110,19 @@ declare
     coef double precision[];
 begin
     execute 'with
-        t1 as (select ano_mes, sum(valor) as valor 
-               from venda 
+        t1 as (select ano_mes, sum(valor) as valor
+               from venda
                where produto=$1
                group by ano_mes)
-    select 
+    select
         array_agg(array[t1.ano_mes,1.0]),
         transpor(array_agg(array[t1.ano_mes,1.0])),
-        transpor(array[array_agg(t1.valor)]) 
+        transpor(array[array_agg(t1.valor)])
     from t1'
 	into x,xt,r
 	using p_produto;
 	raise notice 'x = %, xt = %, r = %', x, xt, r;
-        
+
     coef = resolver(multiplicar(xt,x),multiplicar(xt,r));
     return coef[1] * p_anomes + coef[2];
 end;$$ language plpgsql;
