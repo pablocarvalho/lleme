@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181.listas;
+package uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces;
 
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 

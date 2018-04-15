@@ -1,5 +1,6 @@
-package uff.ic.lleme.tic10002.aulas.s20181.listas;
+package uff.ic.lleme.tic10002.aulas.s20181.listas.implementacoes;
 
+import uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces.Lista;
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
 public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {

@@ -1,8 +1,9 @@
-package uff.ic.lleme.tic10002.aulas.s20181.listas;
+package uff.ic.lleme.tic10002.aulas.s20181.listas.implementacoes;
 
+import uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces.Lista;
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
-public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
+public class ListaEncadeadoNaoOrdenadaDeObjetos implements Lista {
 
     private class No {
 
@@ -34,23 +35,15 @@ public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
     public void incluir(Objeto objeto) {
         if (primeiro == null)
             primeiro = new No(objeto);
-        else if (primeiro.conteudo.chave > objeto.chave) {
-            No aux = primeiro;
-            primeiro = new No(objeto);
-            primeiro.proximo = aux;
-        } else
+        else
             incluir(objeto, primeiro);
     }
 
-    public void incluir(Objeto objeto, No noAtual) {
-        if (noAtual.proximo == null
-                || noAtual.proximo.conteudo.chave > objeto.chave) {
-            No novoNo = new No(objeto);
-            No aux = noAtual.proximo;
-            noAtual.proximo = novoNo;
-            novoNo.proximo = aux;
-        } else
-            incluir(objeto, noAtual.proximo);
+    public void incluir(Objeto objeto, No no) {
+        if (no.proximo == null)
+            no.proximo = new No(objeto);
+        else
+            incluir(objeto, no.proximo);
     }
 
     @Override
