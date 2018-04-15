@@ -11,6 +11,7 @@ __pycache__/
 
 **/build/
 **/target/
+**/test/
 **/protegido/
 **/private/
 **/resources/dat/tdb/
