@@ -1,13 +1,11 @@
 package uff.ic.biblioteca.oldmodel.patterns.facade;
 
+import java.util.HashSet;
+import javax.servlet.http.HttpServletRequest;
 import uff.ic.biblioteca.oldmodel.patterns.mediator.EmprestimoMediador;
 import uff.ic.biblioteca.oldmodel.patterns.mediator.MaterialMediador;
 import uff.ic.biblioteca.oldmodel.patterns.mediator.ReservaMediador;
 import uff.ic.biblioteca.oldmodel.patterns.mediator.UsuarioMediador;
-
-import java.util.HashSet;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class Cadastro {
 
