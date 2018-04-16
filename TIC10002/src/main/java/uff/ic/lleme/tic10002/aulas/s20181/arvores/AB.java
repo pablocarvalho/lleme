@@ -2,7 +2,7 @@ package uff.ic.lleme.tic10002.aulas.s20181.arvores;
 
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
-public class AB {
+public abstract class AB {
 
     protected No raiz = null;
     protected int quantidadeNos = 0;
