@@ -23,22 +23,22 @@ public class ArvoreAVL {
             this.conteudo = conteudo;
         }
 
-        public void printTree() {
-            if (esquerda != null)
-                esquerda.printTree(false, "");
-            printNodeValue();
-            if (direita != null)
-                direita.printTree(true, "");
-        }
-
         private void printNodeValue() {
             System.out.print("" + conteudo.chave + "/" + saldo());
             System.out.print('\n');
         }
 
-        private void printTree(boolean isRight, String indent) {
+        public void print() {
             if (esquerda != null)
-                esquerda.printTree(false, indent + (isRight ? " |      " : "        "));
+                esquerda.print(false, "");
+            printNodeValue();
+            if (direita != null)
+                direita.print(true, "");
+        }
+
+        private void print(boolean isRight, String indent) {
+            if (esquerda != null)
+                esquerda.print(false, indent + (isRight ? " |      " : "        "));
             System.out.print(indent);
             if (isRight)
                 System.out.print(" \\");
@@ -47,7 +47,7 @@ public class ArvoreAVL {
             System.out.print("----- ");
             printNodeValue();
             if (direita != null)
-                direita.printTree(true, indent + (isRight ? "        " : " |      "));
+                direita.print(true, indent + (isRight ? "        " : " |      "));
         }
 
         private int altura() {
@@ -71,8 +71,8 @@ public class ArvoreAVL {
         }
     }
 
-    public void print() {
-        raiz.printTree();
+    public void printTree() {
+        raiz.print();
     }
 
     public int altura() {

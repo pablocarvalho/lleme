@@ -1,7 +1,5 @@
 package uff.ic.lleme.tic10002.provas.s20172.P220172Q1;
 
-import com.sun.istack.internal.NotNull;
-
 public class ArvoreBinaria {
 
     private No raiz = null;
@@ -14,7 +12,7 @@ public class ArvoreBinaria {
         public No direita = null;
         public int saldoAltura = 0;
 
-        public No(@NotNull Conteudo conteudo) {
+        public No(Conteudo conteudo) {
             if (conteudo == null)
                 throw new NullPointerException();
             this.conteudo = conteudo;
