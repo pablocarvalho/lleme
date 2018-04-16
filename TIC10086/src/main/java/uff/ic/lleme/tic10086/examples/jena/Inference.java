@@ -95,13 +95,12 @@ public class Inference {
             model.write(new FileOutputStream(RDF + "/dttest2.nt", false), "NT");
             InfModel infmodel = ModelFactory.createRDFSModel(model);
             ValidityReport validity = infmodel.validate();
-            if (validity.isValid()) {
+            if (validity.isValid())
                 System.out.println("OK");
-            } else {
+            else {
                 System.out.println("Conflicts");
-                for (Iterator i = validity.getReports(); i.hasNext();) {
+                for (Iterator i = validity.getReports(); i.hasNext();)
                     System.out.println(" - " + i.next());
-                }
             }
         }
 
@@ -115,13 +114,12 @@ public class Inference {
             model.write(new FileOutputStream(RDF + "/dttest3.nt", false), "NT");
             InfModel infmodel = ModelFactory.createRDFSModel(model);
             ValidityReport validity = infmodel.validate();
-            if (validity.isValid()) {
+            if (validity.isValid())
                 System.out.println("OK");
-            } else {
+            else {
                 System.out.println("Conflicts");
-                for (Iterator i = validity.getReports(); i.hasNext();) {
+                for (Iterator i = validity.getReports(); i.hasNext();)
                     System.out.println(" - " + i.next());
-                }
             }
         }
 
