@@ -28,6 +28,16 @@
             <version>6.0.6</version>
         </dependency>
         <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-distribution</artifactId>
+            <version>5.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openrdf.sesame</groupId>
+            <artifactId>sesame-model</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
             <groupId>uff.ic.swlab</groupId>
             <artifactId>commons-lib</artifactId>
             <version>0.0.1-SNAPSHOT</version>

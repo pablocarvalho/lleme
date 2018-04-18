@@ -17,5 +17,9 @@ public class Main {
         abb.printTree();
         abb.incluir(new Objeto(01));
         abb.printTree();
+        abb.incluir(new Objeto(74));
+        abb.printTree();
+        abb.incluir(new Objeto(13));
+        abb.printTree();
     }
 }

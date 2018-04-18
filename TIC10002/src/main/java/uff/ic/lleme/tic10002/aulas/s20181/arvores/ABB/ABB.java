@@ -48,8 +48,12 @@ public class ABB extends AB {
     public Objeto excluir(int chave) {
         if (raiz != null && raiz.conteudo.chave == chave) {
             No excluido = raiz;
-            raiz = excluido.direita;
-            incluir(raiz, excluido.esquerda);
+            if (excluido.esquerda != null) {
+                raiz = excluido.esquerda;
+                incluir(raiz, excluido.direita);
+            } else
+                raiz = excluido.direita;
+
             quantidadeNos--;
             quantidadeNos--;
             return excluido.conteudo;
@@ -60,12 +64,15 @@ public class ABB extends AB {
     }
 
     private Objeto excluir(No noCorrente, int chave) {
-        if (chave < noCorrente.direita.conteudo.chave) {
+        if (chave < noCorrente.conteudo.chave) {
 
             if (noCorrente.direita != null && chave == noCorrente.direita.conteudo.chave) {
                 No excluido = noCorrente.direita;
-                noCorrente.direita = excluido.direita;
-                incluir(noCorrente.direita, excluido.esquerda);
+                if (excluido.esquerda != null) {
+                    noCorrente.direita = excluido.esquerda;
+                    incluir(noCorrente.direita, excluido.esquerda);
+                } else
+                    noCorrente.direita = excluido.direita;
                 quantidadeNos--;
                 quantidadeNos--;
                 return excluido.conteudo;
