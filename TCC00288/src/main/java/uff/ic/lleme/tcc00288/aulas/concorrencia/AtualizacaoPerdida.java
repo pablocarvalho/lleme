@@ -1,4 +1,4 @@
-package uff.ic.lleme.tcc00288.aulas;
+package uff.ic.lleme.tcc00288.aulas.concorrencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class AtualizacaoPerdida {
 
     public static void main(String[] args) throws InterruptedException {
-        initTabela();
+        Config.initBD();
         Thread t1 = startTransactionT1();
         Thread t2 = startTransactionT2();
         t1.join();
@@ -20,11 +20,9 @@ public class AtualizacaoPerdida {
             @Override
             public void run() {
                 try {
-                    System.out.println("Comecou transacao 1.");
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(true);
-                        //conn.setTransactionIsolation(Connection.TRANSACTION_NONE);
 
                         try (Statement st = conn.createStatement();) {
                             long x = 0;
@@ -33,11 +31,11 @@ public class AtualizacaoPerdida {
                                 if (rs1.next())
                                     x = rs1.getLong("valor");
                                 System.out.println(String.format("Transacao 1 le x = %d", x));
-                                System.out.println(String.format("Transacao 1 faz x = %d - 5", x));
-                                x = x - 5;
-                                System.out.println("Transacao 1 entra em espera...");
+                                int N = 5;
+                                System.out.println(String.format("Transacao 1 faz x = %d - %d", x, N));
+                                x = x - N;
+                                System.out.println("Transacao 1 em processamento...");
                                 Thread.sleep(2000);
-                                System.out.println("Transacao 1 continua.");
                             }
 
                             long y = 0;
@@ -48,14 +46,14 @@ public class AtualizacaoPerdida {
                                 if (rs2.next())
                                     y = rs2.getLong("valor");
                                 System.out.println(String.format("Transacao 1 le y = %d", y));
-                                System.out.println("Transacao 1 entra em espera...");
+                                System.out.println("Transacao 1 em processamento...");
                                 Thread.sleep(2000);
-                                System.out.println("Transacao 1 continua.");
                             }
 
                             {// Parte 3
-                                y = y + 3;// y=20
-                                System.out.println(String.format("Transacao 1 faz y = %d + 3", y));
+                                int N = 3;
+                                System.out.println(String.format("Transacao 1 faz y = %d + %d", y, N));
+                                y = y + N;// y=20
                                 st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
                                 System.out.println(String.format("Transacao 1 salva y = %d", y));
                             }
@@ -67,7 +65,6 @@ public class AtualizacaoPerdida {
                             System.out.println(String.format("Transacao 1 le x = %d em vez de x = %d", novox, x));
                         }
                     }
-                    System.out.println("Terminou trancacao 1.");
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -82,7 +79,6 @@ public class AtualizacaoPerdida {
             @Override
             public void run() {
                 try {
-                    System.out.println("Comecou transacao 2.");
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(true);
@@ -91,18 +87,17 @@ public class AtualizacaoPerdida {
                         try (Statement st = conn.createStatement();) {
                             long x = 0;
                             {// Parte 1
-                                System.out.println("Transacao 2 entra em espera...");
+                                System.out.println("Transacao 2 em processamento...");
                                 Thread.sleep(1000);
-                                System.out.println("Transacao 2 continua.");
                                 ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
                                 if (rs1.next())
                                     x = rs1.getLong("valor");
                                 System.out.println(String.format("Transacao 2 le x = %d", x));
-                                System.out.println(String.format("Transacao 2 faz x = %d - 8", x));
-                                x = x - 8;
-                                System.out.println("Transacao 2 entre em espera...");
+                                int N = 8;
+                                System.out.println(String.format("Transacao 2 faz x = %d - %d", x, N));
+                                x = x - N;
+                                System.out.println("Transacao 2 em processamento...");
                                 Thread.sleep(2000);
-                                System.out.println("Transacao 2 continua.");
                             }
 
                             {// Parte 2
@@ -111,7 +106,6 @@ public class AtualizacaoPerdida {
                             }
                         }
                     }
-                    System.out.println("Terminou trancacao 2.");
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
@@ -119,24 +113,6 @@ public class AtualizacaoPerdida {
         };
         t.start();
         return t;
-    }
-
-    private static void initTabela() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                conn.setAutoCommit(true);
-
-                try (Statement st = conn.createStatement();) {
-                    st.execute("drop table if exists tabela cascade;");
-                    st.execute("create table tabela(chave char,valor bigint, primary key(chave));");
-                    st.execute("insert into tabela values('x',100);");
-                    st.execute("insert into tabela values('y',50);");
-                }
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
     }
 
 }
