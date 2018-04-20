@@ -1,5 +1,7 @@
 package uff.ic.lleme.tcc00288.aulas.concorrencia;
 
+import uff.ic.lleme.tcc00288.aulas.util.MyThread;
+import uff.ic.lleme.tcc00288.aulas.util.Config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -21,9 +23,10 @@ public class AtualizacaoPerdida {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        desativarControleTransacao(conn);
 
                         try {
+                            desativarControleTransacao(conn);
+
                             long x = 0;
                             {// Parte 1
                                 x = lerX(conn, "");
@@ -59,12 +62,12 @@ public class AtualizacaoPerdida {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
-
         };
         t.start();
         return t;
@@ -101,11 +104,11 @@ public class AtualizacaoPerdida {
                             e.printStackTrace();
                         }
                     }
+
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
-
         };
         t.start();
         return t;
