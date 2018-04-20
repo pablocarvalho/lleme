@@ -1,9 +1,9 @@
 package uff.ic.lleme.tcc00288.aulas.concorrencia;
 
-import uff.ic.lleme.tcc00288.aulas.util.MyThread;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import uff.ic.lleme.tcc00288.aulas.util.MyThread;
 
 public class AtualizacaoTemporaria {
 
@@ -49,6 +49,7 @@ public class AtualizacaoTemporaria {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -66,9 +67,10 @@ public class AtualizacaoTemporaria {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        conn.setAutoCommit(true);
 
                         try {
+                            conn.setAutoCommit(true);
+
                             long x = 0;
                             {// Parte 1
                                 System.out.println("Transacao 2 em processamento...");
@@ -93,6 +95,7 @@ public class AtualizacaoTemporaria {
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
+
             }
         };
         t.start();

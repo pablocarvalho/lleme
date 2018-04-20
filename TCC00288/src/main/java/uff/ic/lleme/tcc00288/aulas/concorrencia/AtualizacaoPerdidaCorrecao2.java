@@ -1,12 +1,11 @@
 package uff.ic.lleme.tcc00288.aulas.concorrencia;
 
-import uff.ic.lleme.tcc00288.aulas.util.MyThread;
-import uff.ic.lleme.tcc00288.aulas.util.Config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 import org.postgresql.util.PSQLException;
+import uff.ic.lleme.tcc00288.aulas.util.Config;
+import uff.ic.lleme.tcc00288.aulas.util.MyThread;
 
 public class AtualizacaoPerdidaCorrecao2 {
 
@@ -67,6 +66,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                         } catch (SQLException e) {
                             conn.rollback();
                         }
+
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -87,9 +87,9 @@ public class AtualizacaoPerdidaCorrecao2 {
                     try {
                         Class.forName("org.postgresql.Driver");
                         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                            ativarControleTransacaoComIsolamento(conn);
 
-                            try (Statement st = conn.createStatement();) {
+                            try {
+                                ativarControleTransacaoComIsolamento(conn);
 
                                 long x = 0;
                                 {// Parte 1
@@ -118,6 +118,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                                     run = true;
                                 }
                             }
+
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
