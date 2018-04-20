@@ -54,10 +54,12 @@ public class AtualizacaoPerdidaCorrecao1 {
                                 escreverY(conn, y);
                                 System.out.println(String.format("Transacao 1 salva y = %d", y));
                             }
-                            conn.commit();
 
                             long novox = lerXNovamente(conn);
                             System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d <--------", novox, x));
+
+                            conn.commit();
+                            System.out.println("Transacao 1 encerra e libera bloqueios.");
 
                         } catch (Exception e) {
                             conn.rollback();
@@ -148,7 +150,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                                 System.out.println("Transacao 2 em processamento...");
                                 Thread.sleep(1000);
                                 x = lerX(conn);
-                                System.out.println(String.format("Transacao 2 le x = %d", x));
+                                System.out.println(String.format("Transacao 2 le x = %d após liberacao do bloqueio.", x));
                                 int N = 8;
                                 System.out.println(String.format("Transacao 2 faz x = %d - %d = %d", x, N, x - N));
                                 x = x - N;
