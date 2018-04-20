@@ -23,7 +23,7 @@ public class AtualizacaoPerdida {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        conn.setAutoCommit(true);
+                        desativarControleTransacao(conn);
 
                         try {
                             long x = 0;
@@ -58,7 +58,8 @@ public class AtualizacaoPerdida {
                             long novox = lerXNovamente(conn);
                             System.out.println(String.format("Transacao 1 le x = %d em vez de x = %d <--------", novox, x));
 
-                        } catch (Exception e) {
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         }
                     }
                 } catch (Exception e) {
@@ -66,6 +67,13 @@ public class AtualizacaoPerdida {
                 }
             }
 
+            // <editor-fold defaultstate="collapsed" desc=" ${desativarControleTransacao} ">
+            private void desativarControleTransacao(final Connection conn) throws SQLException {
+                conn.setAutoCommit(true);
+            }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
@@ -75,7 +83,9 @@ public class AtualizacaoPerdida {
                     return x;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${lerY} ">
             private long lerY(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long y = 0;
@@ -85,7 +95,9 @@ public class AtualizacaoPerdida {
                     return y;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${lerXNovamente} ">
             private long lerXNovamente(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long novox = 0;
@@ -95,18 +107,23 @@ public class AtualizacaoPerdida {
                     return novox;
                 }
             }
+            // </editor-fold>
 
-            private void escreverY(final Connection conn, long y) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
-                }
-            }
-
+            // <editor-fold defaultstate="collapsed" desc=" ${escreverX} ">
             private void escreverX(final Connection conn, long x) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
                 }
             }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${escreverY} ">
+            private void escreverY(final Connection conn, long y) throws SQLException {
+                try (Statement st = conn.createStatement();) {
+                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
+                }
+            }
+            // </editor-fold>
         };
         t.start();
         return t;
@@ -119,7 +136,7 @@ public class AtualizacaoPerdida {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        conn.setAutoCommit(true);
+                        desativarControleTransacao(conn);
 
                         try {
                             long x = 0;
@@ -148,6 +165,13 @@ public class AtualizacaoPerdida {
                 }
             }
 
+            // <editor-fold defaultstate="collapsed" desc=" ${desativarControleTransacao} ">
+            private void desativarControleTransacao(final Connection conn) throws SQLException {
+                conn.setAutoCommit(true);
+            }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
@@ -157,12 +181,15 @@ public class AtualizacaoPerdida {
                     return x;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${esxceverX} ">
             private void escreverX(final Connection conn, long x) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
                 }
             }
+            // </editor-fold>
         };
         t.start();
         return t;

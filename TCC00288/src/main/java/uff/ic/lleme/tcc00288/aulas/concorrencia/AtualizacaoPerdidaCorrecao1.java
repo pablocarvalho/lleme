@@ -23,8 +23,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        ativarControleTransacaoComBloqueio(conn);
 
                         try {
                             long x = 0;
@@ -58,7 +57,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                             conn.commit();
 
                             long novox = lerXNovamente(conn);
-                            System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d", novox, x));
+                            System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d <--------", novox, x));
 
                         } catch (Exception e) {
                             conn.rollback();
@@ -69,6 +68,14 @@ public class AtualizacaoPerdidaCorrecao1 {
                 }
             }
 
+            // <editor-fold defaultstate="collapsed" desc=" ${ativarControleTransacaoComBloqueio} ">
+            private void ativarControleTransacaoComBloqueio(final Connection conn) throws SQLException {
+                conn.setAutoCommit(false);
+                conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+            }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
@@ -78,7 +85,9 @@ public class AtualizacaoPerdidaCorrecao1 {
                     return x;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${lerY} ">
             private long lerY(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long y = 0;
@@ -88,7 +97,9 @@ public class AtualizacaoPerdidaCorrecao1 {
                     return y;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${lerXNovamente} ">
             private long lerXNovamente(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long novox = 0;
@@ -98,18 +109,24 @@ public class AtualizacaoPerdidaCorrecao1 {
                     return novox;
                 }
             }
+            // </editor-fold>
 
-            private void escreverY(final Connection conn, long y) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
-                }
-            }
-
+            // <editor-fold defaultstate="collapsed" desc=" ${escreverX} ">
             private void escreverX(final Connection conn, long x) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
                 }
             }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${escreverY} ">
+            private void escreverY(final Connection conn, long y) throws SQLException {
+                try (Statement st = conn.createStatement();) {
+                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
+                }
+            }
+            // </editor-fold>
+
         };
         t.start();
         return t;
@@ -122,8 +139,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        ativarControleTransacaoComBloqueio(conn);
 
                         try {
 
@@ -155,21 +171,34 @@ public class AtualizacaoPerdidaCorrecao1 {
                 }
             }
 
+            // <editor-fold defaultstate="collapsed" desc=" ${ativarControleTransacaoComBloqueio} ">
+            private void ativarControleTransacaoComBloqueio(final Connection conn) throws SQLException {
+                conn.setAutoCommit(false);
+                conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+            }
+            // </editor-fold>
+
+            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
+                    System.out.println(String.format("Transacao 2 espera liberacao de bloqueio em x.", x));
                     ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
                     if (rs1.next())
                         x = rs1.getLong("valor");
                     return x;
                 }
             }
+            // </editor-fold>
 
+            // <editor-fold defaultstate="collapsed" desc=" ${escreverX} ">
             private void escreverX(final Connection conn, long x) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
                 }
             }
+            // </editor-fold>
+
         };
         t.start();
         return t;
