@@ -60,6 +60,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                             System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d <--------", novox, x));
 
                             conn.commit();
+                            System.out.println("Transacao 1 confirma e libera bloqueios.");
 
                         } catch (SQLException e) {
                             conn.rollback();
@@ -81,7 +82,7 @@ public class AtualizacaoPerdidaCorrecao2 {
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
-                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
+                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
                     if (rs1.next())
                         x = rs1.getLong("valor");
                     return x;
@@ -93,7 +94,7 @@ public class AtualizacaoPerdidaCorrecao2 {
             private long lerY(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long y = 0;
-                    ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y';");
+                    ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y' for update;");
                     if (rs2.next())
                         y = rs2.getLong("valor");
                     return y;
@@ -152,6 +153,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                                 {// Parte 1
                                     System.out.println("Transacao 2 em processamento...");
                                     Thread.sleep(1000);
+                                    System.out.println(String.format("Transacao 2 tenta bloquear X e aguarda T1 confirmar ou nao para declarar conflito de serializabilidade.", x));
                                     x = lerX(conn);
                                     System.out.println(String.format("Transacao 2 le x = %d", x));
                                     int N = 8;
@@ -192,7 +194,7 @@ public class AtualizacaoPerdidaCorrecao2 {
             private long lerX(final Connection conn) throws SQLException {
                 try (Statement st = conn.createStatement();) {
                     long x = 0;
-                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
+                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
                     if (rs1.next())
                         x = rs1.getLong("valor");
                     return x;

@@ -59,7 +59,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                             System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d <--------", novox, x));
 
                             conn.commit();
-                            System.out.println("Transacao 1 encerra e libera bloqueios.");
+                            System.out.println("Transacao 1 confirma e libera bloqueios.");
 
                         } catch (Exception e) {
                             conn.rollback();
