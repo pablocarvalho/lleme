@@ -24,12 +24,12 @@ public class AtualizacaoPerdidaCorrecao2 {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
                         conn.setAutoCommit(false);
-                        conn.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
+                        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 
                         try (Statement st = conn.createStatement();) {
                             long x = 0;
                             {// Parte 1
-                                ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
+                                ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
                                 if (rs1.next())
                                     x = rs1.getLong("valor");
                                 System.out.println(String.format("Transacao 1 le x = %d", x));
@@ -44,7 +44,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                             {// Parte 2
                                 st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
                                 System.out.println(String.format("Transacao 1 salva x = %d", x));
-                                ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y' for update;");
+                                ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y';");
                                 if (rs2.next())
                                     y = rs2.getLong("valor");
                                 System.out.println(String.format("Transacao 1 le y = %d", y));
@@ -62,7 +62,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                             conn.commit();
 
                             long novox = 0;
-                            ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
+                            ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
                             if (rs1.next())
                                 novox = rs1.getLong("valor");
                             System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d", novox, x));

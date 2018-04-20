@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class AtualizacaoTemporaria {
+public class AtualizacaoTemporariaCorrecao1 {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = startT1();
@@ -74,7 +74,7 @@ public class AtualizacaoTemporaria {
                             {// Parte 1
                                 System.out.println("Transacao 2 em processamento...");
                                 Thread.sleep(1000);
-                                ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
+                                ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
                                 if (rs1.next())
                                     x = rs1.getLong("valor");
                                 System.out.println(String.format("Transacao 2 le x = %d", x));
