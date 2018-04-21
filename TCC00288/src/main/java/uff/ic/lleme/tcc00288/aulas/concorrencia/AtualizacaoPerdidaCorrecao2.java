@@ -2,10 +2,10 @@ package uff.ic.lleme.tcc00288.aulas.concorrencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import org.postgresql.util.PSQLException;
+import uff.ic.lleme.tcc00288.aulas.util.Config;
+import uff.ic.lleme.tcc00288.aulas.util.MyThread;
 
 public class AtualizacaoPerdidaCorrecao2 {
 
@@ -18,18 +18,19 @@ public class AtualizacaoPerdidaCorrecao2 {
     }
 
     private static Thread startTransactionT1() throws InterruptedException {
-        Thread t = new Thread() {
+        Thread t = new MyThread() {
             @Override
             public void run() {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                        ativarControleTransacaoComIsolamento(conn);
 
                         try {
+                            ativarControleTransacaoComIsolamento(conn);
+
                             long x = 0;
                             {// Parte 1
-                                x = lerX(conn);
+                                x = lerX(conn, "for update");
                                 System.out.println(String.format("Transacao 1 le x = %d", x));
                                 int N = 5;
                                 System.out.println(String.format("Transacao 1 faz x = %d - %d", x, N));
@@ -42,7 +43,7 @@ public class AtualizacaoPerdidaCorrecao2 {
                             {// Parte 2
                                 escreverX(conn, x);
                                 System.out.println(String.format("Transacao 1 salva x = %d", x));
-                                y = lerY(conn);
+                                y = lerY(conn, "for update");
                                 System.out.println(String.format("Transacao 1 le y = %d", y));
                                 System.out.println("Transacao 1 em processamento...");
                                 Thread.sleep(2000);
@@ -65,78 +66,19 @@ public class AtualizacaoPerdidaCorrecao2 {
                         } catch (SQLException e) {
                             conn.rollback();
                         }
+
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
-
-            // <editor-fold defaultstate="collapsed" desc=" ${ativarControleTransacaoComIsolamento} ">
-            private void ativarControleTransacaoComIsolamento(final Connection conn) throws SQLException {
-                conn.setAutoCommit(false);
-                conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
-            private long lerX(final Connection conn) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    long x = 0;
-                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
-                    if (rs1.next())
-                        x = rs1.getLong("valor");
-                    return x;
-                }
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${lerY} ">
-            private long lerY(final Connection conn) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    long y = 0;
-                    ResultSet rs2 = st.executeQuery("select valor from tabela where chave = 'y' for update;");
-                    if (rs2.next())
-                        y = rs2.getLong("valor");
-                    return y;
-                }
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${lerXNovamente} ">
-            private long lerXNovamente(final Connection conn) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    long novox = 0;
-                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x';");
-                    if (rs1.next())
-                        novox = rs1.getLong("valor");
-                    return novox;
-                }
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${escreverX} ">
-            private void escreverX(final Connection conn, long x) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
-                }
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${escreverY} ">
-            private void escreverY(final Connection conn, long y) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", y, "'y'"));
-                }
-            }
-            // </editor-fold>
-
         };
         t.start();
         return t;
     }
 
     private static Thread startTransactionT2() throws InterruptedException {
-        Thread t = new Thread() {
+        Thread t = new MyThread() {
             @Override
             public void run() {
                 boolean run = false;
@@ -145,16 +87,16 @@ public class AtualizacaoPerdidaCorrecao2 {
                     try {
                         Class.forName("org.postgresql.Driver");
                         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
-                            ativarControleTransacaoComIsolamento(conn);
 
-                            try (Statement st = conn.createStatement();) {
+                            try {
+                                ativarControleTransacaoComIsolamento(conn);
 
                                 long x = 0;
                                 {// Parte 1
                                     System.out.println("Transacao 2 em processamento...");
                                     Thread.sleep(1000);
                                     System.out.println(String.format("Transacao 2 tenta bloquear X e aguarda T1 confirmar ou nao para declarar conflito de serializabilidade.", x));
-                                    x = lerX(conn);
+                                    x = lerX(conn, "for update");
                                     System.out.println(String.format("Transacao 2 le x = %d", x));
                                     int N = 8;
                                     System.out.println(String.format("Transacao 2 faz x = %d - %d", x, N));
@@ -176,39 +118,13 @@ public class AtualizacaoPerdidaCorrecao2 {
                                     run = true;
                                 }
                             }
+
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 } while (run);
             }
-
-            // <editor-fold defaultstate="collapsed" desc=" ${ativarControleTransacaoComIsolamento} ">
-            private void ativarControleTransacaoComIsolamento(final Connection conn) throws SQLException {
-                conn.setAutoCommit(false);
-                conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${lerX} ">
-            private long lerX(final Connection conn) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    long x = 0;
-                    ResultSet rs1 = st.executeQuery("select valor from tabela where chave = 'x' for update;");
-                    if (rs1.next())
-                        x = rs1.getLong("valor");
-                    return x;
-                }
-            }
-            // </editor-fold>
-
-            // <editor-fold defaultstate="collapsed" desc=" ${esxceverX} ">
-            private void escreverX(final Connection conn, long x) throws SQLException {
-                try (Statement st = conn.createStatement();) {
-                    st.executeUpdate(String.format("update tabela set valor=%d where chave = %s;", x, "'x'"));
-                }
-            }
-            // </editor-fold>
         };
         t.start();
         return t;
