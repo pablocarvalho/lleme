@@ -35,12 +35,12 @@ public class AtualizacaoPerdida {
                                 int N = 5;
                                 x = x - N;
                                 System.out.println(String.format("Transacao 1 faz x = %d - %d = %d", x + N, N, x));
+                                escreverX(x);
                                 processar(2000);
                             }
 
                             long y = 0;
                             {// Parte 2
-                                escreverX(x);
                                 y = lerY("");
                                 processar(2000);
                             }
