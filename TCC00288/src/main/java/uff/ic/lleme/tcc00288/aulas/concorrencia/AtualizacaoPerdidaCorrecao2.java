@@ -5,67 +5,69 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.postgresql.util.PSQLException;
 import uff.ic.lleme.tcc00288.aulas.util.Config;
-import uff.ic.lleme.tcc00288.aulas.util.MyThread;
+import uff.ic.lleme.tcc00288.aulas.util.Transacao;
 
 public class AtualizacaoPerdidaCorrecao2 {
 
     public static void main(String[] args) throws InterruptedException {
         Config.initBD();
-        Thread t1 = startTransactionT1();
-        Thread t2 = startTransactionT2();
+        Transacao t1 = iniciarTransacaoT1();
+        Transacao t2 = iniciarTransacaoT2();
         t1.join();
         t2.join();
     }
 
-    private static Thread startTransactionT1() throws InterruptedException {
-        Thread t = new MyThread() {
+    private static Transacao iniciarTransacaoT1() throws InterruptedException {
+        Transacao t = new Transacao(1) {
             @Override
             public void run() {
                 try {
                     Class.forName("org.postgresql.Driver");
                     try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
+                        this.conn = conn;
 
+                        // -------------------------------------------------------------------------------------------
                         try {
-                            ativarControleTransacaoComIsolamento(conn);
 
                             long x = 0;
                             {// Parte 1
-                                x = lerX(conn, "for update");
-                                System.out.println(String.format("Transacao 1 le x = %d", x));
+                                iniciarTransacaoComIsolamento();
+                                x = lerX("for update");
                                 int N = 5;
-                                System.out.println(String.format("Transacao 1 faz x = %d - %d", x, N));
                                 x = x - N;
-                                System.out.println("Transacao 1 em processamento...");
-                                Thread.sleep(2000);
+                                System.out.println(String.format("Transacao 1 faz x = %d - %d = %d", x + N, N, x));
+                                processar(2000);
                             }
 
                             long y = 0;
                             {// Parte 2
-                                escreverX(conn, x);
-                                System.out.println(String.format("Transacao 1 salva x = %d", x));
-                                y = lerY(conn, "for update");
-                                System.out.println(String.format("Transacao 1 le y = %d", y));
-                                System.out.println("Transacao 1 em processamento...");
-                                Thread.sleep(2000);
+                                escreverX(x);
+                                y = lerY("for update");
+                                processar(2000);
                             }
 
                             {// Parte 3
                                 int N = 3;
-                                System.out.println(String.format("Transacao 1 faz y = %d + %d", y, N));
-                                y = y + 3;
-                                escreverY(conn, y);
-                                System.out.println(String.format("Transacao 1 salva y = %d", y));
+                                y = y + N;
+                                System.out.println(String.format("Transacao 1 faz y = %d + %d = %d", y - N, N, y));
+                                escreverY(y);
                             }
 
-                            long novox = lerXNovamente(conn);
-                            System.out.println(String.format("Transacao 1 le x = %d igual a leitura anterior de x = %d <--------", novox, x));
+                            {// Parte 4
+                                System.out.println("");
+                                long novox = lerX("");
+                                System.out.println(String.format("Transacao 1 le x = %d como anteriormente.                      <---", novox, x));
+                                System.out.println(String.format("Transacao 1 teve todos os seus efeitos registrados.            <---"));
 
-                            conn.commit();
-                            System.out.println("Transacao 1 confirma e libera bloqueios.");
+                                conn.commit();
+                                System.out.println("Transacao 1 confirma processamento e libera bloqueios.         <---");
+                                System.out.println("");
+                            }
 
                         } catch (SQLException e) {
                             conn.rollback();
                         }
+                        // -------------------------------------------------------------------------------------------
 
                     }
                 } catch (Exception e) {
@@ -77,53 +79,54 @@ public class AtualizacaoPerdidaCorrecao2 {
         return t;
     }
 
-    private static Thread startTransactionT2() throws InterruptedException {
-        Thread t = new MyThread() {
+    private static Transacao iniciarTransacaoT2() throws InterruptedException {
+        Transacao t = new Transacao(2) {
+            private boolean erroDeSerializacao;
+
             @Override
             public void run() {
-                boolean run = false;
-                do {
-                    run = false;
+                do
                     try {
                         Class.forName("org.postgresql.Driver");
                         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
+                            this.conn = conn;
 
+                            // -------------------------------------------------------------------------------------------
                             try {
-                                ativarControleTransacaoComIsolamento(conn);
 
                                 long x = 0;
                                 {// Parte 1
-                                    System.out.println("Transacao 2 em processamento...");
-                                    Thread.sleep(1000);
+                                    iniciarTransacaoComIsolamento();
+                                    processar(1000);
                                     System.out.println(String.format("Transacao 2 tenta bloquear X e aguarda T1 confirmar ou nao para declarar conflito de serializabilidade.", x));
-                                    x = lerX(conn, "for update");
-                                    System.out.println(String.format("Transacao 2 le x = %d", x));
+                                    x = lerX("for update");
                                     int N = 8;
-                                    System.out.println(String.format("Transacao 2 faz x = %d - %d", x, N));
-                                    x = x - 8;
-                                    System.out.println("Transacao 2 em processamento...");
-                                    Thread.sleep(2000);
+                                    x = x - N;
+                                    System.out.println(String.format("Transacao 2 faz x = %d - %d = %d", x + N, N, x));
+                                    processar(2000);
                                 }
 
                                 {// Parte 2
-                                    escreverX(conn, x);
-                                    System.out.println(String.format("Transacao 2 salva x = %d", x));
+                                    escreverX(x);
+                                    conn.commit();
+                                    System.out.println("Transacao 2 confirma processamento e libera bloqueios.         <---");
+                                    erroDeSerializacao = false;
                                 }
-                                conn.commit();
 
                             } catch (PSQLException e) {
                                 conn.rollback();
                                 if (e.getSQLState().equals("40001")) {
                                     System.out.println("Transacao 2 ira reiniciar por problemas de serializacao.");
-                                    run = true;
+                                    erroDeSerializacao = true;
                                 }
                             }
+                            // -------------------------------------------------------------------------------------------
 
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
-                } while (run);
+                while (erroDeSerializacao);
             }
         };
         t.start();
