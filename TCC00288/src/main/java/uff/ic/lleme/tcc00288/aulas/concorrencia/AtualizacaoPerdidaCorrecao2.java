@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.postgresql.util.PSQLException;
-import uff.ic.lleme.tcc00288.aulas.util.Config;
-import uff.ic.lleme.tcc00288.aulas.util.Transacao;
+import uff.ic.lleme.tcc00288.aulas.concorrencia.util.Config;
+import uff.ic.lleme.tcc00288.aulas.concorrencia.util.Transacao;
 
 public class AtualizacaoPerdidaCorrecao2 {
 

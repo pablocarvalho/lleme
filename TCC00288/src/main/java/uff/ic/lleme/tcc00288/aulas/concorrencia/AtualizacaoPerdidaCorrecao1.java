@@ -3,8 +3,8 @@ package uff.ic.lleme.tcc00288.aulas.concorrencia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import uff.ic.lleme.tcc00288.aulas.util.Config;
-import uff.ic.lleme.tcc00288.aulas.util.Transacao;
+import uff.ic.lleme.tcc00288.aulas.concorrencia.util.Config;
+import uff.ic.lleme.tcc00288.aulas.concorrencia.util.Transacao;
 
 public class AtualizacaoPerdidaCorrecao1 {
 
