@@ -110,6 +110,7 @@ public class AtualizacaoPerdidaCorrecao1 {
 
                         } catch (SQLException e) {
                             conn.rollback();
+                            System.out.println(e.getMessage());
                         }
                         // -------------------------------------------------------------------------------------------
 
