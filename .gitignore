@@ -12,7 +12,7 @@ __pycache__/
 **/build/
 **/target/
 **/test/
-**/protegido/
+**/protected/
 **/private/
 **/resources/dat/tdb/
 **/dist/
