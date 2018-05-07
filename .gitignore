@@ -9,10 +9,10 @@ __pycache__/
 .ipynb_checkpoints
 .pydevproject
 
+**/dist/
 **/build/
 **/target/
-**/test/
-**/protegido/
-**/private/
 **/resources/dat/tdb/
-**/dist/
+**/nbproject/private/
+**/src/protected/
+**/src/private/
