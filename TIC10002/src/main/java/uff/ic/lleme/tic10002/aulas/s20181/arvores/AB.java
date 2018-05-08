@@ -47,7 +47,7 @@ public abstract class AB {
 
     }
 
-    public void printTree() {
+    public void print() {
         raiz.print();
         System.out.println("");
     }

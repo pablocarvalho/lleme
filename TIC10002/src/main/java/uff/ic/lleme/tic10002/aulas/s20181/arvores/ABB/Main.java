@@ -8,18 +8,18 @@ public class Main {
         ABB abb = new ABB();
 
         abb.incluir(new Objeto(15));
-        abb.printTree();
-        abb.incluir(new Objeto(02));
-        abb.printTree();
+        abb.print();
+        abb.incluir(new Objeto(2));
+        abb.print();
         abb.incluir(new Objeto(53));
-        abb.printTree();
+        abb.print();
         abb.incluir(new Objeto(23));
-        abb.printTree();
-        abb.incluir(new Objeto(01));
-        abb.printTree();
+        abb.print();
+        abb.incluir(new Objeto(1));
+        abb.print();
         abb.incluir(new Objeto(74));
-        abb.printTree();
+        abb.print();
         abb.incluir(new Objeto(13));
-        abb.printTree();
+        abb.print();
     }
 }
