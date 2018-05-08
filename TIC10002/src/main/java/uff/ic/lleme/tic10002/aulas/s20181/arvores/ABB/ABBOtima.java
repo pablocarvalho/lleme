@@ -1,27 +1,36 @@
 package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
 
 public class ABBOtima {
 
     private static double[] chaves = {0, 2, 4, 20, 36};
-    private static double[] f1 = {0, 10, 1, 3, 2};
-    private static double[] f2 = {2, 1, 1, 1, 1};
+    private static List<Integer> ordenacao = new ArrayList<>();
+    private static double[] f = {0, 10, 1, 3, 2};
+    private static double[] fl = {2, 1, 1, 1, 1};
     private static double[][] c = new double[5][5];
     private static double[][] F = new double[5][5];
     private static int[][] K = new int[5][5];
 
     public static void main(String[] args) {
         calcularCusto();
+        ordenarChaves(0, f.length - 1);
+
         print(c);
         print(K);
+        print(ordenacao);
 
-        double[] chaves = ordenar(0, f1.length);
         ABB abb = new ABB();
-        for (double c : chaves)
-            abb.incluir(new Objeto(c));
+        for (int c : ordenacao)
+            abb.incluir(new Objeto(chaves[c]));
         abb.print();
+    }
+
+    private static void print(List<Integer> ordenacao) {
+        System.out.println(ordenacao.toString() + "\n");
     }
 
     public static void calcularCustoDidatico1() {
@@ -41,7 +50,7 @@ public class ABBOtima {
 
         for (int j = 1; j <= n; j++) {
             c[j][j] = 0;
-            F[j][j] = f2[j];
+            F[j][j] = fl[j];
         }
     }
 
@@ -50,7 +59,7 @@ public class ABBOtima {
 
         for (int j = 0; j < n; j++) {
             c[j][j] = 0;
-            F[j][j] = f2[j];
+            F[j][j] = fl[j];
         }
 
         for (int d = 1; d <= n; d++) {
@@ -59,7 +68,7 @@ public class ABBOtima {
             for (int i = 0; i <= n - d; i++) {
                 j = i + d;
 
-                F[i][j] = F[i][j - 1] + f1[j] + f2[j];
+                F[i][j] = F[i][j - 1] + f[j] + fl[j];
                 Custo menorCusto = menorCusto(i, j);
                 c[i][j] = menorCusto.valor + F[i][j];
                 K[i][j] = menorCusto.chave;
@@ -79,18 +88,12 @@ public class ABBOtima {
         return new Custo(custoMinimo, chaveDeMenorCusto);
     }
 
-    private static double[] ordenar(int i, int j) {
-        return ordenar(1, j, 0, new double[f1.length - 1]);
-    }
-
-    private static double[] ordenar(int i, int j, int ordem, double[] ordenacao) {
+    private static void ordenarChaves(int i, int j) {
         if (i < j) {
-            System.out.print(K[i][j] + " ");
-            ordenacao[ordem] = K[i][j];
-            ordenar(i, K[i][j] - 1, ordem++, ordenacao);
-            ordenar(K[i][j], j, ordem++, ordenacao);
+            ordenacao.add(K[i][j]);
+            ordenarChaves(i, K[i][j] - 1);
+            ordenarChaves(K[i][j], j);
         }
-        return ordenacao;
     }
 
     public static void print(double[][] c) {

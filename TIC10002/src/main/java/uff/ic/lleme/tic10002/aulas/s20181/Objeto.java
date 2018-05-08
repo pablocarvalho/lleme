@@ -8,6 +8,10 @@ public class Objeto {
         this.chave = chave;
     }
 
+    public Objeto(double chave) {
+        this.chave = chave;
+    }
+
     public Objeto(int chave) {
         this.chave = chave * 1.;
     }
