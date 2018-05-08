@@ -1,20 +1,25 @@
-package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABBOtima;
+package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 
 import java.util.Arrays;
 
-public class GeracaoMatriz {
+public class ABBOtima {
+
+    private static double[] chaves = {0, 102, 103, 2, 4};
+    private static double[] f1 = {0, 10, 1, 3, 2};
+    private static double[] f2 = {2, 1, 1, 1, 1};
+    private static double[][] c = new double[5][5];
+    private static double[][] F = new double[5][5];
+    private static int[][] K = new int[5][5];
 
     public static void main(String[] args) {
         m3();
-
+        print(c);
+        print(K);
+        ordem(0, f1.length, K);
+        ABB abb = new ABB();
     }
 
     public static void m1() {
-        double[][] c = new double[5][5];
-        double[][] F = new double[5][5];
-        double[] f1 = {0, 10, 1, 3, 2};
-        double[] f2 = {2, 1, 1, 1, 1};
-
         int n = c.length;
 
         for (int d = 1; d <= n; d++) {
@@ -24,31 +29,18 @@ public class GeracaoMatriz {
                 System.out.println(String.format("c[%d][%d]", i, j));
             }
         }
-
     }
 
     public static void m2() {
-        double[][] c = new double[5][5];
-        double[][] F = new double[5][5];
-        double[] f1 = {0, 10, 1, 3, 2};
-        double[] f2 = {2, 1, 1, 1, 1};
-
         int n = c.length;
 
         for (int j = 1; j <= n; j++) {
             c[j][j] = 0;
             F[j][j] = f2[j];
         }
-
     }
 
     public static void m3() {
-        double[][] c = new double[5][5];
-        double[][] F = new double[5][5];
-        int[][] K = new int[5][5];
-        double[] f1 = {0, 10, 1, 3, 2};
-        double[] f2 = {2, 1, 1, 1, 1};
-
         int n = c.length - 1;
 
         for (int j = 0; j < n; j++) {
@@ -69,10 +61,6 @@ public class GeracaoMatriz {
 
             }
         }
-        print(c);
-        print(K);
-        ordem(0, n, K);
-
     }
 
     private static Custo menorCusto(int i, int j, double[][] c) {

@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABBOtima;
+package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 
 public class Custo {
 
