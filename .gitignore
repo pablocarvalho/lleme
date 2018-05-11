@@ -16,3 +16,4 @@ __pycache__/
 **/nbproject/private/
 **/src/protected/
 **/src/private/
+**/src/test/
