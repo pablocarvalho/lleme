@@ -1,20 +1,20 @@
 package uff.ic.lleme.tic10002.aulas.s20181.listas.implementacoes;
 
 import uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces.Lista;
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
 
     private class No {
 
-        public Objeto conteudo;
+        public Conteudo conteudo;
         public No proximo;
 
         private No() {
 
         }
 
-        public No(Objeto objeto) {
+        public No(Conteudo objeto) {
             this.conteudo = objeto;
         }
     }
@@ -22,20 +22,20 @@ public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
     private No primeiro = null;
 
     @Override
-    public Objeto buscar(int chave) {
+    public Conteudo buscar(int chave) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Objeto obter(int pos) {
+    public Conteudo obter(int pos) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void incluir(Objeto objeto) {
+    public void incluir(Conteudo objeto) {
         if (primeiro == null)
             primeiro = new No(objeto);
-        else if (primeiro.conteudo.chave > objeto.chave) {
+        else if (primeiro.conteudo.chaveAsNum() > objeto.chaveAsNum()) {
             No aux = primeiro;
             primeiro = new No(objeto);
             primeiro.proximo = aux;
@@ -43,9 +43,9 @@ public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
             incluir(objeto, primeiro);
     }
 
-    public void incluir(Objeto objeto, No noAtual) {
+    public void incluir(Conteudo objeto, No noAtual) {
         if (noAtual.proximo == null
-                || noAtual.proximo.conteudo.chave > objeto.chave) {
+                || noAtual.proximo.conteudo.chaveAsNum() > objeto.chaveAsNum()) {
             No novoNo = new No(objeto);
             No aux = noAtual.proximo;
             noAtual.proximo = novoNo;

@@ -1,16 +1,16 @@
 package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public class MergeSort {
 
-    Objeto[] merge;
+    Conteudo[] merge;
 
-    public static Objeto[] sort(Objeto[] lista) {
+    public static Conteudo[] sort(Conteudo[] lista) {
         return sort(lista, 0, lista.length - 1);
     }
 
-    private static Objeto[] sort(Objeto[] lista, int e, int d) {
+    private static Conteudo[] sort(Conteudo[] lista, int e, int d) {
         if (e < d) {
             int meio = (e + d) / 2;
             sort(lista, e, meio);
@@ -20,13 +20,13 @@ public class MergeSort {
         return lista;
     }
 
-    public static void merge(Objeto[] lista, int p, int q, int r) {
+    public static void merge(Conteudo[] lista, int p, int q, int r) {
         if (0 <= p && p <= q && q < r && r < lista.length) {
-            Objeto[] merge = new Objeto[r - p + 1];
+            Conteudo[] merge = new Conteudo[r - p + 1];
             int i = p, j = q + 1, k = 0;
             while (i <= q || j <= r)
                 if (i <= q && j <= r)
-                    if (lista[i].chave < lista[j].chave)
+                    if (lista[i].chaveAsNum() < lista[j].chaveAsNum())
                         merge[k++] = lista[i++];
                     else
                         merge[k++] = lista[j++];

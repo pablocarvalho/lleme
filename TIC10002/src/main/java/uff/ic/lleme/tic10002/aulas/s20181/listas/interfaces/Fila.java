@@ -1,11 +1,11 @@
 package uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public interface Fila {
 
-    public void enfileirar(Objeto objeto);
+    public void enfileirar(Conteudo objeto);
 
-    public Objeto desenfileirar(int chave);
+    public Conteudo desenfileirar(int chave);
 
 }

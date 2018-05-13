@@ -1,26 +1,26 @@
 package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 import uff.ic.lleme.tic10002.aulas.s20181.arvores.AB;
 
 public class ABB extends AB {
 
-    public Objeto buscar(int chave) {
+    public Conteudo buscar(int chave) {
         return buscar(raiz, chave);
     }
 
-    private Objeto buscar(No noCorrente, int chave) {
+    private Conteudo buscar(No noCorrente, int chave) {
         if (noCorrente != null)
-            if (chave == noCorrente.conteudo.chave)
+            if (chave == noCorrente.conteudo.chaveAsNum())
                 return noCorrente.conteudo;
-            else if (chave < noCorrente.conteudo.chave)
+            else if (chave < noCorrente.conteudo.chaveAsNum())
                 return buscar(noCorrente.direita, chave);
             else
                 return buscar(noCorrente.esquerda, chave);
         return null;
     }
 
-    public void incluir(Objeto conteudo) {
+    public void incluir(Conteudo conteudo) {
         No novoNo = new No(conteudo);
         if (raiz == null) {
             raiz = novoNo;
@@ -30,9 +30,9 @@ public class ABB extends AB {
     }
 
     private void incluir(No noCorrente, No novoNo) {
-        if (noCorrente.conteudo.chave == novoNo.conteudo.chave)
+        if (noCorrente.conteudo.chaveAsNum() == novoNo.conteudo.chaveAsNum())
             return;
-        else if (novoNo.conteudo.chave < noCorrente.conteudo.chave)
+        else if (novoNo.conteudo.chaveAsNum() < noCorrente.conteudo.chaveAsNum())
             if (noCorrente.direita == null) {
                 noCorrente.direita = novoNo;
                 quantidadeNos++;
@@ -45,8 +45,8 @@ public class ABB extends AB {
             incluir(noCorrente.esquerda, novoNo);
     }
 
-    public Objeto excluir(int chave) {
-        if (raiz != null && raiz.conteudo.chave == chave) {
+    public Conteudo excluir(int chave) {
+        if (raiz != null && raiz.conteudo.chaveAsNum() == chave) {
             No excluido = raiz;
             if (excluido.esquerda != null) {
                 raiz = excluido.esquerda;
@@ -63,10 +63,10 @@ public class ABB extends AB {
             return null;
     }
 
-    private Objeto excluir(No noCorrente, int chave) {
-        if (chave < noCorrente.conteudo.chave) {
+    private Conteudo excluir(No noCorrente, int chave) {
+        if (chave < noCorrente.conteudo.chaveAsNum()) {
 
-            if (noCorrente.direita != null && chave == noCorrente.direita.conteudo.chave) {
+            if (noCorrente.direita != null && chave == noCorrente.direita.conteudo.chaveAsNum()) {
                 No excluido = noCorrente.direita;
                 if (excluido.esquerda != null) {
                     noCorrente.direita = excluido.esquerda;
@@ -79,7 +79,7 @@ public class ABB extends AB {
             } else if (raiz != null)
                 return excluir(noCorrente.direita, chave);
 
-        } else if (noCorrente.esquerda != null && chave == noCorrente.esquerda.conteudo.chave) {
+        } else if (noCorrente.esquerda != null && chave == noCorrente.esquerda.conteudo.chaveAsNum()) {
             No excluido = noCorrente.esquerda;
             noCorrente.esquerda = excluido.direita;
             incluir(noCorrente.esquerda, excluido.esquerda);

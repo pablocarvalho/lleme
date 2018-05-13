@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20181.arvores;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public abstract class AB {
 
@@ -9,17 +9,17 @@ public abstract class AB {
 
     protected class No {
 
-        public Objeto conteudo = null;
-        public No pai = null;
+        public Conteudo conteudo = null;
         public No esquerda = null;
         public No direita = null;
+        public int saldoAltura = 0;
 
-        public No(Objeto conteudo) {
+        public No(Conteudo conteudo) {
             this.conteudo = conteudo;
         }
 
         private void printNodeValue() {
-            System.out.print("" + conteudo.chave);
+            System.out.print("" + conteudo.rotulo());
             System.out.print('\n');
         }
 

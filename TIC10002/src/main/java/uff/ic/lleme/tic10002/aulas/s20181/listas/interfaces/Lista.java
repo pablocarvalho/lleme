@@ -1,14 +1,14 @@
 package uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces;
 
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public interface Lista {
 
-    public Objeto buscar(int chave);
+    public Conteudo buscar(int chave);
 
-    public Objeto obter(int pos);
+    public Conteudo obter(int pos);
 
-    public void incluir(Objeto objeto);
+    public void incluir(Conteudo objeto);
 
     public void excluir(int chave);
 

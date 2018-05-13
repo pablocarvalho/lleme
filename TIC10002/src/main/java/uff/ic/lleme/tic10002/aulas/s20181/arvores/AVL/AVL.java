@@ -5,12 +5,7 @@ import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
 public class AVL {
 
     private No raiz = null;
-    private boolean balanceada = false;
     private int maxSaldo = 0;
-
-    public AVL(boolean balanceada) {
-        this.balanceada = balanceada;
-    }
 
     private class No {
 
@@ -145,7 +140,7 @@ public class AVL {
 
                 if (Math.abs(saldoPosteriorU) > Math.abs(saldoAnteriorU)) {
                     no.saldoAltura++;
-                    if (Math.abs(no.saldoAltura) > 1 && balanceada)
+                    if (Math.abs(no.saldoAltura) > 1)
                         balancearADireita(no, delta1, delta2);
                 }
                 //</editor-fold>
@@ -183,7 +178,7 @@ public class AVL {
 
                 if (Math.abs(saldoPosteriorZ) > Math.abs(saldoAnteriorZ)) {
                     no.saldoAltura--;
-                    if (Math.abs(no.saldoAltura) > 1 && balanceada)
+                    if (Math.abs(no.saldoAltura) > 1)
                         balancearAEsquerda(no, delta1, delta2);
                 }
                 //</editor-fold>

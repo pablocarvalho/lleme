@@ -3,7 +3,7 @@ package uff.ic.lleme.tic10002.aulas.s20181.arvores.ABB;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public class ABBOtima {
 
@@ -25,7 +25,7 @@ public class ABBOtima {
 
         ABB abb = new ABB();
         for (int c : ordenacao)
-            abb.incluir(new Objeto(chaves[c]));
+            abb.incluir(new Conteudo(chaves[c]));
         abb.print();
     }
 

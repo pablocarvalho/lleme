@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20181.listas.implementacoes;
 
 import uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces.Lista;
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
 
@@ -9,7 +9,7 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
     private int tamanho = 0;
     private int inicio = 0;
     private int fim = 0;
-    private Objeto[] lista = new Objeto[delta];
+    private Conteudo[] lista = new Conteudo[delta];
 
     private void incInicio() {
         inicio = ++inicio % lista.length;
@@ -24,7 +24,7 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
         if (fim < inicio)
             fim = fim + lista.length;
 
-        Objeto[] lista = new Objeto[this.lista.length + delta];
+        Conteudo[] lista = new Conteudo[this.lista.length + delta];
         int l = 0;
         for (int k = inicio; k < fim + 1; k++)
             lista[l++] = this.lista[k % this.lista.length];
@@ -38,7 +38,7 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
     }
 
     @Override
-    public Objeto buscar(int chave) {
+    public Conteudo buscar(int chave) {
         int fim = this.fim;
         if (fim < inicio)
             fim = fim + lista.length;
@@ -46,27 +46,27 @@ public class ListaEstaticaCircularNaoOrdenadaDeObjetos implements Lista {
         return buscar(chave, inicio, fim);
     }
 
-    private Objeto buscar(int chave, int i, int j) {
+    private Conteudo buscar(int chave, int i, int j) {
         int meio = (i + j) / 2;
         int meio_ = meio % lista.length;
 
-        if (lista[meio_].chave == chave)
+        if (lista[meio_].chaveAsNum() == chave)
             return lista[meio_];
-        else if (chave < lista[meio_].chave)
+        else if (chave < lista[meio_].chaveAsNum())
             return buscar(chave, i, meio - 1);
-        else if (chave > lista[meio_].chave)
+        else if (chave > lista[meio_].chaveAsNum())
             return buscar(chave, meio + 1, j);
         else
             return null;
     }
 
     @Override
-    public Objeto obter(int pos) {
+    public Conteudo obter(int pos) {
         return lista[(inicio + pos) % lista.length];
     }
 
     @Override
-    public void incluir(Objeto objeto) {
+    public void incluir(Conteudo objeto) {
         if (tamanho == lista.length)
             expandir();
         lista[fim] = objeto;

@@ -1,18 +1,18 @@
 package uff.ic.lleme.tic10002.aulas.s20181.ordenacao;
 
 import java.util.Random;
-import uff.ic.lleme.tic10002.aulas.s20181.Objeto;
+import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
 public class QuickSort {
 
     private static Random random = new Random();
 
-    public static Objeto[] sort(Objeto[] lista) {
+    public static Conteudo[] sort(Conteudo[] lista) {
         return sort(lista, 0, lista.length - 1);
 
     }
 
-    private static Objeto[] sort(Objeto[] lista, int p, int r) {
+    private static Conteudo[] sort(Conteudo[] lista, int p, int r) {
         if (p < r) {
             int q = partition(lista, p, r);
             sort(lista, p, q - 1);
@@ -21,21 +21,21 @@ public class QuickSort {
         return lista;
     }
 
-    private static int partition(Objeto[] lista, int p, int r) {
+    private static int partition(Conteudo[] lista, int p, int r) {
         int sorteio = random.nextInt(r - p + 1) + p;
         trocar(lista, r, sorteio);
 
-        Objeto pivot = lista[r];
+        Conteudo pivot = lista[r];
         int i = p - 1;
         for (int j = p; j < r; j++)
-            if (lista[j].chave < pivot.chave)
+            if (lista[j].chaveAsNum() < pivot.chaveAsNum())
                 trocar(lista, ++i, j);
         trocar(lista, i + 1, r);
         return i + 1;
     }
 
-    private static void trocar(Objeto[] lista, int i, int j) {
-        Objeto aux = lista[i];
+    private static void trocar(Conteudo[] lista, int i, int j) {
+        Conteudo aux = lista[i];
         lista[i] = lista[j];
         lista[j] = aux;
     }
