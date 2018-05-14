@@ -3,7 +3,7 @@ package uff.ic.lleme.tic10002.aulas.s20181.listas.implementacoes;
 import uff.ic.lleme.tic10002.aulas.s20181.listas.interfaces.Lista;
 import uff.ic.lleme.tic10002.aulas.s20181.Conteudo;
 
-public class ListaEncadeadoOrdenadaDeObjetos implements Lista {
+public class ListaEncadeadaOrdenadaDeObjetos implements Lista {
 
     private class No {
 

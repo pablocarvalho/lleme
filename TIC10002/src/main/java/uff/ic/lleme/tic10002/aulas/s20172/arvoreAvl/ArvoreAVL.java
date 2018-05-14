@@ -5,12 +5,7 @@ import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
 public class ArvoreAVL {
 
     private No raiz = null;
-    private boolean balanceada = false;
     private int maxSaldo = 0;
-
-    public ArvoreAVL(boolean balanceada) {
-        this.balanceada = balanceada;
-    }
 
     private class No {
 
@@ -185,7 +180,7 @@ public class ArvoreAVL {
 
                 if (Math.abs(deltaZ) > 0 && saldoPosteriorZ != 0) {
                     no.saldoAltura--;
-                    if (Math.abs(no.saldoAltura) > 1 && balanceada)
+                    if (Math.abs(no.saldoAltura) > 1)
                         balancearAEsquerda(no, deltaZ, deltaY);
                 }
                 //</editor-fold>
