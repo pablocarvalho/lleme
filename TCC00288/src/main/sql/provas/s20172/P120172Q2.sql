@@ -15,4 +15,4 @@ begin
     end loop;
 end;$$ language plpgsql;
 
-select * from fibonacci(50);
+select * from fibonacci(4);

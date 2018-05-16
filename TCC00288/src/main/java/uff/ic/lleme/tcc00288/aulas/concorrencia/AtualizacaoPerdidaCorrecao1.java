@@ -12,8 +12,10 @@ public class AtualizacaoPerdidaCorrecao1 {
         Config.initBD();
         Transacao t1 = iniciarTransacaoT1();
         Transacao t2 = iniciarTransacaoT2();
+        //Transacao t3 = iniciarTransacaoT3();
         t1.join();
         t2.join();
+        //t3.join();
     }
 
     private static Transacao iniciarTransacaoT1() throws InterruptedException {
@@ -58,6 +60,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                                 System.out.println(String.format("Transacao 1 le x = %d como anteriormente.                      <---", novox, x));
                                 System.out.println(String.format("Transacao 1 teve todos os seus efeitos registrados.            <---"));
 
+                                //y = y / 0;
                                 conn.commit();
                                 System.out.println("Transacao 1 confirma processamento e libera bloqueios.         <---");
                                 System.out.println("");
@@ -65,6 +68,8 @@ public class AtualizacaoPerdidaCorrecao1 {
 
                         } catch (Exception e) {
                             conn.rollback();
+                            System.out.println("Transacao 1 faz rollback.");
+                            System.out.println("(Transacao 1) " + e.getMessage());
                         }
                         // -------------------------------------------------------------------------------------------
 
@@ -95,7 +100,7 @@ public class AtualizacaoPerdidaCorrecao1 {
                                 iniciarTransacaoComBloqueio();
                                 processar(1000);
                                 System.out.println(String.format("Transacao 2 tenta bloquear X e aguarda ate o item ser liberado.", x));
-                                x = lerX("for update");
+                                x = lerX("");
                                 int N = 8;
                                 x = x - N;
                                 System.out.println(String.format("Transacao 2 faz x = %d - %d = %d", x + N, N, x));
@@ -110,13 +115,55 @@ public class AtualizacaoPerdidaCorrecao1 {
 
                         } catch (SQLException e) {
                             conn.rollback();
-                            System.out.println(e.getMessage());
+                            System.out.println("Transacao 2 faz rollback.");
+                            System.out.println("(Transacao 2) " + e.getMessage());
                         }
                         // -------------------------------------------------------------------------------------------
 
                     }
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    System.out.println("(Transacao 2) " + e.getMessage());
+                }
+            }
+        };
+        t.start();
+        return t;
+    }
+
+    private static Transacao iniciarTransacaoT3() throws InterruptedException {
+        Transacao t = new Transacao(3) {
+            @Override
+            public void run() {
+                try {
+                    Class.forName("org.postgresql.Driver");
+                    try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TCC00288", "postgres", "fluminense");) {
+                        this.conn = conn;
+
+                        // -------------------------------------------------------------------------------------------
+                        try {
+
+                            long x = 0;
+                            {// Parte 1
+                                iniciarTransacaoComBloqueio();
+                                processar(500);
+                                System.out.println(String.format("Transacao 3 tenta bloquear X e aguarda ate o item ser liberado.", x));
+                                x = lerX("for update");
+                                processar(1000);
+                                //x = 12;
+                                //escreverX(x);
+                                conn.commit();
+                                System.out.println("Transacao 3 confirma processamento e libera bloqueios.         <---");
+                            }
+
+                        } catch (SQLException e) {
+                            conn.rollback();
+                            System.out.println("Transacao 3 faz rollback.");
+                            System.out.println("(Transacao 3) " + e.getMessage());
+                        }
+                        // -------------------------------------------------------------------------------------------
+                    }
+                } catch (Exception e) {
+                    System.out.println("(Transacao 3) " + e.getMessage());
                 }
             }
         };
