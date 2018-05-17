@@ -1,5 +1,7 @@
 package uff.ic.lleme.tic10002.provas.s20172.P120172Q1;
 
+import uff.ic.lleme.tic10002.provas.s20172.P120172Q2.Pilha;
+
 public class Main {
 
     public static void main(String[] args) {

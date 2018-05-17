@@ -7,7 +7,7 @@ public class Main {
         ListaEncadeada lista = new ListaEncadeada();
         for (int i = 0; i < seq.length; i++)
             lista.incluir(seq[seq.length - i - 1]);
-        lista.print();
+
         lista.imprimeAntecedentes();
     }
 
