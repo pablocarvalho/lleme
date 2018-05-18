@@ -5,7 +5,7 @@ import uff.ic.lleme.tic10002.aulas.s20171.Tarefa;
 
 public class HeapMinMax {
 
-    private No[] lista = new No[100];
+    private final No[] lista = new No[100];
     private int n = 0;
 
     private class No {
