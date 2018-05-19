@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20181.arvores.arvoreB;
+package uff.ic.lleme.tic10002.aulas.old.s20171.arvoreB;
 
 import uff.ic.lleme.tic10002.utils.Empregado;
 
@@ -10,11 +10,11 @@ public class ArvoreB {
         if (empregado != null) {
             if (raiz == null) raiz = new Pagina();
 
-            raiz.incluir(empregado);
+            raiz.inserir(empregado);
             if (raiz.tamanhoExedido()) {
                 Divisao divisao = raiz.dividir();
                 raiz = new Pagina();
-                raiz.incluir(divisao.empregado);
+                raiz.inserir(divisao.empregado);
                 raiz.PRIMEIRO.pagina = divisao.menores;
                 raiz.PRIMEIRO.proximo.pagina = divisao.maiores;
             }
@@ -37,13 +37,14 @@ public class ArvoreB {
             public No(Empregado conteudo) {
                 this.conteudo = conteudo;
             }
+
         }
 
-        private void incluir(Empregado empregado) {
-            incluir(PRIMEIRO, empregado);
+        private void inserir(Empregado empregado) {
+            inserir(PRIMEIRO, empregado);
         }
 
-        private void incluir(No noCorrente, Empregado empregado) {
+        private void inserir(No noCorrente, Empregado empregado) {
             if (noCorrente.proximo == null || empregado.chave() < noCorrente.proximo.conteudo.chave())
                 if (noCorrente.pagina == null) {
                     No noAEsquerdaDoPontoDeInsercao = noCorrente.proximo;
@@ -57,7 +58,7 @@ public class ArvoreB {
                     }
                     n++;
                 } else {
-                    noCorrente.pagina.incluir(empregado);
+                    noCorrente.pagina.inserir(empregado);
 
                     if (noCorrente.pagina.tamanhoExedido()) {
                         Divisao divisao = noCorrente.pagina.dividir();
@@ -78,7 +79,7 @@ public class ArvoreB {
                     }
                 }
             else if (empregado.chave() > noCorrente.proximo.conteudo.chave())
-                incluir(noCorrente.proximo, empregado);
+                inserir(noCorrente.proximo, empregado);
         }
 
         private Divisao dividir() {
@@ -101,6 +102,10 @@ public class ArvoreB {
             return new Divisao(empregado, menores, maiores);
         }
 
+        private boolean tamanhoExedido() {
+            return n > 2 * ORDEM;
+        }
+
         private No meio() {
             No primeiro = PRIMEIRO.proximo;
             No avancoLento = primeiro;
@@ -110,10 +115,6 @@ public class ArvoreB {
                 avancoRapido = avancoRapido.proximo != null ? avancoRapido.proximo.proximo : null;
             }
             return avancoLento;
-        }
-
-        private boolean tamanhoExedido() {
-            return n > 2 * ORDEM;
         }
 
         public void print(int ident) {
