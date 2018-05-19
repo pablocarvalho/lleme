@@ -2,7 +2,7 @@ package uff.ic.lleme.tic10002.aulas.s20171.arvore;
 
 import java.io.InvalidObjectException;
 import uff.ic.lleme.tic10002.aulas.s20171.ColecaoEmpregado;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class ArvoreEmpregado implements ColecaoEmpregado {
 
@@ -28,7 +28,7 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
         }
 
         private boolean ehValido(Empregado empregado) {
-            return empregado != null && empregado.getChave() != null;
+            return empregado != null && empregado.chave() != null;
         }
 
         public Empregado getConteudo() {
@@ -109,14 +109,14 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
 
         private No conectar(No filho) {
             if (filho != null)
-                if (getConteudo().compararInstancia(filho.getConteudo()) < 0)
+                if (getConteudo().compareTo(filho.getConteudo()) < 0)
                     if (esquerda == null) {
                         esquerda = filho;
                         filho.pai = this;
                         return filho;
                     } else
                         return esquerda.conectar(filho);
-                else if (getConteudo().compararInstancia(filho.getConteudo()) > 0)
+                else if (getConteudo().compareTo(filho.getConteudo()) > 0)
                     if (direita == null) {
                         direita = filho;
                         filho.pai = this;
@@ -132,17 +132,17 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
     }
 
     @Override
-    public Empregado buscar(String cpf) {
+    public Empregado buscar(Integer cpf) {
         return buscar(raiz, cpf);
     }
 
-    private Empregado buscar(No noCorrente, String cpf) {
+    private Empregado buscar(No noCorrente, Integer cpf) {
         if (noCorrente != null)
-            if (noCorrente.getConteudo().compararChave(cpf) == 0)
+            if (noCorrente.getConteudo().chave().compareTo(cpf) == 0)
                 return noCorrente.getConteudo();
-            else if (noCorrente.getConteudo().compararChave(cpf) < 0)
+            else if (noCorrente.getConteudo().chave().compareTo(cpf) < 0)
                 return buscar(noCorrente.esquerda, cpf);
-            else if (noCorrente.getConteudo().compararChave(cpf) < 0)
+            else if (noCorrente.getConteudo().chave().compareTo(cpf) < 0)
                 return buscar(noCorrente.direita, cpf);
             else
                 return null;
@@ -160,16 +160,16 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
     }
 
     private Empregado incluir(No noCorrente, No novoNo) throws InvalidObjectException {
-        if (noCorrente.getConteudo().compararInstancia(novoNo.getConteudo()) == 0)
+        if (noCorrente.getConteudo().compareTo(novoNo.getConteudo()) == 0)
             throw new InvalidObjectException("Chave duplicada.");
-        else if (noCorrente.getConteudo().compararInstancia(novoNo.getConteudo()) < 0)
+        else if (noCorrente.getConteudo().compareTo(novoNo.getConteudo()) < 0)
             if (noCorrente.esquerda == null) {
                 No resultado = noCorrente.conectar(novoNo);
                 quantidadeNos++;
                 return resultado.getConteudo();
             } else
                 return incluir(noCorrente.esquerda, novoNo);
-        else if (noCorrente.getConteudo().compararInstancia(novoNo.getConteudo()) > 0)
+        else if (noCorrente.getConteudo().compareTo(novoNo.getConteudo()) > 0)
             if (noCorrente.direita == null) {
                 No resultado = noCorrente.conectar(novoNo);
                 quantidadeNos++;
@@ -181,9 +181,9 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
     }
 
     @Override
-    public Empregado excluir(String cpf) {
+    public Empregado excluir(Integer cpf) {
         if (raiz != null) {
-            if (raiz.getConteudo().compararChave(cpf) == 0) {
+            if (raiz.getConteudo().chave().compareTo(cpf) == 0) {
                 No resultado = raiz;
                 raiz = resultado.direita;
                 raiz.conectar(resultado.esquerda);
@@ -196,10 +196,10 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
         return null;
     }
 
-    private Empregado excluir(No noCorrente, String cpf) {
+    private Empregado excluir(No noCorrente, Integer cpf) {
         No excluido;
         if (noCorrente != null)
-            if (noCorrente.getConteudo().compararChave(cpf) == 0) {
+            if (noCorrente.getConteudo().chave().compareTo(cpf) == 0) {
                 excluido = noCorrente;
                 if (noCorrente.ehFolha())
                     if (noCorrente.ehDireita())
@@ -236,9 +236,9 @@ public class ArvoreEmpregado implements ColecaoEmpregado {
                 }
                 quantidadeNos--;
                 return excluido.getConteudo();
-            } else if (noCorrente.getConteudo().compararChave(cpf) < 0)
+            } else if (noCorrente.getConteudo().chave().compareTo(cpf) < 0)
                 return excluir(noCorrente.esquerda, cpf);
-            else if (noCorrente.getConteudo().compararChave(cpf) > 0)
+            else if (noCorrente.getConteudo().chave().compareTo(cpf) > 0)
                 return excluir(noCorrente.direita, cpf);
             else
                 return null;

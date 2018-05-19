@@ -1,5 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20171;
 
+import uff.ic.lleme.tic10002.utils.Empregado;
 import uff.ic.lleme.tic10002.aulas.s20171.lista.ListaEstaticaNaoOrdenada;
 import uff.ic.lleme.tic10002.aulas.s20171.lista.ListaNaoOrdenada;
 import uff.ic.lleme.tic10002.aulas.s20171.ordenacao.Sort;
@@ -7,23 +8,18 @@ import uff.ic.lleme.tic10002.aulas.s20171.ordenacao.Sort;
 public class Main {
 
     public static void main(String[] args) {
-        Empregado e1 = new Empregado("1");
-        e1.cpf = "1";
+        Empregado e1 = new Empregado(1);
         e1.nome = "A";
-        Empregado e2 = new Empregado("2");
-        e2.cpf = "2";
+        Empregado e2 = new Empregado(1);
         e2.nome = "B";
-        Empregado e3 = new Empregado("3");
-        e3.cpf = "3";
+        Empregado e3 = new Empregado(3);
         e3.nome = "C";
-        Empregado e4 = new Empregado("4");
-        e4.cpf = "4";
+        Empregado e4 = new Empregado(4);
         e4.nome = "D";
-        Empregado e5 = new Empregado("5");
-        e5.cpf = "5";
+        Empregado e5 = new Empregado(5);
         e5.nome = "E";
 
-        ListaNaoOrdenada<String, Empregado> lista = new ListaEstaticaNaoOrdenada<>();
+        ListaNaoOrdenada<Integer, Empregado> lista = new ListaEstaticaNaoOrdenada<>();
 
         lista.incluir(e4);
         lista.incluir(e2);

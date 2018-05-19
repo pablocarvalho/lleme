@@ -4,7 +4,7 @@ import uff.ic.lleme.tic10002.aulas.s20171.arvoreAVL.ArvoreAVLCorrigida;
 import uff.ic.lleme.tic10002.aulas.s20171.arvoreAVL.ArvoreAVLErrada;
 import uff.ic.lleme.tic10002.aulas.s20171.arvoreAVL.ArvoreAVLLuan;
 import java.util.Arrays;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class MainAVLLuan {
 

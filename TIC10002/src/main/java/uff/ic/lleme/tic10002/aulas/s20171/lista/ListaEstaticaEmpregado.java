@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.lista;
 
 import uff.ic.lleme.tic10002.aulas.s20171.ColecaoEmpregado;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class ListaEstaticaEmpregado implements ColecaoEmpregado {
 
@@ -16,7 +16,7 @@ public class ListaEstaticaEmpregado implements ColecaoEmpregado {
     public Empregado incluir(Empregado emp) {
         if (tamanho < lista.length) {
             for (int i = 0; i < tamanho; i++)
-                if (lista[i].cpf.equals(emp.cpf))
+                if (lista[i].chave().equals(emp.chave()))
                     return null;
             return lista[tamanho++] = emp;
         } else
@@ -31,7 +31,7 @@ public class ListaEstaticaEmpregado implements ColecaoEmpregado {
     }
 
     public void alterar(int pos, Empregado elem) {
-        if (elem != null && elem.getChave() != null)
+        if (elem != null && elem.chave() != null)
             if (pos < lista.length)
                 lista[pos] = elem;
             else
@@ -41,10 +41,10 @@ public class ListaEstaticaEmpregado implements ColecaoEmpregado {
     }
 
     @Override
-    public Empregado excluir(String cpf) {
+    public Empregado excluir(Integer cpf) {
         Empregado resultado = null;
         for (int i = 0; i < tamanho; i++) {
-            if (resultado == null && lista[i].cpf.equals(cpf))
+            if (resultado == null && lista[i].chave().equals(cpf))
                 resultado = lista[i];
 
             if (resultado != null && i < tamanho - 1)
@@ -59,9 +59,9 @@ public class ListaEstaticaEmpregado implements ColecaoEmpregado {
     }
 
     @Override
-    public Empregado buscar(String cpf) {
+    public Empregado buscar(Integer cpf) {
         for (int i = 0; i < tamanho; i++)
-            if (lista[i].cpf.equals(cpf))
+            if (lista[i].chave().equals(cpf))
                 return lista[i];
         return null;
     }

@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.ordenacao;
 
 import java.util.Random;
-import uff.ic.lleme.tic10002.aulas.s20171.Entidade;
+import uff.ic.lleme.tic10002.utils.Entidade;
 import uff.ic.lleme.tic10002.aulas.s20171.lista.ListaNaoOrdenada;
 
 public class Sort {

@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.arvoreAVL;
 
 import java.util.Random;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class MainAVL {
 

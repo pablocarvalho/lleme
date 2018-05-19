@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20171.lista;
 
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class ListaDinamicaDEEmpregado {
 
@@ -33,13 +33,13 @@ public class ListaDinamicaDEEmpregado {
         }
     }
 
-    public Empregado excluir(String chave) {
+    public Empregado excluir(Integer chave) {
         if (corrente == null)
             corrente = primeiro;
         No anterior = null;
-        while (corrente.atras != null && !((Empregado) corrente.conteudo).cpf.equals(chave))
+        while (corrente.atras != null && !((Empregado) corrente.conteudo).chave().equals(chave))
             corrente = corrente.atras;
-        if (((Empregado) corrente.conteudo).cpf.equals(chave)) {
+        if (((Empregado) corrente.conteudo).chave().equals(chave)) {
             if (corrente.frente != null) {
                 No F = corrente.frente;
                 No A = corrente.atras;
@@ -60,11 +60,11 @@ public class ListaDinamicaDEEmpregado {
         return (Empregado) corrente.conteudo;
     }
 
-    public Empregado buscar(String chave) {
+    public Empregado buscar(Integer chave) {
         No corrente = primeiro;
-        while (corrente.atras != null && !((Empregado) corrente.conteudo).cpf.equals(chave))
+        while (corrente.atras != null && !((Empregado) corrente.conteudo).chave().equals(chave))
             corrente = corrente.atras;
-        if (((Empregado) corrente.conteudo).cpf.equals(chave))
+        if (((Empregado) corrente.conteudo).chave().equals(chave))
             return (Empregado) corrente.conteudo;
         return null;
     }

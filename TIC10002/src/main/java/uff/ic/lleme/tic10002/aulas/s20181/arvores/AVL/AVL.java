@@ -1,6 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.s20181.arvores.AVL;
 
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class AVL {
 
@@ -27,7 +27,7 @@ public class AVL {
         }
 
         private void printNodeValue() {
-            System.out.print("" + conteudo.chave + "/" + saldo());
+            System.out.print("" + conteudo.chave() + "/" + saldo());
             System.out.print('\n');
         }
 
@@ -107,9 +107,9 @@ public class AVL {
     }
 
     private boolean inserir(No no, Empregado conteudo) {
-        if (no.conteudo.chave == conteudo.chave)
+        if (no.conteudo.chave() == conteudo.chave())
             return false;
-        else if (no.conteudo.chave > conteudo.chave)
+        else if (no.conteudo.chave() > conteudo.chave())
             if (no.direita == null) {
                 no.direita = new No(conteudo);
 
@@ -147,7 +147,7 @@ public class AVL {
 
                 return inserido;
             }
-        else if (no.conteudo.chave < conteudo.chave)
+        else if (no.conteudo.chave() < conteudo.chave())
             if (no.esquerda == null) {
                 no.esquerda = new No(conteudo);
 
@@ -303,11 +303,11 @@ public class AVL {
     }
 
     private Empregado buscar(No no, int chave) {
-        if (no.conteudo.chave == chave)
+        if (no.conteudo.chave() == chave)
             return no.conteudo;
-        else if (no.conteudo.chave > chave && no.direita != null)
+        else if (no.conteudo.chave() > chave && no.direita != null)
             return buscar(no.direita, chave);
-        else if (no.conteudo.chave < chave && no.direita != null)
+        else if (no.conteudo.chave() < chave && no.direita != null)
             return buscar(no.esquerda, chave);
         else
             return null;

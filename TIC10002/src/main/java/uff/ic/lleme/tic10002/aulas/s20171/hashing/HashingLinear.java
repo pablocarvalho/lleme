@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.hashing;
 
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class HashingLinear {
 

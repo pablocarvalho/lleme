@@ -1,4 +1,4 @@
-package uff.ic.lleme.tic10002.aulas.s20171.arvoreB;
+package uff.ic.lleme.tic10002.aulas.s20181.arvores.arvoreB;
 
 import uff.ic.lleme.tic10002.utils.Empregado;
 
@@ -37,7 +37,6 @@ public class ArvoreB {
             public No(Empregado conteudo) {
                 this.conteudo = conteudo;
             }
-
         }
 
         private void inserir(Empregado empregado) {

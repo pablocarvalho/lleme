@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.lista;
 
 import java.util.function.Predicate;
-import uff.ic.lleme.tic10002.aulas.s20171.Entidade;
+import uff.ic.lleme.tic10002.utils.Entidade;
 
 public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<? super K, E>> implements ListaEstatica<K, E> {
 
@@ -15,7 +15,7 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
 
     @Override
     public void incluir(E elem) {
-        if (elem != null && elem.getChave() != null)
+        if (elem != null && elem.chave() != null)
             if (tamanho < lista.length)
 
                 if (tamanho == 0)
@@ -24,16 +24,16 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
                     int e = 0, d = tamanho - 1, m = 0;
                     do {
                         m = (e + d) / 2;
-                        if (elem.getChave().compareTo((K) lista[m].getChave()) < 0)
+                        if (elem.chave().compareTo((K) lista[m].chave()) < 0)
                             d = m - 1;
                         else
                             e = m + 1;
-                    } while (e <= d && !elem.getChave().equals(lista[m].getChave()));
+                    } while (e <= d && !elem.chave().equals(lista[m].chave()));
 
                     int inicio = tamanho + 1;
-                    if (elem.getChave().compareTo((K) lista[m].getChave()) < 0)
+                    if (elem.chave().compareTo((K) lista[m].chave()) < 0)
                         inicio = m;
-                    else if (elem.getChave().compareTo((K) lista[m].getChave()) >= 0)
+                    else if (elem.chave().compareTo((K) lista[m].chave()) >= 0)
                         inicio = m + 1;
 
                     Entidade elem_ = elem, li_1;
@@ -53,7 +53,7 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
 
     @Override
     public void alterar(int pos, E elem) {
-        if (elem != null && elem.getChave() != null)
+        if (elem != null && elem.chave() != null)
             if (pos < lista.length)
                 lista[pos] = elem;
             else
@@ -71,14 +71,14 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
                 int e = 0, d = tamanho - 1, m = 0;
                 do {
                     m = (e + d) / 2;
-                    if (chave.compareTo((K) lista[m].getChave()) < 0)
+                    if (chave.compareTo((K) lista[m].chave()) < 0)
                         d = m - 1;
                     else
                         e = m + 1;
-                } while (e <= d && !chave.equals(lista[m].getChave()));
+                } while (e <= d && !chave.equals(lista[m].chave()));
 
                 int inicio = tamanho;
-                if (chave.equals(lista[m].getChave())) {
+                if (chave.equals(lista[m].chave())) {
                     resultado = (E) lista[m];
                     inicio = m;
                 }
@@ -107,13 +107,13 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
             int e = 0, d = tamanho - 1, m = 0;
             do {
                 m = (e + d) / 2;
-                if (chave.compareTo((K) lista[m].getChave()) < 0)
+                if (chave.compareTo((K) lista[m].chave()) < 0)
                     d = m - 1;
                 else
                     e = m + 1;
-            } while (e <= d && !chave.equals(lista[m].getChave()));
+            } while (e <= d && !chave.equals(lista[m].chave()));
 
-            if (chave.equals(lista[m].getChave()))
+            if (chave.equals(lista[m].chave()))
                 resultado = (E) lista[m];
         }
         return resultado;
@@ -125,9 +125,9 @@ public class ListaEstaticaOrdenada<K extends Comparable<K>, E extends Entidade<?
 
         if (e > d)
             resultado = null;
-        else if (chave.equals(lista[m].getChave()))
+        else if (chave.equals(lista[m].chave()))
             resultado = (E) lista[m];
-        else if (chave.compareTo((K) lista[m].getChave()) < 0)
+        else if (chave.compareTo((K) lista[m].chave()) < 0)
             resultado = buscarBinarioRecursivo(chave, e, m - 1);
         else
             resultado = buscarBinarioRecursivo(chave, m + 1, d);

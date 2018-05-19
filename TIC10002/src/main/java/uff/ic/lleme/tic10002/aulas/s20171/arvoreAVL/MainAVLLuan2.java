@@ -6,7 +6,7 @@ import uff.ic.lleme.tic10002.aulas.s20171.arvoreAVL.ArvoreAVLLuan;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import uff.ic.lleme.tic10002.aulas.s20171.Empregado;
+import uff.ic.lleme.tic10002.utils.Empregado;
 
 public class MainAVLLuan2 {
 

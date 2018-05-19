@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.lista;
 
 import java.util.function.Predicate;
-import uff.ic.lleme.tic10002.aulas.s20171.Entidade;
+import uff.ic.lleme.tic10002.utils.Entidade;
 
 public interface Lista<K extends Comparable<K>, E extends Entidade<? super K, E>> {
 

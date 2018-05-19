@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas.s20171.lista;
 
 import java.util.function.Predicate;
-import uff.ic.lleme.tic10002.aulas.s20171.Entidade;
+import uff.ic.lleme.tic10002.utils.Entidade;
 
 public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidade<? super K, E>> implements ListaEstatica<K, E>, ListaNaoOrdenada<K, E> {
 
@@ -15,10 +15,10 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
 
     @Override
     public void incluir(E elem) {
-        if (elem != null && elem.getChave() != null)
+        if (elem != null && elem.chave() != null)
             if (tamanho < lista.length) {
                 for (int i = 0; i < tamanho; i++)
-                    if (lista[i].getChave().equals(elem.getChave()))
+                    if (lista[i].chave().equals(elem.chave()))
                         return;
                 lista[tamanho++] = elem;
             } else
@@ -36,7 +36,7 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
 
     @Override
     public void alterar(int pos, E elem) {
-        if (elem != null && elem.getChave() != null)
+        if (elem != null && elem.chave() != null)
             if (pos < lista.length)
                 lista[pos] = elem;
             else
@@ -49,7 +49,7 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
     public E excluir(K chave) {
         E resultado = null;
         for (int i = 0; i < tamanho; i++) {
-            if (resultado == null && lista[i].getChave().equals(chave))
+            if (resultado == null && lista[i].chave().equals(chave))
                 resultado = (E) lista[i];
 
             if (resultado != null && i < tamanho - 1)
@@ -66,7 +66,7 @@ public class ListaEstaticaNaoOrdenada<K extends Comparable<K>, E extends Entidad
     @Override
     public E buscar(K chave) {
         for (int i = 0; i < tamanho; i++)
-            if (lista[i].getChave().equals(chave))
+            if (lista[i].chave().equals(chave))
                 return (E) lista[i];
         return null;
     }

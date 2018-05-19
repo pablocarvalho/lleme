@@ -1,12 +1,13 @@
 package uff.ic.lleme.tic10002.aulas.s20171;
 
+import uff.ic.lleme.tic10002.utils.Empregado;
 import java.io.InvalidObjectException;
 
 public interface ColecaoEmpregado {
 
-    public Empregado buscar(String cpf);
+    public Empregado buscar(Integer cpf);
 
-    public Empregado excluir(String cpf);
+    public Empregado excluir(Integer cpf);
 
     public Empregado incluir(Empregado emp) throws InvalidObjectException;
 
