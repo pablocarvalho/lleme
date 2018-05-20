@@ -16,14 +16,14 @@ public class MainHeap {
         Tarefa t9 = new Tarefa("t9");
 
         Heap hp = new Heap();
-        hp.inserir(t1, 95);
-        hp.inserir(t2, 60);
-        hp.inserir(t3, 78);
-        hp.inserir(t4, 39);
-        hp.inserir(t5, 28);
-        hp.inserir(t6, 66);
-        hp.inserir(t7, 70);
-        hp.inserir(t8, 33);
+        hp.incluir(t1, 95);
+        hp.incluir(t2, 60);
+        hp.incluir(t3, 78);
+        hp.incluir(t4, 39);
+        hp.incluir(t5, 28);
+        hp.incluir(t6, 66);
+        hp.incluir(t7, 70);
+        hp.incluir(t8, 33);
         hp.printHeap();
 
         hp.alterarPrioridade(5, 1);

@@ -45,40 +45,46 @@ public class ArvoreB {
 
         private void incluir(No noCorrente, Empregado empregado) {
             if (noCorrente.proximo == null || empregado.chave() < noCorrente.proximo.conteudo.chave())
-                if (noCorrente.pagina == null) {
-                    No noAEsquerdaDoPontoDeInsercao = noCorrente.proximo;
-                    No novoNo = new No(empregado);
-
-                    noCorrente.proximo = novoNo;
-                    novoNo.anterior = noCorrente;
-                    if (noAEsquerdaDoPontoDeInsercao != null) {
-                        novoNo.proximo = noAEsquerdaDoPontoDeInsercao;
-                        noAEsquerdaDoPontoDeInsercao.anterior = novoNo;
-                    }
-                    n++;
-                } else {
+                if (noCorrente.pagina == null)
+                    incluirNovoNoNaListaDaPagina(noCorrente, empregado);
+                else {
                     noCorrente.pagina.incluir(empregado);
-
-                    if (noCorrente.pagina.tamanhoExedido()) {
-                        Divisao divisao = noCorrente.pagina.dividir();
-
-                        No noAEsquerdaDoPontoDeInsercao = noCorrente.proximo;
-                        No novoNo = new No(divisao.empregado);
-
-                        noCorrente.proximo = novoNo;
-                        novoNo.anterior = noCorrente;
-                        if (noAEsquerdaDoPontoDeInsercao != null) {
-                            novoNo.proximo = noAEsquerdaDoPontoDeInsercao;
-                            noAEsquerdaDoPontoDeInsercao.anterior = novoNo;
-                        }
-
-                        noCorrente.pagina = divisao.menores;
-                        novoNo.pagina = divisao.maiores;
-                        n++;
-                    }
+                    if (noCorrente.pagina.tamanhoExedido())
+                        dividirPaginaAbaixoInserirMeioEIncorporarMetadades(noCorrente);
                 }
             else if (empregado.chave() > noCorrente.proximo.conteudo.chave())
                 incluir(noCorrente.proximo, empregado);
+        }
+
+        private void dividirPaginaAbaixoInserirMeioEIncorporarMetadades(No noCorrente) {
+            Divisao divisao = noCorrente.pagina.dividir();
+
+            No noAEsquerdaDoPontoDeInsercao = noCorrente.proximo;
+            No novoNo = new No(divisao.empregado);
+
+            noCorrente.proximo = novoNo;
+            novoNo.anterior = noCorrente;
+            if (noAEsquerdaDoPontoDeInsercao != null) {
+                novoNo.proximo = noAEsquerdaDoPontoDeInsercao;
+                noAEsquerdaDoPontoDeInsercao.anterior = novoNo;
+            }
+
+            noCorrente.pagina = divisao.menores;
+            novoNo.pagina = divisao.maiores;
+            n++;
+        }
+
+        private void incluirNovoNoNaListaDaPagina(No noCorrente, Empregado empregado) {
+            No noAEsquerdaDoPontoDeInsercao = noCorrente.proximo;
+            No novoNo = new No(empregado);
+
+            noCorrente.proximo = novoNo;
+            novoNo.anterior = noCorrente;
+            if (noAEsquerdaDoPontoDeInsercao != null) {
+                novoNo.proximo = noAEsquerdaDoPontoDeInsercao;
+                noAEsquerdaDoPontoDeInsercao.anterior = novoNo;
+            }
+            n++;
         }
 
         private Divisao dividir() {

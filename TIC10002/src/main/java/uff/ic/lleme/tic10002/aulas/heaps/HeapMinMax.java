@@ -34,11 +34,11 @@ public class HeapMinMax {
     }
 
     private void descerMin(int i) {
-        int fD = (2 * i) + 1;
-        int fE = (2 * i) + 2;
+        int filhoDireito = (2 * i) + 1;
+        int filhoEsquerdo = (2 * i) + 2;
         int menor = menorEntreFihosENetos(i);
         if (menor != i)
-            if (menor != fD && menor != fE) {// eh neto
+            if (menor != filhoDireito && menor != filhoEsquerdo) {// eh neto
                 if (lista[menor].prioridade < lista[i].prioridade) {
                     trocar(i, menor);
                     int pai = (menor - 1) / 2;
