@@ -1,56 +1,59 @@
 package uff.ic.lleme.tic10002.aulas.heaps;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.naming.LimitExceededException;
-import uff.ic.lleme.tic10002.aulas._old.s20171.Tarefa;
 
 public class Heap {
 
+    private Map<String, No> hash = new HashMap<>();
     private final No[] lista = new No[100];
     private int n = 0;
 
     private class No {
 
-        public Tarefa conteudo = null;
+        public Tarefa tarefa = null;
         public int prioridade = 0;
+        public int indice = 0;
 
-        public No(Tarefa tarefa, int prioridade) {
-            this.conteudo = tarefa;
+        public No(Tarefa tarefa, int prioridade, int indice) {
+            this.tarefa = tarefa;
             this.prioridade = prioridade;
+            this.indice = indice;
         }
-    }
-
-    public Tarefa obterMaiorPrioridade_Heap() {
-        return null;
     }
 
     public void printHeap() {
         System.out.print("{");
         for (int i = 0; i < lista.length; i++)
             if (lista[i] != null)
-                System.out.print(String.format("[%d,%s,%d] ", i, lista[i].conteudo.descricao, lista[i].prioridade));
+                System.out.print(String.format("[%d,%s,%d] ", i, lista[i].tarefa.codigo, lista[i].prioridade));
         System.out.println("}");
     }
 
     public void inserir(Tarefa tarefa, int prioridade) throws LimitExceededException {
         if (n < lista.length - 1) {
-            lista[n++] = new No(tarefa, prioridade);
+            No novoNo = new No(tarefa, prioridade, n);
+            hash.put(novoNo.tarefa.codigo, novoNo);
+            lista[n++] = novoNo;
             subir(n - 1);
         } else
             throw new LimitExceededException();
     }
 
     public Tarefa remover() {
-        Tarefa t = lista[0].conteudo;
+        Tarefa t = lista[0].tarefa;
         lista[0] = lista[--n];
         lista[n] = null;
         descer(0);
         return t;
     }
 
-    public void alterarPrioridade(int id, int prioridade) {
-        lista[id].prioridade = prioridade;
-        subir(id);
-        descer(id);
+    public void alterarPrioridade(Tarefa tarefa, int prioridade) {
+        No no = hash.get(tarefa.codigo);
+        no.prioridade = prioridade;
+        subir(no.indice);
+        descer(no.indice);
     }
 
     public void subir(int i) {
@@ -77,7 +80,9 @@ public class Heap {
     public void trocar(int i, int j) {
         No aux = lista[i];
         lista[i] = lista[j];
+        lista[i].indice = i;
         lista[j] = aux;
+        lista[j].indice = j;
     }
 
 }

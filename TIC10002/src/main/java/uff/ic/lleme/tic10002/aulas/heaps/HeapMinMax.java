@@ -1,7 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.heaps;
 
 import javax.naming.LimitExceededException;
-import uff.ic.lleme.tic10002.aulas._old.s20171.Tarefa;
 
 public class HeapMinMax {
 

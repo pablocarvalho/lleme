@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.aulas._old.s20171.heap;
 
 import javax.naming.LimitExceededException;
-import uff.ic.lleme.tic10002.aulas._old.s20171.Tarefa;
+import uff.ic.lleme.tic10002.aulas.heaps.Tarefa;
 
 public class Heap {
 

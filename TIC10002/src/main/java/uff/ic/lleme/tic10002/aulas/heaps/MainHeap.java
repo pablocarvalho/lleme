@@ -1,7 +1,6 @@
 package uff.ic.lleme.tic10002.aulas.heaps;
 
 import javax.naming.LimitExceededException;
-import uff.ic.lleme.tic10002.aulas._old.s20171.Tarefa;
 
 public class MainHeap {
 
@@ -25,11 +24,10 @@ public class MainHeap {
         hp.inserir(t6, 66);
         hp.inserir(t7, 70);
         hp.inserir(t8, 33);
-        //hp.inserir(t9, 73);
         hp.printHeap();
 
-        //hp.alterarPrioridade(5, 98);
-        //hp.printHeap();
+        hp.alterarPrioridade(t6, 98);
+        hp.printHeap();
         //hp.alterarPrioridade(0, 66);
         //hp.remover();
         //hp.printHeap();

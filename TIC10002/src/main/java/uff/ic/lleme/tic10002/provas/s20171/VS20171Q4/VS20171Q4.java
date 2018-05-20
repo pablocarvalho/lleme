@@ -1,7 +1,7 @@
 package uff.ic.lleme.tic10002.provas.s20171.VS20171Q4;
 
 import javax.naming.LimitExceededException;
-import uff.ic.lleme.tic10002.aulas._old.s20171.Tarefa;
+import uff.ic.lleme.tic10002.aulas.heaps.Tarefa;
 
 public class VS20171Q4 {
 
