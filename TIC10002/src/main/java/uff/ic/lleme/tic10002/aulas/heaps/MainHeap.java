@@ -26,7 +26,7 @@ public class MainHeap {
         hp.inserir(t8, 33);
         hp.printHeap();
 
-        hp.alterarPrioridade(t6, 98);
+        hp.alterarPrioridade(5, 1);
         hp.printHeap();
         //hp.alterarPrioridade(0, 66);
         //hp.remover();

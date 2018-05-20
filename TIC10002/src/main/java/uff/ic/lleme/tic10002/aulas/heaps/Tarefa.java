@@ -7,6 +7,7 @@ public class Tarefa {
 
     public Tarefa(String codigo) {
         this.codigo = codigo;
+        this.descricao = codigo;
     }
 
 }
