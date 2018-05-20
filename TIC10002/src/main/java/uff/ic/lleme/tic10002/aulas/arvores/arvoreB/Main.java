@@ -9,8 +9,8 @@ public class Main {
         ArvoreB arvore = new ArvoreB();
         Random rand = new Random();
 
-        for (int i = 0; i < 200; i++)
-            arvore.incluir(new Empregado(rand.nextInt(1000)));
+        for (int i = 0; i < 10; i++)
+            arvore.incluir(new Empregado(rand.nextInt(100)));
         arvore.print();
     }
 }
