@@ -18,18 +18,6 @@ public class Heap {
         }
     }
 
-    public Tarefa obterMaiorPrioridade_Heap() {
-        return null;
-    }
-
-    public void printHeap() {
-        System.out.print("{");
-        for (int i = 0; i < lista.length; i++)
-            if (lista[i] != null)
-                System.out.print(String.format("[%d,%s,%d] ", i, lista[i].conteudo.descricao, lista[i].prioridade));
-        System.out.println("}");
-    }
-
     public void inserir(Tarefa tarefa, int prioridade) throws LimitExceededException {
         if (n < lista.length - 1) {
             lista[n++] = new No(tarefa, prioridade);
@@ -52,7 +40,7 @@ public class Heap {
         descer(id);
     }
 
-    public void subir(int i) {
+    private void subir(int i) {
         int pai = (i - 1) / 2;
         if (lista[i].prioridade > lista[pai].prioridade) {
             trocar(i, pai);
@@ -60,7 +48,7 @@ public class Heap {
         }
     }
 
-    public void descer(int i) {
+    private void descer(int i) {
         int j = 2 * i + 1;
         if (j < n) {
             if (j < n - 1)
@@ -73,10 +61,18 @@ public class Heap {
         }
     }
 
-    public void trocar(int i, int j) {
+    private void trocar(int i, int j) {
         No aux = lista[i];
         lista[i] = lista[j];
         lista[j] = aux;
+    }
+
+    public void printHeap() {
+        System.out.print("{");
+        for (int i = 0; i < lista.length; i++)
+            if (lista[i] != null)
+                System.out.print(String.format("[%d,%s,%d] ", i, lista[i].conteudo.descricao, lista[i].prioridade));
+        System.out.println("}");
     }
 
 }
