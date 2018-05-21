@@ -4,23 +4,23 @@ import javax.naming.LimitExceededException;
 
 public class HeapMinMax {
 
-    private final No[] lista = new No[100];
+    private final Priorizacao[] heap = new Priorizacao[100];
     private int n = 0;
 
-    private class No {
+    private class Priorizacao {
 
-        public Tarefa conteudo = null;
+        public Tarefa tarefa = null;
         public int prioridade = 0;
 
-        public No(Tarefa tarefa, int prioridade) {
-            this.conteudo = tarefa;
+        public Priorizacao(Tarefa tarefa, int prioridade) {
+            this.tarefa = tarefa;
             this.prioridade = prioridade;
         }
     }
 
     public void inserir(Tarefa tarefa, int prioridade) throws LimitExceededException {
-        if (n < lista.length - 1) {
-            lista[n++] = new No(tarefa, prioridade);
+        if (n < heap.length - 1) {
+            heap[n++] = new Priorizacao(tarefa, prioridade);
             subir(n - 1);
         } else
             throw new LimitExceededException();
@@ -34,19 +34,19 @@ public class HeapMinMax {
     }
 
     private void descerMin(int i) {
-        int filhoDireito = (2 * i) + 1;
-        int filhoEsquerdo = (2 * i) + 2;
-        int menor = menorEntreFihosENetos(i);
+        int fD = (2 * i) + 1;
+        int fE = (2 * i) + 2;
+        int menor = menorEntreIFihosENetos(i);
         if (menor != i)
-            if (menor != filhoDireito && menor != filhoEsquerdo) {// eh neto
-                if (lista[menor].prioridade < lista[i].prioridade) {
+            if (menor != fD && menor != fE) {// eh neto
+                if (heap[menor].prioridade < heap[i].prioridade) {
                     trocar(i, menor);
                     int pai = (menor - 1) / 2;
-                    if (lista[menor].prioridade > lista[pai].prioridade)
+                    if (heap[menor].prioridade > heap[pai].prioridade)
                         trocar(menor, pai);
                     descerMin(menor);
                 }
-            } else if (lista[menor].prioridade < lista[i].prioridade) // eh filho
+            } else if (heap[menor].prioridade < heap[i].prioridade) // eh filho
                 trocar(i, menor);
     }
 
@@ -56,26 +56,26 @@ public class HeapMinMax {
         int maior = maiorEntreFihosENetos(i);
         if (maior != i)
             if (maior != fD && maior != fE) {// eh neto
-                if (lista[maior].prioridade > lista[i].prioridade) {
+                if (heap[maior].prioridade > heap[i].prioridade) {
                     trocar(i, maior);
                     int pai = (maior - 1) / 2;
-                    if (lista[maior].prioridade < lista[pai].prioridade)
+                    if (heap[maior].prioridade < heap[pai].prioridade)
                         trocar(maior, pai);
                     descerMax(maior);
                 }
-            } else if (lista[maior].prioridade > lista[i].prioridade) // eh filho
+            } else if (heap[maior].prioridade > heap[i].prioridade) // eh filho
                 trocar(i, maior);
     }
 
     private void subir(int i) {
         int pai = (i - 1) / 2;
         if (nivel(i) % 2 == 0)// nivel de maximos
-            if (pai >= 0 && lista[i].prioridade < lista[pai].prioridade) {
+            if (pai >= 0 && heap[i].prioridade < heap[pai].prioridade) {
                 trocar(i, pai);
                 subirMin(pai);
             } else
                 subirMax(i);
-        else if (pai >= 0 && lista[i].prioridade > lista[pai].prioridade) { // nivel de minimos
+        else if (pai >= 0 && heap[i].prioridade > heap[pai].prioridade) { // nivel de minimos
             trocar(i, pai);
             subirMax(pai);
         } else
@@ -83,35 +83,40 @@ public class HeapMinMax {
     }
 
     private void subirMin(int i) {
-        int pai = (i - 1) / 2;
-        int avo = (int) Math.floor((pai - 1) / 2.0);
-        if (avo >= 0)
-            if (lista[i].prioridade < lista[avo].prioridade) {
+        if (i > 2) {
+            int pai = (i - 1) / 2;
+            int avo = (i - 3) / 4;
+            if (heap[i].prioridade < heap[avo].prioridade) {
                 trocar(i, avo);
                 subirMin(i);
             }
+        }
     }
 
     private void subirMax(int i) {
-        int pai = (i - 1) / 2;
-        int avo = (int) Math.floor((pai - 1) / 2.0);
-        if (avo >= 0)
-            if (lista[i].prioridade > lista[avo].prioridade) {
+        if (i > 2) {
+            int pai = (i - 1) / 2;
+            int avo = (i - 3) / 4;
+            if (heap[i].prioridade > heap[avo].prioridade) {
                 trocar(i, avo);
                 subirMax(i);
             }
+        }
     }
 
-    private int menorEntreFihosENetos(int i) {
+    private int menorEntreIFihosENetos(int i) {
         int menor = i;
         int fD = (2 * i) + 1;
         int fE = (2 * i) + 2;
+        int fDfD = (2 * fD) + 1;//neto
+        int fEfD = (2 * fD) + 2;//neto
+        int fDfE = (2 * fE) + 1;//neto
+        int fEfE = (2 * fE) + 2;//neto
         if (fD < n) {
             menor = fD;
-            int[] idxs = {fE, (2 * fD) + 1, (2 * fD) + 2, (2 * fE) + 1, (2 * fE) + 2};
+            int[] idxs = {fDfD, fEfD, fE, fDfE, fEfE};
             for (int j = 0; idxs[j] < n && j < idxs.length; j++)
-                if (lista[idxs[j]].prioridade < lista[menor].prioridade)
-                    menor = idxs[j];
+                if (heap[idxs[j]].prioridade < heap[menor].prioridade) menor = idxs[j];
         }
         return menor;
     }
@@ -124,7 +129,7 @@ public class HeapMinMax {
             maior = fD;
             int[] idxs = {fE, (2 * fD) + 1, (2 * fD) + 2, (2 * fE) + 1, (2 * fE) + 2};
             for (int j = 0; idxs[j] < n && j < idxs.length; j++)
-                if (lista[idxs[j]].prioridade > lista[maior].prioridade)
+                if (heap[idxs[j]].prioridade > heap[maior].prioridade)
                     maior = idxs[j];
         }
         return maior;
@@ -135,15 +140,15 @@ public class HeapMinMax {
     }
 
     public void trocar(int i, int j) {
-        No aux = lista[i];
-        lista[i] = lista[j];
-        lista[j] = aux;
+        Priorizacao aux = heap[i];
+        heap[i] = heap[j];
+        heap[j] = aux;
     }
 
     public void printHeap() {
         System.out.print("{");
         for (int i = 0; i < n; i++)
-            System.out.print(String.format("[%d,%s,%d] ", i, lista[i].conteudo.descricao, lista[i].prioridade));
+            System.out.print(String.format("[%d,%s,%d] ", i, heap[i].tarefa.descricao, heap[i].prioridade));
         System.out.println("}");
     }
 }
