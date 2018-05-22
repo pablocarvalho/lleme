@@ -84,22 +84,22 @@ public class HeapMinMax {
 
     private void subirMin(int i) {
         if (i > 2) {
-            int pai = (i - 1) / 2;
+            //int pai = (i - 1) / 2;
             int avo = (i - 3) / 4;
             if (heap[i].prioridade < heap[avo].prioridade) {
                 trocar(i, avo);
-                subirMin(i);
+                subirMin(avo);
             }
         }
     }
 
     private void subirMax(int i) {
         if (i > 2) {
-            int pai = (i - 1) / 2;
+            //int pai = (i - 1) / 2;
             int avo = (i - 3) / 4;
             if (heap[i].prioridade > heap[avo].prioridade) {
                 trocar(i, avo);
-                subirMax(i);
+                subirMax(avo);
             }
         }
     }
