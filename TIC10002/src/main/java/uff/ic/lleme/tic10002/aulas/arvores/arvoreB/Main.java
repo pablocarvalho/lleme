@@ -9,8 +9,18 @@ public class Main {
         ArvoreB arvore = new ArvoreB();
         Random rand = new Random();
 
-        for (int i = 0; i < 10; i++)
-            arvore.incluir(new Empregado(rand.nextInt(100)));
-        arvore.print();
+        Empregado[] num = new Empregado[20];
+
+        for (int i = 0; i < 20; i++)
+            num[i] = new Empregado(i);
+        for (Empregado e : num)
+            System.out.print(e.chave() + " ");
+        System.out.println("");
+
+        for (Empregado e : num) {
+            arvore.incluir(e);
+            arvore.print();
+            System.out.println("");
+        }
     }
 }
