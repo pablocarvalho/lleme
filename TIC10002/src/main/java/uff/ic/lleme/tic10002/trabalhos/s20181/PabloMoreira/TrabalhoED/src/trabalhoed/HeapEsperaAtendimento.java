@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package trabalhoed;
+import java.util.*;
 
 /**
  *
@@ -36,7 +37,9 @@ public class HeapEsperaAtendimento {
     }
 
     private void resizeHeap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ParDeEspera[] largerArr = Arrays.copyOf(heapAtendimento, heapSize+HEAP_STD_SIZE);
+        heapAtendimento = largerArr;
+        
     }
 
     private void sobeFilho(int i) {
@@ -101,6 +104,23 @@ public class HeapEsperaAtendimento {
             
             
             
+        }
+    }
+    
+    public void alterarPrioridade(Atendimento atendimento, int novaPrioridade){
+        int chave = -1;
+        for (int i = 0; i < heapAtendimento.length; i++) {
+            
+            if(heapAtendimento[i].getAtendimento().getCliente().getCpf().equals(atendimento.getCliente().getCpf()) == true){
+                chave = i;
+                break;
+            }               
+            
+        }
+        
+        if(chave > 0){
+            heapAtendimento[chave].setPrioridade(novaPrioridade);
+            sobeFilho(chave);
         }
     }
     
