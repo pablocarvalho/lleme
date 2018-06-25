@@ -7,7 +7,7 @@ package uff.ic.lleme.tic10002.trabalhos.s20181.LuizAntonio_e_CarlosMuniz;
 
 /**
  *
- * @author Luiz
+ * @author Luiz Antonio
  */
 public class ListaDeAtendimentos {
 
