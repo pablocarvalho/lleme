@@ -1,4 +1,4 @@
-from classPF import PF
+from classPF4_sc import PF
 from classCliente import Cliente
 
 cliente1 = Cliente(124, 'Carolina', 28, ['informacoes', 'cancelar agendamento','requerimento de passaporte eletronico'])
