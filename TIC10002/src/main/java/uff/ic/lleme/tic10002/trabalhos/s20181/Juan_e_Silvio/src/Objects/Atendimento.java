@@ -85,7 +85,7 @@ public class Atendimento {
         }
         float mediaUrgencias = somaUrgencias / assuntos.length;
         long minutosDeEspera = getTempoDeEspera() / 60000; //Converte de millis para minutos
-        float prioridade = (idade / 65f) + (minutosDeEspera / 15f) + (mediaUrgencias / 10f) / 3;
+        float prioridade = ((idade / 65f) + (minutosDeEspera / 15f) + (mediaUrgencias / 10f)) / 3;
         if (debug) {
             System.out.println(String.format("DEBUG Prioridade: %s [IDADE:%f,ESPERA:%f,URGENCIAS:%f] ", cliente.getNome(), (idade / 65f), (minutosDeEspera / 15f), (mediaUrgencias / 10f)));
         }

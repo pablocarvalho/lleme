@@ -65,9 +65,9 @@ public class Main {
         TipoAssunto tipo8 = new TipoAssunto(8, "Investimento CDB", 7);
         TipoAssunto tipo9 = new TipoAssunto(9, "Investimento Moeda estrangeira", 10);
         TipoAssunto tipo10 = new TipoAssunto(10, "Depósito", 8);
-        TipoAssunto tipoParaDebug = new TipoAssunto(10, "Depósito", 80); // Forçando uma urgência exageradamente alta
+        TipoAssunto tipoParaDebug = new TipoAssunto(10, "Depósito milionário", 80); // Forçando uma urgência exageradamente alta
         Assunto[] assuntosJoao = {new Assunto(tipo3, "Preciso transferir dinheiro para minha conta em Londres."),
-            new Assunto(tipoParaDebug, "E encerrar minha conta do BancoED.")};
+            new Assunto(tipo10, "E encerrar minha conta do BancoED.")};
         Assunto[] assuntosAlister = {new Assunto(tipo6, "Desejo abrir uma conta"),
             new Assunto(tipo10, "Realizar um depósito de 10000 reais"),
             new Assunto(tipo8, "E investir 5000 reais no CDB")};
