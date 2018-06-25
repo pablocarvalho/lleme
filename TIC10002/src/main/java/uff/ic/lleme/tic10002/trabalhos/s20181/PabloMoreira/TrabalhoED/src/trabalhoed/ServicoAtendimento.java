@@ -5,6 +5,11 @@
  */
 package trabalhoed;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 /**
  *
  * @author pablomoreira
@@ -17,6 +22,8 @@ public class ServicoAtendimento {
    private TipoAssunto tabelaTiposDeAssunto[];
    private Cliente[] clientesDB;
    private HashAssuntos historicoDiarioDeAssuntos;   
+   private Date dataCorrente;
+   private final static SimpleDateFormat dtf = new SimpleDateFormat("yyyy/MM/dd");  
    
    private final static int NUM_DE_TIPOS_DE_ASSUNTO = 10;
    
@@ -27,6 +34,7 @@ public class ServicoAtendimento {
        tabelaTiposDeAssunto = CriadorDataset.criarTiposDeAssunto(NUM_DE_TIPOS_DE_ASSUNTO);
        clientesDB = CriadorDataset.criarClientes(50);
        historicoDiarioDeAssuntos = new HashAssuntos(NUM_DE_TIPOS_DE_ASSUNTO);
+       dataCorrente = new Date();  
        
        
    }
@@ -35,6 +43,17 @@ public class ServicoAtendimento {
     
    public void recepcionar(){
        Atendimento novo = CriadorDataset.gerarAtendimento(clientesDB,tabelaTiposDeAssunto);
+       
+       
+       Date data = new Date();
+       String strData = dtf.format(data);
+       String strDataCorrente = dtf.format(dataCorrente);
+       if(strData.equals(strDataCorrente) == false){
+           dataCorrente = data;
+           historicoDiarioDeAssuntos = new HashAssuntos(NUM_DE_TIPOS_DE_ASSUNTO);
+           
+       }
+       novo.setHoraChegada(dataCorrente);
        
        float urgencias=0.0f;
        for (Assunto assunto : novo.getAssunto()) {
@@ -47,6 +66,8 @@ public class ServicoAtendimento {
    
    public void atender(){
        atendimentoAtual = esperaAtendimento.obterAtendimento();
+       Date dataAtendimento = new Date();
+       atendimentoAtual.setHoraAtendimento(dataAtendimento);
    }
    
    public void encerrar(){
