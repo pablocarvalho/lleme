@@ -48,7 +48,7 @@ public class CriadorDataset {
             
         }
         
-        return new Atendimento(clientesDB[iDcliente], assuntos, 0, 0);
+        return new Atendimento(clientesDB[iDcliente], assuntos);
     }
     
     
