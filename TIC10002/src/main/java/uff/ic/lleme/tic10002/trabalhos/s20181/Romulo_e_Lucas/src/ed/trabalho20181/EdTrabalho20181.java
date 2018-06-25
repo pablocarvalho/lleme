@@ -1,6 +1,4 @@
-package ed.trabalho20181;
-
-import ed.trabalho20181.estruturas.HeapAssunto;
+package uff.ic.lleme.tic10002.trabalhos.s20181.Romulo_e_Lucas.src.ed.trabalho20181;
 
 public class EdTrabalho20181 {
     

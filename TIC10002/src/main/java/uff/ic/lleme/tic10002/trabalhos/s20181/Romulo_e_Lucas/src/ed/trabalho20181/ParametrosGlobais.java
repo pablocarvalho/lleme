@@ -3,14 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ed.trabalho20181;
+package uff.ic.lleme.tic10002.trabalhos.s20181.Romulo_e_Lucas.src.ed.trabalho20181;
 
-import ed.trabalho20181.estruturas.HeapAssunto;
-
-/**
- *
- * @author romul
- */
 public class ParametrosGlobais {
     Long espera2min = 120000L;
     Long espera1min = 60000L;

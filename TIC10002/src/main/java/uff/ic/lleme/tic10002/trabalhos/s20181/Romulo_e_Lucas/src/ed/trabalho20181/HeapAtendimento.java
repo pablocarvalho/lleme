@@ -1,6 +1,4 @@
-package ed.trabalho20181.estruturas;
-
-import ed.trabalho20181.Atendimento;
+package uff.ic.lleme.tic10002.trabalhos.s20181.Romulo_e_Lucas.src.ed.trabalho20181;
 
 public class HeapAtendimento {
 
