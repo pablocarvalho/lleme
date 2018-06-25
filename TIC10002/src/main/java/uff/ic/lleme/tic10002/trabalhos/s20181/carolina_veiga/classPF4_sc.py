@@ -50,7 +50,7 @@ class PF(object):
         self.estatisticas.imprimirEstatisticas()
 
 
-cliente1 = Cliente(124, 'Carolina', 28, ['informacoes', 'cancelar agendamento','requerimento de passaporte eletronico'])
+'''cliente1 = Cliente(124, 'Carolina', 28, ['informacoes', 'cancelar agendamento','requerimento de passaporte eletronico'])
 cliente2 = Cliente(12890937763, 'Clara', 27, ['emissao de GRU', 'emissao de certidao de antecedentes criminais'])
 cliente3 = Cliente(4565767, 'Alice', 55, ['credenciamento de instrutores de armamento e tiro', 'comunicacao de ocorrencia com documentos de viagem'])
 cliente4 = Cliente(234654, 'Soterio', 59, ['comunicacao de ocorrencia com arma de fogo'])
@@ -109,4 +109,4 @@ policia_federal.atender()
 policia_federal.atender()
 
 #Estatisticas
-policia_federal.gerarEstatisticas()
+policia_federal.gerarEstatisticas()'''
