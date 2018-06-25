@@ -6,6 +6,7 @@ public class Cliente {
     private int idade;
     private String cpf;
 
+    public int getId() {
         return id;
     }
 
