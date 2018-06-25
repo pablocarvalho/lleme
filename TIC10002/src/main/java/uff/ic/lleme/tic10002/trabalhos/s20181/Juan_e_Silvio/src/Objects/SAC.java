@@ -74,12 +74,12 @@ public class SAC {
         OBS: A função gerarEstatística() deve computar o tempo médio a partir nos dados
         de atendimento encerrados.
      */
-    public void gerarEstatistica(int dia, int mes, int ano) {
+    public void gerarEstatistica(String data) {
         if(debug){
             System.out.println(atendimentosEncerrados.toString());
         }
         //Pega atendimentos do dia especificado
-        Atendimento[] encerradosDoDia = atendimentosEncerrados.get(formataData(dia, mes, ano));
+        Atendimento[] encerradosDoDia = atendimentosEncerrados.get(data);
         if (encerradosDoDia.length > 0) {
             //Conta duração de cada tipo assunto e imprime média.
             Contador cont = new Contador(QTD_TIPOS);
@@ -91,7 +91,7 @@ public class SAC {
                 }
             }
             System.out.println("-----------------------------------------------------------------");
-            System.out.println("Estatísticas (" + dia + "/" + mes + "/" + ano + "):");
+            System.out.println("Estatísticas (" + data.substring(8, 10) + "/" + data.substring(5, 7) + "/" + data.substring(0, 4) + "):");
             System.out.println("-----------------------------------------------------------------");
             for (int i = 1; i <= QTD_TIPOS; i++) {
                 System.out.println("Tipo " + i + ": " + cont.getMedia(i));

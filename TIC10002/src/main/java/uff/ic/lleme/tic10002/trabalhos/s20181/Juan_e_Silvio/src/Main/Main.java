@@ -46,7 +46,7 @@ public class Main {
                 System.out.println("Atendimento encerrado recuperado, do cliente: " + servicoAtendimento.getAtendimentosEncerrados().get(getDataDoSistema())[0].getCliente().getNome());
             }
         }
-        servicoAtendimento.gerarEstatistica(21, 06, 2018);
+        servicoAtendimento.gerarEstatistica(getDataDoSistema());
     }
 
     public static void simularRecepcoes(SAC servicoAtendimento) throws InterruptedException {
