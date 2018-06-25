@@ -2,11 +2,11 @@ package trabalho;
 
 public class EstatisticaTipoAssunto {
 
-    String idTipo;
-    int totalAtendimentos = 1;
-    double tempoTotal = 0.0;
+    public int idTipo;
+    public int totalAtendimentos = 1;
+    public double tempoTotal = 0.0;
 
-    public EstatisticaTipoAssunto(String idTipo, double tempoTotal) {
+    public EstatisticaTipoAssunto(int idTipo, double tempoTotal) {
         this.idTipo = idTipo;
         this.tempoTotal = tempoTotal;
     }
@@ -17,13 +17,13 @@ public class EstatisticaTipoAssunto {
     }
 
     public static EstatisticaTipoAssunto buscaElemento(
-            String tipo,
+            int tipo,
             ListaLigada<EstatisticaTipoAssunto> listaPorTipoAssuntos
     ) {
         EstatisticaTipoAssunto tipoAssunto;
         for (int i = 0; i < listaPorTipoAssuntos.tamanho(); i++) {
             tipoAssunto = listaPorTipoAssuntos.obtem(i);
-            if (tipoAssunto.idTipo.equals(tipo)) {
+            if (tipoAssunto.idTipo == tipo) {
                 return tipoAssunto;
             }
         }

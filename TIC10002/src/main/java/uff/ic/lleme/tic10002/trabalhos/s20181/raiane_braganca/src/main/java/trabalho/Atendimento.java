@@ -12,7 +12,11 @@ public class Atendimento {
     public ListaLigada<Assunto> assuntos;
     public Date horaChegada;
     public Date horaIncioAtendimento;
-
+    
+    public static double PRIORIDADE_CLIENTE_IDADE = 65.0;
+    public static double PRIORIDADE_CLIENTE_ESPERA = 15.0;
+    public static double PRIORIDADE_CLIENTE_URGENCIA = 10.0;
+    
     public Atendimento(int id) {
         this.id = id;
         this.assuntos = new ListaLigada<>();
@@ -89,7 +93,7 @@ public class Atendimento {
         for (int i = 0; i < this.assuntos.tamanho(); i++) {
             assunto = this.assuntos.obtem(i);
             assunto.providencia = "Providência tomada no assunto de urgência " + assunto.tipoAssunto.getUrgencia();
-            assunto.duracaoAtendimento = duracao.nextDouble() * 60;
+            assunto.duracaoAtendimento = duracao.nextDouble() * 30;
             System.out.println(assunto.toString());
         }
     }
@@ -113,7 +117,8 @@ public class Atendimento {
                     objEstatisticaTipoAssunto.atualizaTempo(assunto.duracaoAtendimento);
                 } else {
                     objEstatisticaTipoAssunto = new EstatisticaTipoAssunto(assunto.tipoAssunto.tipo, assunto.duracaoAtendimento);
-                    listaPorTipoAssuntos.adiciona(objEstatisticaTipoAssunto);
+                    //listaPorTipoAssuntos.adiciona(objEstatisticaTipoAssunto);
+                    listaPorTipoAssuntos.adicionaComPrioridade(objEstatisticaTipoAssunto, new EstatisticaTipoAssuntoComparator());
                 }
             }
         }
@@ -203,11 +208,11 @@ public class Atendimento {
     }
 
     public Double calculaPrioridade(Date d2) {
-        double idade = this.cliente.idade / (double) 65;
-        double espera = (this.diferencaEmMinutos(this.horaChegada, d2)) / (double) 15;
-        double mediaDosAssuntos = (Assunto.calculaMediaAssuntos(this.assuntos)) / (double) 10;
+        double idade = this.cliente.idade / PRIORIDADE_CLIENTE_IDADE;
+        double espera = (this.diferencaEmMinutos(this.horaChegada, d2)) / PRIORIDADE_CLIENTE_ESPERA;
+        double mediaDosAssuntos = (Assunto.calculaMediaAssuntos(this.assuntos)) / PRIORIDADE_CLIENTE_URGENCIA;
 
-        return (idade + espera + mediaDosAssuntos) / (double) 3;
+        return (idade + espera + mediaDosAssuntos) / 3.0;
     }
 
     public static int buscaClienteMaiorPrioridade(ListaLigada<Atendimento> filaDeEspera, Date horaIncioAtendimento) {

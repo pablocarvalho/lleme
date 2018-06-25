@@ -1,11 +1,11 @@
 package trabalho;
 
 public class TipoAssunto {
-    public String tipo;
+    public int tipo;
     public String titulo;
     private int urgencia;
 
-    public TipoAssunto(String tipo, String titulo, int urgencia) {
+    public TipoAssunto(int tipo, String titulo, int urgencia) {
         this.tipo = tipo;
         this.titulo = titulo;
         this.setUrgencia(urgencia);

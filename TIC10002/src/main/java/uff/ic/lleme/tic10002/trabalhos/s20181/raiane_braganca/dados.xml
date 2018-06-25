@@ -6,12 +6,16 @@
 		<idade>25</idade>
 		<assuntos>
 			<assunto>
-				<tipo>2</tipo>
-				<descricao>Assunto 2</descricao>
+				<tipo>8</tipo>
+				<descricao>Assunto 8</descricao>
 			</assunto>
 			<assunto>
 				<tipo>6</tipo>
 				<descricao>Assunto 6</descricao>
+			</assunto>
+			<assunto>
+				<tipo>2</tipo>
+				<descricao>Assunto 2</descricao>
 			</assunto>
 		</assuntos>
 	</cliente>
@@ -31,6 +35,10 @@
 			<assunto>
 				<tipo>7</tipo>
 				<descricao>Assunto 7</descricao>
+			</assunto>
+			<assunto>
+				<tipo>5</tipo>
+				<descricao>Assunto 5</descricao>
 			</assunto>
 		</assuntos>
 	</cliente>

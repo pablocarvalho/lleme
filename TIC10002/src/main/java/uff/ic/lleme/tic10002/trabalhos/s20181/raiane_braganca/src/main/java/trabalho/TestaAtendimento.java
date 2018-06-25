@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class TestaAtendimento {
 
     public static int codigoAtendimento = 1000;
+    public static int NUM_MAX_ATENDIMENTO_SIMULTANEOS = 2;
 
     public static void menu() {
         System.out.println("\n\n### Opções do sistema ###");
@@ -24,7 +25,7 @@ public class TestaAtendimento {
 
         TipoAssunto[] tiposDeAssuntos = new TipoAssunto[11];
         for (int i = 0; i <= 10; i++) {
-            tiposDeAssuntos[i] = new TipoAssunto(Integer.toString(i), "Assunto " + (i + 1), i);
+            tiposDeAssuntos[i] = new TipoAssunto(i, "Assunto " + (i + 1), i);
         }
         // Importa dados do XML
         codigoAtendimento = CarregaDados.lerXML("dados.xml", codigoAtendimento, listaDeEspera, tiposDeAssuntos);
@@ -53,8 +54,10 @@ public class TestaAtendimento {
                     int idProximo = Atendimento.buscaClienteMaiorPrioridade(listaDeEspera, horaIncioAtendimento);
                     if (listaDeEspera.estaVazia()) {
                         System.out.println("Não existe nenhum cliente na fila de espera.");
+                    } else if(filaEmAtendimento.tamanho() == NUM_MAX_ATENDIMENTO_SIMULTANEOS) {
+                        System.out.println("Por favor, aguarde. Todos os nossos operadores estão ocupados.");
                     } else {
-                        objAtendimento = listaDeEspera.obtem(idProximo);
+                        objAtendimento = listaDeEspera.obtem(idProximo);                        
                         objAtendimento.atender(horaIncioAtendimento);
                         filaEmAtendimento.adicionaNoFinal(objAtendimento);
                         listaDeEspera.remove(idProximo);
