@@ -33,7 +33,7 @@ public class ServicoAtendimento {
        atendimentoAtual = null;
        tabelaTiposDeAssunto = CriadorDataset.criarTiposDeAssunto(NUM_DE_TIPOS_DE_ASSUNTO);
        clientesDB = CriadorDataset.criarClientes(50);
-       historicoDiarioDeAssuntos = new HashAssuntos(NUM_DE_TIPOS_DE_ASSUNTO);
+       historicoDiarioDeAssuntos = new HashAssuntos(tabelaTiposDeAssunto);
        dataCorrente = new Date();  
        
        
@@ -50,7 +50,7 @@ public class ServicoAtendimento {
        String strDataCorrente = dtf.format(dataCorrente);
        if(strData.equals(strDataCorrente) == false){
            dataCorrente = data;
-           historicoDiarioDeAssuntos = new HashAssuntos(NUM_DE_TIPOS_DE_ASSUNTO);
+           historicoDiarioDeAssuntos = new HashAssuntos(tabelaTiposDeAssunto);
            
        }
        novo.setHoraChegada(dataCorrente);
@@ -89,17 +89,10 @@ public class ServicoAtendimento {
        for (TipoAssunto tipoAssunto : tabelaTiposDeAssunto) {
            String saida = tipoAssunto.getTítulo()+"\t";
            
-           Assunto[] assuntos = historicoDiarioDeAssuntos.obterAssuntosPorTipo(tipoAssunto);
+           ListaDeAssuntos assuntos = historicoDiarioDeAssuntos.obterAssuntosPorTipo(tipoAssunto);
            
-           float soma = 0.0f;
-           int contador = 0;
-           for (Assunto assunto : assuntos) {
-               if(assunto != null){
-                   soma += assunto.getDuracao();
-                   contador++;
-               }
-           }
-           float media = soma/contador;
+           
+           float media = assuntos.obterMediaDeTempos();
            
            saida += Float.toString(media);
            System.out.println(saida);           
