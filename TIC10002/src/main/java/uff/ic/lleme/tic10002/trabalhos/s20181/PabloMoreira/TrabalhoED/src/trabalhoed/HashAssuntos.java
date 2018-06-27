@@ -11,27 +11,33 @@ package trabalhoed;
  */
 class HashAssuntos {
     
-    private Assunto[][] tabelaHash;
-    private final static int TOTAL_DE_UM_TIPO = 100;
+    private ListaDeAssuntos[] tabelaHash;    
 
-    public HashAssuntos(int tipoAssuntoTotal) {
-         tabelaHash = new Assunto[tipoAssuntoTotal][TOTAL_DE_UM_TIPO];
+    public HashAssuntos(TipoAssunto[] tiposDeAssunto) {
+         
+         int maxTipo = -1;
+         for (int i = 0; i < tiposDeAssunto.length; i++) {
+            if(tiposDeAssunto[i].getTipo() > maxTipo)
+                maxTipo = tiposDeAssunto[i].getTipo();               
+            
+        }
+         
+         tabelaHash = new ListaDeAssuntos[maxTipo+1];
+         
+         
+         for(TipoAssunto tipoAssunto : tiposDeAssunto){             
+             tabelaHash[tipoAssunto.getTipo()] = new ListaDeAssuntos(tipoAssunto);            
+             
+         }
     }
     
     public void inserir(Assunto assunto){
         
-        for( int i = 0; i < TOTAL_DE_UM_TIPO; i++){
-            if(tabelaHash[assunto.getTipo()][i] == null)
-            {
-                tabelaHash[assunto.getTipo()][i]=assunto;
-                break;
-            }           
-            
-        }
+        tabelaHash[assunto.getTipo()].Inserir(assunto);
         
     }
     
-    public Assunto[] obterAssuntosPorTipo(TipoAssunto tipo){
+    public ListaDeAssuntos obterAssuntosPorTipo(TipoAssunto tipo){
         return tabelaHash[tipo.getTipo()];
     }
     
