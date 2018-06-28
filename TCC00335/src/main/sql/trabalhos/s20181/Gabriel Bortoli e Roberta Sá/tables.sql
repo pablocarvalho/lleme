@@ -14,7 +14,7 @@ CREATE TABLE cliente(
     tel             CHARACTER VARYING               ,
     endereco        CHARACTER VARYING               ,
     CONSTRAINT PK_cliente PRIMARY KEY(id_cliente)  ,
-	CONSTRAINT SK_cliente UNIQUE(login, senha)	  
+	CONSTRAINT SK_cliente UNIQUE(login, senha)
 );
 
 
@@ -73,7 +73,7 @@ CREATE TABLE item_carrinho(
 CREATE TABLE entrega(
     id_entrega    	serial           NOT NULL   ,
     carrinho      	INT              NOT NULL   ,
-    stat          	BOOL		 DEFAULT 'f', 
+    stat          	BOOL		 DEFAULT 'f',
     momento_saida 	TIMESTAMP                   ,
     momento_chegada  	TIMESTAMP                   ,
     CONSTRAINT PK_Entrega PRIMARY KEY(id_entrega),
