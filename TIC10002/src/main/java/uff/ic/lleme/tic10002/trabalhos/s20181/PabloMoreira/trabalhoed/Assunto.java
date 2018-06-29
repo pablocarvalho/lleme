@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhoed;
+package uff.ic.lleme.tic10002.trabalhos.s20181.PabloMoreira.trabalhoed;
 
 /**
  *
  * @author pablomoreira
  */
 public class Assunto {
+
     public final static int MAX_PROVIDENCIAS = 10;
     private int tipo;
     private String descricao;
@@ -60,7 +61,5 @@ public class Assunto {
     public void setDuracao(int duracao) {
         this.duracao = duracao;
     }
-    
-    
-    
+
 }

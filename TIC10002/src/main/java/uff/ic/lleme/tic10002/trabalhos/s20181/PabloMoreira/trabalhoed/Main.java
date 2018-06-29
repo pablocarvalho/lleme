@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhoed;
+package uff.ic.lleme.tic10002.trabalhos.s20181.PabloMoreira.trabalhoed;
 
 /**
  *
@@ -16,12 +16,12 @@ public class Main {
      */
     public static void main(String[] args) {
         ServicoAtendimento servico = new ServicoAtendimento();
-        
+
         servico.recepcionar();
         servico.recepcionar();
         servico.recepcionar();
         servico.recepcionar();
-        
+
         servico.atender();
         servico.encerrar();
         servico.atender();
@@ -30,12 +30,9 @@ public class Main {
         servico.encerrar();
         servico.atender();
         servico.encerrar();
-        
+
         servico.gerarEstatistica();
-        
-        
-        
-        
+
     }
-    
+
 }
