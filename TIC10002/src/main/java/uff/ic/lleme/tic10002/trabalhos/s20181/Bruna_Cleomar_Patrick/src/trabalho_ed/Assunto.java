@@ -1,54 +1,55 @@
-package trabalho_ed;
+package uff.ic.lleme.tic10002.trabalhos.s20181.Bruna_Cleomar_Patrick.src.trabalho_ed;
 
 import java.nio.ByteBuffer;
-import java.util.Date;
 
 public class Assunto extends ObjetoBase {
-	/* Classe que representa um Assunto tratado durante um Atendimento a um Cliente
-     * Implementada conforme especificação do trabalho
-	 * (Assunto {tipo, descrição, providências, duraçãoAtendimento})
-     */
-     private TipoAssunto tipo;
-     private String descricao;
-     private String providencias = null;
-     private int duracaoAtendimento = 0;
-    
-	public Assunto(TipoAssunto tipo, String descricao){
-    	 this.tipo = tipo;
-    	 this.descricao = descricao;
-     }
 
-     public TipoAssunto getTipoAssunto() {
-    	 return this.tipo;
-     }
-	 public String getChave() {
-	     return this.tipo.getChave();
-	 }
-	 
+    /* Classe que representa um Assunto tratado durante um Atendimento a um Cliente
+     * Implementada conforme especificaï¿½ï¿½o do trabalho
+	 * (Assunto {tipo, descriï¿½ï¿½o, providï¿½ncias, duraï¿½ï¿½oAtendimento})
+     */
+    private TipoAssunto tipo;
+    private String descricao;
+    private String providencias = null;
+    private int duracaoAtendimento = 0;
+
+    public Assunto(TipoAssunto tipo, String descricao) {
+        this.tipo = tipo;
+        this.descricao = descricao;
+    }
+
+    public TipoAssunto getTipoAssunto() {
+        return this.tipo;
+    }
+
+    public String getChave() {
+        return this.tipo.getChave();
+    }
+
     public String getDescricao() {
         return this.descricao;
     }
-    
-	public String getProvidencias() {
-		return providencias;
-	}
-	
+
+    public String getProvidencias() {
+        return providencias;
+    }
+
     public Integer getHash() {
         String chave = this.tipo.getChave();
         ByteBuffer wrapped = ByteBuffer.wrap(chave.getBytes());
         return wrapped.getInt();
     }
 
-	public void setProvidencias(String providencias) {
-		this.providencias = providencias;
-	}
+    public void setProvidencias(String providencias) {
+        this.providencias = providencias;
+    }
 
-	public int getDuracaoAtendimento() {
-		return duracaoAtendimento;
-	}
+    public int getDuracaoAtendimento() {
+        return duracaoAtendimento;
+    }
 
-	public void setDuracaoAtendimento(int duracaoAtendimento) {
-		this.duracaoAtendimento = duracaoAtendimento;
-	}
+    public void setDuracaoAtendimento(int duracaoAtendimento) {
+        this.duracaoAtendimento = duracaoAtendimento;
+    }
 
 }
