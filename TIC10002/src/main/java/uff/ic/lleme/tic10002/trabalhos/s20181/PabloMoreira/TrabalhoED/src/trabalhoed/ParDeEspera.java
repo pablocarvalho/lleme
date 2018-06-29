@@ -32,6 +32,10 @@ public class ParDeEspera {
     public Atendimento getAtendimento() {
         return atendimento;
     }
+
+    void setPrioridade(int novaPrioridade) {
+        this.prioridade = novaPrioridade;
+    }
     
     
     
