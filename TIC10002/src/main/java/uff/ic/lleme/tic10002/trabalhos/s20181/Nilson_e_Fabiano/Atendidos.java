@@ -7,7 +7,7 @@ package uff.ic.lleme.tic10002.trabalhos.s20181.Nilson_e_Fabiano;
 class NoAtendido {
     protected Atendimento atendimento;
     protected NoAtendido prox;
-//    protected NoAtendido ante;
+    protected NoAtendido ante;
 
     NoAtendido (Atendimento a) {
         this.atendimento = a;
